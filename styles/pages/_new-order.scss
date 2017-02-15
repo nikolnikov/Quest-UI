@@ -1,0 +1,712 @@
+.qd-new-order {
+    $qd-new-order-header-height-mobile: 130px;
+    $qd-new-order-header-height-tablet: 150px;
+    $qd-new-order-header-height-desktop: 160px;
+    $qd-new-order-nav-height: 60px;
+
+    @include when-wider-than(tablet) {
+        padding-top: $qd-new-order-header-height-tablet;
+    }
+
+    @include when-wider-than(desktop) {
+        padding-top: $qd-new-order-header-height-desktop;
+    }
+
+    &--no-nav {
+        @include when-wider-than(tablet) {
+            padding-top: $qd-new-order-header-height-tablet - $qd-new-order-nav-height;
+        }
+
+        @include when-wider-than(desktop) {
+            padding-top: $qd-new-order-header-height-desktop - $qd-new-order-nav-height;
+        }
+    }
+    
+    &__header {
+        background: $white;
+        height: $qd-new-order-header-height-mobile;
+
+        @include when-wider-than(tablet) {
+            position: fixed;
+            top: $top-nav-height;
+            left: 0;
+            z-index: 10;
+            width: 100%;
+            height: $qd-new-order-header-height-tablet;
+        }
+
+        @include when-wider-than(desktop) {
+            height: $qd-new-order-header-height-desktop;
+            left: $side-nav-width;
+            width: calc(100% - #{$side-nav-width});
+        }
+
+        &--wide {
+            @include when-wider-than(desktop) {
+                left: $side-nav-width-narrow;
+                width: calc(100% - #{$side-nav-width-narrow});
+            }
+        }
+
+        .qd-new-order--no-nav & {
+            height: $qd-new-order-header-height-mobile - $qd-new-order-nav-height;
+
+            @include when-wider-than(tablet) {
+                height: $qd-new-order-header-height-tablet - $qd-new-order-nav-height;
+            }
+
+            @include when-wider-than(desktop) {
+                height: $qd-new-order-header-height-desktop - $qd-new-order-nav-height;
+            }
+        }
+    }
+    
+    &__scroll-anchor {
+      display: block;
+      position: relative;
+      top: -160px;
+      visibility: hidden;
+   }
+
+    &__nav {
+        overflow-x: scroll;
+        overflow-y: hidden;
+
+        @include when-wider-than(tablet) {
+            overflow-x: auto;
+        }
+    }
+
+    &__nav-item {
+        @extend %type-cta;
+        color: rgba($black, .12);
+        text-align: center;
+        width: 160px;
+        min-width: 160px;
+        height: $qd-new-order-nav-height;
+        padding-left: 5px;
+        border-bottom: 1px solid $divider-gray-1;
+        background: $background-light-gray;
+        position: relative;
+        box-sizing: border-box;
+        transition: all .2s;
+        cursor: pointer;
+
+        @include when-wider-than(tablet) {
+            width: 33%; // ?????
+            min-width: 190px;
+        }
+
+        @include when-wider-than(desktop) {
+            width: auto;
+        }
+
+        &:last-child {
+            &::before,
+            &::after {
+                content: none;
+            }
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-top: 30px solid transparent;
+            border-bottom: 30px solid transparent;
+            position: absolute;
+            z-index: 1;
+        }
+
+        &::before {
+            border-left: 10px solid $divider-gray-1;
+            right: -10px;
+        }
+
+        &::after {
+            border-left: 10px solid $background-light-gray;
+            right: -9px;
+        }
+
+        &:focus {
+            outline: 0;
+        }
+
+        .icon-check,
+        .icon-warningcircle {
+            color: $green-l;
+            margin: 0 3px 0 10px;
+            display: none;
+
+            @include when-wider-than(desktop) {
+                margin-right: 13px;
+            }
+        }
+
+        .icon-warningcircle {
+            color: $red;
+        }
+
+        &--current,
+        &--complete,
+        &--incomplete {
+            color: $green-l;
+            background: $white;
+
+            &::after {
+                border-left: 10px solid $white;
+            }
+        }
+
+        &--current {
+            border-bottom: 3px solid $green-l;
+        }
+
+        &--complete {
+            .icon-check {
+                display: inline-block;
+            }
+        }
+
+        &--incomplete {
+            .icon-warningcircle {
+                display: inline-block;
+            }
+        }
+    }
+
+    &__nav-item-title {
+        text-align: left;
+    }
+
+    &__cards {
+        min-height: calc(100vh - #{$qd-new-order-header-height-mobile} - #{$top-nav-height});
+        box-sizing: border-box;
+        padding: 10px 0 80px;
+        background: $background-gray;
+
+        @include when-wider-than(tablet) {
+            min-height: calc(100vh - #{$qd-new-order-header-height-tablet} - #{$top-nav-height});
+        }
+
+        @include when-wider-than(desktop) {
+            min-height: calc(100vh - #{$qd-new-order-header-height-desktop} - #{$top-nav-height});
+        }
+
+        .qd-new-order--no-nav & {
+            padding-top: 0;
+        }
+    }
+
+    &__change-patient.md-button.qd-button {
+        color: white;
+
+        .qd-icon {
+            color: white;
+        }
+    }
+
+    &__search-form {
+        position: relative;
+    }
+
+    &__search-form-button {
+        position: absolute;
+        right: 0;
+        top: 10px;
+        z-index: 2;
+
+        &--active {
+            &:before {
+                color: $green-l;
+            }
+        }
+    }
+
+    &__autocomplete-search[md-floating-label] {
+        margin-top: 20px;
+        background: none;
+        position: relative;
+        z-index: 1;
+
+        @include when-wider-than(tablet) {
+            margin-top: 45px;
+        }
+
+        @include when-wider-than(desktop) {
+            margin-top: 55px;
+        }
+
+        &::before {
+            font-size: 30px;
+            color: $divider-gray-2;
+            position: absolute;
+            top: 14px;
+            left: 0;
+
+            @include when-wider-than(tablet) {
+                top: 6px;
+            }
+        }
+
+        .md-whiteframe-z1 {
+            box-shadow: none;
+        }
+
+        md-input-container {
+            margin: 0;
+            padding: 0;
+
+            label:not(.md-no-float):not(.md-container-ignore) {
+                @extend %type-display-2;
+                color: rgba($black, $text-opacity-secondary);
+                padding-left: 45px;
+                transform: translate3d(0, 46px, 0) scale(1);
+
+                @include when-wider-than(tablet) {
+                    transform: translate3d(0, 41px, 0) scale(1);
+                }
+            }
+
+            input {
+                @extend %type-display-2;
+                color: rgba($black, $text-opacity-primary);
+                height: 55px;
+                padding: 2px 25px 1px 45px;
+                border-bottom: 1px solid $icon-dark-gray;
+                box-sizing: border-box;
+
+                @include when-wider-than(tablet) {
+                    padding-bottom: 15px;
+                }
+            }
+
+            &:not(.md-input-invalid).md-input-focused,
+            &:not(.md-input-invalid).md-input-has-value {
+                input {
+                    border-bottom: 2px solid $green-l;
+                }
+
+                label {
+                    color: $green-l;
+                    transform: translate3d(-24px, 16px, 0) scale(.6);
+
+                    @include when-wider-than(tablet) {
+                        transform: translate3d(-20px, 6px, 0) scale(.6);
+                    }
+                }
+            }
+        }
+    }
+
+    &__autocomplete-or {
+        @extend %type-cta;
+        text-align: center;
+        color: $icon-dark-gray;
+        width: 100px;
+        margin: 30px auto;
+        position: relative;
+
+        &::before,
+        &::after {
+            content: '';
+            width: 30px;
+            height: 0;
+            border: 1px dashed $divider-gray-2;
+            position: absolute;
+            top: 50%;
+        }
+
+        &::before {
+            left: 0;
+        }
+
+        &::after {
+            right: 0;
+        }
+    }
+
+    &__patient-button {
+        margin: 0 auto;
+
+        &.md-button.md-raised.qd-button {
+            width: 280px;
+        }
+    }
+
+    &__cancel {
+        margin-top: 25px;
+
+        @include when-wider-than(desktop) {
+            margin-top: 35px;
+        }
+
+        & + .qd-patient-profile-card {
+            margin-top: 25px;
+
+            @include when-wider-than(desktop) {
+                margin-top: 35px;
+            }
+        }
+    }
+
+    &__cancel-button {
+        @extend %type-cta;
+        color: $green-l;
+    }
+
+    &__billing-ctas {
+        margin-top: 0;
+    }
+
+    &__or {
+        @extend %type-cta;
+        color: $icon-dark-gray;
+        margin: -10px 15px 0;
+    }
+
+    &__new-bill {
+        padding: 20px 0 40px;
+        margin-top: 40px;
+        background: $divider-gray-1;
+        position: relative;
+
+        &::before {
+            content: '';
+            margin-left: -5px;
+            border-bottom: 10px solid $divider-gray-1;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            position: absolute;
+            top: -10px;
+            left: 50%;
+        }
+    }
+
+    &__use-default {
+        position: absolute;
+        top: 30px;
+        right: 0;
+    }
+
+    &__saved-list-title {
+        @extend %type-body-2;
+        color: rgba($black, $text-opacity-secondary);
+        text-overflow: ellipsis;
+        padding-right: 3px;
+        margin-right: 5px;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    &__saved-list {
+        margin-bottom: 20px;
+    }
+
+    &__saved-list-header {
+        @extend %type-cta;
+        background: $background-gray;
+        border: 1px solid $divider-gray-1;
+        color: rgba($black, $text-opacity-secondary);
+        line-height: 50px;
+        padding: 0 20px;
+        height: 50px;
+        cursor: pointer;
+        outline: none;
+
+        &--default {
+            font-weight: 700;
+            font-style: italic;
+        }
+    }
+
+    &__saved-list-toggle {
+        @extend %type-cta;
+        color: $green-l;
+        text-align: center;
+    }
+
+    &__your-order-inputs {
+        &::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+    }
+
+    &__datepicker-wrapper {
+        box-sizing: border-box;
+        padding: 2px 10px;
+        margin: 8px 0 15px;
+        float: left;
+        width: 50%;
+
+        @include when-wider-than(tablet) {
+            width: auto;
+        }
+
+        label {
+            @extend %type-label-2;
+            color: rgba($black, $text-opacity-secondary);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        &--collection {
+            @include when-on(tablet) {
+                float: none;
+            }
+        }
+
+        &--scheduled {
+            @include when-wider-than(tablet) {
+                width: auto;
+            }
+        }
+    }
+
+    &__your-order-input {
+        box-sizing: border-box;
+        width: 100%;
+
+        @include when-wider-than(tablet) {
+            float: left;
+            width: 50%;
+        }
+
+        @include when-wider-than(desktop) {
+            width: 25%;
+        }
+
+        .md-errors-spacer {
+            display: none;
+        }
+    }
+
+    &__specimen-checkbox {
+        box-sizing: border-box;
+        float: left;
+        margin: 18px 0;
+        padding: 2px 10px;
+
+        @include when-on(tablet) {
+            width: 50%;
+        }
+
+        .qd-checkbox {
+            margin-bottom: 0;
+
+            .md-label {
+                line-height: 20px;
+            }
+        }
+    }
+
+    &__order-abn-link {
+        margin: 20px 0 30px;
+    }
+
+    &__order-items {
+        border-top: 1px solid $divider-gray-1;
+        margin: 20px -10px -20px;
+    }
+
+    &__order-items-header {
+        font-size: 16px;
+        line-height: 60px;
+        color: $green-l;
+        height: 60px;
+        padding: 0 20px;
+        position: relative;
+        cursor: pointer;
+
+        @include when-wider-than(tablet) {
+            height: 80px;
+            line-height: 80px;
+        }
+
+        .qd-patient-profile-card__content--static & {
+            cursor: default;
+        }
+
+        .qd-icon {
+            color: $green-l;
+            position: absolute;
+            right: 20px;
+        }
+    }
+
+    &__order-items-list {
+        padding: 20px;
+        background: $background-light-gray;
+    }
+
+    &__order-buttons {
+        margin-bottom: 20px;
+    }
+
+    &__order-note-title {
+        @extend .qd-patient-profile-card__title;
+    }
+
+    &__note-block {
+        margin-bottom: 15px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .md-errors-spacer {
+            display: none;
+        }
+    }
+
+    &__order-note-placeholder {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    &__info-block-container {
+        background: $white;
+        padding: 15px 20px 0;
+        margin: 0;
+
+        .qd-patient-profile-card__content--static & {
+            padding: 15px 10px 0;
+        }
+    }
+
+    &__info-block {
+        &:last-child {
+            border-right: none;
+        }
+    }
+
+    &__review-warning {
+        background: $background-light-gray;
+        padding: 10px 20px;
+
+        .qd-icon {
+            float: left;
+            color: $orange;
+        }
+    }
+
+    &__review-warning-text {
+        @extend %type-subhead-1;
+        color: $orange;
+        padding-left: 10px;
+        line-height: 18px;
+    }
+
+    &__review-tests-and-diagnosis-container {
+        padding: 0 20px 5px;
+    }
+
+    &__review-content {
+        background: $background-light-gray;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+    }
+
+    &__review-added-wrapper {
+        margin-bottom: 20px;
+
+        &--last {
+            margin-bottom: 0;
+        }
+    }
+
+    &__review-title {
+        @extend %type-headline-1;
+        padding: 30px 0 15px 20px;
+    }
+
+    &__review-added-title {
+        @extend %type-cta;
+        line-height: 50px;
+        color: rgba($black, $text-opacity-secondary);
+        height: 50px;
+        padding: 0 20px;
+        border: 1px solid $divider-gray-1;
+        background: $background-gray;
+        cursor: pointer;
+    }
+
+    &__review-subtitle {
+        padding-left: 10px;
+    }
+
+    &__success-banner {
+        background: $yellow-l;
+        background: linear-gradient(to right, $green-l, $yellow-l);
+        height: 160px;
+        width: 100%;
+        padding: 0 40px;
+        color: $white;
+        position: relative;
+
+        &:before,
+        &:after {
+            content: '';
+            background: url($image-base + 'Dots.svg') no-repeat;
+            position: absolute;
+            height: 135px;
+            width: 117px;
+        }
+
+        &:before {
+            right: 0;
+            bottom: 0;
+        }
+
+        &:after {
+            top: 0;
+            left: 0;
+            transform: rotate(180deg);
+        }
+    }
+
+    &__success-header {
+        @extend %type-display-1;
+        margin: 0;
+        font-size: 50px;
+
+        @include when-wider-than(desktop) {
+            font-size: 60px;
+        }
+    }
+
+    &__success-subheader {
+        @extend %type-title-2;
+        margin-bottom: 5px;
+        text-align: center;
+
+        @include when-wider-than(desktop) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__success-cta-subheader {
+        @extend %type-subhead-2;
+        margin-bottom: 24px;
+        text-align: center;
+    }
+    
+    &__success-error  {
+        margin-left: 5px;
+    }
+
+    &__success-cta-area {
+        background: $white;
+        width: 100%;
+        padding: 30px 20px;
+        line-height: 18px;
+
+        @include when-wider-than(tablet) {
+            padding: 30px 115px;
+        }
+    }
+}

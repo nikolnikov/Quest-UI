@@ -1,0 +1,25 @@
+/*== FORM OVERRIDES ==*/
+
+/* Overrides default Material required asterisks */
+
+md-input-container label:not(.md-container-ignore).md-required:after,
+md-input-container:not(.md-input-has-value) md-select[required] .md-select-value span:first-child:after,
+md-input-container:not(.md-input-has-value) md-select.ng-required .md-select-value span:first-child:after  {
+  color: $red !important;
+  content: '*';
+}
+
+/* Overrides default Material color for labels */
+
+md-input-container:not(.md-input-focused):not(.md-input-invalid) md-select.md-default-theme .md-select-value span:first-child:after, 
+md-input-container:not(.md-input-focused):not(.md-input-invalid) md-select .md-select-value span:first-child:after  {
+  color: rgba($black, $text-opacity-hint);
+}
+
+/* Overrides default Material forcing the green color for labels and asterisks as needed */
+
+md-input-container.md-input-focused:not(.md-input-invalid) label.md-required:after,
+md-input-container.md-input-focused:not(.md-input-has-value) md-select.md-default-theme .md-select-value.md-select-placeholder, 
+md-input-container.md-input-focused:not(.md-input-has-value) md-select .md-select-value.md-select-placeholder {
+  color: $green-l;
+}

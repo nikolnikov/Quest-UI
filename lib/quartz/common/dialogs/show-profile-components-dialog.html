@@ -1,0 +1,27 @@
+<md-dialog class="qd-custom-dialog" aria-label="DirectoryOfService" ng-cloak>
+  <md-card-header class="qd-dialog__header" layout="row" layout-align="space-between center">
+    <md-card-header-text flex="50">
+      Test Components 
+    </md-card-header-text>
+    <div flex="50" layout-align="end center" class="component">
+      Profile Code: {{vm.parentVm.DOS.item.code}}
+    </div>
+  </md-card-header>
+
+  <md-dialog-content ng-form name="profileComponentsDialogForm">
+    <div class="qd-custom-dialog__section">
+      <div ng-repeat="component in vm.parentVm.DOS.item.profileComponents track by $index" layout="row" layout-align="space-between center">
+        <div flex="10">
+          {{component.ComponentCode}}
+        </div>
+        <div flex="90" layout-align="end center">
+          {{component.ComponentDescription}}
+        </div>
+      </div>
+    </div>
+
+    <div layout="column" layout-align="center center" class="qd-save-cancel qd-custom-dialog__save-cancel">
+      <a href="#" class="qd-link" ng-click="vm.parentVm.closeDialog()">Close</a>
+    </div>
+  </md-dialog-content>
+</md-dialog>

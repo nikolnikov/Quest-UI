@@ -1,0 +1,37 @@
+<div class="qd-header qd-header--home" layout="row" layout-align="start center">
+    <div class="qd-header__title" flex>
+        <!-- ng-click below is just for prototyping purposes.
+            Clicking the name toggled Logged in Statuc -->
+        Welcome, <b>Quartz Sample App user!</b>
+
+        <div class="qd-header__caption">
+            Here are your accessible feeds.
+            <md-button class="md-icon-button" md-no-ink="false" ng-click="vm.$state.go('settings')">
+                <md-icon class="qd-icon qd-icon--green icon-setting qd-home__settings-icon"></md-icon>
+            </md-button>
+        </div>
+    </div>
+
+    
+</div>
+
+<div>
+    <div class="qd-home__section">
+        <div class="qd-home__section-header" layout="row" layout-align="start center">
+            <md-icon class="qd-icon qd-icon--green icon-results"></md-icon>
+            <span flex>Reddit Feeds</span>
+        </div>
+
+        <div class="qd-home__section-row" layout-xs="column" layout-gt-xs="row">
+            <div class="qd-home__dashboard-card" flex ng-repeat="feat in vm.features"
+            layout-xs="row" layout-gt-xs="column" layout-align-xs="start center" layout-align-gt-xs="center center" 
+            ng-click="vm.featureClicked(feat)">
+                <span class="qd-home__dashboard-card-stat">{{feat.num}}</span>
+                <span class="qd-home__dashboard-card-description">{{feat.desc}}</span>
+            </div>
+
+            
+            
+        </div>
+    </div>
+</div>

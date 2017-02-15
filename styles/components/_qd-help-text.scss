@@ -1,0 +1,21 @@
+.qd-help-text {
+    @extend %type-caption;
+
+    &::before {
+        font-size: 20px;
+        color: $yellow-l;
+        position: relative;
+        top: 3px;
+        margin-right: 2px;
+    }
+}
+
+    md-tooltip .md-content {
+        font-size: 14px;
+        background: $background-light-gray;
+        color: rgba($black, $text-opacity-primary);
+
+        a {
+            color: $green-l
+        }
+    }

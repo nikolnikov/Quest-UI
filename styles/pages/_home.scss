@@ -1,0 +1,285 @@
+.qd-home {
+    background-color: $background-gray;
+    min-height: calc(100vh - #{$top-nav-height});
+    display: block;
+
+    &__section {
+        border-bottom: 1px solid $divider-gray-1;
+        padding: 20px;
+
+        &:last-of-type {
+            border-bottom: none;
+        }
+
+        @include when-wider-than(tablet) {
+            padding: 30px 20px;
+        }
+
+        @include when-wider-than(desktop) {
+            padding: 30px 40px;
+        }
+
+        &--gray {
+            background-color: $background-light-gray;
+            border-bottom: none;
+        }
+
+        &--graph {
+            padding-top: 20px;
+        }
+    }
+
+    &__section-header {
+        @extend %type-display-2;
+        margin-bottom: 20px;
+
+        .qd-icon {
+            margin-right: 15px;
+        }
+
+        .qd-home__graph-container & {
+            @extend %type-title-2;
+            font-weight: 400;
+            border-bottom: 1px solid $divider-gray-1;
+            padding: 20px;
+            margin: 0;
+        }
+
+        &--small {
+            @extend %type-caption;
+            font-weight: normal;
+            line-height: 1;
+        }
+
+        &--graph {
+            margin-bottom: 15px;
+        }
+
+        .qd-select-input .md-select-value,
+        .md-input-focused .qd-select-input .md-select-value {
+            border-color: transparent;
+            border-bottom-width: 5px;
+        }
+
+        md-input-container {
+            margin: 0;
+            padding: 0 3px;
+
+            @include when-wider-than(tablet) {
+                padding: 2px 0;
+            }
+        }
+
+        md-select {
+            .qd-home__graph-container & {
+                @extend %type-body-2;
+            }
+
+            .md-select-icon {
+                margin-left: 0px;
+            }
+        }
+    }
+
+    &__section-row {
+        margin-bottom: 10px;
+
+        @include when-wider-than(desktop) {
+            margin-bottom: 20px;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__dashboard-card {
+        background-color: $white;
+        border: 1px solid $divider-gray-1;
+        cursor: pointer;
+        height: 60px;
+        margin-bottom: 10px;
+        padding: 20px;
+        outline: none;
+        position: relative;
+
+        @include when-wider-than(tablet) {
+            height: 158px;
+            margin: 0 10px 0 0;
+            max-width: calc((100%/3) - (40px / 3));
+        }
+
+        @include when-wider-than(desktop) {
+            height: 147px;
+            margin-right: 20px;
+        }
+
+        &:hover {
+            background-color: $background-light-gray;
+
+            &:after {
+                color: $green-l;
+            }
+        }
+
+        &:last-child {
+            margin: 0;
+        }
+
+        &:after {
+            content: "\f10b";
+            color: $divider-gray-2;
+            font-family: 'quest-icons';
+            font-size: 22px;
+            position: absolute;
+            bottom: 5px;
+            right: 7px;
+        }
+    }
+
+    &__dashboard-card-stat {
+        color: $green-l;
+        font-size: 40px;
+        line-height: 1;
+        margin-right: 10px;
+        font-weight: 300;
+
+        @include when-wider-than(tablet) {
+            font-size: 70px;
+            margin-right: 0;
+        }
+
+        @include when-wider-than(desktop) {
+            font-size: 80px;
+        }
+    }
+
+    &__dashboard-card-description {
+        @extend %type-subhead-1;
+        color: rgba($black, $text-opacity-secondary);
+        text-transform: uppercase;
+        margin-top: 15px;
+        text-align: center;
+
+        @include when-wider-than(tablet) {
+            margin-top: 0;
+        }
+    }
+
+    &__graph-container {
+        @include elevation(2);
+        background-color: $white;
+        margin-bottom: 20px;
+
+        &:last-child {
+            margin: 0;
+        }
+    }
+
+    &__graph {
+        border-bottom: 1px solid $divider-gray-1;
+        padding: 20px;
+
+        @include when-wider-than(tablet) {
+            border-right: 1px solid $divider-gray-1;
+            border-bottom: none;
+        }
+
+        &:last-child {
+            border: none;
+        }
+    }
+
+    &__banner {
+        background: $yellow-l;
+        background: linear-gradient(to right, $green-l, $yellow-m);
+        width: 100%;
+        padding: 40px;
+        color: $white;
+        position: relative;
+        text-align: center;
+
+        &:before,
+        &:after {
+            content: '';
+            background: url($image-base + 'Dots.svg') no-repeat;
+            position: absolute;
+            opacity: .6;
+            height: 133px;
+            width: 114px;
+        }
+
+        &:before {
+            right: 0;
+            bottom: 0;
+        }
+
+        &:after {
+            top: 0;
+            left: 0;
+            transform: rotate(180deg);
+        }
+    }
+
+    &__banner-header {
+        @extend %type-display-1;
+        margin-bottom: 15px;
+    }
+
+    &__banner-subhead {
+        @extend %type-title-2;
+        margin-bottom: 30px;
+    }
+
+    &__static-steps {
+        padding: 20px;
+
+        @include when-wider-than(desktop) {
+            padding: 40px;
+        }
+    }
+
+    &__static-step {
+        padding-bottom: 50px;
+
+        @include when-on(mobile) {
+            height: 110px;
+        }
+
+        &:last-child {
+            .qd-home__static-step-icon:after {
+                display: none;
+            }
+        }
+    }
+
+    &__static-step-icon.qd-icon {
+        border: 1px solid $green-l;
+        border-radius: 50%;
+        line-height: 42px;
+        text-align: center;
+        margin-right: 20px;
+        height: 40px;
+        width: 40px;
+
+        &:after {
+            content: '';
+            display: block;
+            height: 40px;
+            width: 1px;
+            background-color: $divider-gray-2;;
+            text-align: center;
+            margin: 12px 20px;
+
+            @include when-wider-than(tablet) {
+                height: 25px;
+            }
+        }
+    }
+
+    &__settings-icon {
+        &:hover {
+            color: $green-m;
+        }
+    }
+}

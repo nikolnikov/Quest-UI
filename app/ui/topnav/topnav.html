@@ -1,0 +1,53 @@
+<div class="md-toolbar-tools">
+  <md-icon class="icon-menu" hide-gt-md ng-click="vm.toggleSidenav()"></md-icon>
+  <div class="qd-top-nav__logo-wrapper">
+      <a href="http://de.qdx.com/" target="_blank"><img class="qd-top-nav__logo" src="/images/quest-logo-quanum.svg" alt="Quest Quanum"></a>
+  </div>
+  <span hide-xs hide-gt-xs></span>
+
+
+  <md-autocomplete class="qd-top-nav__search icon-search" flex
+        id="globalPatientsSearch"
+        md-input-id="input-searchPatients"
+        ng-keydown="vm.searchPatients($event,vm.searchText,'globalPatientsSearch')"
+        md-selected-item="vm.selectedItem"
+        md-search-text="vm.searchText"
+        md-selected-item-change="vm.selectedItemChange(item)"
+        md-items="item in vm.autoCompleteQ(vm.searchText)"
+        md-item-text="item.display"
+        md-min-length="0"
+        md-no-cache="true"
+        md-delay="250"
+        md-menu-class="qd-autocomplete-suggestions qd-autocomplete-suggestions--patient-section"
+        placeholder="Search">
+
+        <md-item-template>
+            <md-button md-ink-ripple="#ececec" class="qd-patient-card qd-patient-card--mini md-raised">
+              <div class="qd-patient-card__container" layout="row" layout-align="start center">
+                <md-icon class="qd-icon icon-history" ng-if="vm.searchText==''"></md-icon>
+                <md-icon class="qd-icon icon-search" ng-if="vm.searchText!=''"></md-icon>
+
+                <span class="qd-patient-card__name" flex="50" flex-md="75">
+                  <span class="highlight" ng-if="item.lastNameMatch">{{item.lastNameMatch}}</span>{{item.lastName}},
+                  <span class="highlight" ng-if="item.firstNameMatch">{{item.firstNameMatch}}</span>{{item.firstName}}
+                                        &nbsp;<span ng-if="item.middleNameMatch">{{item.middleNameMatch}}</span>{{item.middleName}}
+                </span>
+
+                <div class="qd-patient-card__right" flex="50" flex-md="25">
+                  <div class="qd-patient-card__info-wrapper" layout="row" layout-align="end center">
+                    <span class="qd-patient-card__dob"><span class="highlight" ng-if="item.dobMatch">{{item.dobMatch}}</span>{{item.dob}}</span>
+                    <span class="qd-patient-card__sex">{{item.sex | limitTo: 1}}</span>
+                  </div>
+                </div>
+              </div>
+            </md-button>
+        </md-item-template>
+        <md-not-found>
+            No matches for "{{vm.searchText}}".
+        </md-not-found>
+    </md-autocomplete>
+
+  <qd-alert-widget ng-if="false" class="qd-top-nav__alert-wrapper"></qd-alert-widget>
+  <!--<md-icon class="icon-search" hide-gt-xs></md-icon>-->
+  <qd-account-widget q-on-signout="vm.signout()"></qd-account-widget>
+</div>

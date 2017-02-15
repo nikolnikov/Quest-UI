@@ -1,0 +1,29 @@
+.qd-lab-report-header {
+    @extend .qd-header;
+    padding: 0;
+
+    @include when_wider_than(tablet) {
+        padding: 0 20px;
+    }
+
+    button.qd-lab-report-header__flag-button.md-button {
+        margin-left: 22px;
+
+        @include when_wider_than(tablet) {
+            margin-left: 32px;
+        }
+    }
+
+    &__back {
+        button.md-button {
+            @extend %type-cta;
+            color: $icon-dark-gray;
+        }
+    }
+
+    &__shelf {
+        .qd-icon {
+            color: $green-l;
+        }
+    }
+}

@@ -1,0 +1,154 @@
+qd-lab-order-search-results{
+    md-autocomplete{
+        margin: 5px!important;
+    }
+    .qd-header__action{
+        float:right;
+    }
+    .qd-pagination-bar{
+        background: $white;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-flow: row wrap;
+        .qd-pagination-arrows{
+            height: 20px;
+            width: 56px;
+        }
+        &__text{
+            margin-left: 15px;
+        }
+    }
+    ul.results{
+        -webkit-columns: 2!important;
+        -moz-columns: 2!important;
+        columns: 2!important;
+        margin: 0 10px 20px 10px!important;
+        li{
+            width: 100%;
+            color: rgba($black, $text-opacity-secondary);
+            font-size: 14px;
+            padding: 4px 0 0 0;
+            div.result{
+                width:90%;
+                max-width:90%!important;
+                div{
+                    vertical-align: top;
+                    &:first-child{
+                        display: inline-block;
+                        margin: 1px;
+                        padding: 5px;
+                        border-radius: 8px;
+                        width: 100%;
+                        max-width: 80%!important;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                    &:nth-child(2){
+                        max-width: 15%!important;
+                        width: 15%;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        text-align: right;
+                    }
+                }
+            }
+            &.selected{
+                div.result{
+                    background: $blue-lab-order;
+                    color: $darkest-gray;
+                    border-radius: 8px;
+                    -webkit-box-shadow:inset 0px 0px 0px 1px $blue-lab-order;
+                    -moz-box-shadow:inset 0px 0px 0px 1px $blue-lab-order;
+                    box-shadow:inset 0px 0px 0px 1px $blue-lab-order;
+                }                                
+            }
+            .qd-lab-order__overflow{
+                margin-top: 10px!important;
+                background: transparent!important;
+                -webkit-box-shadow:inset 0px 0px 0px 0px!important;
+                -moz-box-shadow:inset 0px 0px 0px 0px!important;
+                box-shadow:inset 0px 0px 0px 0px!important;
+            }
+            &:hover{
+                cursor: pointer;
+                background-color: $background-light-gray; 
+                .qd-lab-order__overflow{
+                    display: inline-block;
+                    position: relative;
+                    margin: 7px 2px 0 0;
+                    padding: 0;
+                    vertical-align: top;
+                    height: 18px;
+                    float: right;
+                    .md-menu{
+                        .md-icon-button {
+                            padding: 0;
+                            margin: 0;
+                            border-radius: 0;
+                            width: 18px;
+                            height: 18px;
+                            min-height: 18px;                                         
+                        }
+                        .md-button.md-raised:not([disabled]) & .qd-icon,
+                        .qd-icon {
+                            color: $green-l;
+                            font-size: 18px;
+                            line-height: 1px;
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                        }                                        
+                    }
+                }                                    
+            }
+            &:focus{
+                outline: 0;
+            }
+            .qd-lab-order__overflow{
+                display: none;
+            }
+        }                  
+    }     
+}
+ md-card{
+    &.diagnosis{
+        min-height: calc(28vh - #{$top-nav-height});
+        md-card-content{
+            qd-lab-order-search-results{
+                ul.results{
+                    li{
+                        &.selected{
+                            div.result{
+                                background: $yellow-lab-order;
+                                -webkit-box-shadow:inset 0px 0px 0px 1px $yellow-lab-order;
+                                -moz-box-shadow:inset 0px 0px 0px 1px $yellow-lab-order;
+                                box-shadow:inset 0px 0px 0px 1px $yellow-lab-order;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include when-less-than(mini-tablet){
+    qd-lab-order-search-results{
+        .qd-pagination-bar{
+            .qd-pagination-arrows{
+                height: 25px;
+                width: 60px;
+            }
+        }        
+        ul.results{
+            margin: 0!important;
+            -webkit-columns: 1!important;
+            -moz-columns: 1!important;
+            columns: 1!important;
+        }
+    }
+}

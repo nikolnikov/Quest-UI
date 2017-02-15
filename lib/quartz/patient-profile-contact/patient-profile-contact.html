@@ -1,0 +1,330 @@
+
+<form name="qdPatientProfileContact">
+<md-card ng-switch="vm.populated" id="qd-patient-profile-card--contact" class="qd-patient-profile-card">
+  <md-card-header class="qd-patient-profile-card__header" layout="row" layout-align="end center">
+    <md-card-header-text layout="row">
+      <div ng-show="vm.editing">Edit&nbsp;</div> Contact &amp; Reference Information
+    </md-card-header-text>
+
+    <md-button class="md-icon-button md-button" ng-click="vm.activateEditMode()" id="editContactAndReferenceInformation" aria-label="Activate Edit Mode">
+      <md-icon ng-hide="vm.editing" class="qd-icon icon-edit"></md-icon>
+    </md-button>
+  </md-card-header>
+
+  <md-card-content ng-switch-when="false" class="qd-patient-profile-card__content">
+    <div class="qd-placeholder-text">
+      Click on the edit icon to add contact information.
+    </div>
+  </md-card-content>
+
+  <div ng-switch-when="true">
+    <md-card-content ng-switch="vm.editing" class="qd-patient-profile-card__content">
+      <md-card-title ng-if="vm.contactData.primaryPhone || vm.contactData.primaryPhoneType || vm.contactData.smsNotifications || vm.contactData.email || vm.contactData.address1" class="qd-patient-profile-card__title" ng-class="{'qd-patient-profile-card__title--static': !vm.editing}" flex>
+        Contact Information
+      </md-card-title>
+
+      <div ng-switch-when="true">
+        <div layout-xs="column" layout-gt-xs="row">
+          <md-input-container flex-sm="50" flex-gt-sm="30" class="qd-patient-profile-card__input-container">
+              <label class="qd-required">Primary Phone</label>
+              <input id="priPhone" name="priPhone" ng-model="vm.contactData.primaryPhone"
+                      class="qd-text-input"
+                      ng-model-options="{'updateOn':'blur'}"
+                      qd-phone-validator="vm.priPhoneError" required>
+               <div class="hint">###-###-####</div>
+               <div ng-messages="qdPatientProfileContact.priPhone.$error">
+                    <div ng-message="qdPhoneValidator">{{ vm.priPhoneError }}</div>
+                    <div ng-message="required">This field is required</div>
+               </div>
+          </md-input-container>
+
+          <div layout-xs="column" layout-sm="column" layout-gt-sm="row" flex-sm="50" flex-gt-sm="70">
+            <div layout="column" layout-align="center start" class="qd-patient-profile-card__radio-group-container qd-patient-profile-card__sub-group">
+              <label class="qd-patient-profile-card__label">Type</label>
+
+              <md-radio-group layout="row" layout-align="start center" ng-model="vm.contactData.primaryPhoneType">
+                <md-radio-button value="Mobile" class="qd-radio-button" ng-click="vm.unCheckSecondaryPhone($event, 'Mobile')">Mobile</md-radio-button>
+                <md-radio-button value="Home" class="qd-radio-button" ng-click="vm.unCheckSecondaryPhone($event, 'Home')">Home</md-radio-button>
+                <md-radio-button value="Work" class="qd-radio-button" ng-click="vm.unCheckSecondaryPhone($event, 'Work')">Work</md-radio-button>
+              </md-radio-group>
+            </div>
+
+            <div ng-if="false && vm.contactData.primaryPhoneType == 'Mobile'" layout="column" layout-align="center start" class="qd-patient-profile-card__checkbox-container">
+              <label class="qd-patient-profile-card__label">Preference</label>
+
+              <md-checkbox class="qd-checkbox" id="canReceiveSMSNotifications" ng-model="vm.contactData.primarySmsNotifications">
+                Can receive SMS notifications
+
+                <span ng-show="vm.editing" class="qd-help-text icon-help">
+                  <md-tooltip md-direction="top">Medical data will not be shared</md-tooltip>
+                </span>
+              </md-checkbox>
+            </div>
+
+            <md-input-container id="primaryPhoneExtension" ng-if="vm.contactData.primaryPhoneType === 'Work'" layout="column" layout-align="center start" class="qd-patient-profile-card__input-container">
+              <label>Extension</label>
+              <input ng-model="vm.contactData.primaryPhoneExtension" class="qd-text-input">
+            </md-input-container>
+          </div>
+        </div>
+
+        <div layout-xs="column" layout-gt-xs="row">
+          <md-input-container flex-sm="50" flex-gt-sm="30" class="qd-patient-profile-card__input-container">
+              <label>Secondary Phone</label>
+              <input id="secPhone" name="secPhone" ng-model="vm.contactData.secondaryPhone"
+                      class="qd-text-input"
+                      ng-model-options="{'updateOn':'blur', allowInvalid: true}"
+                      ng-blur="contactData.formatTelephoneNumber(vm.contactData.secondaryPhone, 'secondaryPhone')"
+                      qd-phone-validator="vm.secPhoneError">
+               <div class="hint">###-###-####</div>
+               <div ng-messages="qdPatientProfileContact.secPhone.$error">
+                    <div ng-message="qdPhoneValidator">{{ vm.secPhoneError }}</div>
+               </div>
+          </md-input-container>
+
+          <div layout-xs="column" layout-sm="column" layout-gt-sm="row" flex-sm="50" flex-gt-sm="70">
+            <div layout="column" layout-align="center start" class="qd-patient-profile-card__radio-group-container qd-patient-profile-card__sub-group">
+              <label class="qd-patient-profile-card__label">Type</label>
+
+              <md-radio-group layout="row" ng-model="vm.contactData.secondaryPhoneType">
+                <md-radio-button value="Mobile" class="qd-radio-button" ng-disabled="vm.contactData.primaryPhoneType === 'Mobile'">Mobile</md-radio-button>
+                <md-radio-button value="Home" class="qd-radio-button" ng-disabled="vm.contactData.primaryPhoneType === 'Home'">Home</md-radio-button>
+                <md-radio-button value="Work" class="qd-radio-button" ng-disabled="vm.contactData.primaryPhoneType === 'Work'">Work</md-radio-button>
+              </md-radio-group>
+            </div>
+
+            <div ng-if="false && vm.contactData.secondaryPhoneType == 'Mobile'" layout="column" layout-align="center start" class="qd-patient-profile-card__checkbox-container">
+              <label class="qd-patient-profile-card__label">Preference</label>
+
+              <md-checkbox class="qd-checkbox" ng-model="vm.contactData.secondarySmsNotifications">
+                Can receive SMS notifications
+                <span ng-show="vm.editing" class="qd-help-text icon-help">
+                  <md-tooltip md-direction="top">Medical data will not be shared</md-tooltip>
+                </span>
+              </md-checkbox>
+            </div>
+
+            <md-input-container ng-if="vm.contactData.secondaryPhoneType === 'Work'" layout="column" layout-align="center start" class="qd-patient-profile-card__input-container">
+              <label>Extension</label>
+              <input ng-model="vm.contactData.secondaryPhoneExtension" class="qd-text-input">
+            </md-input-container>
+          </div>
+        </div>
+
+        <div layout-xs="column" layout-gt-xs="row">
+          <md-input-container flex-xs flex-sm="50" flex-gt-sm="40" class="qd-patient-profile-card__input-container">
+            <label>Email</label>
+            <input id="email" name="email" ng-model-options="{'updateOn':'blur'}" 
+            ng-model="vm.contactData.email" maxlength="256" class="qd-text-input"
+            qd-email-validator="vm.emailError">
+            <span ng-show="vm.editing" class="qd-patient-profile-card__input-tip qd-help-text icon-help">
+              <md-tooltip md-direction="top">Medical data will not be shared</md-tooltip>
+            </span>
+          	<div ng-messages="qdPatientProfileContact.email.$error">
+           		<div ng-message="qdEmailValidator">{{ vm.emailError }}</div>
+          	</div>
+          </md-input-container>
+
+          <div class="qd-patient-profile-card__checkbox-container qd-patient-profile-card__sub-group" flex-xs flex-sm="50" flex-gt-sm="60" layout="column" layout-align="center start" ng-if="false">
+            <label class="qd-patient-profile-card__label">Preference</label>
+
+            <div layout-xs="column" layout-sm="column" layout-gt-sm="row">
+              <md-checkbox class="qd-checkbox" id="emailPreferedFormOfContact" ng-model="vm.contactData.preferEmail">
+                Patient's preferred form of contact
+              </md-checkbox>
+
+              <md-checkbox class="qd-checkbox" id="canReceiveNotifications" ng-model="vm.contactData.emailNotifications">
+                Can receive notifications
+              </md-checkbox>
+            </div>
+          </div>
+        </div>
+
+        <div layout-xs="column" layout-gt-xs="row">
+          <md-input-container flex class="qd-patient-profile-card__input-container">
+            <label>Address 1</label>
+            <input maxlength="30" ng-model="vm.contactData.address1" class="qd-text-input">
+          </md-input-container>
+
+          <md-input-container flex class="qd-patient-profile-card__input-container input-lg">
+            <label>Address 2</label>
+            <input maxlength="30" ng-disabled="!vm.contactData.allowSecondAddressLine" ng-model="vm.contactData.address2" class="qd-text-input">
+          </md-input-container>
+        </div>
+
+        <div layout-xs="column" layout-gt-xs="row">
+          <div flex flex-gt-xs="50" layout="row">
+            <md-input-container flex class="qd-patient-profile-card__input-container">
+              <label>City</label>
+              <input ng-model="vm.contactData.city" class="qd-text-input" ng-blur="contactData.getCityInfoQ(vm.contactData.city, contactData.patient)">
+            </md-input-container>
+          </div>
+
+          <div flex flex-gt-xs="50" layout="row">
+            <md-input-container flex class="qd-patient-profile-card__input-container">
+              <label>State</label>
+              <md-select ng-model="vm.contactData.state" class="qd-select-input">
+                <md-option ng-repeat="state in vm.contactData.states track by $index" value="{{state}}">
+                  {{state}}
+                </md-option>
+              </md-select>
+            </md-input-container>
+
+            <md-input-container flex class="qd-patient-profile-card__input-container">
+           			<label>Zip</label>
+           			<input id="zip" name="zip" ng-model="vm.contactData.zip"
+           				class="qd-text-input"
+           				ng-model-options="{'updateOn':'blur'}"
+           				ng-change="vm.getCityInfo(vm.contactData.zip)"
+           				qd-zip-validator="vm.zipError">
+           			<div ng-messages="qdPatientProfileContact.zip.$error">
+                		<div ng-message="qdZipValidator">{{ vm.zipError }}</div>
+                		<div ng-message="required">This field is required</div>
+              		</div>
+            </md-input-container>
+          </div>
+        </div>
+      </div>
+
+      <div ng-switch-when="false" class="qd-patient-profile-card__wrapper">
+        <div ng-if="vm.contactData.primaryPhone || vm.contactData.primaryPhoneType || vm.contactData.smsNotifications" class="qd-patient-profile-card__static-row">
+          <div class="qd-patient-profile-card__static-container">
+            <div ng-if="vm.contactData.primaryPhone" class="qd-patient-profile-card__static-sub-wrapper">
+              <label>Primary Phone</label>
+              {{vm.contactData.primaryPhone}}
+            </div>
+
+            <div ng-if="vm.contactData.primaryPhoneType" class="qd-patient-profile-card__static-sub-wrapper">
+              <label>Type</label>
+              {{vm.contactData.primaryPhoneType}}
+            </div>
+
+            <div ng-if="false && vm.contactData.primarySmsNotifications" class="qd-patient-profile-card__static-sub-wrapper qd-patient-profile-card__static-sub-wrapper--preference">
+              <label>Preference</label>
+              Can receive sms notifications
+            </div>
+
+            <div ng-if="vm.contactData.primaryPhoneExtension" class="qd-patient-profile-card__static-sub-wrapper">
+              <label>Extension</label>
+              {{vm.contactData.primaryPhoneExtension}}
+            </div>
+          </div>
+
+          <div ng-if="vm.contactData.secondaryPhone || vm.contactData.secondaryPhoneType" class="qd-patient-profile-card__static-container">
+            <div ng-if="vm.contactData.secondaryPhone" class="qd-patient-profile-card__static-sub-wrapper">
+              <label>Secondary Phone</label>
+              {{vm.contactData.secondaryPhone}}
+            </div>
+
+            <div ng-if="vm.contactData.secondaryPhoneType" class="qd-patient-profile-card__static-sub-wrapper">
+              <label>Type</label>
+              {{vm.contactData.secondaryPhoneType}}
+            </div>
+
+            <div ng-if="false && vm.contactData.secondarySmsNotifications" class="qd-patient-profile-card__static-sub-wrapper qd-patient-profile-card__static-sub-wrapper--preference">
+              <label>Preference</label>
+              Can receive sms notifications
+            </div>
+
+            <div ng-if="vm.contactData.secondaryPhoneExtension" class="qd-patient-profile-card__static-sub-wrapper">
+              <label>Extension</label>
+              {{vm.contactData.secondaryPhoneExtension}}
+            </div>
+          </div>
+        </div>
+
+        <div ng-if="vm.contactData.email" class="qd-patient-profile-card__static-row">
+          <div class="qd-patient-profile-card__static-container">
+            <div class="qd-patient-profile-card__static-sub-wrapper">
+              <label>Email</label>
+              {{vm.contactData.email}}
+            </div>
+
+            <div ng-if="false && vm.contactData.preferEmail || vm.contactData.emailNotifications" class="qd-patient-profile-card__static-sub-wrapper qd-patient-profile-card__static-sub-wrapper--preference">
+              <label>Preference</label>
+              <span ng-show="vm.contactData.preferEmail">Patient's preferred form of contact <span ng-show="vm.contactData.emailNotifications">, </span></span>
+              <span ng-show="vm.contactData.emailNotifications">Can receive notifications</span>
+            </div>
+          </div>
+        </div>
+
+        <div ng-if="vm.contactData.address1" class="qd-patient-profile-card__static-row">
+          <div class="qd-patient-profile-card__static-container">
+            <div class="qd-patient-profile-card__static-sub-wrapper">
+              <label>Address</label>
+              {{vm.contactData.address1}}<span ng-show="vm.contactData.address2">, {{vm.contactData.address2}}</span><span ng-show="vm.contactData.city">, {{vm.contactData.city}}</span><span ng-show="vm.contactData.state">, {{vm.contactData.state}}</span> <span ng-show="vm.contactData.zip">{{vm.contactData.zip}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </md-card-content>
+
+    <md-card-content ng-if="contactData.patient.hid > 0 || contactData.patient.labRefId > 0 || contactData.editing.contact === true" ng-switch="vm.editing" class="qd-patient-profile-card__content">
+      <md-divider class="qd-patient-profile-card__divider"></md-divider>
+
+      <md-card-title class="qd-patient-profile-card__title" ng-class="{'qd-patient-profile-card__title--static': !vm.editing}" flex>
+        Reference Information
+      </md-card-title>
+
+      <div ng-switch-when="true">
+        <div layout="column" layout-gt-sm="row">
+          <md-input-container flex class="qd-patient-profile-card__input-container">
+            <label>Health ID</label>
+            <input disabled ng-model="vm.contactData.hid" class="qd-text-input">
+          </md-input-container>
+
+          <md-input-container flex class="qd-patient-profile-card__input-container">
+            <label ng-class="{'qd-required':vm.contactData.labRefIdSettings.Required}">Lab Ref ID</label>
+            <input ng-disabled="vm.contactData.labRefIdSettings.PreventMods" ng-required="vm.contactData.labRefIdSettings.Required" ng-model="vm.contactData.labRefId" maxlength="20" class="qd-text-input">
+          </md-input-container>
+        </div>
+
+        <div layout="row" ng-if="false">
+          <md-input-container flex flex-gt-sm="50" class="qd-patient-profile-card__input-container md-has-icon">
+            <label>Photo ID Image</label>
+
+            <div class="qd-patient-profile__photo-upload">
+              <button ng-if="vm.contactData.photoId" class="qd-link">View</button>
+              <button class="qd-link">Upload Image</button>
+            </div>
+
+            <input ng-model="vm.contactData.photoId" class="qd-text-input">
+            <md-icon class="qd-icon icon-image"></md-icon>
+          </md-input-container>
+        </div>
+      </div>
+
+      <div ng-switch-when="false" class="qd-patient-profile-card__wrapper">
+        <div class="qd-patient-profile-card__static-row">
+          <div class="qd-patient-profile-card__static-container">
+            <div ng-if="vm.contactData.hid" class="qd-patient-profile-card__static-sub-wrapper qd-patient-profile-card__sub-divider">
+              <label>Health ID</label>
+              {{vm.contactData.hid}}
+            </div>
+
+            <div ng-if="vm.contactData.labRefId" class="qd-patient-profile-card__static-sub-wrapper qd-patient-profile-card__sub-divider">
+              <label>Lab Ref ID</label>
+              {{vm.contactData.labRefId}}
+            </div>
+
+            <div ng-if="vm.contactData.photoId" ng-if="false" class="qd-patient-profile-card__static-sub-wrapper qd-patient-profile-card__sub-divider qd-patient-profile-card__static-sub-wrapper--preference">
+              <label>Photo ID Image</label>
+              {{vm.contactData.photoId}}
+
+              <button class="qd-link qd-patient-profile__static-view">View</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </md-card-content>
+
+    <div ng-show="vm.editing" layout="column" layout-align="center center" class="qd-save-cancel">
+      <md-button class="md-raised qd-button" ng-click="vm.saveContact(vm.contactData);" ng-disabled="!qdPatientProfileContact.$valid" aria-label="Save Changes button">
+        Save Changes
+      </md-button>
+      <a href="#" class="qd-link" id="cancelEditContactAndReferenceInformation" ng-click="(qdPatientProfileContact.$pristine ? vm.cancelEditMode(qdPatientProfileContact) : vm.showConfirm($event, '#qd-patient-profile-card--contact', qdPatientProfileContact))">Cancel</a>
+    </div>
+  </div>
+
+</md-card>
+</form>

@@ -1,0 +1,34 @@
+/* NOTE: All DOS styles are overriding embedded classes */
+
+h1.doshdr1care360 {
+  margin: 0;
+}
+
+.doshdr1care360 {
+  margin: 0 0 15px 0;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.doshdrgreencare360 {
+  @extend %type-title-1;
+  color: $green-l;
+  padding-top: 10px;
+}
+
+td hr  {
+  height: 2px;
+  margin-bottom: 15px;
+  border: 0;
+  background-color: $green-l;
+}
+
+.dostextcare360,
+.doshdrblackcare360 {
+  padding: 10px 0;
+}
+
+.dostextcare360 a  {
+  color: $green-l;
+}

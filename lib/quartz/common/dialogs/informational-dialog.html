@@ -1,0 +1,65 @@
+<md-dialog class="qd-custom-dialog" aria-label="Additional Information" ng-cloak>
+    <md-card-header class="qd-patient-profile-card__header" layout="row" layout-align="end center">
+        <md-card-header-text layout="row" flex>
+            Additional Information 
+        </md-card-header-text>
+
+        <md-button class="md-icon-button md-button" ng-click="vm.cancel()">
+            <md-icon class="qd-icon icon-close"></md-icon>
+        </md-button>
+    </md-card-header>
+
+    <md-dialog-content>
+        <div class="qd-custom-dialog__section">
+            <div class="qd-custom-dialog__info-block">
+                <label class="qd-patient-profile-card__label">Test Information</label>
+                Immune Complex Detection By C1q Binding
+            </div>
+        </div>
+
+        <md-divider></md-divider>
+
+        <div class="qd-custom-dialog__section">
+            <h5 class="qd-custom-dialog__title">Related Information</h5>
+            <div class="qd-custom-dialog__info-block">
+                <label class="qd-patient-profile-card__label">CPT Code(s)</label>
+                SS1585
+            </div>
+
+            <div class="qd-custom-dialog__info-block">
+                <label class="qd-patient-profile-card__label">Methodology</label>
+                Enzyme Linked Immunosorbent Immunoassay (ELISA)
+            </div>
+
+            <div class="qd-custom-dialog__info-block">
+                <label class="qd-patient-profile-card__label">Reference Ranges</label>
+                25.1 mcg Eq/mL
+            </div>
+        </div>
+
+        <md-divider></md-divider>
+
+        <div class="qd-custom-dialog__section">
+            <h5 class="qd-custom-dialog__title">Order Information</h5>
+            <div class="qd-custom-dialog__info-block">
+                <label class="qd-patient-profile-card__label">Test Code</label>
+                SS1585
+            </div>
+
+            <div class="qd-custom-dialog__info-block">
+                <label class="qd-patient-profile-card__label">Preferred Specimen(s)</label>
+                1mL Serum
+            </div>
+
+            <div class="qd-custom-dialog__info-block">
+                <label class="qd-patient-profile-card__label">Minimum Volume</label>
+                0.2 mL
+            </div>
+
+            <div class="qd-custom-dialog__info-block">
+                <label class="qd-patient-profile-card__label">Collection Instructions</label>
+                Freeze serum within one hour of time drawn. With multiple tests, submit a separate tube for each test. Do not submit the sample in a glass tube. Do not thaw.
+            </div>
+        </div>
+    </md-dialog-content>
+</md-dialog>

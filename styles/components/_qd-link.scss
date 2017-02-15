@@ -1,0 +1,49 @@
+.qd-link {
+    @extend %type-cta;
+    border-bottom: 1px solid rgba($green-l, .5);
+    color: $green-l;
+    padding-bottom: 1px;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        color: $green-m;
+        border-bottom-color: rgba($green-m, .5);
+    }
+
+    &--icon {
+        margin-left: 28px;
+        position: relative;
+
+        .qd-icon {
+            position: absolute;
+            top: -3px;
+            left: -28px;
+            color: $green-l;
+        }
+    
+        &:hover {
+            color: $green-m;
+        }
+
+        &.qd-link--warning {
+            .qd-icon {
+                color: $red;
+            }
+
+            &:hover {
+                color: $red-d;
+            }
+        }
+    }
+
+    &--warning {
+        color: $red;
+        border-bottom: 1px solid rgba($red, .5);
+
+        &:hover {
+            color: $red-d;
+            border-bottom: 1px solid rgba($red-d, .5);
+        }
+    }
+}

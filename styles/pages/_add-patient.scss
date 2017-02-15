@@ -1,0 +1,10 @@
+.qd-add-patient {
+    &__save-cancel {
+        margin: 20px 0 40px;
+        position: relative;
+
+        @include when-wider-than(desktop) {
+            margin: 40px 0;
+        }
+    }
+}

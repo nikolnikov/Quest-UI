@@ -1,0 +1,47 @@
+._720kb-datepicker-calendar {
+    width: 300px;
+    margin-top: 30px;
+    @include elevation(12);
+    
+    &-header  {
+      a, a:hover  {
+          color: #fff;
+      }
+          
+      &:nth-child(odd)  {
+          background: $green-l;
+
+          select {
+              background: $green-l !important;
+          }
+      }
+      
+      &:nth-child(even) {
+          background: #e8e8e8;
+          
+          select {
+              background: #e8e8e8 !important;
+              color: $black !important;
+          }
+      }
+    }
+    
+    &-years-pagination a,
+    &-years-pagination a:hover,
+    &-years-pagination-pages a,
+    &-years-pagination-pages a:hover  {
+        color: $black;
+    }
+    
+    &-days-header {
+        background: #f8f8f8;
+    }
+    
+    &-month span {
+        color: #fff;
+    }
+}
+
+._720kb-datepicker-calendar-day._720kb-datepicker-active, ._720kb-datepicker-calendar-day:hover {
+    background: rgba(0,0,0,.1);
+}

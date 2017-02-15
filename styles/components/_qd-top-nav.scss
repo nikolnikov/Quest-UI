@@ -1,0 +1,245 @@
+md-toolbar.qd-top-nav {
+    min-height: $top-nav-height;
+    background-color: $green-l;
+    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.12), 0px 4px 4px 0px rgba(0,0,0,0.24);
+    z-index: $top-nav-z-index;
+
+    .md-toolbar-tools {
+        height: $top-nav-height;
+        max-height: $top-nav-height;
+    }
+
+    .icon-menu {
+        font-size: 28px;
+        width: 28px;
+        height: 28px;
+        margin-right: 20px;
+        position: relative;
+        top: -1px;
+    }
+
+    .icon-alert {
+        &::before {
+          font-size: 30px;
+        }
+
+        @include when-on(tablet) {
+            margin-right: 0;
+        }
+    }
+
+    .icon-alert,
+    .icon-menu,
+    .icon-account,
+    .icon-search {
+        cursor: pointer;
+    }
+
+    .qd-button-alert {
+        overflow: visible;
+        position: relative;
+        width: 40px;
+        height: 40px;
+        background: $green-l;
+        padding-top: 6px;
+    }
+
+    .qd-badge {
+        position: absolute;
+        left: 25px;
+        top: 15px;
+        padding: 0px 6px;
+        font-size: 12px;
+        color: $white;
+        background: $red;
+        border-radius: 10px;
+        cursor: pointer;
+        height: 18px;
+        line-height: 18px;
+    }
+}
+
+.qd-top-nav__logo-wrapper {
+    height: 26px;
+    width: 28px;
+    overflow: hidden;
+
+    @include when-wider-than(tablet) {
+        width: 37px;
+        height: 35px;
+    }
+
+    @include when-wider-than(desktop) {
+        width: auto;
+    }
+}
+
+.qd-top-nav__alert-wrapper {
+    position: relative;
+    width: 60px;
+
+    .qd-arrow {
+        @include when-on(mobile) {
+            display: none;
+        }
+    }
+}
+
+.qd-top-nav__logo {
+    width: 151px;
+    height: 26px;
+
+    @include when-wider-than(tablet) {
+        width: 204px;
+        height: 35px;
+    }
+}
+
+.qd-top-nav__search {
+    margin: 0 0 0 20px;
+    background: rgba($white, .15);
+
+    &::before {
+        position: absolute;
+        top: 11px;
+        left: 20px;
+    }
+
+    path {
+      fill: $white;
+    }
+
+    @include when-wider-than(desktop) {
+        margin: 0 40px 0 80px;
+    }
+
+    .md-whiteframe-z1 {
+        box-shadow: none;
+    }
+
+    md-autocomplete-wrap {
+        padding-left: 40px;
+    }
+
+    input {
+        color: $white;
+
+        &::-webkit-input-placeholder {
+            color: $white;
+        }
+    }
+}
+
+.qd-top-nav__alpha-login-link {
+    &,
+    &:hover {
+        color: $white;
+        border-color: $white;
+    }
+}
+
+.qd-account-widget {
+    position: relative;
+    height: 45px;
+    margin-top: 5px;
+
+    .qd-account-menu.md-open .qd-button-alert {
+        background: rgba($white, .2);
+    }
+}
+
+md-menu-content.qd-menu-content {
+  background: $background-light-gray;
+  padding: 0px;
+
+    &::before {
+        border-left: solid transparent 10px;
+        border-right: solid transparent 10px;
+        border-bottom: solid $background-light-gray 10px;
+        top: -10px;
+        content: " ";
+        height: 0;
+        right: 24px;
+        margin-left: -10px;
+        position: absolute;
+        width: 0;
+    }
+
+    a {
+        @extend %type-cta;
+        color: $green-l;
+        cursor: pointer;
+        text-decoration: none !important;
+    }
+
+    md-icon {
+        color: $green-l;
+        font-size: 18px;
+    }
+
+    .qd-header-text {
+        font-size: 24px;
+    }
+
+    .qd-option-text {
+        font-size: 14px;
+        opacity: .38;
+    }
+
+    .qd-account-links {
+        background: $white;
+        position:relative;
+        height: 55px;
+        text-align: center;
+    }
+}
+
+.qd-user-avatar.large {
+  width: 56px;
+  height: 56px;
+  line-height: 56px;
+  margin: 20px;
+  font-size: 42px;
+  text-align: center;
+  color: $white;
+  background: $green-l;
+  border-radius: 28px;
+}
+
+.qd-user-avatar.small {
+  position:absolute;
+  top: 5px;
+  left: 5px;
+  width: 30px;
+  height: 30px;
+  padding: 3px;
+  font-size: 22px;
+  text-align: center;
+  background: $white;
+  color: $green-l;
+  border-radius: 15px;
+  cursor: pointer;    // HAND???
+
+  &:hover {
+    background: rgba($white,$text-opacity-primary);
+  }
+}
+
+.qd-vertical-divider {
+  background: $divider-gray-2;
+  width: 1px;
+  height: 100%;
+  opacity: .5;
+  content: " ";
+}
+
+.qd-dot {
+    position: absolute;
+    left: 29px;
+    top: 17px;
+    width: 10px;
+    height: 10px;
+    background: $red;
+    border-radius: 5px;
+    cursor: pointer;
+}

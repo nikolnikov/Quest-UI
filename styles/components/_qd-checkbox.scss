@@ -1,0 +1,12 @@
+md-checkbox.qd-checkbox {
+    @extend %type-subhead-2;
+    color: rgba($black, $text-opacity-secondary);
+}
+
+md-checkbox.qd-checkbox .md-icon {
+    border-color: $divider-gray-2;
+}
+
+md-checkbox.md-checked.qd-checkbox .md-icon {
+     background-color: $yellow-l;
+ }

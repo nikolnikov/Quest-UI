@@ -1,0 +1,23 @@
+.qd-user-icon {
+  @extend %type-headline-2;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  width: 30px;
+  height: 30px;
+
+  @include when-wider-than(tablet) {
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+  }
+
+  &--green {
+    background-color: $green-l;
+    color: white;
+  }
+
+  &--white {
+    color: $green-l;
+  }
+}

@@ -1,0 +1,27 @@
+md-icon.qd-icon {
+    font-size: 22px;
+    color: $icon-dark-gray;
+    height: auto;
+    width: auto;
+    cursor: pointer;
+
+    &:focus {
+    	outline: 0;
+    }
+
+    &--green {
+        color: $green-l;
+    }
+
+    &--light-gray {
+        color: $divider-gray-2;
+    }
+
+    &--white {
+        color: $white;
+    }
+
+    &--yellow {
+        color: $yellow-l;
+    }
+}

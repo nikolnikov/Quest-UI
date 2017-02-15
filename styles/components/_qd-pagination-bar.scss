@@ -1,0 +1,32 @@
+.qd-pagination-bar {
+    padding: 0 20px;
+    height: 54px;
+    background: $background-gray;
+
+    @include when-wider-than(desktop) {
+        padding: 0 40px 0 0;
+    }
+    
+    &--bottom {
+      height: auto;
+      padding: 0;
+      
+      @include when-less-than(tablet) {
+          padding: 0 20px 20px 0;
+      }
+    }
+
+    &__text {
+        @extend %type-subhead-2;
+        color: rgba($black, $text-opacity-hint);
+
+        .qd-icon {
+            color: $icon-dark-gray;
+        }
+
+        span {
+            @extend %type-subhead-2;
+            color: rgba($black, $text-opacity-primary);
+        }
+    }
+}

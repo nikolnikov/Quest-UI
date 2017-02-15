@@ -1,0 +1,13 @@
+.qd-bullet-heading {
+    @extend %type-body-2;
+    color: rgba($black, $text-opacity-primary);
+
+    &::before {
+        content: '•';
+        font-size: 24px;
+        color: $yellow-l;
+        padding-right: 5px;
+        position: relative;
+        top: 1px;
+    }
+}

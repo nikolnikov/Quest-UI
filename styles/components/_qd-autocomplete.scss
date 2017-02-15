@@ -1,0 +1,78 @@
+.qd-autocomplete-wrapper {
+    position: relative;
+
+    .qd-button.qd-autocomplete-wrapper__icon {
+        position: absolute;
+        right: 0;
+        top: 13px;
+        width: 36px;
+        min-width: 36px;
+        height: 36px;
+        padding: 0;
+        border-radius: 18px;
+
+        .qd-icon {
+            margin: 0;
+        }
+
+        .md-ripple-container {
+            border-radius: 18px;
+        }
+    }
+}
+
+.qd-autocomplete {
+    md-input-container {
+        margin-top: 21px;
+    }
+
+    md-input-container:not(.md-input-invalid) {
+        .md-input {
+            border-color: $divider-gray-2;
+        }
+        
+        &.md-input-focused {
+            .md-input {
+                border-color: $green-l;
+
+                &::before {
+                    content: none;
+                }
+            }
+        }
+    }
+
+    &--icon {
+        &::before {
+            font-size: 22px;
+            color: $icon-dark-gray;
+            position: absolute;
+            top: 26px;
+            left: 6px;
+        }
+
+        .md-input {
+            box-sizing: border-box;
+            padding-left: 25px;
+        }
+
+        label:not(.md-container-ignore) {
+            left: 25px;
+        }
+
+        md-input-container:not(.md-input-invalid) {
+            &.md-input-focused,
+            &.md-input-has-value {
+                label:not(.md-no-float):not(.md-container-ignore) {
+                    left: 0;
+                }
+            }
+        }
+    }
+}
+
+.qd-type-ahead-invalid label, .qd-type-ahead-invalid input {
+  color: $red-d !important;
+  border-bottom-color: $red-d !important;
+  border-bottom-width: 1.8px;
+}

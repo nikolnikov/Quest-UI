@@ -1,0 +1,326 @@
+.qd-lab-order { 
+    .qd-header {
+        
+        .qd-header__title {
+            display: inline-block;
+            line-height:40px;
+        }
+        .qd-header__action--icon{
+            display: inline-block;
+            vertical-align: top;
+            float: right;
+        }
+    }
+    
+    &__search {
+        background: none;
+        border-bottom: 1px solid $divider-gray-2;
+
+        &::before {
+            font-size: 22px;
+            color: $icon-dark-gray;
+            position: absolute;
+            left: 0;
+            top: 4px;
+        }
+
+        .md-whiteframe-z1 {
+            box-shadow: none;
+        }
+
+        input:not(.md-input) {
+            @extend %type-title-2;
+            padding-left: 30px;
+        }
+    }
+    
+    .qd-patient-card {
+        height:auto;
+        margin:0;
+        box-shadow: 0 0 0;
+        background-color: $background-light-gray;
+        
+        &:hover {
+            background-color: $background-light-gray;
+            
+            .qd-patient-card__container {
+                border-left: 3px solid transparent;
+            }
+        }
+        
+        &:focus {
+            outline: 0;
+        }       
+
+        &__container {
+            padding: 0 0 0 35px;
+            box-sizing: border-box;
+            
+            @include when-less-than(desktop) {
+                padding: 0 0 0 15px;  
+            }
+            
+            @include when-on(mobile) {
+                flex-direction: row;
+                justify-content: center;
+                height:40px;
+            }
+        }
+
+        &__avatar-and-name {
+            @include when-on(mobile) {
+                flex-direction: row;
+                flex:1;
+
+            }
+        }
+
+        &__address {          
+            @include when-on(mobile) {
+                width: 180px;
+                margin-right: 0;
+            }
+        }
+        
+        &__name-and-address {
+            @include when-on(mobile) {
+                margin-right: 15px;
+            }
+        }
+
+        &__dob, &__sex {
+            @include when-less-than(tablet) {
+                flex-grow: 0 !important;
+            }
+
+            &:before {
+                @include when-less-than(desktop) {
+                    color: rgba($black, $text-opacity-hint);
+                    display: block;
+                }
+                
+                @include when-on(mobile) {
+                    display: inline; 
+                }
+            }
+        }
+
+        &__dob {
+            border-right: 1px solid rgba(167, 168, 170, 0.5);
+            
+            @include when-less-than(mini-tablet) {
+                border-right: 0;
+            }
+
+            &:before {
+                @include when-less-than(desktop) {
+                    content: 'DOB: ';
+                }
+            }
+            
+            &:after {
+                display: none;
+            }
+        }
+
+        &__sex {
+
+            &:before {
+                @include when-less-than(desktop) {
+                    content: 'Sex: ';
+                }
+            }
+
+            &:after {
+                @include when-less-than(tablet) {
+                    display:none;
+                }
+            }
+        }
+
+        &__info-item {
+            line-height: 20px;
+            padding-right: 20px;
+            margin-right: 20px;
+            text-align: left;
+          
+            @include when-on(mobile) {
+              text-align: left;
+              line-height: normal;
+              margin-right: 0;
+            }
+
+            @include when-on(mobile) {
+                font-size: 12px;
+                padding: 0 0 2px 0;
+            }
+        }
+
+        &__right {
+            height: 66px;
+            
+            @include when-less-than(tablet) {
+                margin: 0;
+                height: auto;
+            }
+        } 
+
+        &__info-wrapper {
+            justify-content: flex-end;
+            height: inherit;
+            
+            @include when-on(mobile) {
+                 justify-content: flex-start;
+                 margin: 3px 0 0;
+            }
+            
+            span {
+                &.qd-patient-card__tel {
+                    display: none;
+                }
+                
+                &:nth-child(2) {
+                    border: none;
+                    justify-content: flex-start;
+                    flex-grow: 1;
+                }
+            }
+
+            @include when-on(mobile) {
+                width: 110px;
+            }           
+        }
+            
+        @include when-wider-than(mobile) {
+            height: 66px;
+        }
+    }
+    
+    &__content {
+        position: relative;
+        display: block !important;
+        background: $background-gray;
+        padding: 20px 40px;
+        min-height: calc(100vh - 205px);
+        
+        @include when-less-than(desktop) {
+            padding: 15px 20px;
+        }
+        
+        @include when-less-than(tablet) {
+            padding: 15px 0;
+        }
+      
+        .qd-button{
+            display: block;
+            margin: 5px auto 0 auto;
+            
+            @include when-less-than(tablet) {
+                width: 150px !important; 
+            }
+        }        
+    }
+    
+    &__filters  {
+        margin-bottom: 10px;
+        
+        md-select {
+            width: 150px;
+            margin: auto 0;
+            
+            @include when-less-than(tablet) {
+                width: 100%;
+            }
+        }
+        
+        .qd-icon.icon-search{
+            display:none;
+        }
+        
+        md-autocomplete.qd-lab-order__search {
+            margin: 0;
+            height: 30px;
+            width: 50%;
+            max-width: 40%;
+            
+            @include when-less-than(mini-tablet)  {
+                max-width: 50%;
+            }
+            
+            @include when-less-than(tablet) {
+                width: 100%;
+                max-width: 100%;
+                margin-top: 10px;
+            }
+            
+            input {
+                font-size: 14px !important;
+                height: 30px;
+                line-height: 30px;
+            }
+            
+            md-autocomplete-wrap  {
+                height: 30px;
+            }
+        }
+        
+        .qd-patients-section__search:before{
+            font-size: 24px;
+            top: 7px;
+        }                        
+    }
+    
+    .qd-button  {
+        margin: 0 5px;
+    }
+    
+/* === MOBILE TABS === */
+    
+    &__mobileTabs {
+        display: none;
+        
+        @include when-on(mobile) {
+            display: block;
+            padding: 0;
+            
+            li {
+                position: relative;
+                display: inline-block;
+                margin: 0 0 -1px 5px;
+                min-width: 110px;
+                width: 110px;
+                height:50px;
+                
+                div {
+                    padding: 5px 10px;
+                    margin-top: 10px;
+                }
+                
+                md-icon {
+                    position: absolute;
+                    top: -7px;
+                    right: -7px;
+                    color: $orange;                    
+                }
+                
+                &:first-child {
+                    md-icon {
+                        display: none;
+                    }
+                }
+                
+                &.qd-rectangle-tabs {
+                    &__tab {
+                        background: $background-light-gray;
+                    }
+                }
+                
+                &.qd-rectangle-tabs__tab--selected {
+                    z-index: 1;
+                    background: $background-gray;
+                    border-bottom-color: $background-gray;
+                }
+            }         
+        }
+    }
+}

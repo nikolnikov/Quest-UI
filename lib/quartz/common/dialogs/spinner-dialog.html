@@ -1,0 +1,14 @@
+<md-dialog class="qd-custom-dialog" aria-label="Processing" ng-cloak>
+    <md-card-header class="qd-patient-profile-card__header" layout="row" layout-align="end center">
+        <md-card-header-text layout="row" flex>
+            {{vm.processingTitle}}
+        </md-card-header-text>
+    </md-card-header>
+
+    <md-dialog-content>
+        <div class="qd-progress-circular" layout="column" layout-align="center center">
+        <md-progress-circular md-mode="indeterminate" md-diameter="40"></md-progress-circular>
+        <div class="qd-progress-circular__text">{{vm.processingMessage}}&hellip; </div>
+    </div>
+    </md-dialog-content>
+</md-dialog>

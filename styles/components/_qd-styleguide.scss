@@ -1,0 +1,93 @@
+ .qd-styleguide {
+     background-color: $green-l;
+     height: 100%;
+
+     &__sidenav-header {
+         border-bottom: 1px solid rgba($white, .10);
+         padding: 30px;
+
+         img {
+             width: 100%;
+         }
+     }
+
+     &__sidenav-content {
+         background-color: $green-l;
+     }
+
+     &__menu-heading {
+        border-bottom: 1px solid rgba($white, .10);
+        color: rgba($white, 0.54);
+        display: block;
+        line-height: 32px;
+        margin: 0;
+        padding: 8px 16px;
+        text-align: left;
+        width: 100%;
+    }
+
+    &__menu-item {
+        color: $white;
+        border-bottom: 1px solid rgba($white, .10);
+        font-weight: 700;
+        margin: 0;
+        padding: 0 16px;
+        height: 40px;
+        text-align: left;
+        text-transform: uppercase;
+        width: 100%;
+
+        &--sub {
+            padding: 0 16px 0 32px;
+        }
+    }
+
+    &__icon.qd-icon {
+        color: $white;
+    }
+
+    &__section {
+        margin-bottom: 70px;
+
+        h1 {
+            border-bottom: 1px solid $divider-gray-1;
+            color: $green-l;
+            font-size: 28px;
+            font-weight: 400;
+            padding: 20px 40px;
+            margin: 0;
+        }
+    }
+
+    &__subsection {
+        padding: 20px 40px;
+    }
+
+    &__block {
+        height: 150px;
+        width: 150px;
+        display: inline-block;
+        margin: 10px;
+        text-align: center;
+        font-weight: 600;
+        position: relative;
+        text-transform: uppercase;
+        vertical-align: top;
+        text-align: center;
+    }
+
+    &__block-subsection {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__menu-option {
+        &,
+        a {
+            height: 44px;
+            line-height: 44px;
+        }
+    }
+ }

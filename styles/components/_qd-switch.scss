@@ -1,0 +1,51 @@
+.qd-switch {
+    &__text{
+        @extend %type-label-1;
+        color: rgba($black, $text-opacity-hint);
+
+        &--active {
+            color: rgba($black, $text-opacity-primary);
+        }
+    }
+
+    &__switch,
+    &__switch:last-of-type {
+        margin: 0 2px 0 10px;
+
+        .md-bar {
+            background-color: $divider-gray-1;
+        }
+
+        .md-thumb {
+            @include elevation(1);
+            background-color: $background-light-gray;
+        }
+
+        &.md-checked {
+            .md-bar {
+                background-color: rgba($green-l, .5);
+            }
+
+            .md-thumb {
+                background-color: $green-l;
+            }
+
+            .md-ripple-container,
+            .md-ink-ripple {
+                color: $green-l;
+            }
+        }
+
+        &[disabled] {
+            .md-bar {
+                background-color: $background-gray;
+            }
+
+            .md-thumb {
+                box-shadow: none;
+                background-color: $divider-gray-1;
+            }
+
+        }
+    }
+}

@@ -1,0 +1,20 @@
+<section class="qd-supplies" flex>
+    <div class="qd-header" flex layout="row" layout-align="start center" layout-wrap>
+        <div class="qd-header__title" layout="row" flex="100" flex-gt-xs="10" layout-align="start center">
+            Supplies
+        </div>
+        
+        <ul class="qd-rectangle-tabs" flex="100" flex-gt-xs="90" layout="row" layout-align="end end" layout-align-xs="center end" ng-model="vm.tabs">
+            <li class="qd-rectangle-tabs__tab" ng-repeat="tab in vm.tabs track by $index" ng-class="{'qd-rectangle-tabs__tab--selected': vm.selectedTab === tab.slug}" ng-click="vm.selectTab(tab.slug)">
+                <md-icon class="{{tab.icon}} qd-icon qd-icon--green hide-xs"></md-icon>
+                <span class="hide-xs">{{::tab.title}}</span>
+                <span class="hide-gt-xs">{{::tab.slug}}</span>
+            </li>
+        </ul>
+    </div>
+    
+    <qd-supplies ng-if="vm.selectedTab === 'Supplies'"></qd-supplies>
+    <qd-order-history ng-show="vm.selectedTab === 'History'"></qd-order-history>
+    <qd-reoccurring-orders ng-show="vm.selectedTab === 'Reoccurring'"></qd-reoccurring-orders>
+    <qd-view-supplies-cart ng-show="vm.selectedTab === 'Cart'"></qd-view-supplies-cart>
+</section>

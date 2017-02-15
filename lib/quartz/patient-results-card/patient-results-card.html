@@ -1,0 +1,58 @@
+<md-button ng-click="vm.resultsCardClicked(vm.result);" md-ink-ripple="#ececec" class="qd-result-card" ng-class="{'qd-result-card--unread': !vm.result.viewed}">
+    <div class="qd-result-card__container" ng-class="{'qd-result-card__container--reviewed': vm.result.reviewedBy}" layout-xs="column" layout-gt-xs="row" layout-align-gt-xs="start center">
+        <div class="qd-result-card__title" ng-class="{'flex-xs-60': vm.result.reviewedBy}" layout="row" layout-align="start center" flex>
+
+            <div class="qd-result-card__name-and-doctor" flex>
+                <span ng-attr-id="{{ 'qd-result-card__title-for-id-' + vm.result.id }}" class="qd-result-card__name" ng-class="{'qd-result-card__name--read': vm.result.viewed}">{{vm.result.title}}</span>
+                <span ng-if="vm.result.reviewedBy" class="qd-result-card__reviewed-by">
+                    <label>Reviewed by</label>
+                    {{vm.result.reviewedBy}}
+                </span>
+            </div>
+            <div class="qd-test-and-diagnosis-card__more-info" ng-if="vm.showResultMoreInfo(vm.result)" layout="row" layout-align="center center">
+                <md-button class="qd-help-text icon-infocircle md-icon-button" ng-click="$event.stopPropagation();vm.showResultNameDialog(vm.result)"></md-button>
+            </div>
+        </div>
+
+        <div class="qd-result-card__right" layout="row" layout-align="start center" flex-xs>
+            <div ng-switch="vm.result.status" layout="column" layout-align="center start" class="qd-result-card__item qd-result-card__status">
+                <div ng-switch-when="1" layout-xs="row" layout-sm="column" layout-md="column" layout-gt-md="row" layout-align-sm="start center" layout-align-md="start center">
+                    <span flex-order-sm="2" flex-order-md="2">Final</span>
+                    <md-icon class="qd-icon icon-final"></md-icon>
+                </div>
+
+                <div ng-switch-when="0" layout-xs="row" layout-sm="column" layout-md="column" layout-gt-sm="row" layout-align-sm="start center" layout-align-md="start center">
+                    <span flex-order-sm="2" flex-order-md="2">Partial</span>
+                    <md-icon class="qd-icon icon-partial"></md-icon>
+                </div>
+
+                <div ng-switch-when="2" layout-xs="row" layout-sm="column" layout-md="column" layout-gt-md="row" layout-align-sm="start center" layout-align-md="center center" layout-align-gt-sm="start center">
+                    <span flex-order-sm="2" flex-order-md="2">Reissued</span>
+                    <md-icon class="qd-icon icon-reissued"></md-icon>
+                </div>
+            </div>
+
+            <div class="qd-result-card__item qd-result-card__date-and-time" layout-xs="row" layout-gt-xs="column" layout-align-gt-xs="center end">
+                <span class="qd-result-card__date">{{vm.result.date}}</span>
+                <span class="qd-result-card__time">{{vm.result.time}}</span>
+            </div>
+        </div>
+	    </div>
+
+	<div ng-if="vm.result.abnormality==1 || vm.result.abnormality==2 || vm.result.abnormality==3"
+		ng-class="{'qd-result-card__mini-status--critical': vm.result.abnormality==2, 'qd-result-card__mini-status--attention-needed': vm.result.abnormality==3}"
+		class="qd-result-card__mini-status" layout="row"
+		layout-align="start center">
+		<md-icon ng-if="vm.result.abnormality==1" class="qd-icon icon-warning"></md-icon>
+		<md-icon ng-if="vm.result.abnormality==2" class="qd-icon icon-criticalwarning"></md-icon>
+		<md-icon ng-if="vm.result.abnormality==3" class="qd-icon icon-warninglight"></md-icon>
+
+		<div flex ng-if="vm.result.abnormality==1 || vm.result.abnormality==2"
+			class="qd-result-card__mini-status-message">
+			<span ng-if="vm.result.abnormality==2">Critically</span> Out Of Range
+		</div>
+
+		<div flex ng-if="vm.result.abnormality==3"
+			class="qd-result-card__mini-status-message">Interpreted Results</div>
+	</div>
+</md-button>

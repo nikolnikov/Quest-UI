@@ -1,0 +1,45 @@
+md-radio-button.qd-radio-button {
+    @extend %type-body-2;
+
+    &.md-checked {
+        .md-label {
+            color: rgba($black, $text-opacity-primary);
+        }
+    }
+    &[disabled] {
+        .md-label{
+            color: rgba($black, $text-opacity-hint);
+        }
+    }
+    .md-label {
+        color: rgba($black, $text-opacity-primary);
+    }
+}
+
+md-radio-button:not([disabled]).qd-radio-button {
+    .md-on {
+        background-color: $yellow-l;
+    }
+
+    .md-off {
+        border-color: $divider-gray-2;
+    }
+
+    &.md-checked {
+        .md-off {
+            border-color: $yellow-l; 
+        }
+    }
+}
+
+md-radio-button:not([disabled]).qd-radio-button--dark {
+    .md-on {
+        background-color: $green-l;
+    }
+
+    &.md-checked {
+        .md-off {
+            border-color: $green-l; 
+        }
+    }
+}

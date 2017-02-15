@@ -1,0 +1,23 @@
+// Text opacities
+$text-opacity-full: 1;
+$text-opacity-primary: .90;
+$text-opacity-secondary: .60;
+$text-opacity-hint: .38;
+
+
+// Z-indices
+$top-nav-z-index: 100;
+$side-nav-z-index: $top-nav-z-index - 1;
+$dialog-backdrop-z-index: $top-nav-z-index + 1;
+$dialog-z-index: $dialog-backdrop-z-index + 1;
+$notification-banner-z-index: $dialog-z-index + 1;
+$select-menu-z-index: $notification-banner-z-index + 1;
+$datepicker-z-index: $dialog-z-index + 1;
+
+
+// Sizing
+$top-nav-height: 56px;
+$side-nav-width: 260px;
+$side-nav-width-narrow: 80px;
+
+$image-base: "/images/";

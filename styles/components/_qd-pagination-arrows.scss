@@ -1,0 +1,43 @@
+.qd-pagination-arrows {
+    width: 56px;
+    position: relative;
+
+    @include when-wider-than(desktop) {
+        width: 36px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 2px;
+        width: 1px;
+        height: 20px;
+        background-color: $divider-gray-2;
+    }
+
+    &__arrow.qd-icon {
+        cursor: pointer;
+        color: $icon-dark-gray;
+
+        &:first-child {
+            margin-left: -7px;
+        }
+
+        &:last-child {
+            margin-right: -7px;
+        }
+
+        &:hover {
+            color: rgba($icon-dark-gray, $text-opacity-primary);
+        }
+
+        &:active {
+            color: rgba($icon-dark-gray, $text-opacity-full);
+        }
+
+        &[disabled] {
+            color: rgba($divider-gray-2, $text-opacity-secondary);
+        }
+    }
+}

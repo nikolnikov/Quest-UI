@@ -1,0 +1,494 @@
+.qd-test-and-diagnosis-card {
+    @extend .qd-patient-card;
+
+    &:hover {
+        background-color: $white;
+
+        .qd-test-and-diagnosis-card--gray & {
+            background-color: $background-light-gray; 
+        }
+    }
+
+    &__container {
+        @extend .qd-patient-card__container;
+        padding: 0 15px;
+
+        .qd-test-and-diagnosis-card--action & {
+            padding-right: 0;
+        }
+
+        .qd-test-and-diagnosis-card__dropdown-card-container & {
+            padding-left: 77px;
+        }
+    }
+
+    &__specimen,
+    &__cost-info,
+    &__error,
+    &__reviewed,
+    &__panel {
+        margin: 15px 20px 0;
+        position: relative;
+        z-index: 1;
+
+        @include when-on(tablet) {
+            overflow: auto;
+        }
+
+        .qd-test-and-diagnosis-card__info-block,
+        .qd-test-and-diagnosis-card__inline-info-block {
+            @include when-on(mobile) {
+                display: block;
+            }
+
+            @include when-on(tablet) {
+                float: left;
+                border-right: 1px solid $divider-gray-1;
+                padding-right: 20px;
+                max-width: 50%;
+            }
+
+            &:nth-of-type(even) {
+                @include when-on(tablet) {
+                    border-right: none;
+                    padding-right: 20px;
+                }
+            }
+
+            &:nth-of-type(2n+3) {
+                @include when-on(tablet) {
+                    clear: left;
+                }
+            }
+
+            &:last-child {
+                border-right: none;
+            }
+        }
+    }
+
+    &__cost-info,
+    &__error {
+        border-top: 1px solid $divider-gray-1;
+        padding-top: 15px;
+
+        @include when-wider-than(tablet) {
+            padding-top: 30px;
+        }
+
+        &.qd-test-and-diagnosis-card__patient-responsibility {
+            padding-top: 0;
+            border-top: 0;
+        }
+    }
+
+    &__reviewed,
+    &__cost-info {
+        .icon-billtype {
+            margin: 0 7px 0 0;
+
+            @include when-on(desktop) {
+                margin-bottom: 10px;
+            }
+
+            .md-button:not([disabled]) & {
+                color: $icon-dark-gray;
+            }
+        }
+
+        &.qd-test-and-diagnosis-card__patient-responsibility {
+            margin-top: 0;
+
+            .icon-billtype {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__subtitle {
+        color: $green-l;
+        font-size: 16px;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    &__error {
+        .icon-warningcircle {
+            font-size: 20px;
+            margin-right: 5px;
+            height: auto;
+            width: auto;
+
+            &::before {
+                color: $red;
+            }
+        }
+    }
+
+    &__reviewed {
+        .icon-checkcircle {
+            font-size: 20px;
+            margin-right: 5px;
+            height: auto;
+            width: auto;
+
+            &::before {
+                color: $green-l;
+            }
+        }
+    }
+
+    &__link-wrapper {
+        display: inline-block;
+        padding-right: 10px;
+        margin-right: 5px;
+        margin-bottom: 10px;
+
+        @include when-wider-than(tablet) {
+            border-right: 1px solid $divider-gray-1;
+            padding-right: 20px;
+            margin-right: 20px;
+            margin-bottom: 0;
+        }
+
+        &:last-of-type {
+            border-right: none;
+            padding-right: 0;
+            margin-right: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    &__wrapper {
+        & + & {
+            .qd-test-and-diagnosis-card--full,
+            .qd-test-and-diagnosis-card--full.md-button:not(disabled) {
+                border-top: none;
+            }
+        }
+        
+        & + & {
+            .qd-test-and-diagnosis-card--order-detail,
+            .qd-test-and-diagnosis-card--order-detail.md-button:not(disabled) {
+                border-top: 1px solid $divider-gray-1;
+            }
+        }
+
+        .qd-test-and-diagnosis-card__dropdown-card-container & {
+            .qd-test-and-diagnosis-card--full.md-button:not(disabled) {
+                &:first-child {
+                    border-top: none;
+                }
+            }
+        }
+
+        .qd-order-detail & {
+            margin-bottom: 20px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__info-block-wrapper {
+        @extend .qd-patient-profile-card__static-container;
+    }
+
+    &__info-block {
+        @extend .qd-patient-profile-card__static-sub-wrapper;
+        @extend .qd-patient-profile-card__static-sub-wrapper--divider;
+        font-size: 16px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+        &--cta {
+            overflow: visible;
+            margin: 20px 0;
+
+            @include when-wider-than(tablet) {
+                margin-bottom: 0;
+            }
+        }
+
+        .qd-test-and-diagnosis-card__panel & {
+            max-width: none;
+            white-space: normal;
+
+            @include when-on(tablet) {
+                float: none;
+            }
+        }
+    }
+
+    &__panel {
+        .qd-link {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__panel-info-block {
+        margin-bottom: 15px;
+
+        label {
+            @extend .qd-patient-profile-card__label;
+        }
+
+        p {
+            white-space: normal;
+            margin: 0;
+        }
+    }
+
+    &__inline-info-block {
+        margin: 0 20px 10px 0;
+        font-size: 16px;
+
+        @include when-wider-than(desktop) {
+            border-right: 1px solid $divider-gray-1;
+            padding-right: 20px;
+            margin-right: 20px;
+        }
+
+        label {
+            @extend %type-body-2;
+            color: rgba($black, $text-opacity-secondary);
+
+            &:after {
+                content: ':';
+            }
+        }
+
+        .qd-test-and-diagnosis-card__patient-responsibility & {
+            border-right: none;
+            display: block;
+            float: none;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            @include when-wider-than(desktop) {
+                border-right: 1px solid $divider-gray-1;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__name {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-right: 20px;
+        white-space: nowrap;
+
+        @include when-wider-than(tablet) {
+            padding-right: 50px;
+        }
+
+        .qd-test-and-diagnosis-card--mini & {
+            @extend %type-body-2-special;
+        }
+
+        .qd-test-and-diagnosis-card--full & {
+            @extend %type-title-2-special;
+        }
+
+        .qd-test-and-diagnosis-card--dropdown & {
+            color: $green-l;
+        }
+    }
+
+    &__dropdown-cta {
+        margin: 0 22px 0 10px;
+
+        &::before {
+            color: $green-l;
+            font-size: 20px;
+        }
+    }
+
+    &__code-number {
+        @extend %type-subhead-2;
+        color: rgba($black, $text-opacity-secondary);
+
+        .qd-test-and-diagnosis-card--full & {
+            font-size: 16px;
+        }
+    }
+
+    &__button {
+        border: 2px solid $green-l;
+        padding: 0;
+        margin: 0 20px 0 0;
+        text-align: center;
+        height: 30px;
+        width: 30px;
+        min-height: 30px;
+        min-width: 30px;
+
+        @include when-wider-than(tablet) {
+            height: 40px;
+            width: 40px;
+            min-width: 40px;
+        }
+
+        &--pressed {
+            background-color: $green-l;
+        }
+    }
+
+    &__more-info {
+        margin-right: 10px;
+
+        @include when-wider-than(tablet) {
+            margin-right: 20px;
+        }
+
+        .icon-infocircle {
+            &:before {
+                color: $green-l;
+                top: 1px;
+            }
+        }
+    }
+
+    &__top {
+        @include when-wider-than(tablet) {
+            padding: 20px 0;
+        }
+
+        & + .qd-test-and-diagnosis-card__status-wrapper {
+            border-top: 1px solid $divider-gray-1;
+            padding: 20px 0;
+            margin: 0 20px;
+        }
+    }
+
+    &__status-wrapper {
+        border-top: 1px solid $divider-gray-1;
+        margin: 15px 20px 0;
+        padding: 20px 0 0;
+    }
+
+    &__error-message {
+        @extend %type-subhead-1;
+        color: $orange;
+        margin: 20px 0;
+        padding: 0 20px;
+
+        @include when-wider-than(tablet) {
+            margin: 20px 0 0;
+        }
+
+        md-icon.qd-icon {
+            color: $orange;
+            margin-right: 5px;
+        }
+    }
+
+    &__overflow.qd-icon:not(disabled) {
+        .qd-test-and-diagnosis-card__container & {
+            color: $green-l;
+        }
+    }
+
+    &__action-icon.qd-icon:not(disabled) {
+        .md-button .qd-test-and-diagnosis-card__container & {
+            color: $green-l;
+            margin: 0;
+        }
+
+        &::before {
+            .qd-test-and-diagnosis-card__button--pressed & {
+                color: $white;
+            }
+
+            .qd-test-and-diagnosis-card--dropdown & {
+                margin-right: 6px;
+            }
+        }
+    }
+
+    &--gray {
+        background-color: $background-light-gray;
+
+        &:hover {
+            background-color: $background-gray;
+        }
+
+        &.qd-test-and-diagnosis-card.md-button:not(disabled) {
+            background-color: $background-light-gray;
+
+            &:hover {
+                background-color: $background-gray;
+            }
+        }
+    }
+
+    &--pressed {
+        &.qd-test-and-diagnosis-card.md-button:not(disabled) {
+            background-color: $white;
+        }
+    }
+
+    &--full {
+        border: 1px solid $divider-gray-1;
+        box-shadow: 0 0 0 0;
+        height: 50px;
+
+        & + & {
+            border-top: none;
+        }
+
+        &.md-button:not([disabled]) {
+            border: 1px solid $divider-gray-1;
+            box-shadow: 0 0 0 0;
+            height: 60px;
+
+            @include when-wider-than(tablet) {
+                height: 60px;
+            }
+        }
+
+        &.md-button:not([disabled]) + &.md-button:not([disabled]) {
+            border-top: none;
+        }
+
+        &:hover {
+            .qd-test-and-diagnosis-card__button {
+                background-color: $green-l;
+            }
+
+            .qd-test-and-diagnosis-card__action-icon::before {
+                color: $white;
+            }
+
+            &.qd-test-and-diagnosis-card--dropdown {
+                .qd-test-and-diagnosis-card__action-icon::before {
+                    color: $green-l;
+                }
+            }
+        }
+    }
+
+    &--order-detail {
+        margin-bottom: 20px;
+    }
+
+    &--mini {
+        @extend .qd-patient-card--mini;
+    }
+
+    &--info-blocks {
+        padding: 15px 0;
+        height: auto;
+    }
+
+    &--review-and-submit {
+        @include when-wider-than(tablet) {
+            padding: 30px 0;
+        }
+    }
+}

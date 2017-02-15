@@ -1,0 +1,208 @@
+@font-face {
+  font-family: 'Akkurat';
+  src: url('/fonts/lineto-akkurat-pro-regular.eot?#iefix') format('embedded-opentype'),  url('/fonts/lineto-akkurat-pro-regular.woff') format('woff'), url('/fonts/lineto-akkurat-pro-regular.ttf')  format('truetype'), url('/fonts/lineto-akkurat-pro-regular.svg#lineto-akkurat-pro-regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Akkurat';
+  src: url('/fonts/lineto-akkurat-pro-light.eot?#iefix') format('embedded-opentype'),  url('/fonts/lineto-akkurat-pro-light.woff') format('woff'), url('/fonts/lineto-akkurat-pro-light.ttf')  format('truetype'), url('/fonts/lineto-akkurat-pro-light.svg#lineto-akkurat-pro-light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Akkurat';
+  src: url('/fonts/lineto-akkurat-pro-bold.eot?#iefix') format('embedded-opentype'),  url('/fonts/lineto-akkurat-pro-bold.woff') format('woff'), url('/fonts/lineto-akkurat-pro-bold.ttf')  format('truetype'), url('/fonts/lineto-akkurat-pro-bold.svg#lineto-akkurat-pro-bold') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+
+%type-display-1 {
+    font-size: 30px;
+    font-weight: 300;
+
+    @include when-wider-than(tablet) {
+        font-size: 40px;
+    }
+}
+
+%type-display-2 {
+    font-size: 22px;
+    font-weight: 300;
+
+    @include when-wider-than(tablet) {
+        font-size: 28px;
+    }
+}
+
+%type-headline-1 {
+    font-size: 18px;
+
+    @include when-wider-than(tablet) {
+        font-size: 20px;
+    }
+}
+
+%type-headline-2 {
+    font-size: 16px;
+    font-weight: 400;
+
+    @include when-wider-than(tablet) {
+        font-size: 18px;
+    }
+}
+
+%type-title-1 {
+    font-size: 14px;
+    font-weight: 700;
+
+    @include when-wider-than(tablet) {
+        font-size: 16px;
+    }
+}
+
+%type-title-2 {
+    font-size: 14px;
+
+    @include when-wider-than(tablet) {
+        font-size: 16px;
+    }
+}
+
+%type-title-1-special {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+%type-title-2-special {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+%type-subhead-1 {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+%type-subhead-2 {
+    font-size: 14px;
+}
+
+%type-body-1 {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+%type-body-2 {
+    font-size: 14px;
+}
+
+%type-body-1-special {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+%type-body-2-special {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+%type-caption {
+    font-size: 12px;
+
+    @include when-wider-than(tablet) {
+        font-size: 14px;
+    }
+}
+
+%type-cta {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+%type-label-2 {
+    font-size: 12px;
+}
+
+%type-label-1 {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+%type-alert {
+    font-size: 11px;
+}
+
+.qd-display-1 {
+    @extend %type-display-1;
+}
+
+.qd-display-2 {
+    @extend %type-display-2;
+}
+
+.qd-headline-1 {
+    @extend %type-headline-1;
+}
+
+.qd-headline-2 {
+    @extend %type-headline-2;
+}
+
+.qd-title-1 {
+    @extend %type-title-1;
+}
+
+.qd-title-2 {
+    @extend %type-title-2;
+}
+
+.qd-title-2-special {
+    @extend %type-title-2-special;
+}
+
+.qd-subhead-1 {
+    @extend %type-subhead-1;
+}
+
+.qd-subhead-2 {
+    @extend %type-subhead-2;
+}
+
+.qd-body-1 {
+    @extend %type-body-1;
+}
+
+.qd-body-2 {
+    @extend %type-body-2;
+}
+
+.qd-body-2-special {
+    @extend %type-body-2-special;
+}
+
+.qd-caption {
+    @extend %type-caption;
+}
+
+.qd-cta {
+    @extend %type-cta;
+}
+
+.qd-label-1 {
+    @extend %type-label-1;
+}
+
+.qd-label-2 {
+    @extend %type-label-2;
+}
+
+.qd-alert {
+    @extend %type-alert;
+}

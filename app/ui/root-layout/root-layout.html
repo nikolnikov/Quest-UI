@@ -1,0 +1,9 @@
+<md-toolbar ui-view="qdtopnav" class="qd-top-nav"></md-toolbar>
+<md-content layout="row" flex>
+  <div ui-view="qdsidenav" layout="column"></div>
+  <div layout="column" flex id="content">
+    <md-content flex ng-view layout="column" class="qd-main-content">
+      <div ui-view="qdcontent" id="qd-content-wrapper"></div>
+    </md-content>
+  </div>
+</md-content>

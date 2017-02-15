@@ -1,0 +1,12 @@
+.qd-header-bar {
+    @extend %type-body-2;
+    color: rgba($black, $text-opacity-secondary);
+    height: 40px;
+    background: $background-light-gray;
+
+    @include when-wider-than(tablet) {
+        height: 56px;
+        min-height: 56px;
+        max-height: 56px;
+    }
+}

@@ -1,0 +1,22 @@
+.qd-blockquote {
+    @extend %type-caption;
+    line-height: 1.5em;
+    text-align: left;
+    color: rgba($black, $text-opacity-secondary);
+    border-left: 2px solid $yellow-l;
+    width: 275px;
+    padding-left: 15px;
+
+    &--dark {
+        border-color: $green-l;
+    }
+
+    @include when-wider-than(tablet) {
+        width: 480px;
+        padding-left: 20px;
+    }
+
+    @include when-wider-than(desktop) {
+        width: 400px;
+    }
+}

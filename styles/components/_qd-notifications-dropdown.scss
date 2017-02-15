@@ -1,0 +1,56 @@
+.qd-notifications-dropdown {
+    &__header {
+        font-size: 16px;
+        padding: 20px;
+    }
+
+    &__day-header {
+        @extend %type-subhead-2;
+        margin-bottom: 5px;
+        padding: 0 20px;
+    }
+
+    &__day {
+        padding-top: 17px;
+
+        &::after {
+            content: '';
+            background-color: $divider-gray-1;
+            display: block;
+            height: 1px;
+            width: calc(100% - 40px);
+            margin: 12px 20px 0;
+        }
+
+        &:last-child {
+            &::after {
+                height: 0;
+            }
+        }
+    }
+
+    &__hint {
+        color: rgba($black, $text-opacity-secondary);
+    }
+
+    &__cta.md-button.md-primary {
+        @extend %type-cta;
+        color: $green-l;
+        background-color: $white;
+        cursor: pointer;
+        color: $green-l;
+        min-height: 50px;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+
+        &:hover {
+            background-color: $background-light-gray;
+        }
+    }
+
+    &__menu-content {
+        @include elevation(9);
+        max-height: calc(100vh - 80px);
+    }
+}

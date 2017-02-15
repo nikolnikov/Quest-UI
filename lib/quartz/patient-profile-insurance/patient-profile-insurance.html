@@ -1,0 +1,883 @@
+<form name="qdPatientProfileBilling">
+<md-card ng-switch="vm.populated" id="qd-patient-profile-card--insurance" class="qd-patient-profile-card">
+  <md-card-header class="qd-patient-profile-card__header" layout="row" layout-align="end center">
+    <md-card-header-text layout="row">
+      <span ng-show="vm.editing">Edit&nbsp;</span> Billing Information
+    </md-card-header-text>
+
+    <md-button class="md-icon-button md-button" id="editBillingInformation" ng-click="vm.activateEditMode()" aria-label="Activate Edit Mode">
+      <md-icon ng-hide="vm.editing" class="qd-icon icon-edit"></md-icon>
+    </md-button>
+  </md-card-header>
+
+  <md-card-content ng-switch-when="false" class="qd-patient-profile-card__content">
+    <div class="qd-placeholder-text">
+      Click on the edit icon to add billing information.
+    </div>
+  </md-card-content>
+
+  <div ng-switch-when="true">
+    <md-card-content ng-switch="vm.editing" layout="row" class="qd-patient-profile-card__content">
+      <md-input-container ng-switch-when="true" flex-gt-sm="20" class="qd-patient-profile-card__input-container">
+        <label class="qd-required">Bill Type</label>
+        <md-select id="billType" name="billType" required ng-model="vm.billingData.primaryGuarantor.billType" class="qd-select-input">
+          <md-option ng-repeat="(billValue, bill) in vm.bills track by $index" value="{{billValue}}">
+          {{bill}}
+          </md-option>
+        </md-select>
+        <div ng-messages="qdPatientProfileBilling.billType.$error">
+            <div ng-message="required">Required*</div>
+        </div>
+      </md-input-container>
+
+      <div ng-switch-when="false" class="qd-patient-profile-card__wrapper">
+        <div ng-if="vm.billingData.primaryGuarantor.billType" class="qd-patient-profile-card__static-container">
+          <label>Bill Type</label>
+          {{vm.bills[vm.billingData.primaryGuarantor.billType]}}
+        </div>
+      </div>
+    </md-card-content>
+
+    <md-card-content ng-if="vm.billingData.primaryGuarantor.billType === 'T'" ng-switch="vm.editing" class="qd-patient-profile-card__content">
+      <md-divider class="qd-patient-profile-card__divider"></md-divider>
+
+      <md-card-title class="qd-patient-profile-card__title" flex>
+        Primary Insurance
+      </md-card-title>
+
+      <div ng-switch-when="true">
+        <div ng-switch="vm.hasSearchCallback">
+          <div ng-switch-when="true" layout-xs="column" layout-gt-xs="row">
+            <div flex class="qd-patient-profile-card__autocomplete-container">
+              <md-autocomplete required class="qd-patient-profile-card__autocomplete"
+                ng-class="{'qd-type-ahead-invalid' : (vm.carrierSearchText !== ' ' && vm.carrierSearchText !== '' && (vm.billingData.primaryGuarantor.insurance.carrier.insCode === undefined || vm.billingData.primaryGuarantor.insurance.carrier.insCode === null))}"
+                md-search-text-change="vm.searchTextChange(vm.carrierSearchText)"
+                md-search-text="vm.carrierSearchText"
+                md-selected-item="vm.billingData.primaryGuarantor.insurance.carrier"
+                md-selected-item-change="vm.carrierSearchSubmit()"
+                md-items="item in vm.carrierQuerySearch(vm.carrierSearchText)"
+                md-item-text="vm.carrierDisplay(item.insName, item.insCode)"
+                md-min-length="2"
+                md-delay="250"
+                md-input-id="priCarrierSearch"
+                md-input-name="priCarrierSearch"
+                ng-Trim="true"
+                md-require-match
+                md-menu-class="qd-autocomplete-suggestions qd-autocomplete-suggestions--patient-section"
+                md-floating-label="Carrier">
+
+                <md-item-template>
+                  <md-button md-ink-ripple="#ececec" class="qd-patient-card qd-patient-card--mini md-raised">
+                    <div class="qd-patient-card__container" layout="row" layout-align="start center">
+                      <span class="qd-patient-card__name" flex="50" flex-gt-xs="75" ng-if="item.insCode !== ''">
+                        <span md-highlight-text="vm.carrierSearchText" md-highlight-flags="i">{{item.insName}}({{item.insCode}})</span>
+                      </span>
+                    </div>
+                  </md-button>
+                </md-item-template>
+                <md-not-found>
+                  No matches for "{{vm.carrierSearchText}}".
+                </md-not-found>
+                <div ng-messages="qdPatientProfileBilling.priCarrierSearch.$error">
+            	    <div ng-message="required">Required*</div>
+        	    </div>
+              </md-autocomplete>
+            </div>
+        	<md-input-container flex class="qd-patient-profile-card__input-container">
+              <label class="qd-required">ID</label>
+              <input required id="priInsuranceId" name="priInsuranceId" ng-model="vm.billingData.primaryGuarantor.insurance.insuranceId" class="qd-text-input">
+              <div ng-messages="qdPatientProfileBilling.priInsuranceId.$error">
+            	<div ng-message="required">Required*</div>
+        	  </div>
+            </md-input-container>
+          </div>
+          <div ng-switch-when="false" layout-xs="column" layout-gt-xs="row">
+	          <md-input-container flex class="qd-patient-profile-card__input-container">
+    	      	<label class="qd-required">Carrier</label>
+        	   	<input required id="priInsName" name="priInsName" ng-model="vm.billingData.primaryGuarantor.insurance.carrier.insName" class="qd-text-input">
+                <div ng-messages="qdPatientProfileBilling.priInsName.$error">
+            	  <div ng-message="required">Required*</div>
+        	    </div>
+          	  </md-input-container>
+          	  <md-input-container flex class="qd-patient-profile-card__input-container">
+                <label class="qd-required">ID</label>
+                <input required id="priInsuranceId" name="priInsuranceId" ng-model="vm.billingData.primaryGuarantor.insurance.insuranceId" class="qd-text-input">
+                <div ng-messages="qdPatientProfileBilling.priInsuranceId.$error">
+            	   <div ng-message="required">Required*</div>
+        	    </div>
+              </md-input-container>
+          </div>
+        </div>
+        <div layout-xs="column" layout-gt-xs="row">
+          <md-input-container flex class="qd-patient-profile-card__input-container input-md">
+            <label>Group #</label>
+            <input ng-model="vm.billingData.primaryGuarantor.insurance.insuranceGroup" class="qd-text-input">
+          </md-input-container>
+
+          <md-input-container flex class="qd-patient-profile-card__input-container">
+            <label>Insurance Phone</label>
+            <input id="primaryInsurancePhone" name="primaryInsurancePhone" ng-model="vm.billingData.primaryInsurancePhone"
+                      class="qd-text-input"
+                      ng-model-options="{'updateOn':'blur'}"
+                      ng-change="vm.formatTelephoneNumber(vm.billingData.primaryInsurancePhone, 'primaryInsurancePhone', vm.billingData)"
+                      qd-phone-validator="vm.priInsPhoneError">
+            <div class="hint">(###) ###-####</div>
+            <div ng-messages="qdPatientProfileBilling.primaryInsurancePhone.$error">
+                 <div ng-message="qdPhoneValidator">{{ vm.priInsPhoneError }}</div>
+            </div>
+          </md-input-container>
+        </div>
+
+        <div layout="column" layout-gt-xs="row">
+          <md-input-container flex class="qd-patient-profile-card__input-container input-md">
+            <label>Insurance Address 1</label>
+            <input ng-model="vm.billingData.primaryGuarantor.insurance.insuranceAddress.line1" class="qd-text-input">
+          </md-input-container>
+
+          <md-input-container flex class="qd-patient-profile-card__input-container input-md">
+            <label>Insurance Address 2</label>
+            <input ng-model="vm.billingData.primaryGuarantor.insurance.insuranceAddress.line2" class="qd-text-input">
+          </md-input-container>
+        </div>
+
+        <div layout="column" layout-gt-xs="row">
+          <div flex flex-gt-xs="50" layout="row">
+            <md-input-container flex class="qd-patient-profile-card__input-container input-sm">
+              <label>City</label>
+              <input ng-model="vm.billingData.primaryGuarantor.insurance.insuranceAddress.city" class="qd-text-input">
+            </md-input-container>
+          </div>
+
+          <div flex flex-gt-xs="50" layout="row">
+            <md-input-container flex class="qd-patient-profile-card__input-container input-sm">
+              <label>State</label>
+              <md-select ng-model="vm.billingData.primaryGuarantor.insurance.insuranceAddress.state" class="qd-select-input">
+                <md-option ng-repeat="state in vm.billingData.states" value="{{state}}">
+                  {{state}}
+                </md-option>
+              </md-select>
+            </md-input-container>
+
+            <md-input-container flex class="qd-patient-profile-card__input-container input-sm">
+
+      			<label>Zip</label>
+       			<input id="priGuarInsZip" name="priGuarInsZip" ng-model="vm.billingData.primaryGuarantor.insurance.insuranceAddress.zip"
+       				class="qd-text-input"
+       				ng-model-options="{'updateOn':'blur'}"
+       				ng-change="vm.getCityInfo(vm.billingData.primaryGuarantor.insurance.insuranceAddress.zip, vm.billingData.primaryGuarantor.insurance.insuranceAddress)"
+       				qd-zip-validator="vm.priGuarInsZipError">
+       			<div ng-messages="qdPatientProfileBilling.priGuarInsZip.$error">
+             		<div ng-message="qdZipValidator">{{ vm.priGuarInsZipError }}</div>
+           		</div>
+            </md-input-container>
+          </div>
+        </div>
+      </div>
+
+      <div ng-switch-when="false" class="qd-patient-profile-card__wrapper">
+        <div ng-if="vm.billingData.primaryGuarantor.insurance.carrier || vm.billingData.primaryGuarantor.insurance.insuranceId || vm.billingData.primaryGuarantor.insurance.insuranceGroup || vm.billingData.primaryInsurancePhone || vm.billingData.primaryGuarantor.insurance.insuranceAddress.line1 || vm.billingData.primaryGuarantor.insurance.insuranceCardFront || vm.billingData.primaryGuarantor.insurance.insuranceCardBack" class="qd-patient-profile-card__static-row">
+          <div class="qd-patient-profile-card__static-container">
+            <div ng-if="vm.billingData.primaryGuarantor.insurance.carrier && vm.billingData.primaryGuarantor.insurance.carrier.insCode !== ''" class="qd-patient-profile-card__static-sub-wrapper qd-patient-profile-card__static-sub-wrapper--divider">
+              <label>Carrier</label>
+              {{vm.billingData.primaryGuarantor.insurance.carrier.insName}} {{vm.billingData.primaryGuarantor.insurance.carrier.insCode !== undefined && vm.billingData.primaryGuarantor.insurance.carrier.insCode !== null && vm.billingData.primaryGuarantor.insurance.carrier.insCode !== '' ? ' (' + vm.billingData.primaryGuarantor.insurance.carrier.insCode + ')' : ''}}
+            </div>
+
+            <div ng-if="vm.billingData.primaryGuarantor.insurance.insuranceId" class="qd-patient-profile-card__static-sub-wrapper qd-patient-profile-card__static-sub-wrapper--divider">
+              <label>ID</label>
+              {{vm.billingData.primaryGuarantor.insurance.insuranceId}}
+            </div>
+
+            <div ng-if="vm.billingData.primaryGuarantor.insurance.insuranceGroup" class="qd-patient-profile-card__static-sub-wrapper qd-patient-profile-card__static-sub-wrapper--divider">
+              <label>Group #</label>
+              {{vm.billingData.primaryGuarantor.insurance.insuranceGroup}}
+            </div>
+
+            <div ng-if="vm.billingData.primaryInsurancePhone" class="qd-patient-profile-card__static-sub-wrapper qd-patient-profile-card__static-sub-wrapper--divider">
+              <label>Insurance Phone</label>
+              {{vm.billingData.primaryInsurancePhone}}
+            </div>
+          </div>
+        </div>
+
+        <div ng-if="vm.billingData.primaryGuarantor.insurance.insuranceAddress.line1" class="qd-patient-profile-card__static-row">
+          <div class="qd-patient-profile-card__static-container">
+            <div class="qd-patient-profile-card__static-sub-wrapper">
+              <label>Address</label>
+              {{vm.billingData.primaryGuarantor.insurance.insuranceAddress.line1}}<span ng-show="vm.billingData.primaryGuarantor.insurance.insuranceAddress.line2">, {{vm.billingData.primaryGuarantor.insurance.insuranceAddress.line2}}</span><span ng-show="vm.billingData.primaryGuarantor.insurance.insuranceAddress.city">, {{vm.billingData.primaryGuarantor.insurance.insuranceAddress.city}}</span><span ng-show="vm.billingData.primaryGuarantor.insurance.insuranceAddress.state">, {{vm.billingData.primaryGuarantor.insurance.insuranceAddress.state}}</span> <span ng-show="vm.billingData.primaryGuarantor.insurance.insuranceAddress.zip">{{vm.billingData.primaryGuarantor.insurance.insuranceAddress.zip}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </md-card-content>
+
+    <md-card-content ng-if="vm.billingData.primaryGuarantor.billType === 'P' || vm.billingData.primaryGuarantor.billType === 'T'" ng-switch="vm.editing" class="qd-patient-profile-card__content">
+      <md-divider class="qd-patient-profile-card__divider"></md-divider>
+
+      <md-card-title ng-if="vm.billingData.primaryGuarantor" class="qd-patient-profile-card__title" ng-class="{'qd-patient-profile-card__title--static': !vm.editing}" flex>
+        <span ng-if="vm.billingData.primaryGuarantor.billType === 'T'">Primary&nbsp;</span> Guarantor Information
+      </md-card-title>
+
+      <div ng-switch-when="true">
+        <div layout-xs="column" layout-gt-xs="row">
+          <md-input-container flex-sm="50" flex-gt-sm="30" class="qd-patient-profile-card__input-container input-md">
+            <label>Relationship to Patient</label>
+            <md-select required id="priRelationship" name="priRelationship" ng-model="vm.billingData.primaryGuarantor.relationship" class="qd-select-input" ng-change="vm.setGuarantorAddress(true, vm.billingData.primaryGuarantor.relationship)">
+              <md-option ng-repeat="(relationValue,relation) in vm.relations track by $index" value="{{relationValue}}">
+                {{relation}}
+              </md-option>
+            </md-select>
+              <div ng-messages="qdPatientProfileBilling.priRelationship.$error">
+            	 <div ng-message="required">Required*</div>
+        	  </div>
+          </md-input-container>
+
+          <div layout-xs="column" layout-sm="column" layout-gt-sm="row" flex-sm="50" flex-gt-sm="70">
+            <div ng-if="vm.billingData.primaryGuarantor.relationship !== '1'" layout="column" layout-align="center start" class="qd-patient-profile-card__checkbox-container">
+              <label class="qd-patient-profile-card__label">Preference</label>
+
+              <md-checkbox class="qd-checkbox" ng-model="vm.billingData.primaryGuarantor.copyPatientAddress" ng-click="vm.copyPatientAddress(vm.billingData.primaryGuarantor.copyPatientAddress, vm.billingData.primaryGuarantor);">
+                Use same address
+              </md-checkbox>
+            </div>
+          </div>
+        </div>
+
+        <div layout-xs="column" layout-gt-xs="row">
+          <md-input-container flex class="qd-patient-profile-card__input-container">
+            <label>Last Name</label>
+            <input required id="lastName" name="lastName" ng-model="vm.billingData.primaryGuarantor.lastName" class="qd-text-input">
+           <div ng-messages="qdPatientProfileBilling.lastName.$error">
+              <div ng-message="required">Required*</div>
+       	   </div>
+          </md-input-container>
+
+          <md-input-container flex class="qd-patient-profile-card__input-container">
+            <label>First Name</label>
+            <input required name="firstName" id="firstName" ng-model="vm.billingData.primaryGuarantor.firstName" class="qd-text-input">
+            <div ng-messages="qdPatientProfileBilling.firstName.$error">
+           	   <div ng-message="required">Required*</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container flex flex-gt-xs="35" class="qd-patient-profile-card__input-container">
+            <label>Middle Name</label>
+            <input ng-model="vm.billingData.primaryGuarantor.middleName" class="qd-text-input">
+          </md-input-container>
+        </div>
+
+        <div layout-xs="column" layout-sm="column" layout-gt-sm="row">
+          <div flex layout-xs="column" layout-gt-xs="row">
+            <div flex-gt-xs="75" layout="row">
+              <md-input-container flex class="qd-patient-profile-card__input-container">
+                <label>Month</label>
+                <md-select required name="dobMonth" id="dobMonth" ng-model="vm.billingData.primaryGuarantor.dobMonth" class="qd-select-input">
+                  <md-option ng-repeat="MM in vm.MM track by $index" value="{{MM}}">
+                    {{MM}}
+                  </md-option>
+                </md-select>
+                <div ng-messages="qdPatientProfileBilling.dobMonth.$error">
+           	      <div ng-message="required">Required*</div>
+                </div>
+              </md-input-container>
+
+              <md-input-container flex class="qd-patient-profile-card__input-container">
+                <label>Day</label>
+                <md-select required name="dobDay" id="dobDay" ng-model="vm.billingData.primaryGuarantor.dobDay" class="qd-select-input">
+                  <md-option ng-repeat="DD in vm.DD track by $index" value="{{DD}}">
+                    {{DD}}
+                  </md-option>
+                </md-select>
+                <div ng-messages="qdPatientProfileBilling.dobDay.$error">
+           	      <div ng-message="required">Required*</div>
+                </div>
+              </md-input-container>
+
+              <md-input-container flex class="qd-patient-profile-card__input-container">
+                <label>Year</label>
+                <md-select required id="dobYear"  name="dobYear" ng-model="vm.billingData.primaryGuarantor.dobYear" class="qd-select-input">
+                  <md-option ng-repeat="YY in vm.YY track by $index" value="{{YY}}">
+                     {{YY}}
+                  </md-option>
+                </md-select>
+                <div ng-messages="qdPatientProfileBilling.dobYear.$error">
+           	      <div ng-message="required">Required*</div>
+                </div>
+              </md-input-container>
+            </div>
+
+            <div flex-gt-xs="25" layout="column">
+              <md-input-container flex class="qd-patient-profile-card__input-container input-xsm">
+                <label>Sex</label>
+                <md-select required name="sex" id="sex" ng-model="vm.billingData.primaryGuarantor.sex" class="qd-select-input">
+                  <md-option ng-repeat="(sexValue, sex) in vm.sexes track by $index" value="{{sexValue}}">
+                     {{sex}}
+                  </md-option>
+                </md-select>
+                <div ng-messages="qdPatientProfileBilling.sex.$error">
+           	      <div ng-message="required">Required*</div>
+                </div>
+              </md-input-container>
+            </div>
+          </div>
+        </div>
+
+        <div layout-xs="column" layout-gt-xs="row">
+          <md-input-container flex-sm="50" flex-gt-sm="30" class="qd-patient-profile-card__input-container">
+
+            <label>Guarantor Phone</label>
+            <input id="guarantorPhone" name="guarantorPhone" ng-model="vm.billingData.primaryGuarantor.phone"
+                      class="qd-text-input"
+                      ng-model-options="{'updateOn':'blur'}"
+                      ng-change="vm.formatTelephoneNumber(vm.billingData.primaryGuarantor.phone, 'phone', vm.billingData.primaryGuarantor)"
+                      qd-phone-validator="vm.guarantorPhoneError" required>
+            <div class="hint">(###) ###-####</div>
+            <div ng-messages="qdPatientProfileBilling.guarantorPhone.$error">
+                 <div ng-message="qdPhoneValidator">{{ vm.guarantorPhoneError }}</div>
+                 <div ng-message="required">Required*</div>
+            </div>
+          </md-input-container>
+
+          <div layout-xs="column" layout-sm="column" layout-gt-sm="row"  flex-sm="50" flex-gt-sm="70">
+            <div layout="column" layout-align="center start" class="qd-patient-profile-card__radio-group-container qd-patient-profile-card__sub-group">
+              <label class="qd-patient-profile-card__label">Type*</label>
+
+              <md-radio-group required id="phoneType" name="phoneType" layout="row" ng-model="vm.billingData.primaryGuarantor.phoneType">
+                <md-radio-button value="Mobile" class="qd-radio-button">Mobile</md-radio-button>
+                <md-radio-button value="Home" class="qd-radio-button">Home</md-radio-button>
+                <md-radio-button value="Work" class="qd-radio-button">Work</md-radio-button>
+              </md-radio-group>
+            </div>
+
+            <div ng-if="false && vm.billingData.primaryGuarantor.phoneType == 'Mobile'" layout="column" layout-align="center start" class="qd-patient-profile-card__checkbox-container">
+              <label class="qd-patient-profile-card__label">Preference</label>
+
+              <md-checkbox class="qd-checkbox" ng-model="vm.billingData.primaryGuarantor.smsNotifications">
+                Can receive SMS notifications
+
+                <span ng-show="vm.editing" class="qd-help-text icon-help">
+                  <md-tooltip md-direction="top">Medical data will not be shared</md-tooltip>
+                </span>
+              </md-checkbox>
+            </div>
+
+            <md-input-container ng-if="vm.billingData.primaryGuarantor.phoneType === 'Work'" layout="column" layout-align="center start" class="qd-patient-profile-card__input-container">
+              <label>Extension</label>
+              <input ng-model="vm.billingData.primaryGuarantor.phoneExtension" class="qd-text-input">
+            </md-input-container>
+          </div>
+        </div>
+
+        <div layout-xs="column" layout-gt-xs="row">
+          <md-input-container flex class="qd-patient-profile-card__input-container input-md">
+            <label>Guarantor Address 1</label>
+            <input required name="address1" ng-model="vm.billingData.primaryGuarantor.address.line1" class="qd-text-input">
+
+            <div ng-messages="qdPatientProfileBilling.address1.$error">
+                <div ng-message="pattern">Invalid Characters</div>
+                <div ng-message="required">Required*</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container flex class="qd-patient-profile-card__input-container input-md">
+            <label>Guarantor Address 2</label>
+            <input ng-disabled="!vm.billingData.allowSecondAddressLine"  ng-model="vm.billingData.primaryGuarantor.address.line2" class="qd-text-input">
+          </md-input-container>
+        </div>
+
+        <div layout-xs="column" layout-gt-xs="row">
+          <div flex flex-gt-xs="50" layout="row">
+            <md-input-container flex class="qd-patient-profile-card__input-container input-md">
+              <label>City</label>
+              <input required name="city" ng-model="vm.billingData.primaryGuarantor.address.city" class="qd-text-input">
+
+              <div ng-messages="qdPatientProfileBilling.city.$error">
+                  <div ng-message="pattern">Invalid Characters</div>
+                  <div ng-message="required">Required*</div>
+              </div>
+            </md-input-container>
+          </div>
+
+          <div flex flex-gt-xs="50" layout="row">
+            <md-input-container flex class="qd-patient-profile-card__input-container input-md">
+              <label>State</label>
+              <md-select required name="state" id="state" ng-model="vm.billingData.primaryGuarantor.address.state" class="qd-select-input">
+                <md-option ng-repeat="state in vm.billingData.states track by $index" value="{{state}}">
+                  {{state}}
+                </md-option>
+              </md-select>
+              <div ng-messages="qdPatientProfileBilling.state.$error">
+                <div ng-message="required">Required*</div>
+              </div>
+            </md-input-container>
+
+            <md-input-container flex class="qd-patient-profile-card__input-container input-md">
+      			<label>Zip</label>
+       			<input id="priGuarZip" name="priGuarZip" ng-model="vm.billingData.primaryGuarantor.address.zip"
+       				class="qd-text-input"
+       				ng-model-options="{'updateOn':'blur'}"
+       				ng-change="vm.getCityInfo(vm.billingData.primaryGuarantor.address.zip, vm.billingData.primaryGuarantor.address)"
+       				qd-zip-validator="vm.priGuarZipError" required>
+       			<div ng-messages="qdPatientProfileBilling.priGuarZip.$error">
+             		<div ng-message="qdZipValidator">{{ vm.priGuarZipError }}</div>
+                    <div ng-message="required">Required*</div>
+           		</div>
+            </md-input-container>
+          </div>
+        </div>
+      </div>
+
+      <div ng-switch-when="false" class="qd-patient-profile-card__wrapper">
+        <div ng-if="vm.billingData.primaryGuarantor.lastName || vm.billingData.primaryGuarantor.firstName || vm.billingData.primaryGuarantor.dobMonth && vm.billingData.primaryGuarantor.dobDay && vm.billingData.primaryGuarantor.dobYear || vm.billingData.primaryGuarantor.sex || vm.billingData.primaryGuarantor.relationship" class="qd-patient-profile-card__static-row">
+          <div class="qd-patient-profile-card__static-container">
+            <div ng-if="vm.billingData.primaryGuarantor.lastName || vm.billingData.primaryGuarantor.firstName" class="qd-patient-profile-card__static-sub-wrapper qd-patient-profile-card__static-sub-wrapper--divider">
+              <label>Name</label>
+              {{vm.billingData.primaryGuarantor.lastName}}, {{vm.billingData.primaryGuarantor.firstName}}
+            </div>
+
+            <div ng-if="vm.billingData.primaryGuarantor.dobMonth && vm.billingData.primaryGuarantor.dobDay && vm.billingData.primaryGuarantor.dobYear" class="qd-patient-profile-card__static-sub-wrapper qd-patient-profile-card__static-sub-wrapper--divider">
+              <label>DOB</label>
+              {{vm.billingData.primaryGuarantor.dobMonth}}/{{vm.billingData.primaryGuarantor.dobDay}}/{{vm.billingData.primaryGuarantor.dobYear}}
+            </div>
+
+            <div ng-if="vm.billingData.primaryGuarantor.sex" class="qd-patient-profile-card__static-sub-wrapper qd-patient-profile-card__static-sub-wrapper--divider">
+              <label>Sex</label>
+              {{vm.billingData.primaryGuarantor.sex}}
+            </div>
+
+            <div ng-if="vm.billingData.primaryGuarantor.relationship" class="qd-patient-profile-card__static-sub-wrapper qd-patient-profile-card__static-sub-wrapper--divider">
+              <label>Relationship to Patient</label>
+              {{vm.relations[vm.billingData.primaryGuarantor.relationship]}}
+            </div>
+          </div>
+        </div>
+
+        <div ng-if="vm.billingData.primaryGuarantor.phone" class="qd-patient-profile-card__static-row">
+          <div class="qd-patient-profile-card__static-container">
+            <div ng-if="vm.billingData.primaryGuarantor.phone" class="qd-patient-profile-card__static-sub-wrapper">
+              <label>Phone</label>
+              {{vm.billingData.primaryGuarantor.phone}}
+            </div>
+
+            <div ng-if="vm.billingData.primaryGuarantor.phoneType" class="qd-patient-profile-card__static-sub-wrapper">
+              <label>Type</label>
+              {{vm.billingData.primaryGuarantor.phoneType}}
+            </div>
+
+            <div ng-if="vm.billingData.primaryGuarantor.phoneExtension" class="qd-patient-profile-card__static-sub-wrapper">
+              <label>Extension</label>
+              {{vm.billingData.primaryGuarantor.phoneExtension}}
+            </div>
+
+            <div ng-if="false && vm.billingData.primaryGuarantor.phoneType == 'Mobile' && vm.billingData.primaryGuarantor.smsNotifications" class="qd-patient-profile-card__static-sub-wrapper qd-patient-profile-card__static-sub-wrapper--preference">
+              <label>Preference</label>
+              Can receive SMS notifications
+            </div>
+          </div>
+        </div>
+
+        <div ng-if="vm.billingData.primaryGuarantor.address.line1" class="qd-patient-profile-card__static-row">
+          <div class="qd-patient-profile-card__static-container">
+            <div class="qd-patient-profile-card__static-sub-wrapper">
+              <label>Address</label>
+              {{vm.billingData.primaryGuarantor.address.line1}}<span ng-show="vm.billingData.primaryGuarantor.address.line2">, {{vm.billingData.primaryGuarantor.address.line2}}</span><span ng-show="vm.billingData.primaryGuarantor.address.city">, {{vm.billingData.primaryGuarantor.address.city}}</span><span ng-show="vm.billingData.primaryGuarantor.address.state">, {{vm.billingData.primaryGuarantor.address.state}}</span> <span ng-show="vm.billingData.primaryGuarantor.address.zip">{{vm.billingData.primaryGuarantor.address.zip}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </md-card-content>
+
+    <md-card-content ng-if="vm.billingData.primaryGuarantor.billType === 'T' && vm.billingData.allowSecondaryInsurance" ng-switch="vm.editing" class="qd-patient-profile-card__content">
+      <md-divider ng-if="vm.billingData.secondaryGuarantor.insurance.carrier || vm.billingData.secondaryGuarantor.insurance.insuranceId || vm.billingData.secondaryGuarantor.insurance.insuranceGroup || vm.billingData.secondaryInsurancePhone || vm.billingData.secondaryGuarantor.insurance.insuranceAddress.line1 || vm.billingData.secondaryGuarantor.insurance.insuranceCardFront || vm.billingData.secondaryGuarantor.insurance.insuranceCardBack || vm.editing" class="qd-patient-profile-card__divider"></md-divider>
+
+      <md-card-title ng-if="vm.billingData.secondaryGuarantor.insurance.carrier || vm.billingData.secondaryGuarantor.insurance.insuranceId || vm.billingData.secondaryGuarantor.insurance.insuranceGroup || vm.billingData.secondaryInsurancePhone || vm.billingData.secondaryGuarantor.insurance.insuranceAddress.line1 || vm.billingData.secondaryGuarantor.insurance.insuranceCardFront || vm.billingData.secondaryGuarantor.insurance.insuranceCardBack || vm.editing" class="qd-patient-profile-card__title" ng-class="{'qd-patient-profile-card__title--static': !vm.editing}" flex>
+        Secondary Insurance
+      </md-card-title>
+
+      <div ng-switch-when="true">
+        <div ng-switch="vm.hasSearchCallback">
+          <div ng-switch-when="true" layout-xs="column" layout-gt-xs="row">
+            <div flex class="qd-patient-profile-card__autocomplete-container">
+              <md-autocomplete class="qd-patient-profile-card__autocomplete" flex-gt-md
+              ng-class="{'qd-type-ahead-invalid' : (vm.secondarySearchText !== ' ' && vm.secondarySearchText !== '' && (vm.billingData.secondaryGuarantor.insurance.carrier.insCode === undefined || vm.billingData.secondaryGuarantor.insurance.carrier.insCode === null))}"
+              md-search-text-change="vm.searchTextChange(vm.secondarySearchText)"
+              md-search-text="vm.secondarySearchText"
+              md-selected-item="vm.billingData.secondaryGuarantor.insurance.carrier"
+              md-selected-item-change="vm.carrierSearchSubmit()"
+              md-items="item in vm.carrierQuerySearch(vm.secondarySearchText)"
+              md-item-text="vm.carrierDisplay(item.insName, item.insCode)"
+              md-min-length="2"
+              id="secondaryCarrierSearch"
+              md-menu-class="qd-autocomplete-suggestions qd-autocomplete-suggestions--patient-section"
+              md-floating-label="Carrier">
+              
+                <md-item-template>
+                  <md-button md-ink-ripple="#ececec" class="qd-patient-card qd-patient-card--mini md-raised">
+                    <div class="qd-patient-card__container" layout="row" layout-align="start center">
+                      <span class="qd-patient-card__name" flex="50" flex-gt-xs="75">
+                        <span md-highlight-text="vm.secondarySearchText" md-highlight-flags="i">{{item.insName}} ({{item.insCode}})</span>
+                      </span>
+                    </div>
+                  </md-button>
+                </md-item-template>
+                <md-not-found>
+                  No matches for "{{vm.secondarySearchText}}".
+                </md-not-found>
+              </md-autocomplete>
+            </div>
+            <md-input-container flex class="qd-patient-profile-card__input-container">
+              <label>ID</label>
+              <input ng-model="vm.billingData.secondaryGuarantor.insurance.insuranceId" class="qd-text-input">
+            </md-input-container>
+          </div>
+          <div ng-switch-when="false" layout-xs="column" layout-gt-xs="row">
+	          <md-input-container flex class="qd-patient-profile-card__input-container">
+    	      	<label class="qd-required">Carrier</label>
+        	   	<input ng-model="vm.billingData.secondaryGuarantor.insurance.carrier.insName" class="qd-text-input">
+          	  </md-input-container>
+          	  <md-input-container flex class="qd-patient-profile-card__input-container">
+                <label class="qd-required">ID</label>
+                <input ng-model="vm.billingData.secondaryGuarantor.insurance.insuranceId" class="qd-text-input">
+              </md-input-container>
+          </div>
+        </div>
+
+        <div layout="row">
+          <md-input-container flex flex-gt-xs="50" class="qd-patient-profile-card__input-container">
+            <label>Group #</label>
+            <input ng-model="vm.billingData.secondaryGuarantor.insurance.insuranceGroup" class="qd-text-input">
+          </md-input-container>
+          <md-input-container flex class="qd-patient-profile-card__input-container input-md">
+            <label>Insurance Phone</label>
+            <input id="secondaryInsurancePhone" name="secondaryInsurancePhone" ng-model="vm.billingData.secondaryInsurancePhone"
+                      class="qd-text-input"
+                      ng-model-options="{'updateOn':'blur'}"
+                      ng-change="vm.formatTelephoneNumber(vm.billingData.secondaryInsurancePhone, 'secondaryInsurancePhone', vm.billingData)"
+                      qd-phone-validator="vm.secInsPhoneError">
+            <div class="hint">(###) ###-####</div>
+            <div ng-messages="qdPatientProfileBilling.secondaryInsurancePhone.$error">
+                 <div ng-message="qdPhoneValidator">{{ vm.secInsPhoneError }}</div>
+            </div>
+          </md-input-container>
+        </div>
+
+        <div layout="column" layout-gt-xs="row">
+          <md-input-container flex class="qd-patient-profile-card__input-container input-md">
+            <label>Insurance Address 1</label>
+            <input ng-model="vm.billingData.secondaryGuarantor.insurance.insuranceAddress.line1" class="qd-text-input">
+          </md-input-container>
+
+          <md-input-container flex class="qd-patient-profile-card__input-container input-md">
+            <label>Insurance Address 2</label>
+            <input ng-model="vm.billingData.secondaryGuarantor.insurance.insuranceAddress.line2" class="qd-text-input">
+          </md-input-container>
+        </div>
+
+        <div layout="column" layout-gt-xs="row">
+          <div flex flex-gt-xs="50" layout="row">
+            <md-input-container flex class="qd-patient-profile-card__input-container input-sm">
+              <label>City</label>
+              <input ng-model="vm.billingData.secondaryGuarantor.insurance.insuranceAddress.city" class="qd-text-input">
+            </md-input-container>
+          </div>
+
+          <div flex flex-gt-xs="50" layout="row">
+            <md-input-container flex class="qd-patient-profile-card__input-container input-sm">
+              <label>State</label>
+              <md-select ng-model="vm.billingData.secondaryGuarantor.insurance.insuranceAddress.state" class="qd-select-input">
+                <md-option ng-repeat="state in vm.billingData.states track by $index" value="{{state}}">
+                  {{state}}
+                </md-option>
+              </md-select>
+            </md-input-container>
+
+            <md-input-container flex class="qd-patient-profile-card__input-container input-sm">
+      			<label>Zip</label>
+       			<input id="secGuarInsZip" name="secGuarInsZip" ng-model="vm.billingData.secondaryGuarantor.insurance.insuranceAddress.zip"
+       				class="qd-text-input"
+       				ng-model-options="{'updateOn':'blur'}"
+       				ng-change="vm.getCityInfo(vm.billingData.secondaryGuarantor.insurance.insuranceAddress.zip, vm.billingData.secondaryGuarantor.insurance.insuranceAddress)"
+       				qd-zip-validator="vm.secGuarInsZipError">
+       			<div ng-messages="qdPatientProfileBilling.secGuarInsZip.$error">
+             		<div ng-message="qdZipValidator">{{ vm.secGuarInsZipError }}</div>
+           		</div>
+            </md-input-container>
+          </div>
+        </div>
+      </div>
+
+      <div ng-switch-when="false" class="qd-patient-profile-card__wrapper">
+        <div ng-if="vm.billingData.secondaryGuarantor.insurance.carrier || vm.billingData.secondaryGuarantor.insurance.insuranceId || vm.billingData.secondaryGuarantor.insurance.insuranceGroup" class="qd-patient-profile-card__static-row">
+          <div class="qd-patient-profile-card__static-container">
+            <div ng-if="vm.billingData.secondaryGuarantor.insurance.carrier && vm.billingData.secondaryGuarantor.insurance.carrier.insCode !== ''" class="qd-patient-profile-card__static-sub-wrapper qd-patient-profile-card__static-sub-wrapper--divider">
+              <label>Carrier</label>
+              {{vm.billingData.secondaryGuarantor.insurance.carrier.insName}} {{vm.billingData.secondaryGuarantor.insurance.carrier.insCode !== undefined && vm.billingData.secondaryGuarantor.insurance.carrier.insCode !== null && vm.billingData.secondaryGuarantor.insurance.carrier.insCode !== '' ? ' (' + vm.billingData.secondaryGuarantor.insurance.carrier.insCode + ')' : ''}}
+            </div>
+
+            <div ng-if="vm.billingData.secondaryGuarantor.insurance.insuranceId" class="qd-patient-profile-card__static-sub-wrapper qd-patient-profile-card__static-sub-wrapper--divider">
+              <label>ID</label>
+              {{vm.billingData.secondaryGuarantor.insurance.insuranceId}}
+            </div>
+
+            <div ng-if="vm.billingData.secondaryGuarantor.insurance.insuranceGroup" class="qd-patient-profile-card__static-sub-wrapper qd-patient-profile-card__static-sub-wrapper--divider">
+              <label>Group #</label>
+              {{vm.billingData.secondaryGuarantor.insurance.insuranceGroup}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </md-card-content>
+
+    <md-card-content ng-if="vm.billingData.primaryGuarantor.billType === 'T' && vm.billingData.allowSecondaryInsurance" ng-switch="vm.editing" class="qd-patient-profile-card__content">
+      <md-divider ng-if="vm.billingData.secondaryGuarantor.relationship || vm.billingData.secondaryGuarantor.lastName || vm.billingData.secondaryGuarantor.middleName || vm.billingData.secondaryGuarantor.firstName || vm.billingData.secondaryGuarantor.dobMonth || vm.billingData.secondaryGuarantor.dobDay || vm.billingData.secondaryGuarantor.dobYear || vm.billingData.secondaryGuarantor.sex || vm.editing" class="qd-patient-profile-card__divider"></md-divider>
+
+      <md-card-title ng-if="vm.billingData.secondaryGuarantor.relationship || vm.billingData.secondaryGuarantor.lastName || vm.billingData.secondaryGuarantor.middleName || vm.billingData.secondaryGuarantor.firstName || vm.billingData.secondaryGuarantor.dobMonth || vm.billingData.secondaryGuarantor.dobDay || vm.billingData.secondaryGuarantor.dobYear || vm.billingData.secondaryGuarantor.sex || vm.editing" class="qd-patient-profile-card__title" ng-class="{'qd-patient-profile-card__title--static': !vm.editing}" flex>
+        Secondary Guarantor Information
+      </md-card-title>
+
+      <div ng-switch-when="true">
+        <div layout-xs="column" layout-gt-xs="row">
+          <md-input-container flex-sm="50" flex-gt-sm="30" class="qd-patient-profile-card__input-container input-md">
+            <label>Relationship to Patient</label>
+            <md-select ng-model="vm.billingData.secondaryGuarantor.relationship" class="qd-select-input"
+            ng-change="billingData.setSecondaryGuarantorAddress(true, vm.billingData.secondaryGuarantor.relationship)">
+              <md-option ng-repeat="(relationValue, relation) in vm.relations track by $index" value="{{relationValue}}">
+                {{relation}}
+              </md-option>
+            </md-select>
+          </md-input-container>
+
+          <div layout-xs="column" layout-sm="column" layout-gt-sm="row" flex-sm="50" flex-gt-sm="70">
+            <div ng-if="vm.billingData.secondaryGuarantor.relationship !== '1'" layout="column" layout-align="center start" class="qd-patient-profile-card__checkbox-container">
+              <label class="qd-patient-profile-card__label">Preference</label>
+
+              <md-checkbox class="qd-checkbox" ng-model="vm.billingData.secondaryGuarantor.copyPatientAddress"
+              ng-click="vm.copyPatientAddress(vm.billingData.secondaryGuarantor.copyPatientAddress, vm.billingData.secondaryGuarantor);">
+                Use same address
+              </md-checkbox>
+            </div>
+          </div>
+        </div>
+
+        <div layout-xs="column" layout-gt-xs="row">
+          <md-input-container flex class="qd-patient-profile-card__input-container">
+            <label>Last Name</label>
+            <input ng-model="vm.billingData.secondaryGuarantor.lastName" class="qd-text-input">
+          </md-input-container>
+
+          <md-input-container flex class="qd-patient-profile-card__input-container">
+            <label>First Name</label>
+            <input ng-model="vm.billingData.secondaryGuarantor.firstName" class="qd-text-input">
+          </md-input-container>
+
+          <md-input-container flex flex-gt-xs="20" class="qd-patient-profile-card__input-container">
+            <label>Middle Name</label>
+            <input ng-model="vm.billingData.secondaryGuarantor.middleName" class="qd-text-input">
+          </md-input-container>
+        </div>
+
+        <div layout-xs="column" layout-sm="column" layout-gt-sm="row">
+          <div flex layout-xs="column" layout-gt-xs="row">
+            <div flex flex-gt-xs="75" layout="row">
+              <md-input-container flex  class="qd-patient-profile-card__input-container">
+                <label>Month</label>
+                <md-select ng-model="vm.billingData.secondaryGuarantor.dobMonth" class="qd-select-input">
+                  <md-option ng-repeat="MM in vm.MM track by $index" value="{{MM}}">
+                    {{MM}}
+                  </md-option>
+                </md-select>
+              </md-input-container>
+
+              <md-input-container flex class="qd-patient-profile-card__input-container">
+                <label>Day</label>
+                <md-select ng-model="vm.billingData.secondaryGuarantor.dobDay" class="qd-select-input">
+                  <md-option ng-repeat="DD in vm.DD track by $index" value="{{DD}}">
+                    {{DD}}
+                  </md-option>
+                </md-select>
+              </md-input-container>
+
+              <md-input-container flex class="qd-patient-profile-card__input-container">
+                <label>Year</label>
+                <md-select ng-model="vm.billingData.secondaryGuarantor.dobYear" class="qd-select-input">
+                  <md-option ng-repeat="YY in vm.YY track by $index" value="{{YY}}">
+                     {{YY}}
+                  </md-option>
+                </md-select>
+              </md-input-container>
+            </div>
+
+            <div flex flex-gt-xs="25" layout="column">
+              <md-input-container flex class="qd-patient-profile-card__input-container input-xsm">
+                <label>Sex</label>
+                <md-select ng-model="vm.billingData.secondaryGuarantor.sex" class="qd-select-input">
+                  <md-option ng-repeat="(sexValue, sex) in vm.sexes track by $index" value="{{sexValue}}">
+                     {{sex}}
+                  </md-option>
+                </md-select>
+              </md-input-container>
+            </div>
+          </div>
+        </div>
+
+        <div layout-xs="column" layout-gt-xs="row">
+          <md-input-container flex-sm="50" flex-gt-sm="30" class="qd-patient-profile-card__input-container">
+
+
+            <label>Guarantor Phone</label>
+            <input id="secondaryGuarInsurancePhone" name="secondaryGuarInsurancePhone" ng-model="vm.billingData.secondaryGuarantor.phone"
+                      class="qd-text-input"
+                      ng-model-options="{'updateOn':'blur'}"
+                      ng-change="vm.formatTelephoneNumber(vm.billingData.secondaryGuarantor.phone, 'phone', vm.billingData.secondaryGuarantor)"
+                      qd-phone-validator="vm.secGuarPhoneError">
+            <div class="hint">(###) ###-####</div>
+            <div ng-messages="qdPatientProfileBilling.secondaryGuarInsurancePhone.$error">
+                 <div ng-message="qdPhoneValidator">{{ vm.secGuarPhoneError }}</div>
+            </div>
+
+          </md-input-container>
+
+          <div layout-xs="column" layout-sm="column" layout-gt-sm="row" flex-sm="50" flex-gt-sm="70">
+            <div layout="column" layout-align="center start" class="qd-patient-profile-card__radio-group-container qd-patient-profile-card__sub-group">
+              <label class="qd-patient-profile-card__label">Type</label>
+
+              <md-radio-group layout="row" ng-model="vm.billingData.secondaryGuarantor.phoneType">
+                <md-radio-button value="Mobile" class="qd-radio-button">Mobile</md-radio-button>
+                <md-radio-button value="Home" class="qd-radio-button">Home</md-radio-button>
+                <md-radio-button value="Work" class="qd-radio-button">Work</md-radio-button>
+              </md-radio-group>
+            </div>
+
+            <div ng-if="false && vm.billingData.secondaryGuarantor.phoneType == 'Mobile'" layout="column" layout-align="center start" class="qd-patient-profile-card__checkbox-container">
+              <label class="qd-patient-profile-card__label">Preference</label>
+
+              <md-checkbox class="qd-checkbox" ng-model="vm.billingData.secondaryGuarantor.smsNotifications">
+                Can receive SMS notifications
+
+                <span ng-show="vm.editing" class="qd-help-text icon-help">
+                  <md-tooltip md-direction="top">Medical data will not be shared</md-tooltip>
+                </span>
+              </md-checkbox>
+            </div>
+
+            <md-input-container ng-if="vm.billingData.secondaryGuarantor.phoneType === 'Work'" layout="column" layout-align="center start" class="qd-patient-profile-card__input-container">
+              <label>Extension</label>
+              <input ng-model="vm.billingData.secondaryGuarantor.phoneExtension" class="qd-text-input">
+            </md-input-container>
+          </div>
+        </div>
+
+        <div layout-xs="column" layout-gt-xs="row">
+          <md-input-container flex class="qd-patient-profile-card__input-container input-md">
+            <label>Guarantor Address 1</label>
+            <input ng-model="vm.billingData.secondaryGuarantor.address.line1" class="qd-text-input">
+          </md-input-container>
+
+          <md-input-container flex class="qd-patient-profile-card__input-container input-md">
+            <label>Guarantor Address 2</label>
+            <input ng-disabled="!vm.billingData.allowSecondAddressLine" ng-model="vm.billingData.secondaryGuarantor.address.line2" class="qd-text-input">
+          </md-input-container>
+        </div>
+
+        <div layout-xs="column" layout-gt-xs="row">
+          <div flex flex-gt-xs="50" layout="row">
+            <md-input-container flex class="qd-patient-profile-card__input-container input-md">
+              <label>City</label>
+              <input ng-model="vm.billingData.secondaryGuarantor.address.city" class="qd-text-input">
+            </md-input-container>
+          </div>
+
+          <div flex flex-gt-xs="50" layout="row">
+            <md-input-container flex class="qd-patient-profile-card__input-container input-md">
+              <label>State</label>
+              <md-select ng-model="vm.billingData.secondaryGuarantor.address.state" class="qd-select-input">
+                <md-option ng-repeat="state in vm.billingData.states track by $index" value="{{state}}">
+                  {{state}}
+                </md-option>
+              </md-select>
+            </md-input-container>
+
+            <md-input-container flex class="qd-patient-profile-card__input-container input-md">
+      			<label>Zip</label>
+       			<input id="secGuarZip" name="secGuarZip" ng-model="vm.billingData.secondaryGuarantor.address.zip"
+       				class="qd-text-input"
+       				ng-model-options="{'updateOn':'blur'}"
+       				ng-change="vm.getCityInfo(vm.billingData.secondaryGuarantor.address.zip, vm.billingData.secondaryGuarantor.address)"
+       				qd-zip-validator="vm.secGuarZipError">
+       			<div ng-messages="qdPatientProfileBilling.secGuarZip.$error">
+             		<div ng-message="qdZipValidator">{{ vm.secGuarZipError }}</div>
+           		</div>
+            </md-input-container>
+          </div>
+        </div>
+      </div>
+
+      <div ng-switch-when="false" class="qd-patient-profile-card__wrapper">
+        <div ng-if="vm.billingData.secondaryGuarantor.lastName || vm.billingData.secondaryGuarantor.firstName || vm.billingData.secondaryGuarantor.middleName || billingData.secondGuarantor.dobMonth || vm.billingData.secondaryGuarantor.dobDay || billingData.secondGuarantor.dobYear || vm.billingData.secondaryGuarantor.sex || vm.billingData.secondaryGuarantor.relationship" class="qd-patient-profile-card__static-row">
+          <div ng-if="vm.billingData.secondaryGuarantor.lastName || vm.billingData.secondaryGuarantor.firstName || vm.billingData.secondaryGuarantor.middleName" class="qd-patient-profile-card__static-container">
+            <div ng-if="vm.billingData.secondaryGuarantor.lastName" class="qd-patient-profile-card__static-sub-wrapper qd-patient-profile-card__static-sub-wrapper--divider">
+              <label>Name</label>
+              {{vm.billingData.secondaryGuarantor.lastName}}, {{vm.billingData.secondaryGuarantor.firstName}}
+            </div>
+
+            <div ng-if="vm.billingData.secondaryGuarantor.dobMonth && vm.billingData.secondaryGuarantor.dobDay && billingData.secondGuarantor.dobYear" class="qd-patient-profile-card__static-sub-wrapper qd-patient-profile-card__static-sub-wrapper--divider">
+              <label>DOB</label>
+              {{vm.billingData.secondaryGuarantor.dobMonth}} / {{vm.billingData.secondaryGuarantor.dobDay}} / {{vm.billingData.secondaryGuarantor.dobYear}}
+            </div>
+
+            <div ng-if="vm.billingData.secondaryGuarantor.sex" class="qd-patient-profile-card__static-sub-wrapper qd-patient-profile-card__static-sub-wrapper--divider">
+              <label>Sex</label>
+              {{vm.billingData.secondaryGuarantor.sex}}
+            </div>
+
+            <div ng-if="vm.billingData.secondaryGuarantor.relationship" class="qd-patient-profile-card__static-sub-wrapper qd-patient-profile-card__static-sub-wrapper--divider">
+              <label>Relationship to Patient</label>
+              {{vm.relations[vm.billingData.secondaryGuarantor.relationship]}}
+            </div>
+          </div>
+        </div>
+
+        <div ng-if="vm.billingData.secondaryGuarantor.phone" class="qd-patient-profile-card__static-row">
+          <div class="qd-patient-profile-card__static-container">
+            <div ng-if="vm.billingData.secondaryGuarantor.phone" class="qd-patient-profile-card__static-sub-wrapper">
+              <label>Phone</label>
+              {{vm.billingData.secondaryGuarantor.phone}}
+            </div>
+
+            <div ng-if="vm.billingData.secondaryGuarantor.phoneType" class="qd-patient-profile-card__static-sub-wrapper">
+              <label>Type</label>
+              {{vm.billingData.secondaryGuarantor.phoneType}}
+            </div>
+
+            <div ng-if="vm.billingData.secondaryGuarantor.phoneExtension" class="qd-patient-profile-card__static-sub-wrapper">
+              <label>Extension</label>
+              {{vm.billingData.secondaryGuarantor.phoneExtension}}
+            </div>
+
+            <div ng-if="false && vm.billingData.secondaryGuarantor.phoneType == 'Mobile' && vm.billingData.secondaryGuarantor.smsNotifications" class="qd-patient-profile-card__static-sub-wrapper qd-patient-profile-card__static-sub-wrapper--preference">
+              <label>Preference</label>
+              Can receive SMS notifications
+            </div>
+          </div>
+        </div>
+
+        <div ng-if="vm.billingData.secondaryGuarantor.address.line1" class="qd-patient-profile-card__static-row">
+          <div class="qd-patient-profile-card__static-container">
+            <div class="qd-patient-profile-card__static-sub-wrapper">
+              <label>Address</label>
+              {{vm.billingData.secondaryGuarantor.address.line1}}<span ng-show="vm.billingData.secondaryGuarantor.address.line2">, {{vm.billingData.secondaryGuarantor.address.line2}}</span><span ng-show="vm.billingData.secondaryGuarantor.address.city">, {{vm.billingData.secondaryGuarantor.address.city}}</span><span ng-show="vm.billingData.secondaryGuarantor.address.state">, {{vm.billingData.secondaryGuarantor.address.state}}</span> <span ng-show="vm.billingData.secondaryGuarantor.address.zip">{{vm.billingData.secondaryGuarantor.address.zip}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </md-card-content>
+
+    <div ng-show="vm.editing" layout="column" layout-align="center center" class="qd-save-cancel">
+      <md-button class="md-raised qd-button" ng-click="vm.saveInsurance(vm.billingData);" ng-disabled="vm.validateBilling(qdPatientProfileBilling)" aria-label="Save Changes button">
+        Save Changes
+      </md-button>
+      <a href="#" class="qd-link" id="cancelEditInsuranceInformation" ng-click="(qdPatientProfileBilling.$pristine ? vm.cancelEditMode(qdPatientProfileBilling) : vm.showConfirm($event, '#qd-patient-profile-card--insurance', qdPatientProfileBilling))">Cancel</a>
+    </div>
+  </div>
+
+</md-card>
+</form>

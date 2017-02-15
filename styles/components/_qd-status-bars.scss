@@ -1,0 +1,345 @@
+.qd-status-bars {
+    &__status {
+        @extend %type-subhead-2;
+        line-height: 20px;
+        margin-bottom: 8px;
+        border-right: 1px solid $divider-gray-1;
+        padding-right: 20px;
+        margin: 0 20px 0 0;
+
+        @include when-less-than(tablet) {
+            border-right: 0;
+            padding-right: 0;
+            margin: 0 0 10px;
+        }
+
+        .qd-status-bars--5 & {
+            @extend %type-subhead-1;
+            color: $green-l;
+        }
+    }
+
+    &__bar {
+        background-color: $divider-gray-1;
+        margin-right: 3px;
+        height: 8px;
+        width: 25%;
+        
+        @include when-wider-than(mobile) {
+            width: 80px;
+            max-width: 80px;
+        }
+
+        .qd-status-bars--1 &,
+        .qd-status-bars--2 &,
+        .qd-status-bars--3 &,
+        .qd-status-bars--4 &,
+        .qd-status-bars--5 &,
+        .qd-status-bars--6 &,
+        .qd-status-bars--7 &,
+        .qd-status-bars--8 &,
+        .qd-status-bars--9 &,
+        .qd-status-bars--10 &,
+        .qd-status-bars--11 &,
+        .qd-status-bars--12 &,
+        .qd-status-bars--13 &,
+        .qd-status-bars--14 &,
+        .qd-status-bars--15 &,
+        .qd-status-bars--16 &,
+        .qd-status-bars--17 &,
+        .qd-status-bars--18 &,
+        .qd-status-bars--19 &,
+        .qd-status-bars--20 & {
+            &:first-child {
+                background-color: $green-l;
+            }
+        }
+
+        .qd-status-bars--2 &,
+        .qd-status-bars--3 &,
+        .qd-status-bars--4 &,
+        .qd-status-bars--5 &,
+        .qd-status-bars--6 &,
+        .qd-status-bars--7 &,
+        .qd-status-bars--8 &,
+        .qd-status-bars--9 &,
+        .qd-status-bars--10 &,
+        .qd-status-bars--11 &,
+        .qd-status-bars--12 &,
+        .qd-status-bars--13 &,
+        .qd-status-bars--14 &,
+        .qd-status-bars--15 &,
+        .qd-status-bars--16 &,
+        .qd-status-bars--17 &,
+        .qd-status-bars--18 &,
+        .qd-status-bars--19 &,
+        .qd-status-bars--20 & {
+            &:nth-child(2) {
+                background-color: $green-l;
+            }
+        }
+
+        .qd-status-bars--3 &,
+        .qd-status-bars--4 &,
+        .qd-status-bars--5 &,
+        .qd-status-bars--6 &,
+        .qd-status-bars--7 &,
+        .qd-status-bars--8 &,
+        .qd-status-bars--9 &,
+        .qd-status-bars--10 &,
+        .qd-status-bars--11 &,
+        .qd-status-bars--12 &,
+        .qd-status-bars--13 &,
+        .qd-status-bars--14 &,
+        .qd-status-bars--15 &,
+        .qd-status-bars--16 &,
+        .qd-status-bars--17 &,
+        .qd-status-bars--18 &,
+        .qd-status-bars--19 &,
+        .qd-status-bars--20 & {
+            &:nth-child(3) {
+                background-color: $green-l;
+            }
+        }
+
+        .qd-status-bars--4 &,
+        .qd-status-bars--5 &,
+        .qd-status-bars--6 &,
+        .qd-status-bars--7 &,
+        .qd-status-bars--8 &,
+        .qd-status-bars--9 &,
+        .qd-status-bars--10 &,
+        .qd-status-bars--11 &,
+        .qd-status-bars--12 &,
+        .qd-status-bars--13 &,
+        .qd-status-bars--14 &,
+        .qd-status-bars--15 &,
+        .qd-status-bars--16 &,
+        .qd-status-bars--17 &,
+        .qd-status-bars--18 &,
+        .qd-status-bars--19 &,
+        .qd-status-bars--20 & {
+            &:nth-child(4) {
+                background-color: $green-l;
+            }
+        }
+
+        .qd-status-bars--5 &,
+        .qd-status-bars--6 &,
+        .qd-status-bars--7 &,
+        .qd-status-bars--8 &,
+        .qd-status-bars--9 &,
+        .qd-status-bars--10 &,
+        .qd-status-bars--11 &,
+        .qd-status-bars--12 &,
+        .qd-status-bars--13 &,
+        .qd-status-bars--14 &,
+        .qd-status-bars--15 &,
+        .qd-status-bars--16 &,
+        .qd-status-bars--17 &,
+        .qd-status-bars--18 &,
+        .qd-status-bars--19 &,
+        .qd-status-bars--20 & {
+            &:nth-child(5) {
+                background-color: $green-l;
+            }
+        }
+        .qd-status-bars--6 &,
+        .qd-status-bars--7 &,
+        .qd-status-bars--8 &,
+        .qd-status-bars--9 &,
+        .qd-status-bars--10 &,
+        .qd-status-bars--11 &,
+        .qd-status-bars--12 &,
+        .qd-status-bars--13 &,
+        .qd-status-bars--14 &,
+        .qd-status-bars--15 &,
+        .qd-status-bars--16 &,
+        .qd-status-bars--17 &,
+        .qd-status-bars--18 &,
+        .qd-status-bars--19 &,
+        .qd-status-bars--20 & {
+            &:nth-child(6) {
+                background-color: $green-l;
+            }
+        }
+		
+        .qd-status-bars--7 &,
+        .qd-status-bars--8 &,
+        .qd-status-bars--9 &,
+        .qd-status-bars--10 &,
+        .qd-status-bars--11 &,
+        .qd-status-bars--12 &,
+        .qd-status-bars--13 &,
+        .qd-status-bars--14 &,
+        .qd-status-bars--15 &,
+        .qd-status-bars--16 &,
+        .qd-status-bars--17 &,
+        .qd-status-bars--18 &,
+        .qd-status-bars--19 &,
+        .qd-status-bars--20 & {
+            &:nth-child(7) {
+                background-color: $green-l;
+            }
+        }
+		
+        .qd-status-bars--8 &,
+        .qd-status-bars--9 &,
+        .qd-status-bars--10 &,
+        .qd-status-bars--11 &,
+        .qd-status-bars--12 &,
+        .qd-status-bars--13 &,
+        .qd-status-bars--14 &,
+        .qd-status-bars--15 &,
+        .qd-status-bars--16 &,
+        .qd-status-bars--17 &,
+        .qd-status-bars--18 &,
+        .qd-status-bars--19 &,
+        .qd-status-bars--20 & {
+            &:nth-child(8) {
+                background-color: $green-l;
+            }
+        }
+		
+        .qd-status-bars--9 &,
+        .qd-status-bars--10 &,
+        .qd-status-bars--11 &,
+        .qd-status-bars--12 &,
+        .qd-status-bars--13 &,
+        .qd-status-bars--14 &,
+        .qd-status-bars--15 &,
+        .qd-status-bars--16 &,
+        .qd-status-bars--17 &,
+        .qd-status-bars--18 &,
+        .qd-status-bars--19 &,
+        .qd-status-bars--20 & {
+            &:nth-child(9) {
+                background-color: $green-l;
+            }
+        }
+		
+        .qd-status-bars--10 &,
+        .qd-status-bars--11 &,
+        .qd-status-bars--12 &,
+        .qd-status-bars--13 &,
+        .qd-status-bars--14 &,
+        .qd-status-bars--15 &,
+        .qd-status-bars--16 &,
+        .qd-status-bars--17 &,
+        .qd-status-bars--18 &,
+        .qd-status-bars--19 &,
+        .qd-status-bars--20 & {
+            &:nth-child(10) {
+                background-color: $green-l;
+            }
+        }
+		
+        .qd-status-bars--11 &,
+        .qd-status-bars--12 &,
+        .qd-status-bars--13 &,
+        .qd-status-bars--14 &,
+        .qd-status-bars--15 &,
+        .qd-status-bars--16 &,
+        .qd-status-bars--17 &,
+        .qd-status-bars--18 &,
+        .qd-status-bars--19 &,
+        .qd-status-bars--20 & {
+            &:nth-child(11) {
+                background-color: $green-l;
+            }
+        }
+		
+        .qd-status-bars--12 &,
+        .qd-status-bars--13 &,
+        .qd-status-bars--14 &,
+        .qd-status-bars--15 &,
+        .qd-status-bars--16 &,
+        .qd-status-bars--17 &,
+        .qd-status-bars--18 &,
+        .qd-status-bars--19 &,
+        .qd-status-bars--20 & {
+            &:nth-child(12) {
+                background-color: $green-l;
+            }
+        }
+		
+        .qd-status-bars--13 &,
+        .qd-status-bars--14 &,
+        .qd-status-bars--15 &,
+        .qd-status-bars--16 &,
+        .qd-status-bars--17 &,
+        .qd-status-bars--18 &,
+        .qd-status-bars--19 &,
+        .qd-status-bars--20 & {
+            &:nth-child(13) {
+                background-color: $green-l;
+            }
+        }
+		
+        .qd-status-bars--14 &,
+        .qd-status-bars--15 &,
+        .qd-status-bars--16 &,
+        .qd-status-bars--17 &,
+        .qd-status-bars--18 &,
+        .qd-status-bars--19 &,
+        .qd-status-bars--20 & {
+            &:nth-child(14) {
+                background-color: $green-l;
+            }
+        }
+		
+        .qd-status-bars--15 &,
+        .qd-status-bars--16 &,
+        .qd-status-bars--17 &,
+        .qd-status-bars--18 &,
+        .qd-status-bars--19 &,
+        .qd-status-bars--20 & {
+            &:nth-child(15) {
+                background-color: $green-l;
+            }
+        }
+		
+        .qd-status-bars--17 &,
+        .qd-status-bars--18 &,
+        .qd-status-bars--19 &,
+        .qd-status-bars--20 & {
+            &:nth-child(16) {
+                background-color: $green-l;
+            }
+        }
+		
+        .qd-status-bars--17 &,
+        .qd-status-bars--18 &,
+        .qd-status-bars--19 &,
+        .qd-status-bars--20 & {
+            &:nth-child(17) {
+                background-color: $green-l;
+            }
+        }
+		
+        .qd-status-bars--18 &,
+        .qd-status-bars--19 &,
+        .qd-status-bars--20 & {
+            &:nth-child(18) {
+                background-color: $green-l;
+            }
+        }
+		
+        .qd-status-bars--19 &,
+        .qd-status-bars--20 & {
+            &:nth-child(19) {
+                background-color: $green-l;
+            }
+        }
+		
+        .qd-status-bars--20 & {
+            &:nth-child(20) {
+                background-color: $green-l;
+            }
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

@@ -1,0 +1,234 @@
+// Tabs using <ul>
+.qd-rectangle-tabs {
+    $qd-rectangle-tab-height: 60px;
+
+    overflow-y: hidden;
+    margin: 15px -20px -1px;
+    padding: 0 20px;
+
+    @include when-wider-than(tablet) {
+        margin-top: 25px;
+    }
+
+    @include when-wider-than(desktop) {
+        margin-top: 20px;
+    }
+
+    &__tab {
+        @extend %type-cta;
+        color: rgba($black, $text-opacity-secondary);
+        text-align: center;
+        background-color: $background-gray;
+        min-width: 182px;
+        width: 182px;
+        height: $qd-rectangle-tab-height;
+        margin-right: 10px;
+        border: 1px solid $divider-gray-1;
+        border-radius: 3px 3px 0 0;
+        box-sizing: border-box;
+        cursor: pointer;
+        outline: none;
+
+        @include when-wider-than(desktop) {
+            position: relative;
+        }
+
+        &--selected {
+            color: rgba($black, $text-opacity-primary);
+            background-color: $background-light-gray;
+            border-bottom: 1px solid $background-light-gray;
+        }
+
+        &:hover {
+            @include when-wider-than(desktop) {
+                background-color: $background-light-gray;
+            }
+        }
+
+        /*&::before,
+        &::after {
+            @include when-wider-than(desktop) {
+                content: '';
+                display: block;
+                width: 2px;
+                height: 16px;
+                background-color: $divider-gray-2;
+                position: absolute;
+                right: 10px;
+                top: 17px;
+            }
+        }*/
+
+        &::before {
+            right: 14px;
+        }
+    }
+
+    &__handle {
+        height: $qd-rectangle-tab-height;
+        padding: 10px;
+
+        @include when-wider-than(desktop) {
+            padding: 0 26px;
+        }
+    }
+
+    &__count {
+        display: block;
+
+        @include when-wider-than(desktop) {
+            display: inline;
+        }
+    }
+
+    &__placeholder {
+        margin-bottom: -2px;
+        margin-left: 0;
+        border-radius: 3px;
+    }
+
+    &.as-sortable-dragging {
+        overflow: hidden;
+    }
+}
+
+// md-tabs directive    
+.qd-md-tabs {
+    $qd-md-tab-height: 60px;
+    $qd-md-tab-height-mobile: 48px;
+    margin: 15px 0 -1px;
+    padding: 0 20px;
+    position: relative;
+
+    @include when-wider-than(tablet) {
+        margin-top: 25px;
+    }
+
+    @include when-wider-than(desktop) {
+        margin-top: 20px;
+    }
+
+    [role="tabpanel"] {
+        transition: none;
+    }
+
+    md-tabs-canvas, md-tab-data, md-pagination-wrapper {
+        height: $qd-md-tab-height-mobile !important;
+
+        @include when-wider-than(tablet) {
+            height: $qd-md-tab-height !important;
+        }
+    }
+
+    md-pagination-wrapper {
+    
+        @include when-wider-than(desktop) {
+            width:auto !important;
+        }
+    }
+
+    md-tab-content {
+        padding: 20px 0 0;
+        margin: 0;
+    }
+
+    &__divider-line {
+        position: absolute;
+        top: 46px;
+        left: 0;
+        border-bottom:1px solid $divider-gray-1;;
+        width: 100%;
+        height:1px;
+
+        @include when-wider-than(tablet) {
+            top: 58px;
+        }
+    }
+
+    .md-tab {
+        @extend %type-cta;
+        color: rgba($black, $text-opacity-secondary);
+        text-align: center;
+        background-color: $background-gray;
+        min-width: 108px;
+        height: $qd-md-tab-height-mobile;
+        margin-right: 0;
+        border: 1px solid $divider-gray-1;
+        border-radius: 6px 6px 0 0;
+        box-sizing: border-box;
+        cursor: pointer;
+        outline: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 12px;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+
+        @include when-wider-than(tablet) {
+            min-width: 182px;
+            height: $qd-md-tab-height;
+        }
+
+        @include when-wider-than(desktop) {
+            margin-right: 10px;
+            border-radius: 3px 3px 0 0;
+        }
+
+        &:hover {
+            @include when-wider-than(desktop) {
+                background-color: $background-light-gray;
+            }
+        }
+
+        &::before {
+            right: 14px;
+        }
+
+        &__count {
+            line-height:10px;
+            
+            /*@include when-wider-than(desktop) {
+                display: inline;
+            }*/
+        }
+
+        &--hide {
+            display: none;
+        }
+    }
+
+    .md-active {
+        color: rgba($black, $text-opacity-primary) !important;
+        background-color: $background-light-gray;
+        border-bottom: 1px solid $background-light-gray;;
+        z-index:2;
+
+    }
+
+    md-ink-bar {
+        display: none;
+    }
+
+    &__handle {
+        height: $qd-md-tab-height;
+        padding: 10px;
+
+        @include when-wider-than(desktop) {
+            padding: 0 26px;
+        }
+    }
+
+    &__placeholder {
+        margin-bottom: -2px;
+        margin-left: 0;
+        border-radius: 3px;
+    }
+
+    &.as-sortable-dragging {
+        overflow: hidden;
+    }
+}

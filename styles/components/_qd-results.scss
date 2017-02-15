@@ -1,0 +1,210 @@
+.qd-results {
+    border-top: 1px solid $divider-gray-1;
+    position: relative;
+
+    &__container {
+        background-color: $background-gray;
+        position: relative;
+        padding-bottom: 40px;
+
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-color: transparent;
+            border-bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &:before {
+            top: 0;
+            border-top-color: $divider-gray-1;
+            border-width: 10px;
+        }
+
+        &:after {
+            top: -2px;
+            border-top-color: $white;
+            border-width: 11px;
+        }
+
+        .qd-pagination-bar {
+            padding-left: 20px;
+            height: 120px;
+            margin-bottom: 10px;
+
+            @include when-wider-than(desktop) {
+                padding-left: 40px;
+                height: 100px;
+            }
+        }
+    }
+
+    &__cards {
+        padding: 0;
+        
+        @include when-wider-than(mini-tablet) {
+            padding: 0 20px;
+        }
+
+        @include when-wider-than(desktop) {
+            padding: 0 40px;
+        }
+    }
+
+    &__label {
+        @extend .qd-patient-profile-card__label;
+        margin: 15px 0 3px;
+
+        @include when-wider-than(desktop) {
+            margin-top: 0;
+        }
+    }
+
+    &__dates {
+        width: 100%;
+    }
+
+    &__no-results {
+        margin: 10px auto 0;
+        position: relative;
+
+        @include when-wider-than(tablet) {
+            width: 375px;
+        }
+
+        @include when-wider-than(desktop) {
+            width: 645px;
+        }
+    }
+
+    &__no-results-header {
+        @extend %type-display-2;
+        color: rgba(black, $text-opacity-hint);
+        margin-bottom: 20px;
+    }
+
+    &__no-results-subhead {
+        @extend %type-body-2;
+        color: rgba($black, $text-opacity-secondary);
+        margin-bottom: 15px;
+    }
+
+    &__null-state {
+        @extend .qd-index-page__no-results;
+    }
+
+    &__results {
+        .qd-pagination-bar {
+            background: none;
+            padding: 0;
+        }
+    }
+
+    &__results-header-bar {
+        @include when-wider-than(desktop) {
+            margin-top: 20px;
+            margin-bottom: -37px;
+        }
+    }
+
+    &__results-header {
+        @extend %type-body-2;
+        color: rgba($black, $text-opacity-secondary);
+        margin-right: 8px;
+        display: none;
+
+        @include when-wider-than(tablet) {
+            display: block;
+        }
+    }
+
+    &__results-subhead {
+        @extend %type-subhead-2;
+        color: rgba($black, $text-opacity-hint);
+    }
+
+    &__results-tests-header {
+        @include when-wider-than(desktop) {
+            padding-left: 20px;
+            margin-right: 166px;
+            margin-bottom: -54px;
+        }
+    }
+
+    &__results-tests-back {
+        @extend %type-cta;
+        color: $icon-dark-gray;
+        margin-bottom: 15px;
+
+        @include when-wider-than(tablet) {
+            display: inline-block;
+            margin-bottom: 0;
+            margin-right: 20px;
+        }
+
+        .qd-icon {
+            margin-right: 7px;
+        }
+    }
+
+    &__results-status {
+        @extend %type-body-2;
+        color: rgba($black, $text-opacity-secondary);
+
+        @include when-wider-than(tablet) {
+            display: inline-block;
+        }
+
+        @include when-wider-than(desktop) {
+            padding-right: 20px;
+            border-right: 1px solid $divider-gray-1;
+        }
+    }
+
+    &__results-sort {
+        margin-top: 15px;
+
+        @include when-wider-than(desktop) {
+            display: inline-block;
+            margin-top: 0;
+            padding-left: 20px;
+            
+        }
+    }
+
+    &__results-tag {
+        @extend %type-caption;
+    }
+
+    &__results-term {
+        color: rgba($black, $text-opacity-primary);
+    }
+
+    &__search {
+        background: none;
+        margin: 8px 10px 26px;
+        border-bottom: 1px solid $icon-dark-gray;
+
+        &::before {
+            font-size: 22px;
+            color: $icon-dark-gray;
+            position: absolute;
+            left: 0;
+            top: 9px;
+        }
+
+        .md-whiteframe-z1 {
+            box-shadow: none;
+        }
+
+        input:not(.md-input) {
+            @extend %type-title-2;
+            padding-left: 30px;
+        }
+    }
+}

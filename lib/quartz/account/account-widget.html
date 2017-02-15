@@ -1,0 +1,31 @@
+<div class="qd-account-widget">
+    <!-- Pleas note that md-offset should be set to md-offset="0 67" in an app but had to be changed for this Quartz directive -->
+   <md-menu class="qd-account-menu" md-position-mode="target-right target" md-offset="-294 67" hide-xs hide-sm hide-md show-lg>
+          <md-button aria-label="Account Settings" class="md-icon-button" ng-click="vm.openMenu($mdOpenMenu, $mdMenuIsOpen, $event)">
+            <qd-avatar class="qd-avatar__topnav qd-avatar--white" initials="vm.accountInfo.firstName.substr(0,1)" avatarimage="vm.accountInfo.avatarImage"></qd-avatar>
+        </md-button>
+        <md-menu-content class="qd-menu-content" width="6" hide-xs hide-sm hide-md show-lg>
+            <div layout="row" layout-align="center center">
+                <qd-avatar class="qd-avatar__accountwidget qd-avatar--green" initials="vm.accountInfo.firstName.substr(0,1)" avatarimage="vm.accountInfo.avatarImage"></qd-avatar>
+                <div flex layout="column">
+                    <div class="qd-header-text">{{vm.accountInfo.fullName}}
+                    </div>
+                    <div name="defaultOrgName" class="qd-option-text">{{ vm.accountInfo.orgName }}</div>
+                    <div name="defaultOrgPrimaryAddress" class="qd-option-text">{{ vm.accountInfo.addressLine1 }}</div>
+                </div>
+            </div>
+            <md-divider></md-divider>
+            <div layout="row" layout-align="center center" class="qd-account-links">
+                <div ng-if="vm.settings" flex="55">
+                    <a href="" ng-click="vm.settingsClicked(vm.settings)">
+                        <md-icon class="icon-setting"></md-icon>SETTINGS</a>
+                </div>
+                <div ng-if="vm.settings" class="qd-vertical-divider"></div>
+                <div flex>
+                    <a href="" ng-click="vm.signoutClicked()">
+                        <md-icon class="icon-signout"></md-icon>SIGN OUT</a>
+                </div>
+            </div>
+        </md-menu-content>
+    </md-menu>
+</div>

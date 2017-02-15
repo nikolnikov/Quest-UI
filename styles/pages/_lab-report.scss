@@ -1,0 +1,258 @@
+.qd-lab-report {
+    &__content {
+        border-top: 1px solid $divider-gray-1;
+        border-bottom: 1px solid $divider-gray-1;
+        background: $background-gray;
+        text-align: center;
+        padding: 20px 0;
+        //min-height: calc(100vh - #{$top-nav-height});
+
+        /*@include when-wider-than(tablet) {
+            padding: 20px;
+            min-height: calc(100vh - #{$top-nav-height});
+        }*/
+
+        @include when-wider-than(tablet) {
+            padding: 20px;
+        }
+        
+        @include when-wider-than(desktop) {
+            padding: 20px 40px;
+            //min-height: calc(100vh - #{$top-nav-height});
+        }
+    }
+
+    &__info-item {
+        @extend .qd-patient-profile__info-item;
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+
+    &__iframe {
+        height: 450px;
+        width: 100%;
+        -webkit-overflow-scrolling: touch;
+        overflow: hidden;
+        border: 1px solid $divider-gray-1;
+        background: $background-gray;
+        
+        @include when-less-than(desktop) {
+            height: 350px;
+            overflow-y: hidden;
+        }
+    }
+
+    &__iframe-touch {
+        -webkit-overflow-scrolling: touch;
+        overflow: auto;
+    }
+
+    &__iframe-ie-dialog { /* this is a fix to generate a dummy iframe to resolve a known z-index generation with MSIE and iframes embedding non HTML content */
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+    }
+
+    /*&__annotations {
+        @extend .qd-patient-profile-card;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }*/
+
+    &__checkbox {
+        .md-label {
+            color: $black;
+            padding-top: 2px;
+        }
+    }
+
+    &__dialog {
+
+        .qd-checkbox {
+            margin-bottom: 0;
+        }
+    }
+
+    &__email-dialog {
+        @extend .qd-custom-dialog;
+        width: 900px;
+
+        .md-dialog-content {
+            padding: 20px;
+            background: $white;
+            position: relative;
+        }
+
+        .md-button.md-raised.qd-button {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__email-dialog-close {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+
+        @include when-wider-than(tablet) {
+            right: 25px;
+            top: 15px;
+        }
+
+        @include when-wider-than(desktop) {
+            right: 20px;
+            top: 20px;
+        }
+    }
+
+    &__email-dialog-error {
+        @extend .qd-new-order__review-warning;
+        background: $background-light-gray;
+    }
+
+    &__email-dialog-close {
+        position: absolute;
+        right: 0;
+        top: -2px;
+    }
+
+    &__email-dialog-title {
+        @extend %type-title-2;
+        color: $green-l;
+        margin-bottom: 10px;
+    }
+
+    &__email-dialog-body {
+        @extend %type-subhead-2;
+        opacity: $text-opacity-secondary;
+        margin-bottom: 10px;
+    }
+
+    &__email-dialog-input {
+        padding: 0;
+        position: relative;
+
+        label:not(.md-no-float):not(.md-container-ignore) {
+            padding: 0;
+            left: 10px !important;
+        }
+    }
+
+    &__email-dialog-check {
+        margin-top: 85px;
+        margin-bottom: 15px;
+    }
+
+    &__email-dialog-subhead {
+        @extend %type-headline-2;
+        font-size: 18px;
+        opacity: $text-opacity-secondary;
+
+        @include when-wider-than(tablet) {
+            font-size: 20px;
+        }
+    }
+
+    &__email-dialog-email {
+        @extend %type-title-2;
+        margin-bottom: 150px;
+        opacity: $text-opacity-primary;
+
+        @include when-wider-than(tablet) {
+            margin-bottom: 135px;
+        }
+
+        @include when-wider-than(desktop) {
+            margin-bottom: 110px;
+        }
+    }
+
+    &__profile-card-wrapper {
+        border-top: 1px solid $divider-gray-1;
+        border-bottom: 1px solid $divider-gray-1;
+    }
+
+    &__reviewed {
+        margin-left: 20px;
+
+        @include when-wider-than(desktop) {
+            margin-left: 0;
+        }
+    }
+
+    &__reviewed-byline {
+        @extend %type-body-2;
+        opacity: $text-opacity-secondary;
+    }
+
+    &__reviewed-name {
+        @extend %type-body-2;
+        opacity: $text-opacity-primary;
+    }
+
+    &__reviewed-timestamp {
+        @extend %type-label-2;
+        opacity: $text-opacity-secondary;
+    }
+
+    &__reviewed-check {
+        margin: -4px 4px 0 0;
+    }
+
+    &__reviewed-link {
+        margin-left: 20px;
+        cursor: pointer;
+
+        @include when-wider-than(desktop) {
+            margin-left: 0;
+        }
+    }
+
+    &__annotations-header {
+        font-size: 18px;
+        opacity: $text-opacity-secondary;
+
+        @include when-wider-than(tablet) {
+            font-size: 20px;
+        }
+    }
+
+    &__annotation-container {
+        background: $background-gray;
+        padding: 20px;
+
+        @include when-wider-than(desktop) {
+            padding: 20px 40px;
+        }
+    }
+
+    &__annotation-box {
+        width: 100%;
+        background: $white;
+        border: 1px solid $divider-gray-1;
+        padding: 20px 20px 30px;
+        margin: 15px auto 0;
+
+        md-input-container {
+            width: 100%;
+        }
+    }
+
+    &__annotations {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        button{
+            float: right;
+        }
+    }
+
+    .qd-checkbox {
+        margin-left: 20px;
+    }
+}

@@ -1,0 +1,98 @@
+.qd-custom-dialog {
+    border-radius: 0;
+    max-height: 520px;
+    width: 340px;
+    max-width: 100%;
+
+    @include when-on(tablet) {
+        max-height: 640px;
+        width: 850px;
+    }
+
+    @include when-wider-than(desktop) {
+        width: 900px;
+    }
+
+    md-card-header {
+        min-height: 50px;
+    }
+
+    &__section {
+        padding: 20px;
+    }
+
+    &__title {
+        color: $green-l;
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0 0 10px 0;
+    }
+
+    &__headline {
+        @extend %type-headline-1;
+        margin: 0 0 8px;
+    }
+
+    &__body-copy {
+        @extend %type-body-2;
+        margin-bottom: 0;
+    }
+
+    &__info-block {
+        @extend %type-body-2-special;
+        margin-bottom: 20px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &--inline {
+            @include when-wider-than(tablet) {
+                border-right: 1px solid $divider-gray-1;
+                display: inline-block;
+                padding-right: 20px;
+                margin-right: 20px;
+
+                &:last-child {
+                    border-right: none;
+                    padding-right: 0;
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    &__timestamp {
+        @extend %type-label-2;
+    }
+
+    &__datepicker-label {
+        @extend %type-label-2;
+        color: rgba($black, $text-opacity-secondary);
+        display: block;
+        margin-bottom: -25px;
+    }
+
+    &__datepicker-to {
+        font-size: 16px;
+        color: rgba($black, $text-opacity-secondary);
+        margin: 35px 10px 0;
+    }
+
+    &__datepicker {
+        margin-top: 35px;
+    }
+
+    &__input {
+        margin: 28px 0;
+        padding: 0;
+    }
+
+    &__save-cancel {
+        padding: 0 20px 20px;
+
+        .qd-button {
+            margin-bottom: 20px;
+        }
+    }
+}

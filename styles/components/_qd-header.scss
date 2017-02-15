@@ -1,0 +1,106 @@
+.qd-header {
+    height: 70px;
+    padding: 0 20px;
+    border-bottom: 1px solid $divider-gray-1;
+    background-color: white;
+    position: relative;
+
+    @include when-wider-than(tablet) {
+        height: 80px;
+    }
+
+    @include when-wider-than(desktop) {
+        padding: 0 40px;
+    }
+
+    &__title {
+        @extend %type-display-2;
+
+        .qd-header--home & {
+            @extend %type-headline-1;
+            color: $green-l;
+            padding-top: 10px;
+        }
+    }
+
+    &__caption {
+        @extend %type-subhead-1;
+        color: rgba($black, $text-opacity-secondary);
+        font-weight: normal;
+    }
+
+    &__back-button {
+        margin-left: -18px;
+
+        button.md-button {
+            @extend %type-cta;
+            color: $icon-dark-gray;
+        }
+
+        .qd-icon {
+            margin-right: 5px;
+        }
+    }
+
+    &__action {
+        button {
+            @extend %type-cta;
+            color: rgba($black, $text-opacity-secondary);
+            margin: 0;
+            min-width: 0;
+            width: auto;
+        }
+
+        &--icon {
+            font-size: 20px;
+            padding: 0;
+        }
+    }
+
+    button.md-button {
+        margin: 0;
+    }
+
+    &__date-range {
+        @extend %type-subhead-2;
+        font-weight: 400;
+        color: rgba($black, $text-opacity-primary);
+        margin-top: 15px;
+
+        @include when-wider-than(tablet) {
+            display: inline;
+            margin-left: 15px;
+        }
+    }
+
+    &__ordered-by {
+        @extend %type-subhead-2;
+        font-weight: 400;
+        color: rgba($black, $text-opacity-secondary);
+
+        @include when-wider-than(tablet) {
+            display: inline;
+        }
+
+        md-icon.qd-icon {
+            color: $green-l;
+            margin-left: 5px;
+        }
+    }
+
+    &__ordered-by-name {
+        color: rgba($black, $text-opacity-primary);
+    }
+
+    &--tabs {
+        height: auto;
+        padding-top: 20px;
+    }
+
+    &--settings {
+        .qd-header__title {
+            text-align: center;
+            margin-left: -88px;
+        }
+    }
+}

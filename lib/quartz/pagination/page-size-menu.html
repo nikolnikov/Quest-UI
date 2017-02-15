@@ -1,0 +1,11 @@
+<md-menu class="qd-dropdown-menu" md-position-mode="target-right target">
+    <md-icon class="qd-icon icon-dropdown" ng-click="$mdOpenMenu($event)"></md-icon>
+    <md-menu-content class="qd-dropdown-menu__content">
+        <md-menu-item class="qd-dropdown-menu__title" layout-align="center center">Show up to:</md-menu-item>
+        <md-menu-item class="qd-dropdown-menu__item" ng-repeat="i in qdPaginationControls.getPageSizes() track by $index">
+            <md-button ng-click="qdPaginationControls.setPageSize(i)">
+                <span ng-class="{'qd-dropdown-menu__item-count': qdPaginationControls.isPageSizeSelected(i)}">{{i}} items</span>
+            </md-button>
+        </md-menu-item>
+    </md-menu-content>
+</md-menu>

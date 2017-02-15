@@ -1,0 +1,543 @@
+.qd-patient-card {
+    @include elevation(3);
+    background-color: white;
+    border-radius: 0px;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    text-transform: none;
+    text-align: left;
+    line-height: inherit;
+    transition: all .4s;
+    width: 100%;
+
+    &.md-button:not([disabled]) {
+        @include elevation(3);
+        background-color: white;
+    }
+
+    .md-autocomplete-suggestions li.selected &.md-button:not([disabled]) {
+        background-color: $background-gray;
+    }
+
+    &.md-button:not([disabled]):hover,
+    &:hover {
+        background-color: $background-light-gray;
+    }
+
+    &__container {
+        position: relative;
+        padding: 0 20px;
+        z-index: 1;
+        width: 100%;
+        
+        @include when-on(mobile) {
+          padding: 0 10px;
+        }
+
+        .qd-patient-card--mini & {
+            height: 56px;
+        }
+
+
+        .qd-patient-card--full-status &,
+        .qd-patient-card--full-edit &,
+        .md-button.qd-patient-card--full & {
+            padding-right: 0;
+        }
+
+        .qd-patient-card--full & {
+            border-left: 3px solid transparent;
+            height: 100px;
+
+            @include when-wider-than(tablet) {
+                height: 65px;
+            }
+        }
+
+        .qd-patient-card--full-ordering & {
+            padding-left: 25px;
+            padding-right: 20px;
+        }
+
+        .md-button.md-raised:not([disabled]) & .qd-icon,
+        .qd-icon {
+            color: $divider-gray-2;
+            margin-right: 20px;
+            
+            @include when-on(mobile) {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &__avatar-and-name {
+        margin-bottom: 10px;
+
+        @include when-wider-than(tablet) {
+            margin-bottom: 0;
+        }
+
+        .qd-order-card & {
+            @include when-on(mobile) {
+                margin-bottom: -5px;
+            }
+        }
+    }
+    
+    &__name-and-address  {
+        display: block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        margin-right: 30px;
+        width: 100%;
+        
+        @include when-wider-than(tablet) {
+            height: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+    }
+
+    &__name {
+        line-height: normal;
+
+        &--first {
+            .qd-patient-card--mini & {
+                display: block;
+
+                @include when-wider-than(tablet) {
+                    display: inline-block;
+                }
+            }
+        }
+
+        .qd-patient-card--mini &,
+        .qd-order-card__patient-wrapper &,
+        .qd-result-card__patient-container &,
+        .qd-patient-card--full & {
+            @extend %type-body-2;
+        }
+    }
+
+    &__address {
+        @extend %type-caption;
+        color: rgba($black, $text-opacity-secondary);
+        display: block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        height: 18px;
+        margin-right: 30px;
+        width: 100%;
+        
+        @include when-wider-than(tablet) {
+            overflow: visible;
+            height: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+    }
+
+    &__ssn,
+    &__pid,
+    &__sex,
+    &__dob,
+    &__tel {
+        @extend %type-caption;
+
+        &:before {
+            @extend %type-label-2;
+
+            @include when-wider-than(desktop) {
+                color: rgba($black, $text-opacity-hint);
+                display: inline-block;
+                font-style: normal;
+                margin-right: 5px;
+            }
+
+            .qd-order-card__patient-wrapper &,
+            .qd-result-card__patient-container &,
+            .qd-patient-card--full & {
+                @include when-wider-than(desktop) {
+                    display: block;
+                    line-height: 20px;
+                }
+            }
+        }
+
+        &:after {
+            background-color: $divider-gray-2;
+            content: '';
+            margin: 0 8px;
+            height: 15px;
+            width: 1px;
+            vertical-align: middle;
+
+            @include when-wider-than(desktop) {
+                margin: 0 20px;
+            }
+
+            .qd-order-card__patient-wrapper &,
+            .qd-result-card__patient-container &,
+            .qd-patient-card--full & {
+                @include when-wider-than(desktop) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__ssn {
+        &:before {
+            @include when-wider-than(desktop) {
+                content: 'SSN:';
+
+                .qd-patient-card--full & {
+                    content: 'SSN';
+                }
+            }
+        }
+
+        &:after {
+            display: inline-block;
+
+            .qd-patient-card__info-wrapper--no-tele & {
+                display: none;
+
+                @include when-wider-than(desktop) {
+                    display: inline-block;
+                }
+            }
+
+            .qd-patient-card--mini & {
+                display: none;
+            }
+
+            .qd-patient-card--full & {
+                @include when-wider-than(tablet) {
+                    display: none;
+                }
+            }
+        }
+    }
+    
+    &__pid {
+        &:before {
+            @include when-wider-than(desktop) {
+                content: 'PID:';
+
+                .qd-patient-card--full & {
+                    content: 'PID';
+                }
+            }
+        }
+
+        &:after {
+            display: inline-block;
+
+            .qd-patient-card__info-wrapper--no-tele & {
+                display: none;
+
+                @include when-wider-than(desktop) {
+                    display: inline-block;
+                }
+            }
+
+            .qd-patient-card--mini & {
+                display: none;
+            }
+
+            .qd-patient-card--full & {
+                @include when-wider-than(tablet) {
+                    display: none;
+                }
+            }
+        }
+    }
+    
+    &__sex {
+        &:before {
+            @include when-wider-than(desktop) {
+                content: 'Sex:';
+
+                .qd-order-card__patient-wrapper &,
+                .qd-result-card__patient-container &,
+                .qd-patient-card--full & {
+                    content: 'Sex';
+                }
+            }
+        }
+
+        &:after {
+            display: inline-block;
+
+            .qd-patient-card__info-wrapper--no-tele & {
+                display: none;
+
+                @include when-wider-than(desktop) {
+                    display: inline-block;
+                }
+            }
+
+            .qd-patient-card--mini & {
+                display: none;
+            }
+
+            .qd-order-card__patient-wrapper &,
+            .qd-result-card__patient-container &,
+            .qd-patient-card--full & {
+                @include when-wider-than(tablet) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__dob {
+        &:before {
+            @include when-wider-than(desktop) {
+                content: 'DOB:';
+
+                .qd-order-card__patient-wrapper &,
+                .qd-result-card__patient-container &,
+                .qd-patient-card--full & {
+                    content: 'DOB';
+                }
+            }
+        }
+
+        &:after {
+            display: inline-block;
+        }
+    }
+
+    &__tel {
+        @include when-wider-than(tablet) {
+            display: block;
+            text-align: right;
+            margin-top: 5px;
+        }
+
+        @include when-wider-than(desktop) {
+            text-align: left;
+            margin-top: 0;
+            min-width: 112px;
+        }
+
+        &:before {
+            @include when-wider-than(desktop) {
+                content: 'Tel';
+            }
+        }
+
+        &:after {
+            @include when-wider-than(tablet) {
+                display: none;
+            }
+
+            @include when-wider-than(desktop) {
+                display: inline-block;
+            }
+        }
+    }
+
+    &__user-icon {
+        @extend .qd-user-icon;
+        margin-right: 20px;
+    }
+
+    &__overflow {
+        position: absolute;
+        top: 5px;
+        right: 0;
+
+        @include when-wider-than(tablet) {
+            position: relative;
+            top: 0;
+        }
+
+        .md-icon-button {
+            padding: 0;
+            margin: 0;
+        }
+
+        .md-button.md-raised:not([disabled]) & .qd-icon,
+        .qd-icon {
+            color: $green-l;
+            font-size: 24px;
+            line-height: 40px;
+            margin-right: 0;
+        }
+    }
+
+    &__edit {
+        font-size: 18px;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        width: 30px;
+        height: 30px;
+
+        @include when-wider-than(tablet) {
+            background-color: $background-light-gray;
+            border-left: 1px solid $divider-gray-1;
+            display: inline-block;
+            text-align: center;
+            line-height: 80px;
+            position: relative;
+            margin-left: 20px;
+            top: 0;
+            right: 0;
+            height: 80px;
+            width: 50px;
+        }
+
+        @include when-wider-than(desktop) {
+            width: 80px;
+            vertical-align: middle;
+        }
+
+        &:hover {
+            background-color: rgba($divider-gray-1, .5);
+        }
+
+        .qd-icon {
+            color: $green-l;
+            margin-right: 0;
+        }
+    }
+
+    &__info-item {
+        text-align: left;
+
+        @include when-wider-than(tablet) {
+            text-align: right;
+        }
+
+        @include when-wider-than(desktop) {
+            border-right: 1px solid rgba($divider-gray-2, 0.5);
+            line-height: 20px;
+            padding-right: 20px;
+            margin-right: 20px;
+            text-align: left;
+        }
+
+        &:last-child {
+            @include when-wider-than(tablet) {
+                border-right: 0px solid transparent;
+                margin-right: 0;
+                padding-right: 0;
+            }
+
+            &:after {
+              display: none;
+            }
+        }
+
+        &--none {
+            color: $divider-gray-2;
+            display: none;
+            font-style: italic;
+
+            @include when-wider-than(desktop) {
+                display: block;
+            }
+        }
+    }
+
+    &__mini-status {
+        background-color: $background-light-gray;
+        border-top: 1px solid $divider-gray-1;
+        height: 40px;
+        line-height: 40px;
+        width: 100%;
+    }
+
+    &__status {
+        &:before {
+            content: 'Order Status: ';
+        }
+    }
+
+    &__radio-button {
+        position: initial;
+        height: 100%;
+        margin-bottom: 0;
+    }
+
+    &__divider {
+        .md-open-menu-container & {
+            margin: 10px 0;
+        }
+    }
+
+    &__right {
+        margin-left: 50px;
+        text-align: right;
+
+        @include when-wider-than(tablet) {
+            margin-left: 0;
+        }
+
+        .qd-patient-card--full-ordering & {
+            margin-left: 0;
+        }
+    }
+
+    &--full {
+        margin-bottom: 15px;
+
+        &.md-button:not([disabled]) {
+            @include elevation(2);
+        }
+
+        &:before {
+            display: none;
+        }
+
+        &:hover {
+            .qd-patient-card__container {
+                border-left: 3px solid $green-l;
+            }
+        }
+    }
+
+    &--full-ordering {
+        margin-bottom: 0;
+        box-shadow: none;
+        border-top: 1px solid $divider-gray-1;
+
+        @include when_wider_than(tablet) {
+            border-left: 1px solid $divider-gray-1;
+            border-right: 1px solid $divider-gray-1;
+        }
+
+        &:last-child {
+            border-bottom: 1px solid $divider-gray-1;
+        }
+
+        .md-label {
+            height: 100%;
+            width: 100%;
+            font-weight: inherit;
+            text-transform: none;
+            margin-left: 30px;
+        }
+
+        .md-ink-ripple {
+            left: 20px;
+        }
+
+        &:hover {
+            .qd-patient-card__container {
+                border-left: 3px solid transparent;
+            }
+        }
+    }
+
+    .md-ripple-container {
+        border-radius: 0;
+    }
+}

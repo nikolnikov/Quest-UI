@@ -1,0 +1,39 @@
+.qd-annotation {
+    border-top: 1px solid $divider-gray-1;
+    border-right: 1px solid $divider-gray-1;
+    border-left: 1px solid $divider-gray-1;
+    padding: 15px 20px;
+    background: $white;
+
+    &:last-child {
+        border-bottom: 1px solid $divider-gray-1;
+    }
+
+    &__creds {
+    	margin-bottom: 15px;
+    }
+
+    &__name {
+    	margin-right: 5px;
+    	margin-bottom: 5px;
+    	font-size: 16px;
+    	color: $green-l;
+
+    	@include when-wider-than(tablet) {
+    		margin-bottom: 0;
+    	}
+    }
+
+    &__timestamp {
+    	@extend %type-label-2;
+    	position: relative;
+    	top: -1px;
+    	color: $black;
+    	opacity: $text-opacity-secondary;
+    }
+
+    &__text {
+    	@extend %type-subhead-2;
+    	color: $black;
+    }
+}

@@ -1,0 +1,35 @@
+<md-dialog class="qd-custom-dialog qd-mlcp__dialog" aria-label="DirectoryOfService">
+  <md-card-header class="qd-dialog__header" layout="row" layout-align="space-between center">
+    <md-card-header-text flex="75">
+      ABN Rules 
+    </md-card-header-text>
+    
+    <md-icon class="qd-icon icon-close" ng-click="vm.cancel()"></md-icon>
+  </md-card-header>
+
+  <md-dialog-content>
+    <div class="qd-custom-dialog__section">
+      Medicare will only pay for services that it determines to be reasonable and necessary under section 1862 (a) (1) of the Medicare Law. If Medicare determines that a particular service, although it would otherwise be covered, is not reasonable and necessary under the Medicare Program standards, Medicare will deny payment for that service.<br><br>
+      
+      Explain to the patient that tests ordered by his/her physician and identified on this requisition with the following symbols are likely to be denied for payment for the reason(s) indicated:
+      
+      <ul>
+          <li>@ = May not be covered for the reported condition</li>
+          <li>F = Has prescribed frequency rules for coverage</li>
+          <li>&amp; = A test or service performed with research/experimental kit</li>
+          <li>B = Has both diagnosis and frequency-related coverage limitations</li>
+      </ul>
+      
+      Details regarding National frequency limitations are included in the National Coverage Determinations available on the CMS Website at http://www.cms.hhs.gov/coverage/labindexlist.asp.<br><br>
+      
+      For the covered screening services, the National Medicare Frequency guidelines are as follows:
+      
+      <ul>
+          <li>Occult Blood, PSA and High Risk Pap Smear - once every 12 months</li>
+          <li>Non-High Risk Pap Smear - once every 24 months</li>
+      </ul>
+      
+      After the ABN has printed, ensure the patient has read and understands the form. Notify the patient that, by signing the ABN, he/she is confirming their agreement to assume financial responsibility for the payment of these tests if they are denied by Medicare.
+    </div>
+  </md-dialog-content>
+</md-dialog>

@@ -1,0 +1,127 @@
+<md-sidenav md-disable-backdrop="false" flex md-component-id="leftnav" md-is-locked-open="$mdMedia('gt-md')" ng-class="{'qd-sidenav--narrow': vm.sideNavNarrow, 'qd-sidenav--editing': vm.isEditMode}" class="md-sidenav-left md-whiteframe-z2 qd-sidenav" md-swipe-left="vm.closeMenu()">
+   <md-content class="qd-sidenav__content" layout="column" flex>
+      <div class="qd-sidenav__inner" flex>
+          <div class="qd-sidenav__user" flex="none" ng-if="!vm.isServicePage">
+              <div class="qd-sidenav__user-initials">J</div>
+              <div class="qd-sidenav__user-info">
+                  <div class="qd-sidenav__user-name">Dr. Jane Anderson</div>
+                  <div class="qd-sidenav__user-org">Flushing Meadows Practice</div>
+              </div>
+          </div>
+          <md-list class="qd-sidenav__list">
+              <md-list-item class="qd-sidenav__list-item" ng-repeat="item in vm.lockedItems">
+                  <md-button class="qd-sidenav__list-item-inner" ng-click="vm.navItemClicked(item.route)">
+                      <md-icon class="qd-sidenav__list-item-icon qd-icon {{item.icon}}"></md-icon>
+                      <md-item-label class="qd-sidenav__list-item-label">{{item.label}}</md-item-label>
+                      <md-badge class="qd-sidenav__list-item-badge" ng-show="item.badge">
+                          <md-badge-content>{{item.badge}}</md-badge-content>
+                      </md-badge>
+                  </md-button>
+              </md-list-item>
+          </md-list>
+
+          <md-list class="qd-sidenav__list" as-sortable="vm.sortableOptions" ng-model="vm.items" is-disabled="!vm.isEditMode" ng-if="!vm.isServicePage">
+              <md-list-item class="qd-sidenav__list-item qd-sidenav__list-item--sortable" as-sortable-item ng-repeat="item in vm.items">
+                  <div class="qd-sidenav__list-item-handle" as-sortable-item-handle>
+                      <md-button class="qd-sidenav__list-item-inner" ng-click="vm.navItemClicked(item.route)">
+                          <md-icon class="qd-sidenav__list-item-icon qd-icon {{item.icon}}"></md-icon>
+                          <md-item-label class="qd-sidenav__list-item-label">{{item.label}}</md-item-label>
+                          <md-icon class="qd-icon icon-handle" ng-show="vm.isEditMode"></md-icon>
+                          <md-badge class="qd-sidenav__list-item-badge" ng-show="item.badge">
+                              <md-badge-content>{{item.badge}}</md-badge-content>
+                          </md-badge>
+                      </md-button>
+                  </div>
+              </md-list-item>
+          </md-list>
+
+          <md-divider class="qd-sidenav__divider" ng-show="!vm.isEditMode" ng-if="!vm.isServicePage"></md-divider>
+          <md-divider class="qd-sidenav__drag-divider" ng-show="vm.isEditMode" ng-if="!vm.isServicePage">
+              <div class="qd-sidenav__drag-divider-content">
+                  <md-icon class="qd-icon icon-arrowup2"></md-icon>
+                  <span class="qd-sidenav__drag-divider-text">Drag</span>
+                  <md-icon class="qd-icon icon-arrowdown2"></md-icon>
+              </div>
+          </md-divider>
+
+          <md-list class="qd-sidenav__list qd-sidenav__list--more-button" ng-click="vm.toggleMoreItems()" ng-show="!vm.isEditMode && vm.moreItems.length > 0" ng-if="!vm.isServicePage">
+              <md-list-item class="qd-sidenav__list-item">
+                  <md-icon class="qd-sidenav__list-item-icon qd-icon icon-morehoriz"></md-icon>
+                  <md-item-label class="qd-sidenav__list-item-label">{{vm.moreItemsText}}</md-item-label>
+                  <md-icon class="qd-sidenav__list-item-icon qd-icon" ng-class="vm.isMoreItemsOpen ? 'icon-dropdownreverse' : 'icon-dropdown'"></md-icon>
+              </md-list-item>
+          </md-list>
+
+          <md-list class="qd-sidenav__list qd-sidenav__list--more-items" as-sortable="vm.sortableOptions" ng-model="vm.moreItems" is-disabled="!vm.isEditMode" ng-show="vm.isMoreItemsOpen || vm.isEditMode" ng-if="!vm.isServicePage">
+              <md-list-item class="qd-sidenav__list-item qd-sidenav__list-item--sortable" as-sortable-item ng-repeat="item in vm.moreItems">
+                  <div class="qd-sidenav__list-item-handle" as-sortable-item-handle>
+                      <md-button class="qd-sidenav__list-item-inner" ng-click="vm.navItemClicked(item.route)">
+                              <md-icon class="qd-sidenav__list-item-icon qd-icon {{item.icon}}"></md-icon>
+                          <md-item-label class="qd-sidenav__list-item-label">{{item.label}}</md-item-label>
+                          <md-icon class="qd-icon icon-handle" ng-show="vm.isEditMode"></md-icon>
+                          <md-badge class="qd-sidenav__list-item-badge" ng-show="item.badge">
+                              <md-badge-content>{{item.badge}}</md-badge-content>
+                          </md-badge>
+                      </md-button>
+                  </div>
+              </md-list-item>
+          </md-list>
+
+          <div class="qd-sidenav__bottom" ng-if="vm.onMobile && !vm.isServicePage">
+              <md-list class="qd-sidenav__list qd-sidenav__list--edit">
+                  <md-list-item class="qd-sidenav__list-item" ng-if="vm.allowNavItemsSort === true">
+                      <md-button class="qd-sidenav__list-item-inner" ng-click="vm.toggleEditMode()">
+                          <md-icon class="qd-sidenav__list-item-icon qd-icon icon-edit" ng-show="!vm.isEditMode"></md-icon>
+                          <md-item-label class="qd-sidenav__list-item-label qd-sidenav__list-item-label--heavy" ng-show="!vm.isEditMode">Edit Navigation</md-item-label>
+                          <md-item-label class="qd-sidenav__list-item-label--heavy" ng-show="vm.isEditMode">Done</md-item-label>
+                      </md-button>
+                  </md-list-item>
+                  <md-list-item class="qd-sidenav__list-item" ng-if="vm.displaySettingsOption === true">
+                      <md-button class="qd-sidenav__list-item-inner" ng-click="vm.handleSettingsClicked()">
+                          <md-icon class="qd-sidenav__list-item-icon qd-icon icon-setting"></md-icon>
+                          <md-item-label class="qd-sidenav__list-item-label qd-sidenav__list-item-label--heavy">Settings</md-item-label>
+                      </md-button>
+                  </md-list-item>
+                  <md-list-item class="qd-sidenav__list-item" ng-if="vm.displaySignOutOption === true">
+                      <md-button class="qd-sidenav__list-item-inner" ng-click="vm.handleSignOutClicked()">
+                          <md-icon class="qd-sidenav__list-item-icon qd-icon icon-signout"></md-icon>
+                      <md-item-label class="qd-sidenav__list-item-label qd-sidenav__list-item-label--heavy">Sign Out</md-item-label>
+                      </md-button>
+                  </md-list-item>
+                  <md-divider></md-divider>
+                  <md-list-item class="qd-sidenav__list-item" ng-click="vm.toggleSideNav(!vm.sideNavNarrow)" hide-xs hide-sm hide-md>
+                      <md-icon class="qd-icon" ng-class="vm.sideNavNarrow ? 'icon-menuopen' : 'icon-menuclose'"></md-icon>
+                  </md-list-item>
+              </md-list>
+          </div>
+      </div>
+
+      <div class="qd-sidenav__bottom" ng-if="!vm.onMobile && !vm.isServicePage">
+          <md-list class="qd-sidenav__list qd-sidenav__list--edit">
+              <md-list-item class="qd-sidenav__list-item" ng-if="vm.allowNavItemsSort === true">
+                  <md-button class="qd-sidenav__list-item-inner" ng-click="vm.toggleEditMode()">
+                      <md-icon class="qd-sidenav__list-item-icon qd-icon icon-edit" ng-show="!vm.isEditMode"></md-icon>
+                      <md-item-label class="qd-sidenav__list-item-label qd-sidenav__list-item-label--heavy" ng-show="!vm.isEditMode">Edit Navigation</md-item-label>
+                      <md-item-label class="qd-sidenav__list-item-label--heavy" ng-show="vm.isEditMode">Done</md-item-label>
+                  </md-button>
+              </md-list-item>
+              <md-list-item class="qd-sidenav__list-item" ng-if="vm.displaySettingsOption === true">
+                  <md-button class="qd-sidenav__list-item-inner" ng-click="vm.handleSettingsClicked()">
+                      <md-icon class="qd-sidenav__list-item-icon qd-icon icon-setting"></md-icon>
+                      <md-item-label class="qd-sidenav__list-item-label qd-sidenav__list-item-label--heavy">Settings</md-item-label>
+                  </md-button>
+              </md-list-item>
+              <md-list-item class="qd-sidenav__list-item" ng-if="vm.displaySignOutOption === true">
+                  <md-button class="qd-sidenav__list-item-inner" ng-click="vm.handleSignOutClicked()">
+                      <md-icon class="qd-sidenav__list-item-icon qd-icon icon-signout"></md-icon>
+                  <md-item-label class="qd-sidenav__list-item-label qd-sidenav__list-item-label--heavy">Sign Out</md-item-label>
+                  </md-button>
+              </md-list-item>
+              <md-divider></md-divider>
+              <md-list-item class="qd-sidenav__list-item" ng-click="vm.toggleSideNav(!vm.sideNavNarrow)" hide-xs hide-sm hide-md>
+                  <md-icon class="qd-icon" ng-class="vm.sideNavNarrow ? 'icon-menuopen' : 'icon-menuclose'"></md-icon>
+              </md-list-item>
+          </md-list>
+      </div>
+   </md-content>
+</md-sidenav>

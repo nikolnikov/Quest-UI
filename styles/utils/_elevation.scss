@@ -1,0 +1,29 @@
+@mixin elevation($px) {
+    @if ($px == 24) {
+        box-shadow: 0px 12px 24px 0px rgba($black, 0.40);
+    }
+
+    @else if ($px == 12) {
+        box-shadow: 0px 2px 8px 4px rgba($black, 0.24);
+    }
+
+    @else if ($px == 9) {
+        box-shadow: 0px 4px 8px 0px rgba($black, 0.40);
+    }
+
+    @else if ($px == 8) {
+        box-shadow: 0px 4px 7px 0px rgba($black, 0.35);
+    }
+
+    @else if ($px == 4) {
+        box-shadow: 0px 4px 4px 0px rgba($black, 0.24);
+    }
+
+    @else if ($px == 3) {
+        box-shadow: 0px 2px 8px 0px rgba($black, 0.30);
+    }
+
+    @else if ($px == 2) {
+        box-shadow: 0px 2px 4px 0px rgba($black, 0.30);
+    }
+}

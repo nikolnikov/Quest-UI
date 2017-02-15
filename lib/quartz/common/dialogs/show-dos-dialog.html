@@ -1,0 +1,23 @@
+<md-dialog class="qd-custom-dialog" aria-label="DirectoryOfService" ng-cloak>
+  <md-card-header class="qd-dialog__header" layout="row" layout-align="space-between center">
+    <md-card-header-text flex="75">
+      Directory of Service Information 
+    </md-card-header-text>
+    <div flex="25" layout-align="end center" class="component">
+      {{vm.parentVm.DOS.item.code}}
+    </div>
+  </md-card-header>
+
+  <md-dialog-content ng-form name="dosDialogForm">
+    <div class="qd-custom-dialog__section">
+      <div ng-bind-html="vm.parentVm.DOS.dosHTML"></div>
+    </div>
+
+    <div layout="column" layout-align="center center" class="qd-save-cancel qd-custom-dialog__save-cancel">
+      <md-button class="md-raised qd-button" ng-click="vm.parentVm.itemClicked(vm.parentVm.DOS.item, false);vm.parentVm.closeDialog()">
+        {{(vm.parentVm.isSelected(vm.parentVm.DOS.item) ? 'Remove' : 'Add')}}
+      </md-button>
+      <a href="#" class="qd-link" ng-click="vm.parentVm.closeDialog()">Cancel</a>
+    </div>
+  </md-dialog-content>
+</md-dialog>

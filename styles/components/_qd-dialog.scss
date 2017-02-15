@@ -1,0 +1,77 @@
+md-dialog {
+    &.md-default-theme {
+        width: 300px;
+        border-radius: 0px;
+    }
+
+    .md-dialog-content {
+        padding: 30px 20px 20px;
+        background-color: $background-light-gray;
+    }
+
+    .md-title {
+        @extend %type-cta;
+    }
+
+    .md-dialog-content-body p {
+        @extend %type-body-2;
+        color: rgba($black, $text-opacity-secondary);
+    }
+
+    md-dialog-actions {
+        border-top: 1px solid $divider-gray-1;
+        padding: 0;
+
+        .md-button {
+            @extend %type-cta;
+            background-color: $white;
+            border-radius: 0px;
+            padding: 0;
+            margin: 0;
+            height: 51px;
+            width: 50%;
+
+            &:first-child {
+                border-right: 1px solid $divider-gray-1;
+            }
+
+            &.md-default-theme:not([disabled]):hover {
+                background-color: $background-light-gray;
+            }
+
+            &.md-primary.md-default-theme {
+                color: $green-l;
+            }
+        }
+
+        .md-button.md-default-theme:not([disabled]).md-focused {
+            background-color: $white;
+
+            &:hover {
+                background-color: $background-light-gray;
+            }
+        }
+    }
+}
+
+.md-dialog-container {
+    z-index: $dialog-z-index;
+}
+
+md-backdrop.md-dialog-backdrop {
+    z-index: $dialog-backdrop-z-index;
+}
+
+.qd-dialog__header  {
+  @extend %type-subhead-1;
+  text-transform: uppercase;
+  padding: 0 20px;
+  width: 100%;
+  height: 50px;
+  color: $white;
+  background-color: $green-l;
+  
+  .component  {
+    text-align: right;
+  }
+}

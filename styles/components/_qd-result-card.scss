@@ -1,0 +1,199 @@
+  .qd-result-card {
+    @extend .qd-patient-card;
+    margin-bottom: 15px;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &__container {
+        position: relative;
+        padding: 15px 20px;
+        height: 65px;
+        z-index: 1;
+
+        @include when-wider-than(tablet) {
+            padding: 0 20px;
+        }
+
+        &--reviewed {
+            @include when-on(mobile) {
+                height: 107px;
+            }
+        }
+    }
+
+    &__patient-container {
+        border-bottom: 1px solid $divider-gray-1;
+        padding: 15px 20px;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__item {
+        border-right: 1px solid $divider-gray-1;
+        padding-right: 10px;
+        margin-right: 10px;
+        height: 15px;
+
+        @include when-wider-than(tablet) {
+            padding-right: 20px;
+            margin-right: 20px;
+            height: 40px;
+        }
+
+        &:last-child {
+            border-right: 0px solid transparent;
+            padding-right: 0;
+            margin-right: 0;
+        }
+    }
+
+    &__right {
+        @include when-on(mobile) {
+            margin-left: 33px;
+        }
+    }
+
+    &__name {
+        @extend %type-body-1;
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-right: 20px;
+    }
+
+    &__status {
+        @extend %type-label-1;
+        color: $green-l;
+        line-height: 15px;
+
+        @include when-on(tablet) {
+            line-height: 20px;
+        }
+
+        @include when-wider-than(desktop) {
+            line-height: 40px;
+        }
+
+        md-icon.qd-icon {
+            color: $green-l;
+            font-size: 20px;
+            margin: 0 0 0 10px;
+
+            @include when-on(mobile) {
+                margin-top: -2px;
+            }
+
+            @include when-on(tablet) {
+                margin-left: 0;
+            }
+        }
+    }
+
+    &__reviewed-by {
+        @extend %type-subhead-2;
+        display: block;
+        margin-top: 3px;
+
+        @include when-wider-than(tablet) {
+            margin-top: 5px;
+        }
+        
+        label {
+            color: rgba($black, $text-opacity-secondary);
+        }
+    }
+
+    &__date {
+        @extend %type-body-2;
+
+        @include when-on(mobile) {
+            margin-right: 5px;
+        }
+
+        @include when-wider-than(tablet) {
+            margin-bottom: 4px;
+        }
+    }
+
+    &__mini-status {
+        background-color: $background-light-gray;
+        border-top: 1px solid $divider-gray-1;
+        padding: 0 20px;
+        height: 30px;
+        position: relative;
+        z-index: 1;
+
+        @include when-wider-than(desktop) {
+            height: 40px;
+        }
+
+        .qd-icon {
+            color: $red;
+            margin-right: 10px;
+        }
+
+        .qd-lab-report & {
+            padding: 0 20px;
+
+            @include when_wider_than(desktop) {
+                padding: 0 40px;
+            }
+        }
+
+        &--critical {
+            background-color: $red;
+
+            .qd-icon {
+                color: $white;
+            }
+        }
+
+        &--attention-needed {
+            .qd-icon {
+                color: $orange;
+            }
+        }
+    }
+
+    &__mini-status-message {
+        @extend %type-cta;
+        color: $red;
+
+        .qd-result-card__mini-status--critical & {
+            color: $white;
+        }
+
+        .qd-result-card__mini-status--attention-needed & {
+            color: $orange;
+        }
+    }
+
+    &__time {
+        @extend %type-subhead-2;
+        color: rgba($black, $text-opacity-secondary);
+    }
+
+    &__icon {
+        margin-right: 10px;
+
+        &.qd-icon {
+            color: $green-l;
+        }
+    }
+
+    &--unread {
+        border-left: 3px solid $icon-dark-gray;
+    }
+}
+
+qd-patient-results-card {
+  display: block;
+  height: auto;
+  margin-bottom: 20px;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

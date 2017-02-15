@@ -1,0 +1,124 @@
+.qd-custom-dialog__eligibility  {
+    height: 650px;
+    max-height: 650px;
+    
+    @include when-less-than(mini-tablet) {
+        max-height: 550px;   
+    }
+}
+
+.qd-eligibility {
+    margin-bottom: 20px;
+    max-height: 410px;
+    overflow-y: auto;
+    
+    @include when-less-than(mini-tablet) {
+        max-height: 310px;   
+    }
+    
+    &__item {
+        @extend %type-body-2;
+        padding: 15px;
+        border-right: 1px solid $divider-gray-1;
+        border-bottom: 1px solid $divider-gray-1;
+        
+        &:nth-child(even)  {
+            border-right: 0;
+        }
+        
+        &--header {
+            @extend %type-title-2;
+            display: inline-block;
+            color: $green-l;
+            padding-right: 15px;
+            margin: 0 15px 15px 35px;
+            border-right: 1px solid $divider-gray-1;
+            
+            @include when-less-than(mini-tablet) {
+                padding-right: 0;
+                border-right: 0;
+                margin: 0;
+            }
+        }
+        
+        .qd-radio-button {
+            display: inline;
+            
+            &--all  {
+                display: inline-block;
+                
+                @include when-less-than(mini-tablet) {
+                    display: block;
+                    margin: 10px 0 15px 0;
+                }
+            }
+        }
+        
+        &--radio {
+            width: 35px; 
+        }
+        
+        & ::before {
+            @extend %type-alert;
+            display: block;
+            margin-bottom: 5px;
+            color: $divider-gray-2;
+        }
+        
+        &--last-name::before {
+            content: 'Last Name';
+        }
+        
+        &--first-name::before {
+            content: 'First Name';
+        }
+        
+        &--sex::before {
+            content: 'Sex';
+        }
+        
+        &--dob::before {
+            content: 'DOB';
+        }
+        
+        &--insurance-carrier::before {
+            content: 'Insurance Carrier';
+        }
+        
+        &--sub-plan::before {
+            content: 'Sub-Plan Name';
+        }
+        
+        &--insurance-id::before {
+            content: 'Insurance ID';
+        }
+        
+        &--group-number::before {
+            content: 'Group Number';
+        }
+        
+        &--relationship::before {
+            content: 'Relationship';
+        }
+        
+        &--responsible-street::before {
+            content: 'Responsible Party Street';
+        }
+        
+        &--responsible-city::before {
+            content: 'Responsible Party City';
+        }
+        
+        &--responsible-state::before {
+            content: 'Responsible Party State';
+        }
+        
+        &--responsible-zip::before {
+            content: 'Responsible Party Zip';
+        }
+        
+        &--responsible-phone::before {
+            content: 'Responsible Party Phone';
+        }
+    }
+}

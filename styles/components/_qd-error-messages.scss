@@ -1,0 +1,54 @@
+.qd-message {
+  @extend %type-caption;
+  width: 100%;
+  min-height: 48px;
+  font-weight: 700;
+  padding: 10px 15px;
+  
+  &__error  {
+    color: $white;
+    background: $red;
+    
+    md-icon.qd-icon {
+      color: $white;
+      margin: 0 10px 0 0;
+      
+      &.icon-close  {
+        margin-right: 0;
+        margin-left: 15px;
+      }
+    }
+  }
+  
+  &__warning  {
+    color: $darkest-gray;
+    background: $yellow-lab-alert;
+    
+    md-icon.qd-icon {
+      color: $darkest-gray;
+      margin: 0 10px 0 0;
+      
+      &.icon-close  {
+        margin-right: 0;
+        margin-left: 15px;
+      }
+    }
+  }
+  
+  a.qd-link {
+      @extend %type-caption;
+      text-transform: capitalize !important;
+  }
+  
+  &--space  {
+    margin: 15px 0;
+  }
+  
+  &--space-top  {
+    margin-top: 15px;
+  }
+  
+  &--space-bottom  {
+    margin-bottom: 15px;
+  }
+}

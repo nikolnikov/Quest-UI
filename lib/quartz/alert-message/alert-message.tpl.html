@@ -1,0 +1,11 @@
+<div id="alertMessageWrapperId" class="qd-error-breaker" ng-if="message">
+    <div id="alertMessageId" class="qd-message" ng-class="isError ? 'qd-message__error' : 'qd-message__warning'" 
+        layout="row" layout-align="start center">
+        <md-icon id="alertIconId" class="qd-icon icon-warning"></md-icon>
+        {{message}}
+        <md-icon id="closeIconId" class="qd-icon icon-close" ng-click="close()" ng-if="showCloseButton"></md-icon>
+    </div>
+    <div id="wrappedContentId" class="qd-error-breaker__card-wrapper" ng-show="showWrappedContent">
+        <ng-transclude></ng-transclude>
+    </div>
+</div>

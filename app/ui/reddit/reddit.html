@@ -1,0 +1,19 @@
+<section class="qd-patients-section">
+    <div class="qd-patients-section__header-wrapper" id="top">
+        <div class="qd-header qd-patients-section__header" layout="row" layout-align="start center">
+            <div class="qd-header__title" flex>
+                Reddit for <b>{{vm.category}}</b>
+            </div>
+        </div>
+
+    </div>
+
+    
+    
+    <qd-patient-card-full ng-repeat="pat in vm.patients"
+      patient="pat"
+      action-menu-items="vm.actionMenuItems"
+      on-click="vm.onPatientSelect(pat)"
+      on-action-menu-item-selected="vm.onActionMenuItemSelected(item)">
+    </qd-patient-card-full>
+</section>

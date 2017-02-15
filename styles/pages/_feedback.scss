@@ -1,0 +1,19 @@
+.qd-feedback  {
+
+  &__body-content {
+    padding: 20px;
+    
+    @include when-wider-than(tablet) {
+      padding: 20px 40px; 
+    }
+  }
+  
+  &__content-wrapper  {
+    margin-top: 25px;
+  }
+}
+
+.qd-feedback__success {
+  padding: 20px 0;
+  text-align: center;
+}

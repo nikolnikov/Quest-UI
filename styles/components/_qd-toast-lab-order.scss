@@ -1,0 +1,69 @@
+.qd-toast.qd-lab-order {
+    width: 360px;
+    padding: 0;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &.md-top {
+        top: 62px;
+        bottom: auto;
+    }
+
+    &.md-right {
+        right: 5px;
+    }
+
+    .qd-toast{
+        &__content {
+            min-height: 0;
+            height: auto;
+            padding: 10px;
+            background: rgba($blue-lab-order, .95)!important;
+            align-items: flex-start;
+        }
+        
+        &__icon.qd-icon {
+            font-size: 17px;
+            color: $white;
+            margin: 0 6px 0 0;
+        }
+
+        &__info {
+            @extend %type-label-2;
+            font-weight: 700;
+            font-size: 13px!important;
+            color: $white;
+            margin: 0;
+        }
+
+        &__text {
+            color: rgba($white, $text-opacity-secondary);
+        }        
+    }
+}
+
+@include when-less-than(mid-tablet){
+    .qd-toast.qd-lab-order{
+      
+        &.md-bottom{
+            top: 125px;
+            bottom: auto;
+            left: auto;
+        }
+    }
+}
+
+@include when-less-than(mini-tablet){
+    .qd-toast.qd-lab-order {
+        transition: left 400ms linear;
+        
+        &.md-bottom{
+            top: 62px;
+            right: 0;
+            bottom: auto;
+            left: 0;
+            margin: auto;
+            width: 98%;
+        }
+    }
+}

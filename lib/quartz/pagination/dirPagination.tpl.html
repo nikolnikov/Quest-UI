@@ -1,0 +1,14 @@
+<!-- Template for pagination controls.  Used by angular-utils-pagination.  See
+  https://github.com/michaelbromley/angularUtils/tree/master/src/directives/pagination#customising--specifying-the-template -->
+<div flex-xs flex-sm flex-md layout="row" layout-align="end center">
+    <div flex-xs flex-sm flex-md layout-xs="row" layout-sm="row" layout-md="row" layout-align-xs="end center" layout-align-sm="end center" layout-align-md="end center" class="qd-pagination-bar__text">
+        <div>
+            <span>{{range.lower}}-{{range.upper}}</span> of <span>{{range.total}}</span>
+            <qd-page-size-menu></qd-page-size-menu>
+        </div>
+    </div>
+    <div class="qd-pagination-arrows" layout="row" layout-align="space-between center">
+        <md-icon class="qd-icon icon-arrowleft qd-pagination-arrows__arrow qd-pagination-arrows__arrow" ng-click="setCurrent(pagination.current - 1)" ng-disabled="pagination.current == 1"></md-icon>
+        <md-icon class="qd-icon icon-arrowright qd-pagination-arrows__arrow" ng-click="setCurrent(pagination.current + 1)" ng-disabled="pagination.current === pagination.last"></md-icon>
+    </div>
+</div>

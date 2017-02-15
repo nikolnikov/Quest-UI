@@ -1,0 +1,12 @@
+<div class="qd-order-card__status-wrapper">
+    <div layout-gt-md="row" layout-align-gt-md="start center" class="layout-gt-md-row layout-align-gt-md-start-center qd-status-bars qd-status-bars--{{progressedBars}}">
+        <div class="qd-status-bars__status">
+            {{progressStatusText}}
+        </div>
+
+		<div class="qd-status-bars__bars" layout="row" layout-align="start center" layout-wrap>
+		    <div flex-xs flex-sm flex-md class="qd-status-bars__bar" ng-repeat="i in numberOfBarsArray track by $index"></div>
+		</div>		
+		
+    </div>
+</div>

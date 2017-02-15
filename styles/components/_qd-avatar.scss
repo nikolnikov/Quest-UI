@@ -1,0 +1,105 @@
+.qd-avatar {
+
+	&__topnav,
+	&__topnav .avatarimage { //background white, color green
+		font-size: 22px;
+		width: 30px;
+		height: 30px;
+		position: absolute;
+		top: 5px;
+		left: 5px;
+		padding: 3px;
+		border-radius: 15px;
+		cursor: pointer;    // HAND???
+		
+		&:hover {
+			background: rgba($white,$text-opacity-primary);
+		}
+	}
+
+	&__topnav .avatarimage {
+		top: 0;
+		left: 0;
+		padding: 0;
+	}
+
+	&__sidenav,
+	&__sidenav .avatarimage { //background white, color green
+		font-size: 22px;
+		width: 35px;
+		height: 35px;
+		line-height: 35px;
+		margin-right: 15px;
+		border-radius: 17px;
+		text-align: center;
+		float: left;
+	}
+
+	&__accountwidget,
+	&__accountwidget .avatarimage { //background green, color white
+		font-size: 32px;
+		width: 56px;
+		height: 56px;
+		line-height: 56px;
+		margin: 20px;
+		border-radius: 28px;
+		text-align:center;
+	}
+
+	&__accountwidget .avatarimage {
+		margin: 0;
+	}
+
+	&__patient-card,
+	&__patient-card .avatarimage { //background green, color white
+		font-size: 20px;
+		width: 40px;
+		min-width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		line-height: 40px;
+		margin-right: 15px;
+		text-align:center;
+		text-transform: uppercase;
+	}
+
+	&__patient-profile,
+	&__patient-profile .avatarimage,
+	&__account-settings,
+	&__account-settings .avatarimage { //background green, color white
+      font-size: 30px;
+      font-weight: 100;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      line-height: 60px;
+      background-size: cover;
+      display: inline-block;
+      margin-right: 20px;
+      vertical-align: middle;
+      text-align:center;
+      text-transform: uppercase;
+  
+      @include when-wider-than(tablet) {
+          font-size: 40px;
+          width: 80px;
+          height: 80px;
+          line-height: 80px;
+      }
+	}
+
+	&__patient-profile .avatarimage { 
+		vertical-align: top;
+	}
+
+	&--green {
+		background-color: $green-l;
+		color: $white;
+	}
+
+	&--white {
+		background: $white;
+		color: $green-l;
+	}
+
+}

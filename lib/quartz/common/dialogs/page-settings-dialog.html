@@ -1,0 +1,42 @@
+<md-dialog class="qd-custom-dialog" aria-label="Page Settings" ng-cloak>
+    <md-card-header class="qd-patient-profile-card__header" layout="row" layout-align="end center">
+        <md-card-header-text layout="row" flex>
+            Page Settings
+        </md-card-header-text>
+    </md-card-header>
+
+
+    <md-dialog-content ng-form name="pageSettingsDialogForm">
+    {{vm.orderCreatedFilterStartDate}}
+        <div class="qd-custom-dialog__section">
+            <label class="qd-custom-dialog__datepicker-label">{{vm.parentVm.pageSettingTitle}}</label>
+            <div layout-xs="column" layout-sm="column" layout-md="column" layout-gt-md="row" layout-align-gt-md="start start">
+                <div layout="row" flex-gt-md="70">
+                    <md-datepicker class="qd-datepicker qd-custom-dialog__datepicker" ng-model="vm.parentVm.searchCriteria.startDate" md-min-date="vm.parentVm.searchCriteria.minDate" md-max-date="vm.parentVm.searchCriteria.endDate" md-placeholder="Enter date" required></md-datepicker>
+                    <div class="qd-custom-dialog__datepicker-to">to</div>
+                    <md-datepicker class="qd-datepicker qd-custom-dialog__datepicker" ng-model="vm.parentVm.searchCriteria.endDate" md-min-date="vm.parentVm.searchCriteria.startDate" md-max-date="vm.parentVm.searchCriteria.maxDate" md-placeholder="Enter date" required></md-datepicker>
+                </div>
+
+                <md-input-container class="qd-custom-dialog__input" flex-gt-xs="50" flex-gt-md="30">
+                    <label>Ordered By</label>
+                    <md-select required ng-model="vm.parentVm.searchCriteria.orderingPhysician" class="qd-select-input">
+                        <md-option 
+                        ng-selected="(option.Name === vm.parentVm.searchCriteria.orderingPhysician.Name && (option.NPI === vm.parentVm.searchCriteria.orderingPhysician.NPI || option.UPIN === vm.parentVm.searchCriteria.orderingPhysician.UPIN) )?true:false" 
+                        ng-repeat="option in vm.parentVm.physicians track by $index" ng-value="{{option}}">
+                            {{option.Name}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+        </div>
+
+        <div layout="column" layout-align="center center" class="qd-save-cancel qd-custom-dialog__save-cancel">
+            <md-button class="md-raised qd-button"
+                       ng-disabled="pageSettingsDialogForm.$invalid || pageSettingsDialogForm.$pristine"
+                       ng-click="vm.parentVm.applyPageSettings()">
+                Apply
+            </md-button>
+            <a href="#" class="qd-link" ng-click="vm.parentVm.closePageSettingsDialog()">Cancel</a>
+        </div>
+    </md-dialog-content>
+</md-dialog>

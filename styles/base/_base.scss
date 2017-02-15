@@ -1,0 +1,22 @@
+@import 'error';
+@import 'disabled';
+
+html,body{
+	height:100%;
+}
+body {
+    font-family: 'Akkurat', sans-serif;
+}
+
+md-content  {
+  background-color: $background-light-gray;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}

@@ -1,0 +1,231 @@
+.qd-supplies  {
+  
+    .qd-header  {
+        @include when-less-than(mini-tablet) {
+            height: auto;
+        }
+        
+        &__title  {
+            height: 70px;
+        }
+    }
+        
+    .qd-rectangle-tabs  {
+        margin: 0;
+        padding: 0;
+        
+        &__tab  {
+            @extend %type-body-2;
+            text-transform: capitalize;
+            font-weight: normal;
+            color: $green-l;
+            background: $white;
+            height: 79px;
+            line-height: 79px;
+            min-width: auto;
+            width: auto;
+            padding: 0 5px;
+            margin: 0;
+            margin-left: 15px;
+            border: 0;
+            border-radius: 0;
+            
+            &:first-of-type  {
+                margin-left: 0
+            }
+            
+            &--selected {
+                border-bottom: 3px solid $green-l;
+            }
+            
+            .qd-icon  {
+                @extend %type-headline-1;
+            }
+        }
+        
+        &__handle {
+            height: auto;
+            padding: 0;
+        }
+    }
+    
+    &__filters  {
+        position: relative;
+        height: 90px;
+        padding: 0 40px;
+        border-bottom: 1px solid $divider-gray-1;
+        background: $background-light-gray;
+        
+        @include when-less-than(desktop) {
+            padding: 0 20px;
+        }
+        
+        @include when-less-than(mini-tablet) {
+            height: auto;
+            padding: 10px;
+        }
+        
+        &--left {
+            padding-right: 15px;
+            margin-right: 15px;
+            border-right: 1px solid $divider-gray-1;
+            
+            @include when-less-than(mini-tablet) {
+                border-right: 0;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .qd-button  {
+                position: relative;
+                margin: 0;
+                
+                @include when-less-than(mini-tablet) {
+                    margin-bottom: 10px;
+                }
+            }
+            
+            .qd-icon  {
+                margin: 0;
+                min-width: 15px;
+                width: 15px;
+            }
+        }
+        
+        md-menu {
+            position: relative;
+            top: auto;
+            right: auto;
+            
+            @include when-less-than(mini-tablet) {
+                position: absolute;
+                top: 10px;
+                right: 20px;
+            }
+        }
+    }
+    
+    &__categories {
+        @extend %type-body-2;
+        @include elevation(3);
+        width: 450px;
+        padding: 15px 20px;
+        background: $white;
+        
+        @include when-less-than(mini-tablet) {
+            width: 315px; 
+        }
+    }
+    
+    &__search {
+        background: none;
+        padding: 0;
+        margin: 18px 0 18px 10px;
+        
+        @include when-less-than(mini-tablet) {
+            margin-right: 10px;
+        }
+
+        &::before {
+            font-size: 22px;
+            color: $icon-dark-gray;
+            position: absolute;
+            left: 0;
+            top: 4px;
+        }
+
+        input.qd-text-input {
+            @extend %type-title-2;
+            padding-left: 25px;
+        }
+        
+        &.md-input-focused .icon-go, .icon-go  {
+            position: absolute;
+            top: 0;
+            color: $green-l;
+        }
+        
+        .md-errors-spacer {
+            display: none;
+        }
+    }
+    
+    md-input-container.md-icon-right  {
+        padding: 0;
+    }
+    
+    &__content {
+        padding: 0 40px 20px 40px;
+        
+        @include when-less-than(desktop) {
+            padding: 0 20px 20px;
+        }
+        
+        &-header, &-footer  {
+            height: 54px;
+            padding: 0 8px;
+        }
+        
+        &-title {
+            @extend %type-headline-1;
+            font-weight: 300;
+        }
+    }
+    
+    &__items {
+        box-sizing: border-box;
+    }
+    
+    &__item {
+        @extend %type-body-2;
+        height: 275px;
+        border-radius: 0;
+        
+        &--details  {
+            padding: 10px 15px;
+        }
+        
+        &--img  {
+            min-width: auto;
+            height: 100px;
+            margin-bottom: 10px;
+            text-align: center;
+            
+            img {
+                width: auto;
+                height: 100%;
+            }
+        }
+        
+        &--title  {
+            margin-bottom: 3px;
+            font-weight: 700;
+            line-height: 1.1em;
+            text-transform: capitalize;
+        }
+        
+        &--number, &--units  {
+            color: $icon-dark-gray;
+            margin-bottom: 3px;
+        }
+        
+        &--order  {
+            padding: 10px 0;
+            border-top: 1px solid $divider-gray-1;
+            
+            .qd-text-input {
+                width: 40px;
+            }
+            
+            .qd-button  {
+                margin: 0 0 0 5px;
+                font-size: 12px;
+                height: auto;
+            }
+        }
+    }
+}
+
+.qd-main-content  {
+    background: $background-gray;
+}

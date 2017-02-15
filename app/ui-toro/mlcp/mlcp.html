@@ -1,0 +1,250 @@
+<section class="qd-mlcp" flex>
+    <div class="qd-header" flex layout="row" layout-align="start center">
+        <div class="qd-header__title" flex>
+            MLCP Lookup
+        </div>
+        
+        <md-button ng-click="vm.showABNDialog(item, $event)" class="md-raised qd-button" aria-label="View ABN Rules">
+            View ABN Rules
+        </md-button>
+    </div>
+    
+    <div class="qd-mlcp__filters" flex layout="row" layout-xs="column">
+        <form flex layout="row" layout-wrap name="mlcpFilter" class="qd-mlcp__filters-content">
+            <md-input-container flex="100" flex-gt-xs="33" class="qd-patient-profile__input-container">
+                <label class="qd-required">Lab</label>
+                
+                <md-select class="qd-select-input qd-required" ng-model="mlcp.lab">
+                    <md-option value="Tampa - North Florida">
+                      Tampa - North Florida
+                    </md-option>
+                    
+                    <md-option value="Miami - South Florida">
+                      Miami - South Florida
+                    </md-option>
+                </md-select>
+                
+                <div class="qd-input-error">Field is required.</div>
+            </md-input-container>
+            
+            <md-input-container flex="100" flex-gt-xs="33" class="qd-patient-profile__input-container">
+                <label class="qd-required">Client</label>
+                
+                <md-select class="qd-select-input qd-required" ng-model="mlcp.client">
+                    <md-option value="Edward Blake MD">
+                      Edward Blake MD
+                    </md-option>
+                    
+                    <md-option value="Joseph Kovacs MD">
+                      Joseph Kovacs MD
+                    </md-option>
+                </md-select>
+                
+                <div class="qd-input-error">Field is required.</div>
+            </md-input-container>
+            
+            <md-input-container flex="100" flex-gt-xs="33" class="qd-patient-profile__input-container">
+                <label class="qd-required">Insurance</label>
+                
+                <md-select class="qd-select-input qd-required" ng-model="mlcp.insurance">
+                    <md-option value="Aetna">
+                      Aetna
+                    </md-option>
+                    
+                    <md-option value="Blue Cross/Blue Shield">
+                      Blue Cross/Blue Shield
+                    </md-option>
+                </md-select>
+                
+                <div class="qd-input-error">Field is required.</div>
+            </md-input-container>
+            
+            <md-input-container md-no-float flex="100" flex-gt-xs="50" class="qd-mlcp__search icon-search">
+                <input class="qd-text-input qd-required" type="text" ng-keydown="vm.searchText.length > 2" ng-model="vm.searchText" placeholder="Test Code/Description">
+            
+                <md-icon class="qd-icon icon-go material-icons" aria-hidden="true" ng-show="vm.searchText.length > 2" ng-click="showTests()"></md-icon>
+            </md-input-container>
+        </form>
+    </div>
+    
+    <div class="qd-mlcp__test-container qd-mlcp__test-container--results" ng-show="testResults">
+        <div class="qd-mlcp__results-content">
+            <div class="qd-mlcp__results-filters qd-mlcp__results-filters--tests" flex layout="column" layout-gt-sm="row" layout-align="center space-between" layout-align-gt-sm="space-between center">
+                <div flex>Search Results: <b>Lipid</b></div>
+                
+                <div class="qd-mlcp__pagination" ng-show="pagination">
+                    <qd-pagination-controls page-size-options="::vm.pagination.pageSizes" items-per-page="vm.pagination.itemsPerPage" pagination-id="patientResults">
+                    </qd-pagination-controls>
+                </div>
+            </div>
+            
+            <md-card class="qd-mlcp__card" flex ng-click="selectTest()">
+                <div class="qd-mlcp__card-header" layout="row" layout-xs="column" layout-align="space-between center" layout-align-xs="center start">
+                    Lipid Panel
+                    
+                    <div class="qd-mlcp__card-header-right">
+                        7600
+                        
+                        <span class="qd-mlcp__card-header-right--cost">
+                            $141.68
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="qd-mlcp__card-content" flex layout="row" layout-xs="column" layout-align="start center" layout-align-xs="center start">
+                    <div class="qd-mlcp__card-content--label">Components:</div>
+                    
+                    <div class="qd-mlcp__card-content--item" flex="1">Cholesterol, Total - 334,</div>
+                    <div class="qd-mlcp__card-content--item" flex="1">HDL Cholesterol - 608,</div>
+                    <div class="qd-mlcp__card-content--item" flex="1">Triglycerides - 896</div>
+                </div>
+            </md-card>
+            
+            <md-card class="qd-mlcp__card" flex>
+                <div class="qd-mlcp__card-header" layout="row" layout-xs="column" layout-align="space-between center" layout-align-xs="center start">
+                    Lipid Example - Non Panel
+                    
+                    <div class="qd-mlcp__card-header-right">
+                        7601
+                        
+                        <span class="qd-mlcp__card-header-right--cost">
+                            $47
+                        </span>
+                    </div>
+                </div>
+            </md-card>
+            
+            <md-card class="qd-mlcp__card" flex>
+                <div class="qd-mlcp__card-header" layout="row" layout-xs="column" layout-align="space-between center" layout-align-xs="center start">
+                    Lipid Example - Non Panel
+                    
+                    <div class="qd-mlcp__card-header-right">
+                        7601
+                        
+                        <span class="qd-mlcp__card-header-right--cost">
+                            $47
+                        </span>
+                    </div>
+                </div>
+            </md-card>
+            
+            <div class="qd-mlcp__pagination qd-mlcp__pagination--bottom" layout="row" layout-align="end center" ng-show="pagination">
+                <qd-pagination-controls page-size-options="::vm.pagination.pageSizes" items-per-page="vm.pagination.itemsPerPage" pagination-id="patientResults">
+                </qd-pagination-controls>
+            </div>
+        </div>
+    </div>
+    
+    <div class="qd-mlcp__test-container" flex layout="row" layout-xs="column" ng-class="{'qd-mlcp__test-container--border' : testResults}" ng-show="testContainer">
+        <div class="qd-mlcp__results-content" flex>
+            <div class="qd-mlcp__results-title">Select CPT Description to View Policy</div>
+            
+            <md-card class="qd-mlcp__card" flex>
+                <div class="qd-mlcp__card-header" layout="row" layout-xs="column" layout-align="space-between center" layout-align-xs="center start">
+                    Lipid Panel
+                    
+                    <div class="qd-mlcp__card-header-right">
+                        7600
+                        
+                        <span class="qd-mlcp__card-header-right--cost">
+                            $141.68
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="qd-mlcp__card-content" flex layout="row" layout-xs="column" layout-align="start center" layout-align-xs="center start">
+                    <div class="qd-mlcp__card-content--label">Components:</div>
+                    
+                    <div class="qd-mlcp__card-content--item" flex="1"><a href="#" class="qd-link" ng-click="addTest()">Cholesterol, Total - 334</a></div>
+                    <div class="qd-mlcp__card-content--item" flex="1"><a href="#" class="qd-link">HDL Cholesterol - 608</a></div>
+                    <div class="qd-mlcp__card-content--item" flex="1"><a href="#" class="qd-link">Triglycerides - 896</a></div>
+                </div>
+                    
+                <md-divider class="qd-mlcp__divider"></md-divider>
+                    
+                <div class="qd-mlcp__card-content qd-mlcp__card-content--chips" flex layout="row" layout-xs="column" layout-align="start center" layout-align-xs="center start">
+                    <div class="qd-mlcp__card-content--label">CPT Descriptions:</div>
+                    
+                    <div class="qd-mlcp__card-content--chip" flex="1" ng-click="showDxResults()">Lipid Panel (@) - $141.68</div>
+                </div>
+            </md-card>
+            
+            <md-card class="qd-mlcp__card" flex ng-show="additionalTest">
+                <div class="qd-mlcp__card-header" layout="row" layout-xs="column" layout-align="space-between center" layout-align-xs="center start">
+                    Cholesterol, Total
+                    
+                    <div class="qd-mlcp__card-header-right">
+                        334
+                        
+                        <span class="qd-mlcp__card-header-right--cost">
+                            $36.77
+                        </span>
+                    </div>
+                </div>
+                    
+                <div class="qd-mlcp__card-content qd-mlcp__card-content--chips" flex layout="row" layout-xs="column" layout-align="start center" layout-align-xs="center start">
+                    <div class="qd-mlcp__card-content--label">CPT Descriptions:</div>
+                    
+                    <div class="qd-mlcp__card-content--chip" flex="1" ng-click="showDxResults()">Cholesterol (@) - $36.77</div>
+                </div>
+            </md-card>
+        </div>
+    </div>
+    
+    <div class="qd-mlcp__results" flex>
+        <div class="qd-mlcp__results-content" flex>
+            <div class="qd-mlcp__policy" ng-show="policy">
+                <div class="qd-mlcp__policy--header">
+                    <span ng-show="mlcpPolicy">Limited Coverage </span>
+                    Policies
+                    <span ng-show="testPolicy"> for <b>Lipid Panel</b></span>
+                </div>
+                
+                <div class="qd-mlcp__policy--body">
+                    Tests are subject to a Limited Coverage Policy published by Medicare. Medicare will only pay for tests it considers to be medically necessary. If you are ordering the selected test for a condition other than what is listed in the applicable coverage policy, then you must have your patient sign an Advance Beneficiary Notice (ABN). This diagnosis code reference guide is provided as an aid to physicians and office staff in determining when an ABN (Advance Beneficiary Notice) is necessary. The codes listed include the codes most commonly ordered by physicians that meet the limited coverage policy. The full Medicare Limited Coverage Policy is available at <a href="HTTP://WWW.CMS.GOV/MEDICARE-COVERAGE-DATABASE/" class="qd-link">HTTP://WWW.CMS.GOV/MEDICARE-COVERAGE-DATABASE/</a>. If selecting additional diagnoses, please be sure that all diagnosis codes are applicable to a patient's symptoms or conditions and are consistent with documentation in the patient's medical record. Quest Diagnostics does not recommend any diagnosis codes and will only submit diagnosis information provided to us by the ordering physician or his/her designated staff.
+                </div>
+            </div>
+            
+            <div class="qd-mlcp__results-filters" flex layout="column" layout-gt-sm="row" layout-align="center space-between" layout-align-gt-sm="space-between center" ng-show="dxSearch">
+                <md-input-container md-no-float flex="100" flex-gt-xs="80" class="qd-mlcp__search icon-search">
+                    <input class="qd-text-input qd-required" type="text" ng-keydown="vm.searchTextDx.length > 2" ng-model="vm.searchTextDx" placeholder="Search Diagnoses">
+                
+                    <md-icon class="qd-icon icon-go material-icons" aria-hidden="true" ng-show="vm.searchTextDx.length > 2" ng-click="vm.searchTextDx.length > 2"> </md-icon>
+                </md-input-container>
+                
+                <div class="qd-mlcp__pagination" ng-show="pagination">
+                    <qd-pagination-controls page-size-options="::vm.pagination.pageSizes" items-per-page="vm.pagination.itemsPerPage" pagination-id="patientResults">
+                    </qd-pagination-controls>
+                </div>
+            </div>
+            
+            <div ng-show="dxResults">
+                <md-card class="qd-mlcp__card qd-mlcp__card--diagnoses" flex>
+                    <div class="qd-mlcp__card-header" layout="row" layout-xs="column" layout-align="space-between center" layout-align-xs="center start">
+                        Cytomegaloviral pancreatitis
+                        
+                        <div class="qd-mlcp__card-header-right">
+                            B252
+                        </div>
+                    </div>
+                </md-card>
+                
+                <md-card class="qd-mlcp__card qd-mlcp__card--diagnoses" flex>
+                    <div class="qd-mlcp__card-header" layout="row" layout-xs="column" layout-align="space-between center" layout-align-xs="center start">
+                        Plasmodium malariae malaria with nephropathy
+                        
+                        <div class="qd-mlcp__card-header-right">
+                            B520
+                        </div>
+                    </div>
+                </md-card>
+                
+                <div class="qd-mlcp__pagination qd-mlcp__pagination--bottom" layout="row" layout-align="end center">
+                    <qd-pagination-controls page-size-options="::vm.pagination.pageSizes" items-per-page="vm.pagination.itemsPerPage" pagination-id="patientResults">
+                    </qd-pagination-controls>
+                </div>
+            </div>            
+        </div>
+    </div>
+
+</section>

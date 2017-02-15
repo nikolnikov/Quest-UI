@@ -1,0 +1,48 @@
+<md-card
+  class="qd-patient-card qd-patient-card--full qd-patient-card--full-status"
+  layout="column"
+  layout-align="center start">
+  <div class="qd-patient-card__container" layout="column" layout-align="center start" layout-gt-xs="row" layout-align-gt-xs="start center">
+    <div class="qd-patient-card__avatar-and-name" flex-gt-xs="65" layout="row" layout-align="start center">
+      <qd-avatar class="qd-avatar__patient-card qd-avatar--green" initials="vm.patient.firstName | limitTo:1" avatarimage="vm.patient.avatarimage"></qd-avatar>
+
+      <div class="qd-patient-card__name-and-address">
+        <span class="qd-patient-card__name">{{vm.patient.lastName}}, 
+          <span class="qd-patient-card__name--first">{{vm.patient.firstName}}</span>
+          &nbsp;<span class="qd-patient-card__name--first">{{vm.patient.middleName}}</span>
+        </span>
+        <div class="qd-patient-card__address">{{vm.patient.address}}</div>
+      </div>
+    </div>
+
+    <div class="qd-patient-card__right" flex-gt-xs="50" layout="row" layout-align-gt-xs="end center">
+      <div class="qd-patient-card__info-wrapper" layout="row" layout-align="end center" layout-wrap>
+        <span class="qd-patient-card__dob qd-patient-card__info-item">{{vm.patient.dob}}</span>
+        <span class="qd-patient-card__sex qd-patient-card__info-item">{{vm.patient.sex}}</span>
+        <span class="qd-patient-card__tel qd-patient-card__info-item" flex-sm="100" flex-md="100">{{vm.patient.primaryPhone}}</span>
+      </div>
+      
+      <div class="qd-patient-card__overflow" flex-xs="20">
+        <md-menu md-position-mode="target-right target">
+          <md-button aria-label="Open overflow menu" class="md-icon-button" ng-click="$event.stopPropagation($mdOpenMenu(ev))">
+            <md-icon md-menu-origin class="qd-icon icon-morevert"></md-icon>
+          </md-button>
+          <md-menu-content width="4">
+
+            <md-menu-item ng-repeat="item in vm.actionMenuItems track by $index"
+              class="qd-overflow-menu__action"
+              ng-class="{'qd-overflow-menu__action--primary': $index == 0, 'qd-overflow-menu__action--secondary' : $index > 0}">
+        
+              <md-button ng-click="vm.actionMenuItemSelected({item: item})">
+                <md-icon class="qd-icon icon-add" md-menu-align-target></md-icon>
+                {{item.text}}
+              </md-button>
+            </md-menu-item>
+
+          </md-menu-content>
+        </md-menu>
+      </div>
+      <div ng-transclude></div>
+    </div>
+  </div>
+</md-card>

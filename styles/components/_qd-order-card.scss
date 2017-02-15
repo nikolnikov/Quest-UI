@@ -1,0 +1,141 @@
+.qd-order-card {
+    @include elevation(3);
+    border-radius: 0;
+    padding: 15px 20px;
+    margin: 0 0 15px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &__button {
+        padding: 0;
+        margin: 0;
+        text-align: left;
+        border-radius: 0;
+        line-height: normal;
+        text-transform: none;
+        font-weight: normal;
+        overflow: visible;
+        min-width: 100%; //IE11 width bug
+
+        &:not([disabled]), &:not([disabled]):hover,
+        &.md-focused {
+            cursor: pointer;
+            font-weight: bold;
+            background: $white;
+        }
+
+        &[disabled] {
+            cursor: default;
+            opacity: 1;
+            color: $black !important;
+            background: $white;
+        }
+    }
+
+    &__patient-wrapper,
+    &__info-wrapper,
+    &__status-wrapper {
+        position: relative;
+        z-index: 1;
+    }
+
+    &__patient-wrapper,
+    &__info-wrapper {
+        border-bottom: 1px solid $divider-gray-1;
+        margin-bottom: 15px;
+        
+        &.qd-order-card--draft-status {
+            border-bottom: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    &__info-wrapper {
+        .qd-order-card--no-status & {
+            border-bottom: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    &__patient-wrapper {
+        padding-bottom: 15px;
+
+    }
+
+    &__info-box-container {
+        white-space: normal;
+    }
+
+    &__info-box {
+        @extend %type-body-2;
+        display: inline-block;
+        margin: 0 20px 15px 0;
+        min-height: 40px;
+        white-space: normal;
+        vertical-align: top;
+
+        @include when-wider-than(desktop) {
+            border-right: 1px solid $divider-gray-1;
+            padding-right: 20px;
+        }
+
+        label {
+            @extend .qd-patient-profile-card__label;
+        }
+
+        md-icon.icon-infocircle {
+            margin-left: 5px;
+        }
+
+        &:last-child {
+            border-right: none;
+            padding: 0;
+            margin-right: 0;
+        }
+
+        &--draft {
+            line-height: 40px;
+            color: $orange;
+        }
+
+        &--cta {
+            margin-bottom: 0;
+
+            @include when-on(mobile) {
+                display: block;
+            }
+
+            @include when-wider-than(tablet) {
+                margin: 20px 0 0;
+                vertical-align: top;
+            }
+        }
+
+        &--tests {
+            @extend %type-body-2-special;
+        }
+    }
+
+    &__overflow {
+        &:before {
+            color: $green-l;
+        }
+    }
+
+    &__overflow-button {
+        transform: translateX(20px);
+    }
+
+    &__error-message {
+        @extend %type-subhead-1;
+        color: $orange;
+        margin-bottom: 15px;
+
+        .qd-icon {
+            color: $orange;
+            margin-right: 5px;
+        }
+    }
+}

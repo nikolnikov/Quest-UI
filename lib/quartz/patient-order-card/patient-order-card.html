@@ -1,0 +1,126 @@
+
+<md-card class="qd-order-card">
+<div>
+<div ng-if="vm.showNameMolecule" class="qd-order-card__patient-wrapper" layout-gt-xs="row" layout-align-gt-xs="start center" flex>
+    <div class="qd-patient-card__avatar-and-name" flex layout="row" layout-align-xs="start start" layout-align-gt-xs="start center">
+        <qd-avatar class="qd-avatar__patient-card qd-avatar--green" initials="vm.order.patientFirstName | limitTo:1" avatarimage="patientDef.avatarimage"></qd-avatar>
+        <div class="qd-patient-card__name-and-address">
+            <span class="qd-patient-card__name">{{vm.order.patientLastName}}, <span class="qd-patient-card__name--first">{{vm.order.patientFirstName}}</span></span>
+        </div>
+    </div>
+
+    <div class="qd-patient-card__right">
+        <div class="qd-patient-card__info-wrapper" layout="row" layout-align-gt-xs="end center" layout-wrap>
+            <span class="qd-patient-card__dob qd-patient-card__info-item">{{vm.order.dateOfBirth}}</span>
+            <span class="qd-patient-card__sex qd-patient-card__info-item">{{vm.order.gender}}</span>
+        </div>
+    </div>
+</div>
+
+<md-button class="qd-order-card__button" md-ink-ripple="#ffffff">
+    <div class="qd-order-card__info-wrapper" layout="row">
+        <div flex>
+            <div class="qd-order-card__info-box-container">
+                <div ng-if="vm.order.status=='P'" class="qd-order-card__info-box qd-order-card__info-box--draft" ng-if="typeof(vm.order.requisition) !== 'undefined'">
+                    On Hold
+                </div>
+                <div ng-if="vm.order.status=='DRAFT'" class="qd-order-card__info-box qd-order-card__info-box--draft" ng-if="typeof(vm.order.requisition) !== 'undefined'">
+                    DRAFT
+                </div>
+                <div ng-if="vm.order.status=='F'" class="qd-order-card__info-box" ng-if="typeof(vm.order.requisition) !== 'undefined'">
+                    <label>Requisition Number</label>
+                    {{vm.order.requisition}}
+                </div>
+                <div class="qd-order-card__info-box">
+                    <label>Client</label>
+                    {{vm.order.clientNumber}}<span ng-if="vm.order.clientName!=''"> - {{vm.order.clientName}}</span>
+                </div>
+                <div class="qd-order-card__info-box">
+                    <label>Lab</label>
+                    {{vm.order.perfSite}}
+                </div>
+                <div class="qd-order-card__info-box">
+                    <label>Physician</label>
+                    {{vm.order.physicianName}}
+                    <span ng-if="typeof(vm.order.physicianId) != 'undefined' && vm.order.physicianId != '' && vm.order.physicianId != ' '"> ({{vm.order.physicianId}})</span>
+                </div>
+                <div class="qd-order-card__info-box">
+                    <label>Last Modified By</label>
+                    {{vm.order.editedBy}}
+                </div>
+                <div class="qd-order-card__info-box">
+                    <label>Created</label>
+                    {{vm.order.dateCreated}}
+                </div>
+            </div>
+            <div class="qd-order-card__info-box-container">
+                <div class="qd-order-card__info-box qd-order-card__info-box--tests">
+                    <label>Tests Ordered</label>
+                    {{vm.order.tests}}
+                </div>
+            </div>
+        </div>
+
+        <div ng-cloak ng-if="vm.order.status === 'F'" class="qd-order-card__overflow-wrapper">
+            <md-menu md-position-mode="target-right target">
+                <md-button aria-label="Open overflow menu" class="qd-order-card__overflow-button md-icon-button" ng-click="vm.openMenu($mdOpenMenu, $event)">
+                    <md-icon md-menu-origin class="qd-order-card__overflow qd-icon icon-morevert"></md-icon>
+                </md-button>
+                <md-menu-content width="4">
+                    <md-menu-item class="qd-overflow-menu__action qd-overflow-menu__action--secondary">
+                        <md-button ng-click="vm.printReq(vm.order.patientOID, vm.order.patientOrderOIDs)">
+                            <md-icon class="qd-icon icon-print"></md-icon>
+                            Print Req
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item class="qd-overflow-menu__action qd-overflow-menu__action--secondary">
+                        <md-menu class="qd-overflow-menu__sub-menu">
+                            <md-menu-item class="qd-overflow-menu__action qd-overflow-menu__action--secondary">
+                                <md-button ng-click="$mdOpenMenu()">
+                                    <md-icon class="qd-icon icon-print" md-menu-align-target></md-icon>
+                                    Reprint Labels
+                                    <md-icon class="qd-icon icon-arrowright qd-overflow-menu__sub-menu-icon"></md-icon>
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-content width="4" class="qd-overflow-menu__labels">
+                                <div layout="row" layout-align="center center">
+                                    Labels to print
+                                    <input type="text" class="qd-input--labels">
+                                </div>
+                                <md-button class="md-raised qd-button" ng-click="vm.printLabel()">
+                                    Print Labels
+                                </md-button>
+                            </md-menu-content>
+                        </md-menu>
+                        <!-- US853 -->
+                        <!--md-menu-item class="qd-overflow-menu__action qd-overflow-menu__action--secondary">
+                          <md-button>
+                            <md-icon class="qd-icon icon-edit"></md-icon>
+                            View/Edit Order
+                          </md-button>
+                        </md-menu-item -->
+                        <!-- US853 -->
+                        <!--md-menu-item class="qd-overflow-menu__action qd-overflow-menu__action--secondary">
+                          <md-button>
+                            <md-icon class="qd-icon icon-undo"></md-icon>
+                            Reorder
+                          </md-button>
+                        </md-menu-item-->
+                </md-menu-content>
+            </md-menu>
+        </div>
+    </div>
+
+    <div ng-if="vm.order.status!=='DRAFT'" class="qd-order-card__status-wrapper">
+        <div ng-class="vm.progressStatusBars()" layout-gt-xs="row" layout-align-gt-md="start center">
+            <qd-status-bars
+                    number-of-bars="4"
+                    progressed-bars="vm.progressStatusBars()"
+                    progress-status-text="vm.progressStatusText()">
+            </qd-status-bars>
+        </div>
+    </div>
+
+</md-button>
+</div>
+</md-card>

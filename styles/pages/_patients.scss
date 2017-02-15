@@ -1,0 +1,238 @@
+.qd-patients-section {
+    background-color: $background-gray;
+    
+    &.locked {
+        &::before {
+            content: '';
+            display: block;
+            height: 0;
+        }
+    }
+
+    &__header-wrapper {
+        background: $background-light-gray;
+        
+        .qd-patients-section.locked & {
+            background: white;
+            position: fixed;
+            right: 0;
+            z-index: 2;
+            width: 100%;
+
+            @include when-wider-than(desktop) {
+                width: calc(100% - #{$side-nav-width});
+                transform: translateY(0);
+            }
+        }
+
+        .qd-patients-section.revealed & {
+            transform: translateY(0);
+            transition: transform .3s ease-in-out;
+        }
+
+        .qd-patients-section.locked.sidenav-narrow & {
+            @include when-wider-than(desktop) {
+                width: calc(100% - #{$side-nav-width-narrow});
+            }
+        }
+    }
+
+    &__filters {
+        padding: 0 20px;
+        margin: 0 -20px;
+
+        @include when-wider-than(desktop) {
+            margin: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    &__filters-and-pagination {
+        padding: 0 20px;
+        background-color: $background-light-gray;
+
+        @include when-wider-than(desktop) {
+            padding: 0 40px;
+        }
+    }
+
+    &__filter-toggle {
+        @extend %type-body-2;
+        color: rgba($black, $text-opacity-secondary);
+        cursor: pointer;
+        outline: none;
+        height: 54px;
+
+        @include when-wider-than(desktop) {
+            height: 69px;
+        }
+
+        .qd-icon {
+            color: $icon-dark-gray;
+            margin: 0;
+
+            @include when-wider-than(tablet) {
+                margin-left: 10px;
+            }
+        }
+    }
+
+    &__filters-content {
+        $filters-max-height: 400px;
+        $filters-max-height-tablet: 250px;
+
+        width: 100%;
+        box-sizing: border-box;
+        max-height: $filters-max-height;
+        transition: all .5s ease-in-out;
+
+        @include when-wider-than(tablet) {
+            max-height: $filters-max-height-tablet;
+        }
+
+        &.ng-hide-add {
+            max-height: $filters-max-height;
+
+            @include when-wider-than(tablet) {
+                max-height: $filters-max-height-tablet;
+            }
+        }
+        &.ng-hide-add-active {
+            overflow: hidden;
+            max-height: 0;
+        }
+        &.ng-hide-remove {
+            overflow: hidden;
+            max-height: 0;
+        }
+        &.ng-hide-remove-active {
+            max-height: $filters-max-height;
+
+            @include when-wider-than(tablet) {
+                max-height: $filters-max-height-tablet;
+            }
+        }
+    }
+
+    &__view-by {
+        font-size: 14px;
+        color: rgba($black, $text-opacity-secondary);
+        margin: 0 18px 0 0;
+
+        @include when-wider-than(desktop) {
+            margin-bottom: 13px;
+        }
+    }
+
+    &__radio-filters {
+        margin-top: 10px;
+
+        md-radio-group {
+            @include when-wider-than(desktop) {
+                border-right: 1px solid $divider-gray-2;
+            }
+        }
+
+        .qd-radio-button {
+            @include when-wider-than(tablet) {
+                margin: 0 28px 0 0;
+            }
+
+            &:last-child {
+                @include when-wider-than(desktop) {
+                    margin-right: 40px;
+                }
+            }
+
+            .md-label {
+                margin-top: 15px;
+            }
+        }
+    }
+
+    &__search {
+        background: none;
+        margin-top: 20px;
+        border-bottom: 1px solid $icon-dark-gray;
+
+        &::before {
+            font-size: 22px;
+            color: $icon-dark-gray;
+            position: absolute;
+            left: 0;
+            top: 9px;
+        }
+
+        .md-whiteframe-z1 {
+            box-shadow: none;
+        }
+
+        input:not(.md-input) {
+            @extend %type-title-2;
+            padding-left: 30px;
+        }
+    }
+
+    &__alphabet-filter {
+        overflow-x: scroll;
+
+        @include when-wider-than(desktop) {
+            overflow: auto;
+        }
+    }
+
+    &__alphabet-letter {
+        @extend %type-subhead-2;
+        color: rgba($black, $text-opacity-secondary);
+        padding: 27px 0;
+        margin-right: 33px;
+        cursor: pointer;
+        outline: none;
+
+        @include when-wider-than(desktop) {
+            margin: 0;
+        }
+        
+        &--active {
+            @extend %type-body-1;
+            color: rgba($black, $text-opacity-primary);
+            padding: 26px 0;
+        }
+    }
+
+    &__list {
+        border-top: 1px solid $divider-gray-1;
+        background: $background-gray;
+        padding: 0 0 20px 0;
+        min-height: calc(100vh - 290px);
+      
+        @include when-on(tablet) {
+            padding: 0 20px 20px;
+        }
+        
+        @include when-wider-than(desktop) {
+            padding: 0 40px 20px 40px;
+        }
+        
+        .qd-header__title {
+            @extend %type-headline-1;
+            margin: 20px 0;
+        }
+    }
+
+    .qd-pagination-bar {
+        padding-left: 0;
+        padding-right: 20px;
+        
+        @include when-wider-than(tablet) {
+            padding-right: 0;
+        }
+    }
+    
+    .qd-header__title  {
+        @include when-less-than(tablet) {
+            padding-left: 15px; 
+        }
+    }
+}

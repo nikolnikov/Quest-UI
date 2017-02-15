@@ -1,0 +1,5 @@
+<div ng-if="!avatarimage">
+    {{initials}}
+</div>
+
+<img class="avatarimage" ng-if="avatarimage" data-ng-src="data:image/jpeg;base64,{{avatarimage}}"/>

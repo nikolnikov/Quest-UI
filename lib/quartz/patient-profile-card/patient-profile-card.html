@@ -1,0 +1,165 @@
+<md-card ng-if="vm.patient">
+<div id="qd-patient-profile-card--header" class="qd-patient-profile-card__header-wrapper" ng-switch="vm.editMode">
+
+  <!-- PATIENT PROFILE: display begins -->
+  <div class="qd-patient-profile__header" ng-switch-when="false" layout-gt-sm="row" layout-align="start center">
+    <div class="qd-patient-profile__avatar-and-name" flex>
+        <qd-avatar class="qd-avatar__patient-profile qd-avatar--green" initials="vm.patient.firstName | limitTo:1" avatarimage="vm.patient.avatarimage">T</qd-avatar>
+        <div class="qd-patient-profile__name">
+            {{vm.patient.lastName}}
+            <span ng-if="vm.patient.lastName && vm.patient.firstName">, </span>
+            <span class="qd-patient-profile__name--first">{{vm.patient.firstName}}</span>
+        </div>
+    </div>
+
+    <div class="qd-patient-profile__right" layout-xs="column" layout-gt-xs="row" layout-align-gt-sm="end center">
+        <div class="qd-patient-profile__info-wrapper" layout-xs="column" layout-gt-xs="row">
+            <div ng-if="!vm.hiddenFields.dob && vm.patient.dob" class="qd-patient-profile__info-item">
+                <label>DOB</label>
+                {{vm.patient.dob}}
+            </div>
+            <div ng-if="!vm.hiddenFields.sex && vm.patient.sex" class="qd-patient-profile__info-item">
+                <label>Sex</label>
+                {{vm.patient.sex}}
+            </div>
+
+            <div ng-if="!vm.hiddenFields.primaryPhone && vm.patient.primaryPhone" class="qd-patient-profile__info-item">
+                <label>Tel</label>
+                {{vm.patient.primaryPhone}}
+            </div>
+
+            <div ng-if="!vm.hiddenFields.pid && vm.patient.pid" class="qd-patient-profile__info-item">
+                <label>Patient ID</label>
+                {{vm.patient.pid}}
+            </div>
+
+            <div ng-if="!vm.hiddenFields.ssn && vm.patient.ssn" class="qd-patient-profile__info-item">
+                <label>SSN</label>
+                {{vm.patient.ssn}}
+            </div>
+        </div>
+
+        <md-button ng-if="vm.editable == true"
+                   class="md-icon-button md-button"
+                   id="patientEditMode"
+                   ng-click="vm.activateEditMode()"
+                   aria-label="Activate Edit Mode">
+            <md-icon class="qd-icon icon-edit"></md-icon>
+        </md-button>
+    </div>
+  </div>
+  <!-- PATIENT PROFILE: display ends -->
+
+  <!-- PATIENT PROFILE: edit begins -->
+    <div class="qd-patient-profile__header" ng-switch-when="true">
+      <div class="qd-patient-profile__sub-header" flex> Patient Information</div>
+
+      <form name="qdPatientProfileCardForm">
+        <div class="qd-patient-profile__input-row" layout="column" layout-gt-xs="row">
+            <md-input-container flex class="qd-patient-profile__input-container">
+                <label>Last Name</label>
+                <input maxlength="20" ng-required="true" ng-model="vm.patient.lastName" ng-disabled="vm.disabledFields.lastName" class="qd-text-input">
+            </md-input-container>
+            <md-input-container flex class="qd-patient-profile__input-container">
+                <label>First Name</label>
+                <input maxlength="20" ng-required="true" ng-model="vm.patient.firstName" ng-disabled="vm.disabledFields.firstName" class="qd-text-input">
+            </md-input-container>
+            <md-input-container flex class="qd-patient-profile__input-container">
+                <label>Middle Name</label>
+                <input maxlength="20" ng-model="vm.patient.middleName" ng-disabled="vm.disabledFields.middleName" class="qd-text-input">
+            </md-input-container>
+        </div>
+
+        <div layout-xs="column" layout-gt-sm="row">
+            <div layout-xs="column" layout-gt-xs="row" flex-gt-sm="50">
+
+                <div layout="row" flex-xs flex-gt-xs="75">
+                    <md-input-container flex class="qd-patient-profile__input-container"
+                                        md-is-error="headerData.startedDateSelection && headerData.dateIsInvalid(headerData.patient)">
+                        <label>Month</label>
+                        <md-select ng-disabled="vm.disabledFields.dob"
+                                   ng-class="{'ng-invalid' : vm.patientFormData.MM.split('-')[0] === '0'}"
+                                   ng-model="vm.patientFormData.MM"
+                                   class="qd-select-input">
+                            <md-option ng-repeat="MM in vm.formData.MM" value="{{MM}}">
+                                {{MM}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+
+                    <md-input-container flex class="qd-patient-profile__input-container"
+                                        md-is-error="headerData.startedDateSelection && headerData.dateIsInvalid(headerData.patient)">
+                        <label>Day</label>
+                        <md-select ng-disabled="vm.disabledFields.dob"
+                                   ng-model="vm.patientFormData.DD"
+                                   class="qd-select-input">
+                            <md-option ng-repeat="DD in vm.formData.DD track by $index" value="{{DD}}">
+                                {{DD}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+
+                    <md-input-container flex class="qd-patient-profile__input-container"
+                                        md-is-error="headerData.startedDateSelection && headerData.dateIsInvalid(headerData.patient)">
+                        <label>Year</label>
+                        <md-select ng-disabled="vm.disabledFields.dob"
+                                   ng-class="{'ng-invalid' : vm.formData.YY === 0}"
+                                   ng-model="vm.patientFormData.YY"
+                                   class="qd-select-input">
+                            <md-option ng-repeat="YY in vm.formData.YY track by $index" value="{{YY}}">
+                                {{YY}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+
+                <md-input-container flex-xs flex-gt-xs="25" class="qd-patient-profile__input-container">
+                    <label>Sex</label>
+                    <md-select ng-disabled="vm.disabledFields.sex" ng-model="vm.patient.sex" class="qd-select-input">
+                        <md-option ng-repeat="sex in vm.formData.sexes track by $index" value="{{sex}}">
+                            {{sex}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+
+            <div layout-xs="column" layout-gt-xs="row" flex-sm flex-gt-sm="50">
+                <div layout="row" flex>
+                    <md-input-container flex class="qd-patient-profile__input-container">
+                        <label ng-class="{'qd-required':!vm.patient.ssn}">Patient ID</label>
+                        <input maxlength="20"
+                               ng-disabled="vm.disabledFields.pid"
+                               ng-required="!vm.patient.ssn"
+                               ng-model="vm.patient.pid"
+                               class="qd-text-input" >
+                    </md-input-container>
+
+                    <md-input-container flex class="qd-patient-profile__input-container">
+                        <label ng-class="{'qd-required':(!vm.patient.pid)}">SSN</label>
+                        <input maxlength="11" id="ssnInput"
+                               ng-disabled="vm.disabledFields.ssn"
+                               ng-required="!vm.patient.pid"
+                               ng-model="vm.patient.ssn"
+                               class="qd-text-input"
+                               ng-pattern="/^[0-9]{3}-?[0-9]{2}-?[0-9]{4}$/">
+                        <div class="hint">###-##-####</div>
+                    </md-input-container>
+                </div>
+            </div>
+        </div>
+        <qd-avatar class="qd-avatar__patient-profile qd-avatar--green" ng-show="false" ng-if="vm.patient.profileImg" initials="vm.patient.initials" avatarimage="vm.patient.profileImg"></qd-avatar>
+
+        <div layout="column" layout-align="center center" class="qd-save-cancel">
+            <md-button class="md-raised qd-button" id="saveHeaderSection" ng-click="vm.savePatientInfo(vm.patient);" ng-disabled="!qdPatientProfileCardForm.$valid" aria-label="Save Changes button">
+                Save Changes
+            </md-button>
+            <a href="#" class="qd-link" id="cancelHeaderEditSection"
+               ng-click="(qdPatientProfileCardForm.$pristine ? vm.cancelEditMode() : vm.showConfirmCancel($event))">Cancel</a>
+        </div>
+
+        </form>
+    </div>
+  <!-- PATIENT PROFILE: edit ends -->
+
+</div>
+</md-card>

@@ -1,0 +1,113 @@
+.login {
+    padding: 40px 0 80px;
+    min-height: 750px;
+    height: 100vh;
+    position: relative;
+
+    &__title {
+        @extend %type-display-2;
+
+        &::before {
+            font-size: 22px;
+            margin-right: 12px;
+            color: $yellow-l;
+        }
+
+        &--locked {
+            &::before {
+                color: $red;
+            }
+        }
+    }
+
+    &__subhead {
+        @extend %type-subhead-1;
+        color: rgba($black, $text-opacity-secondary);
+        text-align: center;
+    }
+
+    &__text {
+        @extend %type-body-2;
+        text-align: center;
+    }
+
+    &__phone-number {
+        @extend %type-body-1;
+    }
+
+    &__form {
+        margin-top: 60px;
+        width: 280px;
+        text-align: center;
+
+        @include when-wider-than(tablet) {
+            width: 480px;
+        }
+
+        &--condensed {
+            margin-top: 20px;
+        }
+
+        &--forgotpw2 {
+            .login__questions{
+                text-align: left;
+            }
+        }
+    }
+
+    &__form-input {
+        width: 100%;
+        text-align: left;
+
+        .qd-input-hint {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+    }
+
+    &__button {
+        margin-top: 35px;
+        margin-bottom: 20px;
+
+        .login__form--condensed & {
+            margin-top: 20px;
+        }
+    }
+
+    &__help {
+        position: absolute;
+        bottom: 40px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    &__question-text {
+        @extend %type-body-2;
+        color: rgba($black, $text-opacity-secondary);
+        margin-bottom: 45px;
+    }
+
+    &__resetpw-text {
+        width: 275px;
+
+        @include when-wider-than(tablet) {
+            width: 480px;
+        }
+
+        .login__text {
+            text-align: left;
+        }
+
+        .login__subhead {
+            border-left: 2px solid $yellow-l;
+            padding-left: 20px;
+            text-align: left;
+
+            @include when-wider-than(tablet) {
+                width: 350px;
+            }
+        }
+    }
+}

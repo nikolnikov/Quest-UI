@@ -1,0 +1,28 @@
+.qd-error-page {
+    padding: 90px 20px 0;
+
+    &__title {
+        font-weight: 300;
+        font-size: 80px;
+        color: rgba($black, $text-opacity-secondary);
+
+        & .qd-icon {
+            font-size: 70px;
+        }
+    }
+
+    &__divider {
+        width: 40px;
+        height: 3px;
+        background: $icon-dark-gray;
+        margin: 15px 0 25px;
+    }
+
+    &__message {
+        @extend %type-title-2;
+        color: rgba($black, $text-opacity-secondary);
+        text-align: center;
+        padding: 0 20px;
+        margin-bottom: 30px;
+    }
+}

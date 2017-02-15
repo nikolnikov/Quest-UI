@@ -1,0 +1,191 @@
+.qd-order-detail {
+    &__header,
+    &__subheader {
+        margin-bottom: 20px;
+    }
+
+    &__header {
+        @extend %type-display-2;
+    }
+
+    &__subheader {
+        @extend %type-headline-2;
+        color: $green-l;
+    }
+
+    &__static-info-wrapper {
+        margin-bottom: -20px;
+    }
+
+    &__static-section {
+        border-bottom: 1px solid $divider-gray-1;
+        padding: 20px;
+
+        @include when-wider-than(tablet) {
+            padding: 40px 20px;
+        }
+
+        @include when-wider-than(desktop) {
+            padding: 40px;
+        }
+
+        &--thin {
+            @include when-wider-than(tablet) {
+                padding: 20px;
+            }
+
+            @include when-wider-than(desktop) {
+                padding: 20px 40px;
+            }
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    &__content {
+        background-color: $background-gray;
+        border-top: 1px solid $divider-gray-1;
+        padding-top: 0;
+
+        @include when-on(tablet) {
+            padding: 0 0 20px;
+        }
+
+        @include when-wider-than(desktop) {
+            padding: 20px 0 30px;
+        }
+
+        .qd-new-order__order-items {
+            margin: 25px -10px -25px;
+        }
+    }
+
+    &__tests-content {
+        overflow: hidden;
+
+        &:last-of-type {
+            padding-bottom: 20px;
+        }
+    }
+
+    &__banner-wrapper {
+        padding: 25px 30px;
+
+        @include when-wider-than(tablet) {
+            padding: 39px 60px;
+        }
+
+        @include when-wider-than(desktop) {
+            text-align: center;
+            padding: 33px 20px;
+        }
+    }
+
+    &__cancel-banner {
+        @extend %type-display-2;
+        background-color: $background-gray;
+        border-bottom: 1px solid $divider-gray-1;
+        padding: 0 20px;
+        height: 85px;
+
+        @include when-wider-than(tablet) {
+            text-align: center;
+            padding: 0;
+            height: 80px;
+        }
+    }
+
+    &__success-banner {
+        background: $yellow-l; // FALLBACK
+        background: linear-gradient(to right, $green-l, $yellow-m);
+        color: $white;
+        position: relative;
+
+        .qd-icon {
+            color: $white;
+            margin-right: 10px;
+        }
+
+        &:before,
+        &:after {
+            content: '';
+            background: url($image-base + 'Dots.svg') no-repeat;
+            position: absolute;
+            opacity: .6;
+            height: 133px;
+            width: 114px;
+        }
+
+        &:before {
+            right: 0;
+            bottom: 0;
+        }
+
+        &:after {
+            top: 0;
+            left: 0;
+            transform: rotate(180deg);
+        }
+    }
+
+    &__success-title {
+        @extend %type-display-2;
+        display: block;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    &__success-description {
+        @extend %type-body-1;
+        margin: 0;
+        text-align: center;
+    }
+
+    &__static-hint {
+        @extend %type-label-2;
+        color: rgba($black, $text-opacity-secondary);
+    }
+
+    &__cancel-order {
+        text-decoration: none;
+        margin: 30px 0 0 15px;
+
+        @include when-wider-than(desktop) {
+            margin-top: 0;
+        }
+
+        .qd-icon {
+            &:before {
+                color: $green-l;
+            }
+        }
+    }
+
+    &__cancel-copy {
+        @extend .qd-link;
+        margin-left: 7px;
+    }
+
+    &__note-wrapper {
+        @extend .qd-patient-profile-card__wrapper;
+        margin-top: 10px;
+    }
+
+    &__order-note-title {
+        @extend %type-label-2;
+        padding: 0 0 0 10px;
+    }
+
+    &__billing-ctas {
+        @extend .qd-new-order__billing-ctas;
+        margin-top: 20px;
+        position: relative;
+    }
+
+    &__or {
+        @extend .qd-new-order__or;
+        margin-top: 5px;
+    }
+}

@@ -1,0 +1,40 @@
+.qd-toast {
+    width: 360px;
+    padding: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    height: auto!important;
+
+    &.md-top {
+        top: 75px;
+    }
+
+    &.md-right {
+        right: 20px;
+    }
+
+    md-toast &__content {
+        min-height: 0;
+        height: auto;
+        padding: 10px;
+        background: rgba($darkest-gray, .95);
+        align-items: flex-start;
+    }
+
+    &__icon.qd-icon {
+        font-size: 17px;
+        color: $white;
+        margin: 0 6px 0 0;
+    }
+
+    &__info {
+        @extend %type-label-2;
+        font-weight: 700;
+        color: $white;
+        margin: 0;
+    }
+
+    &__text {
+        color: rgba($white, $text-opacity-secondary);
+    }
+}

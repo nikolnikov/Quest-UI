@@ -1,0 +1,27 @@
+.qd-autocomplete-suggestions {
+    li {
+        height: 56px;
+        padding: 0;
+    }
+
+    &--search {
+        .icon-search {
+            display: initial;
+        }
+
+        .icon-history {
+            display: none;
+        }
+    }
+    &--lab-order {
+    	li {
+        	height: 56px;
+        	padding: 0;
+    	}
+    }
+
+    .highlight {
+        @extend %type-body-1;
+        color: rgba($black, $text-opacity-primary) !important;
+    }
+}

@@ -1,0 +1,97 @@
+.upgrade-browser {
+    padding: 40px 20px 100px;
+    position: relative;
+    background: $background-light-gray;
+    min-height: 750px;
+    width: 100%;
+    height: 100%;
+
+    @include when-wider-than(tablet) {
+        padding-top: 85px;
+    }
+
+    &__title {
+        @extend %type-display-1;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    &__message {
+        @extend %type-title-2;
+        margin-bottom: 40px;
+        text-align: center;
+        padding: 0 25px;
+
+        @include when-wider-than(tablet) {
+            padding: 0 100px;
+            margin-bottom: 50px;
+        }
+    }
+
+    &__browser {
+        @include elevation(3);
+        background: $white;
+        padding: 20px 10px;
+        margin: 0 20px 20px 0;
+        min-width: 130px;
+        width: calc(50% - 10px);
+        border-radius: 3px;
+        cursor: pointer;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:nth-child(2) {
+            margin-right: 0;
+        }
+
+        &:hover{
+            background-color: $background-light-gray;
+        }
+
+        @include when-wider-than(tablet) {
+            margin: 0 20px 0 0;
+            width: 200px;
+
+            &:nth-child(2) {
+                margin-right: 20px;
+            }
+        }
+    }
+
+    &__browser-container {
+        position: relative;
+        z-index: 1;
+    }
+
+    &__container {
+        width: 100%;
+        flex-wrap: wrap;
+
+        @include when-wider-than(tablet) {
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__browser-image {
+        margin-bottom: 15px;
+    }
+
+    &__browser-title {
+        @extend %type-subhead-1;
+        margin-bottom: 25px;
+        white-space: nowrap;
+    }
+
+    &__footnote {
+        @extend %type-body-2;
+        text-align: center;
+        padding: 0 8px;
+        position: absolute;
+        bottom: 50px;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+}

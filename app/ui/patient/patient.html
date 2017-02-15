@@ -1,0 +1,24 @@
+<section class="qd-patients-section">
+    <div class="qd-patients-section__header-wrapper" id="top">
+        <div class="qd-header qd-patients-section__header" layout="row" layout-align="start center">
+            <div class="qd-header__title" flex>
+                Patient
+            </div>
+        </div>
+
+    </div>
+
+    <div layout="row" layout-align="center center">
+      <md-button ng-click="vm.getPatient()" class="md-raised qd-button qd-button--with-icon" aria-label="Get Random Patient">
+        <md-icon class="qd-icon icon-addpatients"></md-icon>
+        <span hide-xs>Get Random Patient</span>
+      </md-button>
+    </div>
+
+    <qd-patient-card-full
+      patient="vm.patient"
+      action-menu-items="vm.actionMenuItems"
+      on-patient-select="vm.onPatientSelect(pid)"
+      on-action-menu-item-selected="vm.onActionMenuItemSelected(item)">
+    </qd-patient-card-full>
+</section>

@@ -1,0 +1,18 @@
+<md-button
+  md-ink-ripple="#ececec"
+  class="qd-patient-card qd-patient-card--mini md-raised">
+  <div class="qd-patient-card__container" layout="row" layout-align="start center">
+    <md-icon class="qd-icon ng-class:vm.iconClass"></md-icon>
+
+    <span class="qd-patient-card__name" flex="50" flex-gt-xs="75">
+      <span>{{vm.patient.lastName}}, {{vm.patient.firstName}} {{vm.patient.middleName}}</span>
+    </span>
+    
+    <div class="qd-patient-card__right" flex="50" flex-md="25">
+      <div class="qd-patient-card__info-wrapper" layout="row" layout-align="end center">
+        <span ng-if="vm.patient.dob" class="qd-patient-card__dob">{{vm.patient.dob}}</span>
+        <span class="qd-patient-card__sex">{{vm.patient.sex}}</span>
+      </div>
+    </div>
+  </div>
+</md-button>

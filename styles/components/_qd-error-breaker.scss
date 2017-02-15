@@ -1,0 +1,75 @@
+.qd-error-breaker {
+    background-color: $icon-gray;
+
+    &__header {
+        margin: 0 20px;
+
+        @include when-wider-than(tablet) {
+            margin-right: 0;
+        }
+
+        .qd-error-breaker--address & {
+            margin-bottom: 20px;
+
+            @include when-wider-than(desktop) {
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    &__title {
+        @extend %type-subhead-1;
+        color: $red;
+
+        &:before {
+            margin-right: 10px;
+        }
+    }
+
+    &__sub-title {
+        @extend %type-body-2;
+        color: $green-l;
+        margin-bottom: 10px;
+    }
+
+    &__message {
+        @extend %type-subhead-2;
+        color: rgba($black, $text-opacity-secondary);
+        margin: 15px 0px 20px 44px;
+
+        @include when-wider-than(desktop) {
+            margin-top: 25px;
+        }
+    }
+
+    &__card-wrapper {
+        padding: 20px 0;
+        
+        @include when-wider-than(tablet) {
+            padding: 20px;
+        }
+    
+        @include when-wider-than(desktop) {
+            padding: 20px 40px;
+        }
+
+        .qd-patient-card {
+            margin-bottom: 0;
+            cursor: pointer;
+        }
+    }
+
+    &__card {
+        @include elevation(3);
+        background-color: white;
+        padding: 20px;
+
+        @include when-wider-than(desktop) {
+            padding: 30px 20px;
+        }
+
+        .qd-button {
+            margin-top: 20px;
+        }
+    }
+}

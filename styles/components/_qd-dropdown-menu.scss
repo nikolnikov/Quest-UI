@@ -1,0 +1,36 @@
+.qd-dropdown-menu {
+    &__content {
+        width: 130px;
+        padding: 0 0 10px;
+    }
+
+    &__title {
+        @extend %type-cta;
+        color: rgba($black, $text-opacity-secondary);
+        height: 50px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid $divider-gray-1;
+    }
+
+    &__item {
+        @extend %type-subhead-2;
+        color: rgba($black, $text-opacity-secondary);
+
+        & > .md-button {
+            text-align: center;
+        }
+
+        & > .md-button:not([disabled]):hover {
+            background-color: $background-light-gray;
+        }
+
+        & > .md-button:not([disabled]):active {
+            background-color: $background-gray;
+        }
+    }
+
+    &__item-count {
+       @extend %type-cta;
+       color: rgba($black, $text-opacity-secondary);
+    }
+}

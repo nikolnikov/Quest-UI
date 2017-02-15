@@ -1,0 +1,98 @@
+.qd-overflow-menu {
+  @include elevation(9);
+  width: 240px;
+
+    &--lab {
+        @include elevation(9);
+        width: 240px;
+        background-color: $background-light-gray;
+        padding: 20px 0 0;
+    }
+
+    &__sub-menu {
+        padding: 0;
+    }
+
+  &__action {
+    button {
+      @extend %type-cta;
+    }
+
+    .md-button:not([disabled]):hover {
+      background-color: $background-light-gray;
+    }
+
+    .qd-icon {
+      color: $green-l;
+    }
+
+    &--primary {
+      color: $green-l;
+    }
+
+    &--secondary {
+      color: rgba($black, $text-opacity-secondary);
+    }
+  }
+
+    &__submit {
+        background: $white;
+        color: $green-l;
+
+        button {
+            @extend %type-cta;
+            text-align: center;
+        }
+    }
+
+    &__sub-menu-icon.qd-icon {
+        color: rgba($black, $text-opacity-secondary);
+        margin: 0;
+        float: right;
+    }
+
+    &__checkbox {
+        padding: 0 20px 20px;
+        color: $black;
+        height: 18px;
+        min-height: 18px;
+
+        .md-label {
+            margin-left: 20px;
+            line-height: 18px;
+            padding-top: 2px;
+        }
+
+        .qd-checkbox {
+            margin: 0;
+            height: 18px;
+        }
+    }
+
+    &__checkbox-label {
+        @extend %type-caption;
+        padding: 0 20px 20px;
+        color: rgba($black, $text-opacity-secondary);
+    }
+
+    &__divider {
+        .md-open-menu-container & {
+            margin: 10px 0 0;
+        }
+    }
+    
+    &__labels {
+        @extend %type-subhead-2;
+        padding: 15px 20px;
+        
+        .qd-input--labels {
+            width: 40px;
+            margin-left: 10px;
+        }
+        
+        .qd-button  {
+            width: 150px;
+            margin-top: 10px;
+        }
+    }
+}

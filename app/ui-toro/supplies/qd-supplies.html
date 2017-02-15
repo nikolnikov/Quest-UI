@@ -1,0 +1,247 @@
+<div class="qd-supplies__filters" layout="column" layout-gt-xs="row" layout-align-gt-xs="start center">
+    <div class="qd-supplies__filters--left" flex="1">
+        <md-button class="qd-button qd-button__categories" ng-click="vm.showCategories()">
+            Categories
+            <md-icon class="qd-icon icon-arrowdown"></md-icon>
+        </md-button>
+    </div>
+    
+    <md-input-container flex flex-gt-xs="25" class="qd-patient-profile__input-container">
+        <label>Client</label>
+        
+        <md-select class="qd-select-input" ng-model="mlcp.client">
+            <md-option value="Edward Blake MD">
+              Edward Blake MD
+            </md-option>
+            
+            <md-option value="Joseph Kovacs MD">
+              Joseph Kovacs MD
+            </md-option>
+        </md-select>
+    </md-input-container>
+    
+    <md-input-container md-no-float flex flex-gt-xs="75" class="qd-supplies__search icon-search">
+        <input class="qd-text-input qd-required" type="text" ng-keydown="vm.searchText.length > 2" ng-model="vm.searchText" placeholder="Search">
+    
+        <md-icon class="qd-icon icon-go material-icons" aria-hidden="true" ng-show="vm.searchText.length > 2" ng-click=""></md-icon>
+    </md-input-container>
+
+    <md-menu flex="1" md-position-mode="target-right target">
+      <md-button aria-label="Open overflow menu" class="qd-order-card__overflow-button md-icon-button" ng-click="vm.openMenu($mdOpenMenu, $event)">
+        <md-icon md-menu-origin class="qd-order-card__overflow qd-icon icon-morevert"></md-icon>
+      </md-button>
+      <md-menu-content width="4">
+        <md-menu-item class="qd-overflow-menu__action qd-overflow-menu__action--secondary">
+          <md-button ng-click="">
+            Access the Quest Diagnostics Test Center
+          </md-button>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+</div>
+
+<div class="qd-supplies__content">
+    <div class="qd-supplies__content-header" flex layout="row" layout-align="space-between center">
+        <span class="qd-supplies__content-title">All Categories</span>
+        
+        <qd-pagination-controls page-size-options="::vm.pagination.pageSizes" items-per-page="vm.pagination.itemsPerPage" pagination-id="patientResults">
+        </qd-pagination-controls>
+    </div>
+    
+    <div class="qd-supplies__items" flex layout="row" layout-align="start center" layout-wrap>
+        <div class="qd-supplies__item-wrapper" flex="100" flex-gt-xs="25" flex-gt-sm="20">
+            <md-card class="qd-supplies__item" flex layout="column">
+                <div class="qd-supplies__item--details" flex layout="column">
+                    <div class="qd-supplies__item--img">
+                        <img src="http://www.novelupdates.com/img/noimagefound.jpg">
+                    </div>
+                    
+                    <div class="qd-supplies__item--title">Curad Flex Fab 3/4</div>
+                    <div class="qd-supplies__item--number">Item #: 105741</div>
+                    <div class="qd-supplies__item--units">Units: 50/pk</div>
+                </div>
+                
+                <div class="qd-supplies__item--order" layout="row" layout-align="center center">
+                    <input type="text" class="qd-text-input" placeholder="Qty">
+                    <md-button class="qd-button">Add to Cart</md-button>
+                </div>
+            </md-card>
+        </div>
+        
+        <div class="qd-supplies__item-wrapper" flex="100" flex-gt-xs="25" flex-gt-sm="20">
+            <md-card class="qd-supplies__item" flex layout="column">
+                <div class="qd-supplies__item--details" flex layout="column">
+                    <div class="qd-supplies__item--img">
+                        <img src="http://www.copanusa.com/files/cache/2536d4996d04873b8b1b5e5ca20d9d37_f136.jpg">
+                    </div>
+                    
+                    <div class="qd-supplies__item--title">SWAB, CULTURETTE AMIES GEL BLUE CAP COPAN,500/CS</div>
+                    <div class="qd-supplies__item--number">Item #: 105741</div>
+                    <div class="qd-supplies__item--units">Units: 50/pk</div>
+                </div>
+                
+                <div class="qd-supplies__item--order" layout="row" layout-align="center center">
+                    <input type="text" class="qd-text-input" placeholder="Qty">
+                    <md-button class="qd-button">Add to Cart</md-button>
+                </div>
+            </md-card>
+        </div>
+        
+        <div class="qd-supplies__item-wrapper" flex="100" flex-gt-xs="25" flex-gt-sm="20">
+            <md-card class="qd-supplies__item" flex layout="column">
+                <div class="qd-supplies__item--details" flex layout="column">
+                    <div class="qd-supplies__item--img">
+                        <img src="http://www.novelupdates.com/img/noimagefound.jpg">
+                    </div>
+                    
+                    <div class="qd-supplies__item--title">Curad Flex Fab 3/4</div>
+                    <div class="qd-supplies__item--number">Item #: 105741</div>
+                    <div class="qd-supplies__item--units">Units: 50/pk</div>
+                </div>
+                
+                <div class="qd-supplies__item--order" layout="row" layout-align="center center">
+                    <input type="text" class="qd-text-input" placeholder="Qty">
+                    <md-button class="qd-button">Add to Cart</md-button>
+                </div>
+            </md-card>
+        </div>
+        
+        <div class="qd-supplies__item-wrapper" flex="100" flex-gt-xs="25" flex-gt-sm="20">
+            <md-card class="qd-supplies__item" flex layout="column">
+                <div class="qd-supplies__item--details" flex layout="column">
+                    <div class="qd-supplies__item--img">
+                        <img src="http://www.novelupdates.com/img/noimagefound.jpg">
+                    </div>
+                    
+                    <div class="qd-supplies__item--title">Curad Flex Fab 3/4</div>
+                    <div class="qd-supplies__item--number">Item #: 105741</div>
+                    <div class="qd-supplies__item--units">Units: 50/pk</div>
+                </div>
+                
+                <div class="qd-supplies__item--order" layout="row" layout-align="center center">
+                    <input type="text" class="qd-text-input" placeholder="Qty">
+                    <md-button class="qd-button">Add to Cart</md-button>
+                </div>
+            </md-card>
+        </div>
+        
+        <div class="qd-supplies__item-wrapper" flex="100" flex-gt-xs="25" flex-gt-sm="20">
+            <md-card class="qd-supplies__item" flex layout="column">
+                <div class="qd-supplies__item--details" flex layout="column">
+                    <div class="qd-supplies__item--img">
+                        <img src="http://www.novelupdates.com/img/noimagefound.jpg">
+                    </div>
+                    
+                    <div class="qd-supplies__item--title">Curad Flex Fab 3/4</div>
+                    <div class="qd-supplies__item--number">Item #: 105741</div>
+                    <div class="qd-supplies__item--units">Units: 50/pk</div>
+                </div>
+                
+                <div class="qd-supplies__item--order" layout="row" layout-align="center center">
+                    <input type="text" class="qd-text-input" placeholder="Qty">
+                    <md-button class="qd-button">Add to Cart</md-button>
+                </div>
+            </md-card>
+        </div>
+        
+        <div class="qd-supplies__item-wrapper" flex="100" flex-gt-xs="25" flex-gt-sm="20">
+            <md-card class="qd-supplies__item" flex layout="column">
+                <div class="qd-supplies__item--details" flex layout="column">
+                    <div class="qd-supplies__item--img">
+                        <img src="http://www.novelupdates.com/img/noimagefound.jpg">
+                    </div>
+                    
+                    <div class="qd-supplies__item--title">Curad Flex Fab 3/4</div>
+                    <div class="qd-supplies__item--number">Item #: 105741</div>
+                    <div class="qd-supplies__item--units">Units: 50/pk</div>
+                </div>
+                
+                <div class="qd-supplies__item--order" layout="row" layout-align="center center">
+                    <input type="text" class="qd-text-input" placeholder="Qty">
+                    <md-button class="qd-button">Add to Cart</md-button>
+                </div>
+            </md-card>
+        </div>
+        
+        <div class="qd-supplies__item-wrapper" flex="100" flex-gt-xs="25" flex-gt-sm="20">
+            <md-card class="qd-supplies__item" flex layout="column">
+                <div class="qd-supplies__item--details" flex layout="column">
+                    <div class="qd-supplies__item--img">
+                        <img src="http://www.novelupdates.com/img/noimagefound.jpg">
+                    </div>
+                    
+                    <div class="qd-supplies__item--title">Curad Flex Fab 3/4</div>
+                    <div class="qd-supplies__item--number">Item #: 105741</div>
+                    <div class="qd-supplies__item--units">Units: 50/pk</div>
+                </div>
+                
+                <div class="qd-supplies__item--order" layout="row" layout-align="center center">
+                    <input type="text" class="qd-text-input" placeholder="Qty">
+                    <md-button class="qd-button">Add to Cart</md-button>
+                </div>
+            </md-card>
+        </div>
+        
+        <div class="qd-supplies__item-wrapper" flex="100" flex-gt-xs="25" flex-gt-sm="20">
+            <md-card class="qd-supplies__item" flex layout="column">
+                <div class="qd-supplies__item--details" flex layout="column">
+                    <div class="qd-supplies__item--img">
+                        <img src="http://www.novelupdates.com/img/noimagefound.jpg">
+                    </div>
+                    
+                    <div class="qd-supplies__item--title">Curad Flex Fab 3/4</div>
+                    <div class="qd-supplies__item--number">Item #: 105741</div>
+                    <div class="qd-supplies__item--units">Units: 50/pk</div>
+                </div>
+                
+                <div class="qd-supplies__item--order" layout="row" layout-align="center center">
+                    <input type="text" class="qd-text-input" placeholder="Qty">
+                    <md-button class="qd-button">Add to Cart</md-button>
+                </div>
+            </md-card>
+        </div>
+        
+        <div class="qd-supplies__item-wrapper" flex="100" flex-gt-xs="25" flex-gt-sm="20">
+            <md-card class="qd-supplies__item" flex layout="column">
+                <div class="qd-supplies__item--details" flex layout="column">
+                    <div class="qd-supplies__item--img">
+                        <img src="http://www.novelupdates.com/img/noimagefound.jpg">
+                    </div>
+                    
+                    <div class="qd-supplies__item--title">Curad Flex Fab 3/4</div>
+                    <div class="qd-supplies__item--number">Item #: 105741</div>
+                    <div class="qd-supplies__item--units">Units: 50/pk</div>
+                </div>
+                
+                <div class="qd-supplies__item--order" layout="row" layout-align="center center">
+                    <input type="text" class="qd-text-input" placeholder="Qty">
+                    <md-button class="qd-button">Add to Cart</md-button>
+                </div>
+            </md-card>
+        </div>
+        
+        <div class="qd-supplies__item-wrapper" flex="100" flex-gt-xs="25" flex-gt-sm="20">
+            <md-card class="qd-supplies__item" flex layout="column">
+                <div class="qd-supplies__item--details" flex layout="column">
+                    <div class="qd-supplies__item--img">
+                        <img src="http://www.novelupdates.com/img/noimagefound.jpg">
+                    </div>
+                    
+                    <div class="qd-supplies__item--title">Curad Flex Fab 3/4</div>
+                    <div class="qd-supplies__item--number">Item #: 105741</div>
+                    <div class="qd-supplies__item--units">Units: 50/pk</div>
+                </div>
+                
+                <div class="qd-supplies__item--order" layout="row" layout-align="center center">
+                    <input type="text" class="qd-text-input" placeholder="Qty">
+                    <md-button class="qd-button">Add to Cart</md-button>
+                </div>
+            </md-card>
+        </div>
+    </div>
+    
+    <div class="qd-supplies__content-footer" layout="row" layout-align="end center">
+        <qd-pagination-controls page-size-options="::vm.pagination.pageSizes" items-per-page="vm.pagination.itemsPerPage" pagination-id="patientResults">
+        </qd-pagination-controls>
+    </div>
+</div>

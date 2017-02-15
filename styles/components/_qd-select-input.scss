@@ -1,0 +1,114 @@
+// Standard select input
+.qd-select-input {
+    .md-select-value.md-select-placeholder {
+        @extend %type-body-2;
+        color: rgba($black, $text-opacity-secondary);
+    }
+
+    .md-select-value {
+        @extend %type-body-2;
+        color: rgba($black, $text-opacity-primary);
+        height: 27px;
+        padding: 0 2px 0;
+        border-color: $divider-gray-2;
+    }
+}
+
+// Focused select input
+.qd-select-input:not([disabled]):focus {
+    .md-select-value {
+        border-bottom-color: $green-l;
+    }
+}
+
+// Error select input
+.qd-select-input:not([disabled]).ng-invalid.ng-touched {
+    .md-select-value {
+        color: $red;
+        border-bottom-color: $red;
+     }
+}
+
+&.qd-required.ng-untouched .md-select-value {
+  border-bottom-color: $divider-gray-2;
+}
+
+&.qd-required[disabled].ng-untouched .md-select-value {
+  border-bottom-color: transparent;
+}
+
+&.qd-required.ng-touched.ng-pristine .md-select-value {
+  border-bottom-color: $red;
+}
+
+&.qd-required .md-select-value span:after {
+  content: "*";
+}
+
+&.qd-required.ng-dirty .md-select-value span:after {
+  content: "";
+}
+
+&.qd-required:not([disabled]).ng-valid.ng-touched .md-select-value span:after,
+&.qd-required:not([disabled]).ng-valid.ng-touched .md-select-placeholder {
+  color: $red;
+}
+
+// Disabled select input
+.qd-select-input[disabled] {
+    .md-select-value,
+    .md-select-value.md-select-placeholder {
+        color: rgba($black, $text-opacity-secondary);
+    }
+
+    .md-select-icon {
+        color: $divider-gray-1;
+    }
+}
+
+.qd-select-input--no-label,
+.qd-select-input--no-label[disabled],
+.qd-select-input--no-label:not([disabled]):focus {
+    .md-select-value {
+        border: 0;
+        background-image: none;
+    }
+}
+
+.md-select-menu-container.md-active md-select-menu,
+md-select-menu {
+    md-option[selected] {
+        color: $green-l;
+        background-color: $white;
+    }
+
+    md-option:hover {
+        background-color: $background-gray;
+    }
+}
+
+md-select {
+    .md-select-value .md-select-icon {
+        @extend .icon-dropdown;
+        color: rgba($black, $text-opacity-secondary);
+        font-size: 20px;
+
+        &:after {
+            display: none;
+        }
+    }
+}
+
+md-input-container.md-input-invalid md-select[disabled] .md-select-value {
+  border-bottom-color: transparent !important;
+}
+
+.md-select-menu-container {
+    z-index: $select-menu-z-index;
+
+    md-option {
+        .md-text {
+            @extend %type-body-2;
+        }
+    }
+}

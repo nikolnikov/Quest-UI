@@ -1,0 +1,21 @@
+<md-dialog class="qd-custom-dialog" aria-label="Additional Information" ng-cloak>
+    <md-card-header class="qd-patient-profile-card__header" layout="row" layout-align="end center">
+        <md-card-header-text layout="row" flex>
+            Tests Included In This Report
+        </md-card-header-text>
+
+        <md-button class="md-icon-button md-button" ng-click="vm.cancel()">
+            <md-icon class="qd-icon icon-close"></md-icon>
+        </md-button>
+    </md-card-header>
+
+    <md-dialog-content>
+        <div class="qd-custom-dialog__section">
+            <div class="qd-custom-dialog__info-block">
+                <label class="qd-patient-profile-card__label">Tests Included</label>
+                {{vm.mdTextContent}}
+            </div>
+        </div>
+    </md-dialog-content>
+</md-dialog>
+
