@@ -45,6 +45,10 @@ function qdSuppliesCtrl($scope, $log, $mdPanel) {
     $mdPanel.open(config);
   
   };
+  
+  vm.openMenu = function($mdOpenMenu, ev) {
+    $mdOpenMenu(ev);
+  };
 }
 
 exports.qdSupplies = qdSupplies;

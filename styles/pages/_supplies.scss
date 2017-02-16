@@ -108,12 +108,18 @@
     &__categories {
         @extend %type-body-2;
         @include elevation(3);
-        width: 450px;
+        width: 500px;
         padding: 15px 20px;
         background: $white;
         
-        @include when-less-than(mini-tablet) {
-            width: 315px; 
+        @include when-less-than(tablet) {
+            width: 315px;
+            height: 350px;
+            overflow-y: auto;
+        }
+        
+        &--item {
+            padding: 5px;
         }
     }
     

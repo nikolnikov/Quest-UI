@@ -84,11 +84,6 @@ function suppliesCtrl($scope, $log, $state, $stateParams, $mdDialog) {
   function setSelectedTab(selTab) {
     _selectedTab = selTab;
   }
-  
-  vm.openMenu = function($mdOpenMenu, ev) {
-    $mdOpenMenu(ev);
-  };
-  
 }
 
 exports.suppliesCtrl = suppliesCtrl;
