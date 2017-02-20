@@ -159,8 +159,16 @@
     md-input-container.md-icon-right  {
         padding: 0;
     }
-    
+
     &__content {
+        padding: 15px 40px 20px;
+
+        @include when-less-than(desktop) {
+            padding: 15px 20px 20px;
+        }
+    }
+    
+    &__content-supplies {
         padding: 0 40px 20px 40px;
         
         @include when-less-than(desktop) {
@@ -227,6 +235,86 @@
                 margin: 0 0 0 5px;
                 font-size: 12px;
                 height: auto;
+            }
+        }
+    }
+
+    // Order History Page Styles
+
+    &__item-order-history {
+        @extend .qd-supplies__item;
+        height: auto;
+
+        &--order-details-wrapper {
+            border-bottom: 1px solid $divider-gray-1;
+            padding: 4px 0;
+            margin-bottom: 15px;
+        }
+
+        &--number, &--time, &--client, &--ordered-by, &--order-actions .qd-button {
+            height: 30px;
+            min-height: 30px;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            border-right: 1px solid $divider-gray-1;
+        }
+
+        &--number, &--time, &--client, &--ordered-by {
+            
+            @include when-less-than(tablet) {
+                width: 100%;
+                border-right: none;
+            }
+
+            &:last-child {
+                border-right: none;
+            }
+        }
+
+        &--number, &--client span, &--ordered-by span {
+            font-weight: 700;
+            color: $black;
+        }
+
+        &--order-actions {
+            width: 100%;
+
+            .qd-button {
+                border-right: 1px solid $divider-gray-1;
+                margin: 0;
+                line-height: normal;
+
+                &:hover {
+                    background: none;
+                }
+
+                &:last-child {
+                    border-right: none;
+                    margin-right: 0;
+                }
+            }
+
+            @include when-wider-than(desktop) {
+                width: 40%;
+            }
+
+        }
+
+        &--img {
+             @extend .qd-supplies__item--img;
+             max-width: 80px;
+             height: 80px;
+             padding: 0 20px 0 0;
+
+        }
+
+        &--quantity {
+            @extend .qd-supplies__item--number;
+
+            .amount {
+                font-weight: 700;
+                color: $black;
             }
         }
     }
