@@ -1,1 +1,88 @@
-Order History
+<div class="qd-supplies__filters" layout="column" layout-gt-xs="row" layout-align-gt-xs="start center">
+    
+    <md-input-container flex flex-gt-xs="25" class="qd-patient-profile__input-container">
+
+        <label>Orders placed in</label>
+        
+        <md-select class="qd-select-input" ng-model="mlcp.ordersPlacedIn">
+            <md-option value="last 30 days" selected>
+              last 30 days
+            </md-option>
+            
+            <md-option value="past 6 months">
+              past 6 months
+            </md-option>
+
+            <md-option value="2017">
+              2017
+            </md-option>
+        </md-select>
+    </md-input-container>
+
+    <md-input-container flex flex-gt-xs="25" class="qd-patient-profile__input-container">
+        <label>Client</label>
+        
+        <md-select class="qd-select-input" ng-model="mlcp.client">
+            <md-option value="Edward Blake MD">
+              Edward Blake MD
+            </md-option>
+            
+            <md-option value="Joseph Kovacs MD">
+              Joseph Kovacs MD
+            </md-option>
+        </md-select>
+    </md-input-container>
+    
+    <md-input-container md-no-float flex flex-gt-xs="75" class="qd-supplies__search icon-search">
+        <input class="qd-text-input qd-required" type="text" ng-keydown="vm.searchText.length > 2" ng-model="vm.searchText" placeholder="Ordered By">
+    
+        <md-icon class="qd-icon icon-go material-icons" aria-hidden="true" ng-show="vm.searchText.length > 2" ng-click=""></md-icon>
+    </md-input-container>
+</div>
+
+<div class="qd-supplies__content">  
+    <div class="qd-supplies__items" flex layout="row" layout-align="start center" layout-wrap>
+        <div class="qd-supplies__item-wrapper" flex>
+            <md-card class="qd-supplies__item-order-history" flex layout="column">
+            	<div class="qd-supplies__item-order-history--order-details-wrapper" flex layout="column" layout-gt-md="row" layout="start center" layout-align-gt-md="space-between center">
+            		<div flex layout="row" layout-align="start center" layout-wrap>
+		            	<div class="qd-supplies__item-order-history--number">Order &#35; 100025</div>
+		            	<div class="qd-supplies__item-order-history--time">09/13/2016 01:08PM</div>
+		            	<div class="qd-supplies__item-order-history--client">Client:&nbsp;<span>Test Client with a very long name</span></div>
+		            	<div class="qd-supplies__item-order-history--ordered-by">Ordered By:&nbsp;<span>John Williams</span></div>
+	            	</div>
+	            	<div class="qd-supplies__item-order-history--order-actions" flex layout="row" layout-align="start center" layout-align-gt-md="end center">
+		            	<md-button class="qd-button" ng-click=""><md-icon class="qd-icon icon-location"></md-icon>
+            			Tracking Details
+            			</md-button>
+		            	<md-button class="qd-button" ng-click=""><md-icon class="qd-icon icon-cached"></md-icon>
+		            	Reorder
+       					</md-button>
+	            	</div>
+            	</div>
+                <div class="qd-supplies__item--details" flex layout="row">
+                    <div class="qd-supplies__item-order-history--img">
+                        <img src="http://www.copanusa.com/files/cache/2536d4996d04873b8b1b5e5ca20d9d37_f136.jpg">
+                    </div>
+                    <div flex layout="column">
+	                    <div class="qd-supplies__item--title">SWAB, CULTURETTE AMIES GEL BLUE CAP COPAN,500/CS</div>
+	                    <div class="qd-supplies__item--number">Item #: 105741</div>
+	                    <div class="qd-supplies__item--units">Units: 50/pk</div>
+	                    <div class="qd-supplies__item-order-history--quantity">Qty Ordered: <span class="amount">100</span></div>
+	                </div>
+                </div>
+                <div class="qd-supplies__item--details" flex layout="row">
+                    <div class="qd-supplies__item-order-history--img">
+                        <img src="http://www.novelupdates.com/img/noimagefound.jpg">
+                    </div>
+                    <div flex layout="column">
+	                    <div class="qd-supplies__item--title">Curad Flex Fab 3/4</div>
+	                    <div class="qd-supplies__item--number">Item #: 105741</div>
+	                    <div class="qd-supplies__item--units">Units: 50/pk</div>
+	                    <div class="qd-supplies__item-order-history--quantity">Qty Ordered: <span class="amount">50</span></div>
+	                </div>
+                </div>
+            </md-card>
+        </div>
+    </div>
+</div>
