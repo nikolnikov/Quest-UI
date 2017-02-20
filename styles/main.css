@@ -7400,16 +7400,12 @@ a.qd-button.no-js {
 
 .qd-supplies__categories {
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.3);
-  width: 500px;
+  width: 450px;
   padding: 15px 20px;
   background: #ffffff; }
-  @media screen and (max-width: 599px) {
+  @media screen and (max-width: 899px) {
     .qd-supplies__categories {
-      width: 315px;
-      height: 350px;
-      overflow-y: auto; } }
-  .qd-supplies__categories--item {
-    padding: 5px; }
+      width: 315px; } }
 
 .qd-supplies__search {
   background: none;
@@ -7493,11 +7489,6 @@ a.qd-button.no-js {
     border-bottom: 1px solid #d8d8d8;
     padding: 4px 0;
     margin-bottom: 15px; }
-  .qd-supplies__item-order-history--order-details {
-    width: 100%; }
-    @media screen and (min-width: 1280px) and (max-width: 9998em) {
-      .qd-supplies__item-order-history--order-details {
-        width: 60%; } }
   .qd-supplies__item-order-history--number, .qd-supplies__item-order-history--time, .qd-supplies__item-order-history--client, .qd-supplies__item-order-history--ordered-by, .qd-supplies__item-order-history--order-actions .qd-button {
     height: 30px;
     min-height: 30px;
