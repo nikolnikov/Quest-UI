@@ -666,10 +666,10 @@ input[type="checkbox"], input[type="radio"] {
   font-size: 14px;
   font-weight: 700; }
 
-.qd-subhead-2, .qd-annotation__text, md-checkbox.qd-checkbox, .qd-dropdown-menu__item, .qd-error-breaker__message, .qd-header__date-range, .qd-header__ordered-by, .qd-notifications-dropdown__day-header, .qd-overflow-menu__labels, .qd-pagination-bar__text, .qd-pagination-bar__text span, .qd-patient-profile-card__static-sub-wrapper--preference, .qd-patient-profile-card .qd-save-cancel__disclaimer, .qd-result-card__reviewed-by, .qd-result-card__time, .qd-notification-card__time, .qd-results__results-subhead, .qd-cart__labels, .qd-status-bars__status, .qd-test-and-diagnosis-card__code-number, .qd-tooltip, .qd-account-settings-page__details-item, .qd-account-settings-page__selected-item, .qd-lab-report__email-dialog-body, .qd-new-order__success-cta-subheader, .qd-patients-section__alphabet-letter, .qd-patient-profile__info-item, .qd-lab-report__info-item, .settings-page__item-subtitle {
+.qd-subhead-2, .qd-annotation__text, md-checkbox.qd-checkbox, .qd-dropdown-menu__item, .qd-error-breaker__message, .qd-header__date-range, .qd-header__ordered-by, .qd-notifications-dropdown__day-header, .qd-overflow-menu__labels, .qd-pagination-bar__text, .qd-pagination-bar__text span, .qd-patient-profile-card__static-sub-wrapper--preference, .qd-patient-profile-card .qd-save-cancel__disclaimer, .qd-result-card__reviewed-by, .qd-result-card__time, .qd-notification-card__time, .qd-results__results-subhead, .qd-cart__labels, .qd-status-bars__status, .qd-test-and-diagnosis-card__code-number, .qd-tooltip, .qd-account-settings-page__details-item, .qd-account-settings-page__selected-item, .qd-lab-report__email-dialog-body, .qd-new-order__success-cta-subheader, .qd-patients-section__alphabet-letter, .qd-patient-profile__info-item, .qd-lab-report__info-item, .settings-page__item-subtitle, .qd-supplies__subtitle {
   font-size: 14px; }
 
-.qd-body-1, .qd-autocomplete-suggestions .highlight, .qd-result-card__name, .login__phone-number, .qd-order-detail__success-description, .qd-patients-section__alphabet-letter--active, .qd-patient-profile__name--lab::before {
+.qd-body-1, .qd-autocomplete-suggestions .highlight, .qd-result-card__name, .login__phone-number, .qd-order-detail__success-description, .qd-patients-section__alphabet-letter--active, .qd-patient-profile__name--lab::before, .qd-supplies__cart--card-header {
   font-size: 14px;
   font-weight: 700; }
 
@@ -677,7 +677,7 @@ input[type="checkbox"], input[type="radio"] {
 .qd-order-card__patient-wrapper .qd-patient-card__name,
 .qd-result-card__patient-container .qd-patient-card__name,
 .qd-patient-card--full .qd-patient-card__name, .qd-patient-profile-card__title, .qd-new-order__order-note-title, .qd-patient-profile-card__content, md-radio-button.qd-radio-button, .qd-result-card__date, .qd-notification-card__date, .qd-results__no-results-subhead, .qd-results__results-header, .qd-results__results-status, .qd-patient-profile__results-status, .qd-select-input .md-select-value.md-select-placeholder, .qd-select-input .md-select-value, .md-select-menu-container md-option .md-text, .qd-test-and-diagnosis-card__inline-info-block label, md-input-container label:not(.md-no-float):not(.md-container-ignore),
-md-input-container .md-input.qd-text-input, .qd-home__graph-container .qd-home__section-header md-select, .qd-index-page__filters-header, .qd-index-page__results-bar-status, .qd-lab-report__reviewed-byline, .qd-lab-report__reviewed-name, .login__text, .login__question-text, .qd-mlcp__card, .qd-mlcp__policy, .qd-mlcp__dialog, .qd-new-order__saved-list-title, .qd-patients-section__filter-toggle, .qd-patient-profile__diagnoses-indicator-tag, .settings-page__item--labeled::before, .qd-supplies .qd-rectangle-tabs__tab, .qd-supplies__categories, .qd-supplies__item, .qd-supplies__item-order-history, .upgrade-browser__footnote {
+md-input-container .md-input.qd-text-input, .qd-home__graph-container .qd-home__section-header md-select, .qd-index-page__filters-header, .qd-index-page__results-bar-status, .qd-lab-report__reviewed-byline, .qd-lab-report__reviewed-name, .login__text, .login__question-text, .qd-mlcp__card, .qd-mlcp__policy, .qd-mlcp__dialog, .qd-new-order__saved-list-title, .qd-patients-section__filter-toggle, .qd-patient-profile__diagnoses-indicator-tag, .settings-page__item--labeled::before, .qd-supplies .qd-rectangle-tabs__tab, .qd-supplies__categories, .qd-supplies__item, .qd-supplies__item-order-history, .qd-supplies__cart--card-content, .upgrade-browser__footnote {
   font-size: 14px; }
 
 .qd-body-2-special, .qd-custom-dialog__info-block, .qd-order-card__info-box--tests, .qd-test-and-diagnosis-card--mini .qd-test-and-diagnosis-card__name {
@@ -7352,6 +7352,15 @@ a.qd-button.no-js {
       margin-left: 0; }
     .qd-supplies .qd-rectangle-tabs__tab--selected {
       border-bottom: 3px solid #35792a; }
+    .qd-supplies .qd-rectangle-tabs__tab .icon-cart--active {
+      width: 24px;
+      height: 24px;
+      color: #ffffff;
+      border-radius: 18px;
+      background: #3d83e1;
+      line-height: 24px;
+      font-size: 16px;
+      margin-right: 3px; }
   .qd-supplies .qd-rectangle-tabs__handle {
     height: auto;
     padding: 0; }
@@ -7530,6 +7539,43 @@ a.qd-button.no-js {
   .qd-supplies__item-order-history--quantity .amount {
     font-weight: 700;
     color: #000000; }
+
+.qd-supplies__subtitle {
+  font-weight: 300;
+  height: 54px;
+  margin: 0 40px; }
+
+.qd-supplies__cart--card {
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
+  padding: 0;
+  margin: 0 40px 20px;
+  border-radius: 0;
+  position: relative; }
+  .qd-supplies__cart--card-header {
+    text-transform: uppercase;
+    padding: 0 0 0 20px;
+    height: 50px;
+    color: #ffffff;
+    background-color: #35792a; }
+    .qd-supplies__cart--card-header .qd-icon {
+      color: #ffffff; }
+  .qd-supplies__cart--card-content {
+    padding: 15px 20px; }
+  .qd-supplies__cart--card-empty {
+    color: rgba(0, 0, 0, 0.38); }
+  .qd-supplies__cart--card-comments {
+    margin: 0;
+    padding: 0; }
+  .qd-supplies__cart--card-hint {
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 15px; }
+  .qd-supplies__cart--card .qd-radio-button:last-of-type {
+    margin-bottom: 0; }
+
+.qd-supplies .qd-save-cancel {
+  margin-bottom: 20px; }
+  .qd-supplies .qd-save-cancel button {
+    margin-bottom: 20px; }
 
 .qd-main-content {
   background: #ececec; }

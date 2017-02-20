@@ -1,1 +1,107 @@
-View Cart
+<section class="qd-supplies qd-supplies__cart">
+    <div class="qd-supplies__subtitle" flex layout="row" layout-align="start center">
+        Orders placed before 4PM EST should ship the same day.
+    </div>
+    
+    <md-card class="qd-supplies__cart--card">
+        <md-card-header ng-if="!forValidation" class="qd-supplies__cart--card-header" layout="row" layout-align="start center">
+            <md-card-header-text layout="row" class="layout-row">
+                Review
+            </md-card-header-text>
+        </md-card-header>
+        
+        <md-card-content class="qd-supplies__cart--card-content" layout="row">
+            Test
+        </md-card-content>
+    </md-card>
+    
+    <md-card class="qd-supplies__cart--card">
+        <md-card-header ng-if="!forValidation" class="qd-supplies__cart--card-header" layout="row" layout-align="space-between center">
+            <md-card-header-text layout="row" class="layout-row">
+                Shipping Address
+            </md-card-header-text>
+            
+            <button class="md-icon-button md-button md-button" type="button" ng-click="contactData.activateEditMode('contact')" id="editContactAndReferenceInformation" aria-label="Activate Edit Mode">
+                <md-icon ng-hide="contactData.editing.contact" class="qd-icon icon-edit" aria-hidden="false"></md-icon>
+            </button>
+        </md-card-header>
+        
+        <md-card-content class="qd-supplies__cart--card-content" layout="row">
+            <md-radio-group ng-model="vm.shippingAddress">
+                <md-radio-button value="1" class="qd-radio-button">
+                    <b>ABC Practice</b> 2100 Example Street, Mason, OH 45421
+                </md-radio-button>
+                <md-radio-button value="2" class="qd-radio-button">
+                    <b>ABC Practice</b> 1500 Default Rd, Cincinnati, OH 44444
+                </md-radio-button>
+                <md-radio-button value="3" class="qd-radio-button">
+                    <b>ABC Practice</b> 1000 Anywhere Dr., Akron, OH 48774
+                </md-radio-button>
+            </md-radio-group>
+        </md-card-content>
+    </md-card>
+    
+    <md-card class="qd-supplies__cart--card">
+        <md-card-header ng-if="!forValidation" class="qd-supplies__cart--card-header" layout="row" layout-align="space-between center">
+            <md-card-header-text layout="row" class="layout-row">
+                Reoccurring Orders (Optional)
+            </md-card-header-text>
+            
+            <button class="md-icon-button md-button md-button" type="button" ng-click="contactData.activateEditMode('contact')" id="editContactAndReferenceInformation" aria-label="Activate Edit Mode">
+                <md-icon ng-hide="contactData.editing.contact" class="qd-icon icon-edit" aria-hidden="false"></md-icon>
+            </button>
+        </md-card-header>
+        
+        <md-card-content class="qd-supplies__cart--card-content" layout="row">
+            <div class="qd-supplies__cart--card-empty">Edit to set up reoccurring order.</div>
+        </md-card-content>
+    </md-card>
+    
+    <md-card class="qd-supplies__cart--card">
+        <md-card-header ng-if="!forValidation" class="qd-supplies__cart--card-header" layout="row" layout-align="space-between center">
+            <md-card-header-text layout="row" class="layout-row">
+                Email (Optional)
+            </md-card-header-text>
+            
+            <button class="md-icon-button md-button md-button" type="button" ng-click="contactData.activateEditMode('contact')" id="editContactAndReferenceInformation" aria-label="Activate Edit Mode">
+                <md-icon ng-hide="contactData.editing.contact" class="qd-icon icon-edit" aria-hidden="false"></md-icon>
+            </button>
+        </md-card-header>
+        
+        <md-card-content class="qd-supplies__cart--card-content" layout="row" layout-wrap>
+            <div class="qd-supplies__cart--card-hint" flex="100">
+                Only necessary for shipping updates.  
+            </div>
+            
+            <md-radio-group ng-model="vm.emailAddress" flex="100">
+                <md-radio-button value="1" class="qd-radio-button">
+                    doctor@abcpractice.org
+                </md-radio-button>
+                <md-radio-button value="2" class="qd-radio-button">
+                    phleb@abcpractice.org
+                </md-radio-button>
+            </md-radio-group>
+        </md-card-content>
+    </md-card>
+    
+    <md-card class="qd-supplies__cart--card">
+        <md-card-header ng-if="!forValidation" class="qd-supplies__cart--card-header" layout="row" layout-align="space-between center">
+            <md-card-header-text layout="row" class="layout-row">
+                Comments (Optional)
+            </md-card-header-text>
+        </md-card-header>
+        
+        <md-card-content class="qd-supplies__cart--card-content" layout="row">
+            <md-input-container flex="" class="qd-supplies__cart--card-comments">
+                <textarea ng-model="commentData.patient.patientComments" md-maxlength="250" maxlength="250" md-select-on-focus="" class="qd-text-input" aria-label="Order Comments"></textarea>
+            </md-input-container>
+        </md-card-content>
+    </md-card>
+    
+    <div layout="column" layout-align="center center" class="qd-save-cancel">
+        <button class="md-raised qd-button md-button" type="button" ng-transclude="" ng-click="#" aria-label="Place Order button">
+            Place Order
+        </button>
+        <a href="#" class="qd-link" ng-click="#">Cancel</a>
+    </div>
+</section>

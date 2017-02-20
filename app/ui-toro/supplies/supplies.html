@@ -7,7 +7,10 @@
         
         <ul class="qd-rectangle-tabs" flex="100" flex-gt-xs="90" layout="row" layout-align="end end" layout-align-xs="center end" ng-model="vm.tabs">
             <li class="qd-rectangle-tabs__tab" ng-repeat="tab in vm.tabs track by $index" ng-class="{'qd-rectangle-tabs__tab--selected': vm.selectedTab === tab.slug}" ng-click="vm.selectTab(tab.slug)">
-                <md-icon class="{{tab.icon}} qd-icon qd-icon--green hide-xs"></md-icon>
+                <md-icon class="{{tab.icon}} qd-icon qd-icon--green hide-xs" ng-hide="(vm.selectedTab === 'Cart') && (tab.title==='View Cart')"></md-icon>
+                <md-icon class="qd-icon icon-cart--active" aria-hidden="false" ng-show="(vm.selectedTab === 'Cart') && (tab.slug === 'Cart')">
+                    <span>2</span>
+                </md-icon>
                 <span class="hide-xs">{{::tab.title}}</span>
                 <span class="hide-gt-xs">{{::tab.slug}}</span>
             </li>
