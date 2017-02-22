@@ -6,29 +6,48 @@
   padding: 10px 15px;
   
   &__error  {
-    color: $white;
-    background: $red;
+    color: #eb3941;
+    background: #fff0f0;
     
     md-icon.qd-icon {
-      color: $white;
+      color: #eb3941;
       margin: 0 10px 0 0;
       
       &.icon-close  {
+        color: $darkest-gray;
         margin-right: 0;
         margin-left: 15px;
       }
     }
+    
+    a.qd-link {
+        color: $white;
+        border-bottom-color: $white;
+    }
+  }
+
+  // Multiple warning banners for OE - hides banner messages for Diagnostics except in tab view.
+  &__warning-diagnosis-mobile {
+      @include when-wider-than(mini-tablet) {
+        display: none;
+      }
+  }
+
+  // Success page
+  &__draft-message {
+    background: $white;
   }
   
-  &__warning  {
+  &__warning {
     color: $darkest-gray;
-    background: $yellow-lab-alert;
+    background: #fffbe6;
     
     md-icon.qd-icon {
-      color: $darkest-gray;
+      color: #f5bd00;
       margin: 0 10px 0 0;
       
-      &.icon-close  {
+      &.icon-close {
+        color: $darkest-gray;
         margin-right: 0;
         margin-left: 15px;
       }

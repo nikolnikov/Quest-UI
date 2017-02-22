@@ -4,30 +4,42 @@ function MLCPCtrl($scope, $log, $mdDialog) {
   
   vm.showABNDialog = showABNDialog;
   
-  $scope.mlcpPolicy = true;
+  vm.mlcpPolicy = true;
   
-  $scope.showTests = function(){
-    $scope.testResults = true;
-    $scope.pagination = true;
-    $scope.testResultsTitle = true;
+  vm.showTests = function(){
+    vm.testResults = true;
+    vm.pagination = true;
+    vm.testResultsTitle = true;
   };
   
-  $scope.selectTest = function(){
-    $scope.testContainer = true;
-    $scope.policy = true;
+  vm.selectTest = function(){
+    vm.testContainer = true;
+    vm.policy = true;
   };
   
-  $scope.addTest = function(){
-    $scope.additionalTest = true;
+  vm.addTest = function(){
+    vm.additionalTest = true;
   };
   
-  $scope.showDxResults = function(){
-    $scope.testResults = false;
-    $scope.dxResults = true;
-    $scope.dxSearch = true;
-    $scope.testPolicy = true;
-    $scope.mlcpPolicy = false;
-    $scope.testResultsTitle = false;
+  vm.showDxResults = function(){
+    vm.testResults = false;
+    vm.dxResults = true;
+    vm.dxSearch = true;
+    vm.testPolicy = true;
+    vm.mlcpPolicy = false;
+    vm.testResultsTitle = false;
+  };
+  
+  vm.showSecondaryDx = function(){
+    vm.arrowDown = true;
+    vm.arrowUp = true;
+    vm.secondaryDx = true;
+  };
+  
+  vm.hideSecondaryDx = function(){
+    vm.arrowDown = false;
+    vm.arrowUp = false;
+    vm.secondaryDx = false;
   };
   
   function showABNDialog(item, ev) {

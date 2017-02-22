@@ -1,10 +1,11 @@
+<form name="qdSuppliesCart">
 <section class="qd-supplies qd-supplies__cart">
     <div class="qd-supplies__subtitle" flex layout="row" layout-align="start center">
-        Orders placed before 4PM EST should ship the same day.
+        Orders placed by 4PM EST should ship the same day.
     </div>
     
     <md-card class="qd-supplies__cart--card">
-        <md-card-header ng-if="!forValidation" class="qd-supplies__cart--card-header" layout="row" layout-align="start center">
+        <md-card-header class="qd-supplies__cart--card-header" layout="row" layout-align="start center">
             <md-card-header-text layout="row" class="layout-row">
                 Review
             </md-card-header-text>
@@ -57,77 +58,120 @@
         </md-card-content>
     </md-card>
     
-    <md-card class="qd-supplies__cart--card">
-        <md-card-header ng-if="!forValidation" class="qd-supplies__cart--card-header" layout="row" layout-align="space-between center">
+    <md-card class="qd-supplies__cart--card" ng-class="{'qd-supplies__cart--card-edit' : vm.editAddress}">
+        <md-card-header class="qd-supplies__cart--card-header" layout="row" layout-align="space-between center">
             <md-card-header-text layout="row" class="layout-row">
-                Shipping Address
+                <span ng-if="vm.editAddressTitle">Edit&nbsp;</span> Shipping Address
             </md-card-header-text>
             
-            <button class="md-icon-button md-button md-button" type="button" ng-click="contactData.activateEditMode('contact')" id="editContactAndReferenceInformation" aria-label="Activate Edit Mode">
-                <md-icon ng-hide="contactData.editing.contact" class="qd-icon icon-edit" aria-hidden="false"></md-icon>
+            <button class="md-icon-button md-button" type="button" ng-click="vm.editSuppliesAddress()" aria-label="Activate Edit Mode">
+                <md-icon ng-if="vm.editAddressIcon" class="qd-icon icon-edit" aria-hidden="false"></md-icon>
+            </button>
+        </md-card-header>
+        
+        
+        <md-card-content class="qd-supplies__cart--card-content" layout="row">
+            <div ng-if="vm.populateAddress">
+                <md-radio-group ng-model="vm.shippingAddress">
+                    <md-radio-button value="1" class="qd-radio-button">
+                        <b>ABC Practice</b> 2100 Example Street, Mason, OH 45421
+                    </md-radio-button>
+                    <md-radio-button value="2" class="qd-radio-button">
+                        <b>ABC Practice</b> 1500 Default Rd, Cincinnati, OH 44444
+                    </md-radio-button>
+                    <md-radio-button value="3" class="qd-radio-button">
+                        <b>ABC Practice</b> 1000 Anywhere Dr., Akron, OH 48774
+                    </md-radio-button>
+                </md-radio-group>
+            </div>
+            
+            <div ng-if="vm.editAddress">
+                Test
+            </div>
+        </md-card-content>
+        
+        <div ng-if="vm.editAddressSave" layout="column" layout-align="center center" class="qd-save-cancel">
+            <md-button class="md-raised qd-button" ng-click="" aria-label="Save Changes button">
+                Save Changes
+            </md-button>
+            
+            <a href="#" class="qd-link" ng-click="vm.cancelSuppliesAddress()">Cancel</a>
+        </div>
+    </md-card>
+    
+    <md-card class="qd-supplies__cart--card" ng-class="{'qd-supplies__cart--card-edit' : vm.editReoccurrance}">
+        <md-card-header class="qd-supplies__cart--card-header" layout="row" layout-align="space-between center">
+            <md-card-header-text layout="row" class="layout-row">
+                <span ng-if="vm.editReoccurranceTitle">Edit&nbsp;</span> Reoccurring Order (Optional)
+            </md-card-header-text>
+            
+            <button class="md-icon-button md-button" type="button" ng-click="vm.editSuppliesReoccurrance()" aria-label="Activate Edit Mode">
+                <md-icon ng-if="vm.editReoccurranceIcon" class="qd-icon icon-edit" aria-hidden="false"></md-icon>
             </button>
         </md-card-header>
         
         <md-card-content class="qd-supplies__cart--card-content" layout="row">
-            <md-radio-group ng-model="vm.shippingAddress">
-                <md-radio-button value="1" class="qd-radio-button">
-                    <b>ABC Practice</b> 2100 Example Street, Mason, OH 45421
-                </md-radio-button>
-                <md-radio-button value="2" class="qd-radio-button">
-                    <b>ABC Practice</b> 1500 Default Rd, Cincinnati, OH 44444
-                </md-radio-button>
-                <md-radio-button value="3" class="qd-radio-button">
-                    <b>ABC Practice</b> 1000 Anywhere Dr., Akron, OH 48774
-                </md-radio-button>
-            </md-radio-group>
-        </md-card-content>
-    </md-card>
-    
-    <md-card class="qd-supplies__cart--card">
-        <md-card-header ng-if="!forValidation" class="qd-supplies__cart--card-header" layout="row" layout-align="space-between center">
-            <md-card-header-text layout="row" class="layout-row">
-                Reoccurring Orders (Optional)
-            </md-card-header-text>
+            <div ng-if="vm.populateReoccurrance">
+                <div class="qd-supplies__cart--card-empty">Edit to set up reoccurring order.</div>
+            </div>
             
-            <button class="md-icon-button md-button md-button" type="button" ng-click="contactData.activateEditMode('contact')" id="editContactAndReferenceInformation" aria-label="Activate Edit Mode">
-                <md-icon ng-hide="contactData.editing.contact" class="qd-icon icon-edit" aria-hidden="false"></md-icon>
-            </button>
-        </md-card-header>
+            <div ng-if="vm.editReoccurrance">
+                Test
+            </div>
+        </md-card-content>
         
-        <md-card-content class="qd-supplies__cart--card-content" layout="row">
-            <div class="qd-supplies__cart--card-empty">Edit to set up reoccurring order.</div>
-        </md-card-content>
+        <div ng-if="vm.editReoccurranceSave" layout="column" layout-align="center center" class="qd-save-cancel">
+            <md-button class="md-raised qd-button" ng-click="" aria-label="Save Changes button">
+                Save Changes
+            </md-button>
+            
+            <a href="#" class="qd-link" ng-click="vm.cancelSuppliesReoccurrance()">Cancel</a>
+        </div>
     </md-card>
     
-    <md-card class="qd-supplies__cart--card">
-        <md-card-header ng-if="!forValidation" class="qd-supplies__cart--card-header" layout="row" layout-align="space-between center">
+    <md-card class="qd-supplies__cart--card" ng-class="{'qd-supplies__cart--card-edit' : vm.editEmail}">
+        <md-card-header class="qd-supplies__cart--card-header" layout="row" layout-align="space-between center">
             <md-card-header-text layout="row" class="layout-row">
-                Email (Optional)
+                <span ng-if="vm.editEmailTitle">Edit&nbsp;</span> Email (Optional)
             </md-card-header-text>
             
-            <button class="md-icon-button md-button md-button" type="button" ng-click="contactData.activateEditMode('contact')" id="editContactAndReferenceInformation" aria-label="Activate Edit Mode">
-                <md-icon ng-hide="contactData.editing.contact" class="qd-icon icon-edit" aria-hidden="false"></md-icon>
+            <button class="md-icon-button md-button" type="button" ng-click="vm.editSuppliesEmail()" aria-label="Activate Edit Mode">
+                <md-icon ng-if="vm.editEmailIcon" class="qd-icon icon-edit" aria-hidden="false"></md-icon>
             </button>
         </md-card-header>
         
         <md-card-content class="qd-supplies__cart--card-content" layout="row" layout-wrap>
-            <div class="qd-supplies__cart--card-hint" flex="100">
-                Only necessary for shipping updates.  
+            <div ng-if="vm.populateEmail">
+                <div class="qd-supplies__cart--card-hint" flex="100">
+                    Only necessary for shipping updates.  
+                </div>
+                
+                <md-radio-group ng-model="vm.emailAddress" flex="100">
+                    <md-radio-button value="1" class="qd-radio-button">
+                        doctor@abcpractice.org
+                    </md-radio-button>
+                    <md-radio-button value="2" class="qd-radio-button">
+                        phleb@abcpractice.org
+                    </md-radio-button>
+                </md-radio-group>
             </div>
             
-            <md-radio-group ng-model="vm.emailAddress" flex="100">
-                <md-radio-button value="1" class="qd-radio-button">
-                    doctor@abcpractice.org
-                </md-radio-button>
-                <md-radio-button value="2" class="qd-radio-button">
-                    phleb@abcpractice.org
-                </md-radio-button>
-            </md-radio-group>
+            <div ng-if="vm.editEmail">
+              
+            </div>
         </md-card-content>
+        
+        <div ng-if="vm.editEmailSave" layout="column" layout-align="center center" class="qd-save-cancel">
+            <md-button class="md-raised qd-button" ng-click="" aria-label="Save Changes button">
+                Save Changes
+            </md-button>
+            
+            <a href="#" class="qd-link" ng-click="vm.cancelSuppliesEmail()">Cancel</a>
+        </div>
     </md-card>
     
     <md-card class="qd-supplies__cart--card">
-        <md-card-header ng-if="!forValidation" class="qd-supplies__cart--card-header" layout="row" layout-align="space-between center">
+        <md-card-header class="qd-supplies__cart--card-header" layout="row" layout-align="space-between center">
             <md-card-header-text layout="row" class="layout-row">
                 Comments (Optional)
             </md-card-header-text>
@@ -141,9 +185,12 @@
     </md-card>
     
     <div layout="column" layout-align="center center" class="qd-save-cancel">
-        <button class="md-raised qd-button md-button" type="button" ng-transclude="" ng-click="#" aria-label="Place Order button">
+        <button class="md-raised qd-button md-button" type="button" ng-click="#" aria-label="Place Order button">
             Place Order
         </button>
         <a href="#" class="qd-link" ng-click="#">Cancel</a>
     </div>
+    
+    <div ng-class="{'qd-patient-profile__fade-out' : vm.editAddress || vm.editReoccurrance || vm.editEmail}"></div>
 </section>
+</form>

@@ -14,14 +14,10 @@
             <md-input-container flex="100" flex-gt-xs="33" class="qd-patient-profile__input-container">
                 <label class="qd-required">Lab</label>
                 
-                <md-select class="qd-select-input qd-required" ng-model="mlcp.lab">
-                    <md-option value="Tampa - North Florida">
-                      Tampa - North Florida
-                    </md-option>
-                    
-                    <md-option value="Miami - South Florida">
-                      Miami - South Florida
-                    </md-option>
+                <md-select class="qd-select-input qd-required" ng-model="vm.PS" ng-change="vm.changePS()">
+                  <md-option ng-repeat="option in vm.perfSites track by $index" ng-value="option">
+                  {{option.psName}} ({{option.psID}})
+                  </md-option>
                 </md-select>
                 
                 <div class="qd-input-error">Field is required.</div>
@@ -30,14 +26,10 @@
             <md-input-container flex="100" flex-gt-xs="33" class="qd-patient-profile__input-container">
                 <label class="qd-required">Client</label>
                 
-                <md-select class="qd-select-input qd-required" ng-model="mlcp.client">
-                    <md-option value="Edward Blake MD">
-                      Edward Blake MD
-                    </md-option>
-                    
-                    <md-option value="Joseph Kovacs MD">
-                      Joseph Kovacs MD
-                    </md-option>
+                <md-select class="qd-select-input qd-required" ng-model="vm.client" ng-change="vm.changeClient()">
+                  <md-option ng-repeat="option in vm.clientList track by $index" ng-value="option">
+                  {{option.clientName}} ({{option.clientNum}})
+                  </md-option>
                 </md-select>
                 
                 <div class="qd-input-error">Field is required.</div>
@@ -47,13 +39,9 @@
                 <label class="qd-required">Insurance</label>
                 
                 <md-select class="qd-select-input qd-required" ng-model="mlcp.insurance">
-                    <md-option value="Aetna">
-                      Aetna
-                    </md-option>
-                    
-                    <md-option value="Blue Cross/Blue Shield">
-                      Blue Cross/Blue Shield
-                    </md-option>
+                 <md-option ng-repeat="option in vm.insurance track by $index" ng-value="option">
+                  {{option.insName}} ({{option.insCode}})
+                  </md-option>
                 </md-select>
                 
                 <div class="qd-input-error">Field is required.</div>
@@ -62,23 +50,29 @@
             <md-input-container md-no-float flex="100" flex-gt-xs="50" class="qd-mlcp__search icon-search">
                 <input class="qd-text-input qd-required" type="text" ng-keydown="vm.searchText.length > 2" ng-model="vm.searchText" placeholder="Test Code/Description">
             
-                <md-icon class="qd-icon icon-go material-icons" aria-hidden="true" ng-show="vm.searchText.length > 2" ng-click="showTests()"></md-icon>
+                <md-icon class="qd-icon icon-go material-icons" aria-hidden="true" ng-show="vm.searchText.length > 2" ng-click="vm.showTests()"></md-icon>
             </md-input-container>
         </form>
     </div>
     
-    <div class="qd-mlcp__test-container qd-mlcp__test-container--results" ng-show="testResults">
+    <div class="qd-mlcp__test-container qd-mlcp__test-container--results" ng-show="vm.testResults">
+        <div class="qd-message qd-message__warning qd-message--space-bottom" layout="row" layout-align="start center">
+            <md-icon class="qd-icon icon-warning"></md-icon>
+      
+            Message goes here.
+        </div>
+        
         <div class="qd-mlcp__results-content">
             <div class="qd-mlcp__results-filters qd-mlcp__results-filters--tests" flex layout="column" layout-gt-sm="row" layout-align="center space-between" layout-align-gt-sm="space-between center">
                 <div flex>Search Results: <b>Lipid</b></div>
                 
-                <div class="qd-mlcp__pagination" ng-show="pagination">
+                <div class="qd-mlcp__pagination" ng-show="vm.pagination">
                     <qd-pagination-controls page-size-options="::vm.pagination.pageSizes" items-per-page="vm.pagination.itemsPerPage" pagination-id="patientResults">
                     </qd-pagination-controls>
                 </div>
             </div>
             
-            <md-card class="qd-mlcp__card" flex ng-click="selectTest()">
+            <md-card class="qd-mlcp__card" flex ng-click="vm.selectTest()">
                 <div class="qd-mlcp__card-header" layout="row" layout-xs="column" layout-align="space-between center" layout-align-xs="center start">
                     Lipid Panel
                     
@@ -92,24 +86,12 @@
                 </div>
                 
                 <div class="qd-mlcp__card-content" flex layout="row" layout-xs="column" layout-align="start center" layout-align-xs="center start">
-                    <div class="qd-mlcp__card-content--label">Components:</div>
+                    <div class="qd-mlcp__card-content--label" flex="1" layout="row" layout-xs="column">Components:</div>
                     
-                    <div class="qd-mlcp__card-content--item" flex="1">Cholesterol, Total - 334,</div>
-                    <div class="qd-mlcp__card-content--item" flex="1">HDL Cholesterol - 608,</div>
-                    <div class="qd-mlcp__card-content--item" flex="1">Triglycerides - 896</div>
-                </div>
-            </md-card>
-            
-            <md-card class="qd-mlcp__card" flex>
-                <div class="qd-mlcp__card-header" layout="row" layout-xs="column" layout-align="space-between center" layout-align-xs="center start">
-                    Lipid Example - Non Panel
-                    
-                    <div class="qd-mlcp__card-header-right">
-                        7601
-                        
-                        <span class="qd-mlcp__card-header-right--cost">
-                            $47
-                        </span>
+                    <div flex layout-wrap layout="row" layout-xs="column">
+                        <div class="qd-mlcp__card-content--item" flex="1">Cholesterol, Total - 334,</div>
+                        <div class="qd-mlcp__card-content--item" flex="1">HDL Cholesterol - 608,</div>
+                        <div class="qd-mlcp__card-content--item" flex="1">Triglycerides - 896</div>
                     </div>
                 </div>
             </md-card>
@@ -128,14 +110,28 @@
                 </div>
             </md-card>
             
-            <div class="qd-mlcp__pagination qd-mlcp__pagination--bottom" layout="row" layout-align="end center" ng-show="pagination">
+            <md-card class="qd-mlcp__card" flex>
+                <div class="qd-mlcp__card-header" layout="row" layout-xs="column" layout-align="space-between center" layout-align-xs="center start">
+                    Lipid Example - Non Panel
+                    
+                    <div class="qd-mlcp__card-header-right">
+                        7601
+                        
+                        <span class="qd-mlcp__card-header-right--cost">
+                            $47
+                        </span>
+                    </div>
+                </div>
+            </md-card>
+            
+            <div class="qd-mlcp__pagination qd-mlcp__pagination--bottom" layout="row" layout-align="end center" ng-show="vm.pagination">
                 <qd-pagination-controls page-size-options="::vm.pagination.pageSizes" items-per-page="vm.pagination.itemsPerPage" pagination-id="patientResults">
                 </qd-pagination-controls>
             </div>
         </div>
     </div>
     
-    <div class="qd-mlcp__test-container" flex layout="row" layout-xs="column" ng-class="{'qd-mlcp__test-container--border' : testResults}" ng-show="testContainer">
+    <div class="qd-mlcp__test-container" flex layout="row" layout-xs="column" ng-class="{'qd-mlcp__test-container--border' : vm.testResults}" ng-show="vm.testContainer">
         <div class="qd-mlcp__results-content" flex>
             <div class="qd-mlcp__results-title">Select CPT Description to View Policy</div>
             
@@ -153,23 +149,37 @@
                 </div>
                 
                 <div class="qd-mlcp__card-content" flex layout="row" layout-xs="column" layout-align="start center" layout-align-xs="center start">
-                    <div class="qd-mlcp__card-content--label">Components:</div>
+                    <div class="qd-mlcp__card-content--label" flex="1" layout="row" layout-xs="column">Components:</div>
                     
-                    <div class="qd-mlcp__card-content--item" flex="1"><a href="#" class="qd-link" ng-click="addTest()">Cholesterol, Total - 334</a></div>
-                    <div class="qd-mlcp__card-content--item" flex="1"><a href="#" class="qd-link">HDL Cholesterol - 608</a></div>
-                    <div class="qd-mlcp__card-content--item" flex="1"><a href="#" class="qd-link">Triglycerides - 896</a></div>
+                    <div flex layout-wrap layout="row" layout-xs="column">
+                        <div class="qd-mlcp__card-content--item" flex="1"><a href="#" class="qd-link" ng-click="vm.addTest()">Cholesterol, Total - 334</a></div>
+                        <div class="qd-mlcp__card-content--item" flex="1"><a href="#" class="qd-link">HDL Cholesterol - 608</a></div>
+                        <div class="qd-mlcp__card-content--item" flex="1"><a href="#" class="qd-link">Triglycerides - 896</a></div>
+                    </div>
                 </div>
                     
                 <md-divider class="qd-mlcp__divider"></md-divider>
                     
                 <div class="qd-mlcp__card-content qd-mlcp__card-content--chips" flex layout="row" layout-xs="column" layout-align="start center" layout-align-xs="center start">
-                    <div class="qd-mlcp__card-content--label">CPT Descriptions:</div>
+                    <div class="qd-mlcp__card-content--label" flex="1" layout="row" layout-xs="column">CPT Descriptions:</div>
                     
-                    <div class="qd-mlcp__card-content--chip" flex="1" ng-click="showDxResults()">Lipid Panel (@) - $141.68</div>
+                    <div flex layout-wrap layout="row" layout-xs="column">
+                        <div class="qd-mlcp__card-content--chip" flex="1" ng-click="vm.showDxResults()">Lipid Panel (@) - $141.68</div>
+                        
+                        <div class="qd-mlcp__card-content--chip" flex="1" ng-click="vm.showDxResults()">Lipid Panel (@) - $141.68</div>
+                        
+                        <div class="qd-mlcp__card-content--chip" flex="1" ng-click="vm.showDxResults()">Lipid Panel (@) - $141.68</div>
+                        
+                        <div class="qd-mlcp__card-content--chip" flex="1" ng-click="vm.showDxResults()">Lipid Panel (@) - $141.68</div>
+                        
+                        <div class="qd-mlcp__card-content--chip" flex="1" ng-click="vm.showDxResults()">Lipid Panel (@) - $141.68</div>
+                        
+                        <div class="qd-mlcp__card-content--chip" flex="1" ng-click="vm.showDxResults()">Lipid Panel (@) - $141.68</div>
+                    </div>
                 </div>
             </md-card>
             
-            <md-card class="qd-mlcp__card" flex ng-show="additionalTest">
+            <md-card class="qd-mlcp__card" flex ng-show="vm.additionalTest">
                 <div class="qd-mlcp__card-header" layout="row" layout-xs="column" layout-align="space-between center" layout-align-xs="center start">
                     Cholesterol, Total
                     
@@ -183,9 +193,11 @@
                 </div>
                     
                 <div class="qd-mlcp__card-content qd-mlcp__card-content--chips" flex layout="row" layout-xs="column" layout-align="start center" layout-align-xs="center start">
-                    <div class="qd-mlcp__card-content--label">CPT Descriptions:</div>
+                    <div class="qd-mlcp__card-content--label" flex="1" layout="row" layout-xs="column">CPT Descriptions:</div>
                     
-                    <div class="qd-mlcp__card-content--chip" flex="1" ng-click="showDxResults()">Cholesterol (@) - $36.77</div>
+                    <div flex layout-wrap layout="row" layout-xs="column">
+                        <div class="qd-mlcp__card-content--chip" flex="1" ng-click="vm.showDxResults()">Cholesterol (@) - $36.77</div>
+                    </div>
                 </div>
             </md-card>
         </div>
@@ -193,11 +205,11 @@
     
     <div class="qd-mlcp__results" flex>
         <div class="qd-mlcp__results-content" flex>
-            <div class="qd-mlcp__policy" ng-show="policy">
+            <div class="qd-mlcp__policy" ng-show="vm.policy">
                 <div class="qd-mlcp__policy--header">
-                    <span ng-show="mlcpPolicy">Limited Coverage </span>
+                    <span ng-show="vm.mlcpPolicy">Limited Coverage </span>
                     Policies
-                    <span ng-show="testPolicy"> for <b>Lipid Panel</b></span>
+                    <span ng-show="vm.testPolicy"> for <b>Lipid Panel</b></span>
                 </div>
                 
                 <div class="qd-mlcp__policy--body">
@@ -205,36 +217,71 @@
                 </div>
             </div>
             
-            <div class="qd-mlcp__results-filters" flex layout="column" layout-gt-sm="row" layout-align="center space-between" layout-align-gt-sm="space-between center" ng-show="dxSearch">
+            <div class="qd-mlcp__results-filters" flex layout="column" layout-gt-sm="row" layout-align="center space-between" layout-align-gt-sm="space-between center" ng-show="vm.dxSearch">
                 <md-input-container md-no-float flex="100" flex-gt-xs="80" class="qd-mlcp__search icon-search">
                     <input class="qd-text-input qd-required" type="text" ng-keydown="vm.searchTextDx.length > 2" ng-model="vm.searchTextDx" placeholder="Search Diagnoses">
                 
                     <md-icon class="qd-icon icon-go material-icons" aria-hidden="true" ng-show="vm.searchTextDx.length > 2" ng-click="vm.searchTextDx.length > 2"> </md-icon>
                 </md-input-container>
                 
-                <div class="qd-mlcp__pagination" ng-show="pagination">
+                <div class="qd-mlcp__pagination" ng-show="vm.pagination">
                     <qd-pagination-controls page-size-options="::vm.pagination.pageSizes" items-per-page="vm.pagination.itemsPerPage" pagination-id="patientResults">
                     </qd-pagination-controls>
                 </div>
             </div>
             
-            <div ng-show="dxResults">
-                <md-card class="qd-mlcp__card qd-mlcp__card--diagnoses" flex>
-                    <div class="qd-mlcp__card-header" layout="row" layout-xs="column" layout-align="space-between center" layout-align-xs="center start">
-                        Cytomegaloviral pancreatitis
+            <div ng-show="vm.dxResults">
+                <md-card class="qd-mlcp__card qd-mlcp__card--diagnoses" flex layout="column" layout-align="center space-between">
+                    <div class="qd-mlcp__card--diagnoses-body" flex layout="row">
+                        <div flex="90" flex-gt-xs="100" layout="column" layout-gt-xs="row" layout-align="space-between center" layout-align-xs="center start">
+                            <div flex="100">
+                                Cytomegaloviral pancreatitis
+                            </div>
+                            
+                            <div class="qd-mlcp__card-header-right" flex="1">
+                                B252
+                            </div>
+                        </div>
                         
-                        <div class="qd-mlcp__card-header-right">
-                            B252
+                        <md-button class="md-button-icon qd-mlcp__button" flex="1" layout="column" layout-gt-xs="row">
+                            <md-icon ng-hide="vm.arrowDown" class="qd-icon icon-arrowdownbig qd-icon--green" aria-hidden="true" ng-click="vm.showSecondaryDx()"></md-icon>
+                            <md-icon ng-show="vm.arrowUp" class="qd-icon icon-arrowupbig qd-icon--green" aria-hidden="true" ng-click="vm.hideSecondaryDx()"></md-icon>
+                        </md-button>
+                    </div>
+                    
+                    <div class="qd-mlcp__card--diagnoses-secondary" flex="100" layout="column" layout-gt-xs="row" layout-wrap ng-show="vm.secondaryDx">
+                        <div class="qd-mlcp__card--diagnoses-item" flex="100" flex-gt-xs="50">
+                            Plasmodium malariae malaria with nephropathy <span class="qd-dx-code">B520</span>
+                        </div>
+                        
+                        <div class="qd-mlcp__card--diagnoses-item" flex="100" flex-gt-xs="50">
+                            Plasmodium malariae malaria with nephropathy <span class="qd-dx-code">B520</span>
+                        </div>
+                        
+                        <div class="qd-mlcp__card--diagnoses-item" flex="100" flex-gt-xs="50">
+                            Plasmodium malariae malaria with nephropathy <span class="qd-dx-code">B520</span>
+                        </div>
+                        
+                        <div class="qd-mlcp__card--diagnoses-item" flex="100" flex-gt-xs="50">
+                            Plasmodium malariae malaria with nephropathy <span class="qd-dx-code">B520</span>
+                        </div>
+                        
+                        <div class="qd-mlcp__card--diagnoses-item" flex="100" flex-gt-xs="50">
+                            Plasmodium malariae malaria with nephropathy <span class="qd-dx-code">B520</span>
                         </div>
                     </div>
                 </md-card>
                 
-                <md-card class="qd-mlcp__card qd-mlcp__card--diagnoses" flex>
-                    <div class="qd-mlcp__card-header" layout="row" layout-xs="column" layout-align="space-between center" layout-align-xs="center start">
-                        Plasmodium malariae malaria with nephropathy
-                        
-                        <div class="qd-mlcp__card-header-right">
-                            B520
+                <md-card class="qd-mlcp__card qd-mlcp__card--diagnoses" flex layout="column" layout-align="center space-between">
+                    <div class="qd-mlcp__card--diagnoses-body" flex layout="row">
+                        <div flex="90" flex-gt-xs="100" layout="column" layout-gt-xs="row" layout-align="space-between center" layout-align-xs="center start">
+                            <div flex="100">
+                                Plasmodium malariae malaria with nephropathy
+                            </div>
+                            
+                            <div class="qd-mlcp__card-header-right" flex="1">
+                                B520
+                            </div>
                         </div>
                     </div>
                 </md-card>
