@@ -7516,13 +7516,17 @@ a.qd-button.no-js {
     padding: 4px 0;
     margin-bottom: 15px; }
   .qd-supplies__item-order-history--number, .qd-supplies__item-order-history--time, .qd-supplies__item-order-history--client, .qd-supplies__item-order-history--ordered-by, .qd-supplies__item-order-history--order-actions .qd-button {
-    height: 30px;
-    min-height: 30px;
     padding: 0 20px;
     display: flex;
     align-items: center;
     border-right: 1px solid #d8d8d8; }
-  @media screen and (max-width: 599px) {
+  @media screen and (max-width: 1279px) {
+    .qd-supplies__item-order-history--number, .qd-supplies__item-order-history--time, .qd-supplies__item-order-history--client, .qd-supplies__item-order-history--ordered-by {
+      padding: 4px 20px;
+      align-items: initial;
+      width: 35%;
+      border-right: none; } }
+  @media screen and (max-width: 899px) {
     .qd-supplies__item-order-history--number, .qd-supplies__item-order-history--time, .qd-supplies__item-order-history--client, .qd-supplies__item-order-history--ordered-by {
       width: 100%;
       border-right: none; } }
@@ -7531,20 +7535,23 @@ a.qd-button.no-js {
   .qd-supplies__item-order-history--number, .qd-supplies__item-order-history--client span, .qd-supplies__item-order-history--ordered-by span {
     font-weight: 700;
     color: #000000; }
-  .qd-supplies__item-order-history--order-actions {
-    width: 100%; }
-    .qd-supplies__item-order-history--order-actions .qd-button {
-      border-right: 1px solid #d8d8d8;
-      margin: 0;
-      line-height: normal; }
-      .qd-supplies__item-order-history--order-actions .qd-button:hover {
-        background: none; }
-      .qd-supplies__item-order-history--order-actions .qd-button:last-child {
-        border-right: none;
-        margin-right: 0; }
-    @media screen and (min-width: 1280px) {
-      .qd-supplies__item-order-history--order-actions {
-        width: 40%; } }
+  .qd-supplies__item-order-history--order-actions .qd-button {
+    border-right: 1px solid #d8d8d8;
+    margin: 0;
+    line-height: normal;
+    font-size: 12px;
+    display: inline-block; }
+    .qd-supplies__item-order-history--order-actions .qd-button:hover {
+      background: none; }
+    .qd-supplies__item-order-history--order-actions .qd-button:last-child {
+      border-right: none;
+      margin-right: 0; }
+  @media screen and (max-width: 599px) {
+    .qd-supplies__item-order-history--order-actions {
+      border-top: 1px solid #d8d8d8;
+      width: 100%;
+      margin-top: 10px;
+      padding-top: 2px; } }
   .qd-supplies__item-order-history--img {
     max-width: 80px;
     height: 80px;
