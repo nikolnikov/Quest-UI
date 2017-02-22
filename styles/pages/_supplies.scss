@@ -267,12 +267,16 @@
         }
     }
 
-    // Order History Page Styles
+    // Order History & Reoccurring Orders Page Styles
 
     &__item-order-history {
         @extend .qd-supplies__item;
         margin: 0 0 15px 0;
         height: auto;
+
+        &.expired {
+             opacity: 0.75; 
+        }
 
         &--order-details-wrapper {
             border-bottom: 1px solid $divider-gray-1;
@@ -280,14 +284,20 @@
             margin-bottom: 15px;
         }
 
-        &--number, &--time, &--client, &--ordered-by, &--order-actions .qd-button {
+        &--details,
+        &--order-occurs, 
+        &--order-actions .qd-button {
             padding: 0 20px;
             display: flex;
             align-items: center;
             border-right: 1px solid $divider-gray-1;
+
+            &:last-child {
+                border-right: none;
+            }
         }
 
-        &--number, &--time, &--client, &--ordered-by {
+        &--details {
 
             @include when-less-than(desktop) {
                 padding: 4px 20px;
@@ -300,15 +310,20 @@
                 width: 100%;
                 border-right: none;
             }
-
-            &:last-child {
-                border-right: none;
-            }
         }
 
-        &--number, &--client span, &--ordered-by span {
-            font-weight: 700;
-            color: $black;
+        &--details, 
+        &--order-occurs {
+
+            &.order-number, span {
+                font-weight: 700;
+                color: $black;
+            }
+
+            span {
+                display: inline-block;
+                padding-left: 5px;
+            }
         }
 
         &--order-actions {
@@ -319,6 +334,7 @@
                 line-height: normal;
                 font-size: 12px; 
                 display: inline-block;
+                opacity: initial;
 
                 &:hover {
                     background: none;
@@ -356,8 +372,6 @@
             }
         }
     }
-
-    // Reoccurring Orders Page Styles
     
     &__subtitle  {
         @extend %type-subhead-2;
