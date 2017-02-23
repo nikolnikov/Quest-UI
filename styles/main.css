@@ -2898,16 +2898,16 @@ md-input-container.md-input-focused:not(.md-input-has-value) md-select .md-selec
     display: none; }
   .qd-patient-profile-card__row .qd-patient-profile-card__input-container {
     border-right: 1px solid #d8d8d8; }
-  .qd-patient-profile-card__checkbox-container, .qd-patient-profile-card__radio-group-container {
+  .qd-patient-profile-card__checkbox-container, .qd-patient-profile-card__radio-group-container, .qd-supplies__cart--radio-group {
     position: relative;
     padding: 2px 10px;
     margin: 18px 0;
     min-height: 35px; }
     @media screen and (min-width: 1280px) {
-      .qd-patient-profile-card__checkbox-container, .qd-patient-profile-card__radio-group-container {
+      .qd-patient-profile-card__checkbox-container, .qd-patient-profile-card__radio-group-container, .qd-supplies__cart--radio-group {
         min-height: inherit; } }
     @media screen and (min-width: 1280px) {
-      .qd-patient-profile-card__checkbox-container md-checkbox, .qd-patient-profile-card__radio-group-container md-checkbox {
+      .qd-patient-profile-card__checkbox-container md-checkbox, .qd-patient-profile-card__radio-group-container md-checkbox, .qd-supplies__cart--radio-group md-checkbox {
         margin-bottom: 0; } }
   .qd-patient-profile-card__checkbox-container {
     margin-bottom: 0; }
@@ -3015,18 +3015,18 @@ md-input-container.md-input-focused:not(.md-input-has-value) md-select .md-selec
     font-family: 'Akkurat';
     margin-bottom: 8px; }
     .qd-patient-profile-card__checkbox-container .qd-patient-profile-card__label, .qd-patient-profile-card__checkbox-container .qd-order-card__info-box label, .qd-order-card__info-box .qd-patient-profile-card__checkbox-container label, .qd-patient-profile-card__checkbox-container .qd-patient-profile-card__static-container label, .qd-patient-profile-card__static-container .qd-patient-profile-card__checkbox-container label, .qd-patient-profile-card__checkbox-container .qd-test-and-diagnosis-card__info-block-wrapper label, .qd-test-and-diagnosis-card__info-block-wrapper .qd-patient-profile-card__checkbox-container label, .qd-patient-profile-card__checkbox-container .qd-results__label, .qd-patient-profile-card__checkbox-container .qd-test-and-diagnosis-card__panel-info-block label, .qd-test-and-diagnosis-card__panel-info-block .qd-patient-profile-card__checkbox-container label, .qd-patient-profile-card__checkbox-container .qd-supplies__item-order-history label, .qd-supplies__item-order-history .qd-patient-profile-card__checkbox-container label,
-    .qd-patient-profile-card__radio-group-container .qd-patient-profile-card__label,
+    .qd-patient-profile-card__radio-group-container .qd-patient-profile-card__label, .qd-supplies__cart--radio-group .qd-patient-profile-card__label,
     .qd-patient-profile-card__radio-group-container .qd-order-card__info-box label, .qd-order-card__info-box
-    .qd-patient-profile-card__radio-group-container label,
+    .qd-patient-profile-card__radio-group-container label, .qd-supplies__cart--radio-group .qd-order-card__info-box label, .qd-order-card__info-box .qd-supplies__cart--radio-group label,
     .qd-patient-profile-card__radio-group-container .qd-patient-profile-card__static-container label, .qd-patient-profile-card__static-container
-    .qd-patient-profile-card__radio-group-container label,
+    .qd-patient-profile-card__radio-group-container label, .qd-supplies__cart--radio-group .qd-patient-profile-card__static-container label, .qd-patient-profile-card__static-container .qd-supplies__cart--radio-group label,
     .qd-patient-profile-card__radio-group-container .qd-test-and-diagnosis-card__info-block-wrapper label, .qd-test-and-diagnosis-card__info-block-wrapper
-    .qd-patient-profile-card__radio-group-container label,
-    .qd-patient-profile-card__radio-group-container .qd-results__label,
+    .qd-patient-profile-card__radio-group-container label, .qd-supplies__cart--radio-group .qd-test-and-diagnosis-card__info-block-wrapper label, .qd-test-and-diagnosis-card__info-block-wrapper .qd-supplies__cart--radio-group label,
+    .qd-patient-profile-card__radio-group-container .qd-results__label, .qd-supplies__cart--radio-group .qd-results__label,
     .qd-patient-profile-card__radio-group-container .qd-test-and-diagnosis-card__panel-info-block label, .qd-test-and-diagnosis-card__panel-info-block
-    .qd-patient-profile-card__radio-group-container label,
+    .qd-patient-profile-card__radio-group-container label, .qd-supplies__cart--radio-group .qd-test-and-diagnosis-card__panel-info-block label, .qd-test-and-diagnosis-card__panel-info-block .qd-supplies__cart--radio-group label,
     .qd-patient-profile-card__radio-group-container .qd-supplies__item-order-history label, .qd-supplies__item-order-history
-    .qd-patient-profile-card__radio-group-container label {
+    .qd-patient-profile-card__radio-group-container label, .qd-supplies__cart--radio-group .qd-supplies__item-order-history label, .qd-supplies__item-order-history .qd-supplies__cart--radio-group label {
       position: absolute;
       top: -12px; }
     .qd-patient-profile-card__label.qd-required:after, .qd-order-card__info-box label.qd-required:after, .qd-patient-profile-card__static-container label.qd-required:after, .qd-test-and-diagnosis-card__info-block-wrapper label.qd-required:after, .qd-required.qd-results__label:after, .qd-test-and-diagnosis-card__panel-info-block label.qd-required:after, .qd-supplies__item-order-history label.qd-required:after {
@@ -7434,6 +7434,8 @@ a.qd-button.no-js {
         @media screen and (max-width: 899px) {
           .qd-supplies__filters--left .qd-button {
             margin-bottom: 10px; } }
+        .qd-supplies__filters--left .qd-button:hover {
+          background: none; }
       .qd-supplies__filters--left .qd-icon {
         margin: 0;
         min-width: 15px;
@@ -7547,9 +7549,21 @@ a.qd-button.no-js {
         height: auto; }
   .qd-supplies__item-order-history {
     margin: 0 0 15px 0;
-    height: auto; }
+    height: auto;
+    position: relative; }
     .qd-supplies__item-order-history.expired {
-      opacity: 0.75; }
+      opacity: 0.50; }
+      .qd-supplies__item-order-history.expired:before {
+        content: "Expired";
+        font-size: 40px;
+        font-weight: 300;
+        position: absolute;
+        bottom: 8px;
+        right: 15px;
+        color: #ccc; }
+        @media screen and (max-width: 599px) {
+          .qd-supplies__item-order-history.expired:before {
+            font-size: 28px; } }
     .qd-supplies__item-order-history label {
       margin: 3px 0; }
     .qd-supplies__item-order-history--order-details-wrapper {
@@ -7575,6 +7589,8 @@ a.qd-button.no-js {
     .qd-supplies__item-order-history--details.order-number {
       font-weight: 700;
       color: #000000; }
+      .qd-supplies__item-order-history--details.order-number label {
+        font-weight: normal; }
     .qd-supplies__item-order-history--order-actions .qd-button {
       border-right: 1px solid #d8d8d8;
       margin: 0;
@@ -7663,6 +7679,27 @@ a.qd-button.no-js {
     display: none; }
   .qd-supplies__cart--edit:nth-last-of-type(2) .qd-supplies__cart--divider {
     border-top-width: 3px; }
+  .qd-supplies__cart--input-no-margin {
+    margin: 18px auto 0; }
+  .qd-supplies__cart--radio-group {
+    border-left: 1px solid #d8d8d8;
+    margin: 18px 0 0 20px;
+    padding: 10px 0 0 25px; }
+    @media screen and (max-width: 599px) {
+      .qd-supplies__cart--radio-group {
+        border-left: 0;
+        margin: 30px 0 0;
+        padding-left: 10px; } }
+    .qd-supplies__cart--radio-group .qd-radio-button {
+      outline: 0; }
+      .qd-supplies__cart--radio-group .qd-radio-button md-input-container {
+        margin-bottom: 0; }
+  .qd-supplies__cart .qd-checkbox .md-label {
+    color: rgba(0, 0, 0, 0.9); }
+  .qd-supplies__cart--group-padding {
+    padding: 20px 0 0 10px; }
+  .qd-supplies__cart--input-adjustment {
+    padding-left: 0; }
   .qd-supplies .qd-save-cancel {
     margin-bottom: 20px; }
     .qd-supplies .qd-save-cancel button {

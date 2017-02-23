@@ -95,6 +95,10 @@
                 @include when-less-than(mini-tablet) {
                     margin-bottom: 10px;
                 }
+                
+                &:hover {
+                    background: none;
+                }
             }
             
             .qd-icon  {
@@ -280,9 +284,24 @@
         @extend .qd-supplies__item;
         margin: 0 0 15px 0;
         height: auto;
+        position: relative;
 
         &.expired {
-             opacity: 0.75; 
+             opacity: 0.50; 
+             
+             &:before {
+                content: "Expired";
+                font-size: 40px;
+                font-weight: 300;
+                position: absolute;
+                bottom: 8px;
+                right: 15px;
+                color: #ccc;
+                
+                @include when-less-than(tablet) {
+                    font-size: 28px;
+                }
+             }
         }
 
         label {
@@ -322,6 +341,10 @@
             &.order-number {
                 font-weight: 700;
                 color: $black;
+                
+                label {
+                    font-weight: normal;
+                }
             }
         }
 
@@ -484,6 +507,43 @@
             &:nth-last-of-type(2) .qd-supplies__cart--divider  {
                 border-top-width: 3px;
             }
+        }
+        
+        &--input-no-margin  {
+            margin: 18px auto 0;
+        }
+        
+        &--radio-group  {
+            @extend .qd-patient-profile-card__radio-group-container;
+            border-left: 1px solid #d8d8d8;
+            margin: 18px 0 0 20px;
+            padding: 10px 0 0 25px;
+            
+            @include when-less-than(tablet) {
+                border-left: 0;
+                margin: 30px 0 0;
+                padding-left: 10px;
+            }
+            
+            .qd-radio-button  {
+                outline: 0;
+                
+                md-input-container  {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        
+        .qd-checkbox .md-label  {
+            color: rgba(0, 0, 0, 0.9);
+        }
+        
+        &--group-padding {
+            padding: 20px 0 0 10px;
+        }
+        
+        &--input-adjustment {
+            padding-left: 0;
         }
     }
     

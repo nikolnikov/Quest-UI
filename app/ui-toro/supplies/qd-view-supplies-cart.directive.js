@@ -19,12 +19,33 @@ function qdViewSuppliesCartCtrl($scope, $log, $mdDialog) {
 
   var vm = this;
   
+  vm.practice = {
+    mason: {
+      name: "ABC Practice",
+      address: "2100 Example Street",
+      address2: "",
+      city: "Mason",
+      state: "OH",
+      zip: "45421"
+    },
+    
+    cincinnati: {
+      name: "ABC Practice",
+      address: "1500 Default Rd",
+      address2: "",
+      city: "Cincinnati",
+      state: "OH",
+      zip: "44444"
+    }
+  };
+  
   vm.populateAddress = true;
   vm.editAddressIcon = true;
   vm.editReoccurranceIcon = true;
   vm.populateReoccurrance = true;
   vm.editEmailIcon = true;
   vm.populateEmail = true;
+  vm.reoccurranceWeeklyOptions = true;
   
   vm.editSuppliesAddress = function(){
     vm.editAddress = true;
@@ -72,6 +93,16 @@ function qdViewSuppliesCartCtrl($scope, $log, $mdDialog) {
     vm.editEmailSave = false;
     vm.editEmailIcon = true;
     vm.populateEmail = true;
+  };
+  
+  vm.reoccurranceWeekly = function(){
+    vm.reoccurranceWeeklyOptions = true;
+    vm.reoccurranceMonthlyOptions = false;
+  };
+  
+  vm.reoccurranceMonthly = function(){
+    vm.reoccurranceWeeklyOptions = false;
+    vm.reoccurranceMonthlyOptions = true;
   };
   
 }
