@@ -285,6 +285,11 @@
              opacity: 0.75; 
         }
 
+        label {
+            @extend .qd-patient-profile-card__label;
+            margin: 3px 0;
+        }
+
         &--order-details-wrapper {
             border-bottom: 1px solid $divider-gray-1;
             padding: 4px 0;
@@ -292,11 +297,8 @@
         }
 
         &--details,
-        &--order-occurs, 
         &--order-actions .qd-button {
             padding: 0 20px;
-            display: flex;
-            align-items: center;
             border-right: 1px solid $divider-gray-1;
 
             &:last-child {
@@ -315,21 +317,11 @@
 
             @include when-less-than(mini-tablet) {
                 width: 100%;
-                border-right: none;
             }
-        }
-
-        &--details, 
-        &--order-occurs {
-
-            &.order-number, span {
+            
+            &.order-number {
                 font-weight: 700;
                 color: $black;
-            }
-
-            span {
-                display: inline-block;
-                padding-left: 5px;
             }
         }
 

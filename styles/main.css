@@ -695,7 +695,7 @@ md-input-container .md-input.qd-text-input, .qd-home__graph-container .qd-home__
   font-weight: 700;
   text-transform: uppercase; }
 
-.qd-label-2, .qd-annotation__timestamp, .qd-custom-dialog__timestamp, .qd-custom-dialog__datepicker-label, .qd-notification-card--mini .qd-notification-card__title, .qd-notification-card--mini .qd-notification-card__time, .qd-patient-card__ssn:before, .qd-patient-card__pid:before, .qd-patient-card__sex:before, .qd-patient-card__dob:before, .qd-patient-card__tel:before, .qd-patient-profile-card__autocomplete .qd-input-error, .qd-patient-profile-card__label, .qd-order-card__info-box label, .qd-patient-profile-card__static-container label, .qd-test-and-diagnosis-card__info-block-wrapper label, .qd-results__label, .qd-test-and-diagnosis-card__panel-info-block label, md-input-container.qd-patient-profile-card__input-container .hint, md-input-container.qd-patient-profile__input-container .hint, md-input-container .qd-input-error, .qd-input-hint, .qd-toast__info, .qd-toast.qd-lab-order .qd-toast__info, .qd-account-settings-page__details-item label, .qd-account-settings-page__selected-item label, .qd-lab-report__reviewed-timestamp, .qd-new-order__datepicker-wrapper label, .qd-order-detail__static-hint, .qd-order-detail__order-note-title, .qd-patient-profile__info-item label, .qd-lab-report__info-item label, .settings-page__bottom-content-subtitle, .settings-page__item-description {
+.qd-label-2, .qd-annotation__timestamp, .qd-custom-dialog__timestamp, .qd-custom-dialog__datepicker-label, .qd-notification-card--mini .qd-notification-card__title, .qd-notification-card--mini .qd-notification-card__time, .qd-patient-card__ssn:before, .qd-patient-card__pid:before, .qd-patient-card__sex:before, .qd-patient-card__dob:before, .qd-patient-card__tel:before, .qd-patient-profile-card__autocomplete .qd-input-error, .qd-patient-profile-card__label, .qd-order-card__info-box label, .qd-patient-profile-card__static-container label, .qd-test-and-diagnosis-card__info-block-wrapper label, .qd-results__label, .qd-test-and-diagnosis-card__panel-info-block label, .qd-supplies__item-order-history label, md-input-container.qd-patient-profile-card__input-container .hint, md-input-container.qd-patient-profile__input-container .hint, md-input-container .qd-input-error, .qd-input-hint, .qd-toast__info, .qd-toast.qd-lab-order .qd-toast__info, .qd-account-settings-page__details-item label, .qd-account-settings-page__selected-item label, .qd-lab-report__reviewed-timestamp, .qd-new-order__datepicker-wrapper label, .qd-order-detail__static-hint, .qd-order-detail__order-note-title, .qd-patient-profile__info-item label, .qd-lab-report__info-item label, .settings-page__bottom-content-subtitle, .settings-page__item-description {
   font-size: 12px; }
 
 .qd-label-1, .qd-password-strength::before, .qd-result-card__status, .qd-sidenav__drag-divider-text, .qd-switch__text {
@@ -3009,12 +3009,12 @@ md-input-container.md-input-focused:not(.md-input-has-value) md-select .md-selec
     position: absolute;
     right: -25px;
     top: 5px; }
-  .qd-patient-profile-card__label, .qd-order-card__info-box label, .qd-patient-profile-card__static-container label, .qd-test-and-diagnosis-card__info-block-wrapper label, .qd-results__label, .qd-test-and-diagnosis-card__panel-info-block label {
+  .qd-patient-profile-card__label, .qd-order-card__info-box label, .qd-patient-profile-card__static-container label, .qd-test-and-diagnosis-card__info-block-wrapper label, .qd-results__label, .qd-test-and-diagnosis-card__panel-info-block label, .qd-supplies__item-order-history label {
     color: rgba(0, 0, 0, 0.6);
     display: block;
     font-family: 'Akkurat';
     margin-bottom: 8px; }
-    .qd-patient-profile-card__checkbox-container .qd-patient-profile-card__label, .qd-patient-profile-card__checkbox-container .qd-order-card__info-box label, .qd-order-card__info-box .qd-patient-profile-card__checkbox-container label, .qd-patient-profile-card__checkbox-container .qd-patient-profile-card__static-container label, .qd-patient-profile-card__static-container .qd-patient-profile-card__checkbox-container label, .qd-patient-profile-card__checkbox-container .qd-test-and-diagnosis-card__info-block-wrapper label, .qd-test-and-diagnosis-card__info-block-wrapper .qd-patient-profile-card__checkbox-container label, .qd-patient-profile-card__checkbox-container .qd-results__label, .qd-patient-profile-card__checkbox-container .qd-test-and-diagnosis-card__panel-info-block label, .qd-test-and-diagnosis-card__panel-info-block .qd-patient-profile-card__checkbox-container label,
+    .qd-patient-profile-card__checkbox-container .qd-patient-profile-card__label, .qd-patient-profile-card__checkbox-container .qd-order-card__info-box label, .qd-order-card__info-box .qd-patient-profile-card__checkbox-container label, .qd-patient-profile-card__checkbox-container .qd-patient-profile-card__static-container label, .qd-patient-profile-card__static-container .qd-patient-profile-card__checkbox-container label, .qd-patient-profile-card__checkbox-container .qd-test-and-diagnosis-card__info-block-wrapper label, .qd-test-and-diagnosis-card__info-block-wrapper .qd-patient-profile-card__checkbox-container label, .qd-patient-profile-card__checkbox-container .qd-results__label, .qd-patient-profile-card__checkbox-container .qd-test-and-diagnosis-card__panel-info-block label, .qd-test-and-diagnosis-card__panel-info-block .qd-patient-profile-card__checkbox-container label, .qd-patient-profile-card__checkbox-container .qd-supplies__item-order-history label, .qd-supplies__item-order-history .qd-patient-profile-card__checkbox-container label,
     .qd-patient-profile-card__radio-group-container .qd-patient-profile-card__label,
     .qd-patient-profile-card__radio-group-container .qd-order-card__info-box label, .qd-order-card__info-box
     .qd-patient-profile-card__radio-group-container label,
@@ -3024,10 +3024,12 @@ md-input-container.md-input-focused:not(.md-input-has-value) md-select .md-selec
     .qd-patient-profile-card__radio-group-container label,
     .qd-patient-profile-card__radio-group-container .qd-results__label,
     .qd-patient-profile-card__radio-group-container .qd-test-and-diagnosis-card__panel-info-block label, .qd-test-and-diagnosis-card__panel-info-block
+    .qd-patient-profile-card__radio-group-container label,
+    .qd-patient-profile-card__radio-group-container .qd-supplies__item-order-history label, .qd-supplies__item-order-history
     .qd-patient-profile-card__radio-group-container label {
       position: absolute;
       top: -12px; }
-    .qd-patient-profile-card__label.qd-required:after, .qd-order-card__info-box label.qd-required:after, .qd-patient-profile-card__static-container label.qd-required:after, .qd-test-and-diagnosis-card__info-block-wrapper label.qd-required:after, .qd-required.qd-results__label:after, .qd-test-and-diagnosis-card__panel-info-block label.qd-required:after {
+    .qd-patient-profile-card__label.qd-required:after, .qd-order-card__info-box label.qd-required:after, .qd-patient-profile-card__static-container label.qd-required:after, .qd-test-and-diagnosis-card__info-block-wrapper label.qd-required:after, .qd-required.qd-results__label:after, .qd-test-and-diagnosis-card__panel-info-block label.qd-required:after, .qd-supplies__item-order-history label.qd-required:after {
       content: "*"; }
   .qd-patient-profile-card md-divider {
     margin: 0 -10px 15px; }
@@ -7548,17 +7550,17 @@ a.qd-button.no-js {
     height: auto; }
     .qd-supplies__item-order-history.expired {
       opacity: 0.75; }
+    .qd-supplies__item-order-history label {
+      margin: 3px 0; }
     .qd-supplies__item-order-history--order-details-wrapper {
       border-bottom: 1px solid #d8d8d8;
       padding: 4px 0;
       margin-bottom: 15px; }
-    .qd-supplies__item-order-history--details, .qd-supplies__item-order-history--order-occurs,
+    .qd-supplies__item-order-history--details,
     .qd-supplies__item-order-history--order-actions .qd-button {
       padding: 0 20px;
-      display: flex;
-      align-items: center;
       border-right: 1px solid #d8d8d8; }
-      .qd-supplies__item-order-history--details:last-child, .qd-supplies__item-order-history--order-occurs:last-child,
+      .qd-supplies__item-order-history--details:last-child,
       .qd-supplies__item-order-history--order-actions .qd-button:last-child {
         border-right: none; }
     @media screen and (max-width: 1279px) {
@@ -7569,14 +7571,10 @@ a.qd-button.no-js {
         border-right: none; } }
     @media screen and (max-width: 899px) {
       .qd-supplies__item-order-history--details {
-        width: 100%;
-        border-right: none; } }
-    .qd-supplies__item-order-history--details.order-number, .qd-supplies__item-order-history--details span, .qd-supplies__item-order-history--order-occurs.order-number, .qd-supplies__item-order-history--order-occurs span {
+        width: 100%; } }
+    .qd-supplies__item-order-history--details.order-number {
       font-weight: 700;
       color: #000000; }
-    .qd-supplies__item-order-history--details span, .qd-supplies__item-order-history--order-occurs span {
-      display: inline-block;
-      padding-left: 5px; }
     .qd-supplies__item-order-history--order-actions .qd-button {
       border-right: 1px solid #d8d8d8;
       margin: 0;
