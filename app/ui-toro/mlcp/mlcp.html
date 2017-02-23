@@ -57,9 +57,9 @@
     
     <div class="qd-mlcp__test-container qd-mlcp__test-container--results" ng-show="vm.testResults">
         <div class="qd-message qd-message__warning qd-message--space-bottom" layout="row" layout-align="start center">
-            <md-icon class="qd-icon icon-warning"></md-icon>
+            <md-icon class="qd-icon icon-warning" flex="1"></md-icon>
       
-            Message goes here.
+            <div flex>Message goes here.</div>
         </div>
         
         <div class="qd-mlcp__results-content">
@@ -243,10 +243,10 @@
                             </div>
                         </div>
                         
-                        <md-button class="md-button-icon qd-mlcp__button" flex="1" layout="column" layout-gt-xs="row">
+                        <div flex="1" layout="column" layout-gt-xs="row">
                             <md-icon ng-hide="vm.arrowDown" class="qd-icon icon-arrowdownbig qd-icon--green" aria-hidden="true" ng-click="vm.showSecondaryDx()"></md-icon>
                             <md-icon ng-show="vm.arrowUp" class="qd-icon icon-arrowupbig qd-icon--green" aria-hidden="true" ng-click="vm.hideSecondaryDx()"></md-icon>
-                        </md-button>
+                        </div>
                     </div>
                     
                     <div class="qd-mlcp__card--diagnoses-secondary" flex="100" layout="column" layout-gt-xs="row" layout-wrap ng-show="vm.secondaryDx">

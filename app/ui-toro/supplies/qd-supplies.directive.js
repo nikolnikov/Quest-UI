@@ -27,16 +27,12 @@ function qdSuppliesCtrl($scope, $log, $mdPanel) {
   
     var config = {
       attachTo: angular.element(document.body),
-      //controller: qdSuppliesCtrl.qdSuppliesCtrl,
-      //locals: {labOrder: pLabOrder},
       controllerAs: 'vm',
-      //disableParentScroll: this.disableParentScroll,
       templateUrl: 'app/ui-toro/supplies/qd-supplies-categories.html',
       hasBackdrop: false,
       panelClass: 'qd-supplies__categories',
       position: position,
       trapFocus: true,
-      //zIndex: 150,
       clickOutsideToClose: true,
       escapeToClose: true,
       focusOnOpen: true

@@ -19,7 +19,7 @@
                 
                 <div flex layout="column">
                     <div class="qd-supplies__item--title">SWAB, CULTURETTE AMIES GEL BLUE CAP COPAN,500/CS</div>
-                    <div class="qd-supplies__item--number">Item #: 105741</div>
+                    <div class="qd-supplies__item--number">Item &#35;: 105741</div>
                     <div class="qd-supplies__item--units">Units: 50/pk</div>
                     <div class="qd-supplies__item--order">
                         Qty:
@@ -41,7 +41,7 @@
                 
                 <div flex layout="column">
                     <div class="qd-supplies__item--title">Curad Flex Fab 3/4</div>
-                    <div class="qd-supplies__item--number">Item #: 105741</div>
+                    <div class="qd-supplies__item--number">Item &#35;: 105741</div>
                     <div class="qd-supplies__item--units">Units: 50/pk</div>
                     <div class="qd-supplies__item--order">
                         Qty:
@@ -58,7 +58,7 @@
         </md-card-content>
     </md-card>
     
-    <md-card class="qd-supplies__cart--card" ng-class="{'qd-supplies__cart--card-edit' : vm.editAddress}">
+    <md-card class="qd-supplies__cart--card" ng-class="{'qd-supplies__cart--card-edit-mode' : vm.editAddress}">
         <md-card-header class="qd-supplies__cart--card-header" layout="row" layout-align="space-between center">
             <md-card-header-text layout="row" class="layout-row">
                 <span ng-if="vm.editAddressTitle">Edit&nbsp;</span> Shipping Address
@@ -79,14 +79,151 @@
                     <md-radio-button value="2" class="qd-radio-button">
                         <b>ABC Practice</b> 1500 Default Rd, Cincinnati, OH 44444
                     </md-radio-button>
-                    <md-radio-button value="3" class="qd-radio-button">
-                        <b>ABC Practice</b> 1000 Anywhere Dr., Akron, OH 48774
-                    </md-radio-button>
                 </md-radio-group>
             </div>
             
-            <div ng-if="vm.editAddress">
-                Test
+            <div ng-if="vm.editAddress" flex>
+                <div class="qd-supplies__cart--edit" flex>
+                    <div class="qd-supplies__cart--edit-address--header" flex layout="row" layout-align="start center">
+                        <div class="qd-supplies__cart--edit-address--title" flex>
+                            ABC Practice - Mason
+                        </div>
+                        
+                        <md-icon flex="1" ng-click="" class="qd-icon icon-close" aria-hidden="false"></md-icon>
+                    </div>
+                    
+                    <div flex layout="row">
+                        <md-input-container flex="100" flex-gt-xs="50" class="qd-patient-profile__input-container">
+                            <label class="qd-required">Practice Name</label>
+                            <input class="qd-text-input" type="text" ng-model="vm.practiceName" value="ABC Practice" required>
+                        </md-input-container>
+                    </div>
+                    
+                    <div flex layout="row" layout-wrap>
+                        <md-input-container flex="100" flex-gt-xs="50" class="qd-patient-profile__input-container">
+                            <label class="qd-required">Address 1</label>
+                            <input class="qd-text-input" type="text" ng-model="vm.practiceAddress" value="2100 Example Street" required>
+                        </md-input-container>
+                        
+                        <md-input-container flex="100" flex-gt-xs="50" class="qd-patient-profile__input-container">
+                            <label>Address 2</label>
+                            <input class="qd-text-input" type="text" ng-model="vm.practiceAddress2">
+                        </md-input-container>
+                        
+                        <md-input-container flex="100" flex-gt-xs="50" class="qd-patient-profile__input-container">
+                            <label class="qd-required">City</label>
+                            <input class="qd-text-input" type="text" ng-model="vm.practiceCity" value="Mason" required>
+                        </md-input-container>
+                        
+                        <md-input-container flex="50" flex-gt-xs="25" class="qd-patient-profile__input-container">
+                            <label class="qd-required">State</label>
+                            <md-select class="qd-select-input" ng-model="vm.practiceState" required>
+                              <md-option value="OH" selected>OH</md-option>
+                            </md-select>
+                        </md-input-container>
+                        
+                        <md-input-container flex="50" flex-gt-xs="25" class="qd-patient-profile__input-container">
+                            <label class="qd-required">Zip</label>
+                            <input class="qd-text-input" type="text" ng-model="vm.practiceZip" value="45421" required>
+                        </md-input-container>
+                    </div>
+                    
+                    <md-divider class="qd-supplies__cart--divider"></md-divider>
+                </div>
+                
+                <div class="qd-supplies__cart--edit" flex>
+                    <div class="qd-supplies__cart--edit-address--header" flex layout="row" layout-align="start center">
+                        <div class="qd-supplies__cart--edit-address--title" flex>
+                            ABC Practice - Cincinnati
+                        </div>
+                        
+                        <md-icon flex="1" ng-click="" class="qd-icon icon-close" aria-hidden="false"></md-icon>
+                    </div>
+                    
+                    <div flex layout="row">
+                        <md-input-container flex="100" flex-gt-xs="50" class="qd-patient-profile__input-container">
+                            <label class="qd-required">Practice Name</label>
+                            <input class="qd-text-input" type="text" ng-model="vm.practiceName" value="ABC Practice" required>
+                        </md-input-container>
+                    </div>
+                    
+                    <div flex layout="row" layout-wrap>
+                        <md-input-container flex="100" flex-gt-xs="50" class="qd-patient-profile__input-container">
+                            <label class="qd-required">Address 1</label>
+                            <input class="qd-text-input" type="text" ng-model="vm.practiceAddress" value="1500 Default Rd" required>
+                        </md-input-container>
+                        
+                        <md-input-container flex="100" flex-gt-xs="50" class="qd-patient-profile__input-container">
+                            <label>Address 2</label>
+                            <input class="qd-text-input" type="text" ng-model="vm.practiceAddress2">
+                        </md-input-container>
+                        
+                        <md-input-container flex="100" flex-gt-xs="50" class="qd-patient-profile__input-container">
+                            <label class="qd-required">City</label>
+                            <input class="qd-text-input" type="text" ng-model="vm.practiceCity" value="Cincinnati" required>
+                        </md-input-container>
+                        
+                        <md-input-container flex="50" flex-gt-xs="25" class="qd-patient-profile__input-container">
+                            <label class="qd-required">State</label>
+                            <md-select class="qd-select-input" ng-model="vm.practiceState" required>
+                              <md-option value="OH" selected>OH</md-option>
+                            </md-select>
+                        </md-input-container>
+                        
+                        <md-input-container flex="50" flex-gt-xs="25" class="qd-patient-profile__input-container">
+                            <label class="qd-required">Zip</label>
+                            <input class="qd-text-input" type="text" ng-model="vm.practiceZip" value="44444" required>
+                        </md-input-container>
+                    </div>
+                    
+                    <md-divider class="qd-supplies__cart--divider"></md-divider>
+                </div>
+                
+                <div class="qd-supplies__cart--edit" flex>
+                    <div class="qd-supplies__cart--edit-address--header" flex layout="row" layout-align="start center">
+                        <div class="qd-supplies__cart--edit-address--title" flex>
+                            Add New Address
+                        </div>
+                    </div>
+                    
+                    <div flex layout="row">
+                        <md-input-container flex="100" flex-gt-xs="50" class="qd-patient-profile__input-container">
+                            <label class="qd-required">Practice Name</label>
+                            <input class="qd-text-input" type="text" ng-model="vm.practiceName" required>
+                        </md-input-container>
+                    </div>
+                    
+                    <div flex layout="row" layout-wrap>
+                        <md-input-container flex="100" flex-gt-xs="50" class="qd-patient-profile__input-container">
+                            <label class="qd-required">Address 1</label>
+                            <input class="qd-text-input" type="text" ng-model="vm.practiceAddress" required>
+                        </md-input-container>
+                        
+                        <md-input-container flex="100" flex-gt-xs="50" class="qd-patient-profile__input-container">
+                            <label>Address 2</label>
+                            <input class="qd-text-input" type="text" ng-model="vm.practiceAddress2">
+                        </md-input-container>
+                        
+                        <md-input-container flex="100" flex-gt-xs="50" class="qd-patient-profile__input-container">
+                            <label class="qd-required">City</label>
+                            <input class="qd-text-input" type="text" ng-model="vm.practiceCity" required>
+                        </md-input-container>
+                        
+                        <md-input-container flex="50" flex-gt-xs="25" class="qd-patient-profile__input-container">
+                            <label class="qd-required">State</label>
+                            <md-select class="qd-select-input" ng-model="vm.practiceState" required>
+                              <md-option ng-value="option"></md-option>
+                            </md-select>
+                        </md-input-container>
+                        
+                        <md-input-container flex="50" flex-gt-xs="25" class="qd-patient-profile__input-container">
+                            <label class="qd-required">Zip</label>
+                            <input class="qd-text-input" type="text" ng-model="vm.practiceZip" required>
+                        </md-input-container>
+                    </div>
+                    
+                    <md-divider class="qd-supplies__cart--divider"></md-divider>
+                </div>
             </div>
         </md-card-content>
         
@@ -99,7 +236,7 @@
         </div>
     </md-card>
     
-    <md-card class="qd-supplies__cart--card" ng-class="{'qd-supplies__cart--card-edit' : vm.editReoccurrance}">
+    <md-card class="qd-supplies__cart--card" ng-class="{'qd-supplies__cart--card-edit-mode' : vm.editReoccurrance}">
         <md-card-header class="qd-supplies__cart--card-header" layout="row" layout-align="space-between center">
             <md-card-header-text layout="row" class="layout-row">
                 <span ng-if="vm.editReoccurranceTitle">Edit&nbsp;</span> Reoccurring Order (Optional)
@@ -129,7 +266,7 @@
         </div>
     </md-card>
     
-    <md-card class="qd-supplies__cart--card" ng-class="{'qd-supplies__cart--card-edit' : vm.editEmail}">
+    <md-card class="qd-supplies__cart--card" ng-class="{'qd-supplies__cart--card-edit-mode' : vm.editEmail}">
         <md-card-header class="qd-supplies__cart--card-header" layout="row" layout-align="space-between center">
             <md-card-header-text layout="row" class="layout-row">
                 <span ng-if="vm.editEmailTitle">Edit&nbsp;</span> Email (Optional)
@@ -143,7 +280,7 @@
         <md-card-content class="qd-supplies__cart--card-content" layout="row" layout-wrap>
             <div ng-if="vm.populateEmail">
                 <div class="qd-supplies__cart--card-hint" flex="100">
-                    Only necessary for shipping updates.  
+                    For shipping updates only.
                 </div>
                 
                 <md-radio-group ng-model="vm.emailAddress" flex="100">
@@ -185,10 +322,10 @@
     </md-card>
     
     <div layout="column" layout-align="center center" class="qd-save-cancel">
-        <button class="md-raised qd-button md-button" type="button" ng-click="#" aria-label="Place Order button">
+        <button class="md-raised qd-button md-button" type="button" ng-click="" aria-label="Place Order button">
             Place Order
         </button>
-        <a href="#" class="qd-link" ng-click="#">Cancel</a>
+        <a href="#" class="qd-link" ng-click="">Cancel</a>
     </div>
     
     <div ng-class="{'qd-patient-profile__fade-out' : vm.editAddress || vm.editReoccurrance || vm.editEmail}"></div>

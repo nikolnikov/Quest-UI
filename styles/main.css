@@ -669,7 +669,7 @@ input[type="checkbox"], input[type="radio"] {
 .qd-subhead-2, .qd-annotation__text, md-checkbox.qd-checkbox, .qd-dropdown-menu__item, .qd-error-breaker__message, .qd-header__date-range, .qd-header__ordered-by, .qd-notifications-dropdown__day-header, .qd-overflow-menu__labels, .qd-pagination-bar__text, .qd-pagination-bar__text span, .qd-patient-profile-card__static-sub-wrapper--preference, .qd-patient-profile-card .qd-save-cancel__disclaimer, .qd-result-card__reviewed-by, .qd-result-card__time, .qd-notification-card__time, .qd-results__results-subhead, .qd-cart__labels, .qd-status-bars__status, .qd-test-and-diagnosis-card__code-number, .qd-tooltip, .qd-account-settings-page__details-item, .qd-account-settings-page__selected-item, .qd-lab-report__email-dialog-body, .qd-new-order__success-cta-subheader, .qd-patients-section__alphabet-letter, .qd-patient-profile__info-item, .qd-lab-report__info-item, .settings-page__item-subtitle {
   font-size: 14px; }
 
-.qd-body-1, .qd-autocomplete-suggestions .highlight, .qd-result-card__name, .login__phone-number, .qd-order-detail__success-description, .qd-patients-section__alphabet-letter--active, .qd-patient-profile__name--lab::before, .qd-supplies__cart--card-header {
+.qd-body-1, .qd-autocomplete-suggestions .highlight, .qd-result-card__name, .login__phone-number, .qd-order-detail__success-description, .qd-patients-section__alphabet-letter--active, .qd-patient-profile__name--lab::before, .qd-supplies__cart--card-header, .qd-supplies__cart--edit-address--title {
   font-size: 14px;
   font-weight: 700; }
 
@@ -6184,12 +6184,8 @@ a.qd-button.no-js {
       @media screen and (max-width: 599px) {
         .qd-mlcp__card--diagnoses {
           padding: 10px 0; } }
-      .qd-mlcp__card--diagnoses .qd-mlcp__button {
-        min-width: 32px;
-        min-height: 0;
-        line-height: 0;
-        margin: 0 0 0 15px;
-        padding: 0; }
+      .qd-mlcp__card--diagnoses .qd-icon {
+        margin-left: 20px; }
       .qd-mlcp__card--diagnoses-body {
         padding: 0 20px; }
         @media screen and (max-width: 599px) {
@@ -7550,40 +7546,55 @@ a.qd-button.no-js {
   .qd-supplies__item-order-history {
     margin: 0 0 15px 0;
     height: auto; }
+    .qd-supplies__item-order-history.expired {
+      opacity: 0.75; }
     .qd-supplies__item-order-history--order-details-wrapper {
       border-bottom: 1px solid #d8d8d8;
       padding: 4px 0;
       margin-bottom: 15px; }
-    .qd-supplies__item-order-history--number, .qd-supplies__item-order-history--time, .qd-supplies__item-order-history--client, .qd-supplies__item-order-history--ordered-by, .qd-supplies__item-order-history--order-actions .qd-button {
-      height: 30px;
-      min-height: 30px;
+    .qd-supplies__item-order-history--details, .qd-supplies__item-order-history--order-occurs,
+    .qd-supplies__item-order-history--order-actions .qd-button {
       padding: 0 20px;
       display: flex;
       align-items: center;
       border-right: 1px solid #d8d8d8; }
-    @media screen and (max-width: 599px) {
-      .qd-supplies__item-order-history--number, .qd-supplies__item-order-history--time, .qd-supplies__item-order-history--client, .qd-supplies__item-order-history--ordered-by {
+      .qd-supplies__item-order-history--details:last-child, .qd-supplies__item-order-history--order-occurs:last-child,
+      .qd-supplies__item-order-history--order-actions .qd-button:last-child {
+        border-right: none; }
+    @media screen and (max-width: 1279px) {
+      .qd-supplies__item-order-history--details {
+        padding: 4px 20px;
+        align-items: initial;
+        width: 35%;
+        border-right: none; } }
+    @media screen and (max-width: 899px) {
+      .qd-supplies__item-order-history--details {
         width: 100%;
         border-right: none; } }
-    .qd-supplies__item-order-history--number:last-child, .qd-supplies__item-order-history--time:last-child, .qd-supplies__item-order-history--client:last-child, .qd-supplies__item-order-history--ordered-by:last-child {
-      border-right: none; }
-    .qd-supplies__item-order-history--number, .qd-supplies__item-order-history--client span, .qd-supplies__item-order-history--ordered-by span {
+    .qd-supplies__item-order-history--details.order-number, .qd-supplies__item-order-history--details span, .qd-supplies__item-order-history--order-occurs.order-number, .qd-supplies__item-order-history--order-occurs span {
       font-weight: 700;
       color: #000000; }
-    .qd-supplies__item-order-history--order-actions {
-      width: 100%; }
-      .qd-supplies__item-order-history--order-actions .qd-button {
-        border-right: 1px solid #d8d8d8;
-        margin: 0;
-        line-height: normal; }
-        .qd-supplies__item-order-history--order-actions .qd-button:hover {
-          background: none; }
-        .qd-supplies__item-order-history--order-actions .qd-button:last-child {
-          border-right: none;
-          margin-right: 0; }
-      @media screen and (min-width: 1280px) {
-        .qd-supplies__item-order-history--order-actions {
-          width: 40%; } }
+    .qd-supplies__item-order-history--details span, .qd-supplies__item-order-history--order-occurs span {
+      display: inline-block;
+      padding-left: 5px; }
+    .qd-supplies__item-order-history--order-actions .qd-button {
+      border-right: 1px solid #d8d8d8;
+      margin: 0;
+      line-height: normal;
+      font-size: 12px;
+      display: inline-block;
+      opacity: initial; }
+      .qd-supplies__item-order-history--order-actions .qd-button:hover {
+        background: none; }
+      .qd-supplies__item-order-history--order-actions .qd-button:last-child {
+        border-right: none;
+        margin-right: 0; }
+    @media screen and (max-width: 599px) {
+      .qd-supplies__item-order-history--order-actions {
+        border-top: 1px solid #d8d8d8;
+        width: 100%;
+        margin-top: 10px;
+        padding-top: 2px; } }
     .qd-supplies__item-order-history--img {
       max-width: 80px;
       height: 80px;
@@ -7642,8 +7653,18 @@ a.qd-button.no-js {
       color: #63666a;
       padding: 0;
       border-top: 0; }
-    .qd-supplies__cart--card-edit {
+    .qd-supplies__cart--card-edit-mode {
       z-index: 2; }
+  .qd-supplies__cart--divider {
+    margin: 15px -20px; }
+  .qd-supplies__cart--edit-address--header {
+    margin-bottom: 15px; }
+  .qd-supplies__cart--edit-address--title {
+    color: #35792a; }
+  .qd-supplies__cart--edit:last-of-type .qd-supplies__cart--divider {
+    display: none; }
+  .qd-supplies__cart--edit:nth-last-of-type(2) .qd-supplies__cart--divider {
+    border-top-width: 3px; }
   .qd-supplies .qd-save-cancel {
     margin-bottom: 20px; }
     .qd-supplies .qd-save-cancel button {

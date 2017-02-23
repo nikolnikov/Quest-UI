@@ -391,82 +391,110 @@
         }
     }
     
-    &__cart--card {
-        @include elevation(2)
-        padding: 0;
-        margin: 0 40px 20px;
-        border-radius: 0;
-        position: relative;
-        
-        @include when-less-than(desktop) {
-          margin: 0 20px 15px;
-        }
-        
-        @include when-less-than(tablet) {
-          margin: 0 0 15px;
-        }
-        
-        &-header  {
-            @extend %type-body-1;
-            text-transform: uppercase;
-            padding: 0 0 0 20px;
-            height: 50px;
-            color: $white;
-            background-color: $green-l;
+    &__cart {
+      
+        &--card {
+            @include elevation(2)
+            padding: 0;
+            margin: 0 40px 20px;
+            border-radius: 0;
+            position: relative;
             
-            .qd-icon  {
-                color: $white;
+            @include when-less-than(desktop) {
+              margin: 0 20px 15px;
             }
-        }
-        
-        &-content  {
-            @extend %type-body-2;
-            padding: 15px 20px;
-        }
-        
-        .qd-supplies__item--details {
-            padding: 0 !important;
-            margin-bottom: 20px;
             
-            &:last-of-type  {
+            @include when-less-than(tablet) {
+              margin: 0 0 15px;
+            }
+            
+            &-header  {
+                @extend %type-body-1;
+                text-transform: uppercase;
+                padding: 0 0 0 20px;
+                height: 50px;
+                color: $white;
+                background-color: $green-l;
+                
+                .qd-icon  {
+                    color: $white;
+                }
+            }
+            
+            &-content  {
+                @extend %type-body-2;
+                padding: 15px 20px;
+            }
+            
+            .qd-supplies__item--details {
+                padding: 0 !important;
+                margin-bottom: 20px;
+                
+                &:last-of-type  {
+                    margin-bottom: 0;
+                }
+            }
+            
+            &-empty {
+                color: rgba(0,0,0,$text-opacity-hint);
+            }
+            
+            &-comments  {
+                margin: 0;
+                padding: 0;
+            }
+            
+            &-hint {
+                color: rgba(0,0,0,$text-opacity-secondary);
+                margin-bottom: 15px;
+            }
+            
+            .qd-radio-button:last-of-type {
                 margin-bottom: 0;
             }
-        }
-        
-        &-empty {
-            color: rgba(0,0,0,$text-opacity-hint);
-        }
-        
-        &-comments  {
-            margin: 0;
-            padding: 0;
-        }
-        
-        &-hint {
-            color: rgba(0,0,0,$text-opacity-secondary);
-            margin-bottom: 15px;
-        }
-        
-        .qd-radio-button:last-of-type {
-            margin-bottom: 0;
-        }
-        
-        .qd-supplies__item--details {
-            @include when-less-than(tablet) {
-                padding: 10px 0; 
+            
+            .qd-supplies__item--details {
+                @include when-less-than(tablet) {
+                    padding: 10px 0; 
+                }
+            }
+           
+            .qd-supplies__item--order  {
+                color: $icon-dark-gray;
+                padding: 0;
+                border-top: 0;
+            }
+            
+            &-edit-mode  {
+                z-index: 2;
             }
         }
-       
-        .qd-supplies__item--order  {
-            color: $icon-dark-gray;
-            padding: 0;
-            border-top: 0;
+        
+        &--divider  {
+            margin: 15px -20px;
         }
         
-        &-edit  {
-            z-index: 2;
+        &--edit {
+            
+            &-address--header {
+                margin-bottom: 15px;
+            }
+            
+            &-address--title  {
+                @extend %type-body-1;
+                color: $green-l;
+            }
+            
+            &:last-of-type .qd-supplies__cart--divider  {
+                display: none;
+            }
+            
+            &:nth-last-of-type(2) .qd-supplies__cart--divider  {
+                border-top-width: 3px;
+            }
         }
     }
+    
     
     .qd-save-cancel {
         margin-bottom: 20px;
