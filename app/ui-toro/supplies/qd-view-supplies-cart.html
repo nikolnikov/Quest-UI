@@ -29,7 +29,7 @@
                 
                 <div flex="1" layout="column" layout-align="center end">
                     <button class="md-icon-button md-button" type="button" ng-click="">
-                        <md-icon class="qd-icon icon-close ng-scope material-icons" aria-label="Close Button" aria-hidden="true"></md-icon>
+                        <md-icon class="qd-icon icon-close" aria-label="Close Button" aria-hidden="true"></md-icon>
                     </button>
                 </div>
             </div>
@@ -51,7 +51,7 @@
                 
                 <div flex="1" layout="column" layout-align="center end">
                     <button class="md-icon-button md-button" type="button" ng-click="">
-                        <md-icon class="qd-icon icon-close ng-scope material-icons" aria-label="Close Button" aria-hidden="true"></md-icon>
+                        <md-icon class="qd-icon icon-close" aria-label="Close Button" aria-hidden="true"></md-icon>
                     </button>
                 </div>
             </div>
@@ -335,7 +335,7 @@
                             month(s)
                         </div>
                         
-                        <div flex layout="row" layout-align="start center">
+                        <div flex layout="row" layout-align="start center" layout-wrap>
                             <md-radio-button value="monthly2" class="qd-radio-button" id="monthly2"></md-radio-button>
                             The
                             <md-input-container flex="1" class="qd-patient-profile__input-container">
@@ -384,24 +384,54 @@
             </button>
         </md-card-header>
         
-        <md-card-content class="qd-supplies__cart--card-content" layout="row" layout-wrap>
-            <div ng-if="vm.populateEmail">
+        <md-card-content class="qd-supplies__cart--card-content">
+            <div flex ng-if="vm.populateEmail" layout="row" layout-wrap>
                 <div class="qd-supplies__cart--card-hint" flex="100">
                     For shipping updates only.
                 </div>
                 
-                <md-radio-group ng-model="vm.emailAddress" flex="100">
+                <md-radio-group ng-model="vm.emailAddress">
                     <md-radio-button value="1" class="qd-radio-button">
-                        doctor@abcpractice.org
+                        reallylong.employee.name@questdiagnostics.com
                     </md-radio-button>
+                    
                     <md-radio-button value="2" class="qd-radio-button">
                         phleb@abcpractice.org
                     </md-radio-button>
                 </md-radio-group>
             </div>
             
-            <div ng-if="vm.editEmail">
-              
+            <div ng-if="vm.editEmail" flex>
+                <div flex layout="row">
+                    For shipping updates only.<br><br>
+                </div>
+                
+                <div flex layout="column" layout-gt-sm="row">
+                    <md-input-container flex="100" flex-gt-sm="50" class="qd-patient-profile__input-container">
+                        <label>Email Address</label>
+                        <input class="qd-text-input" type="text" ng-model="vm.email.new" placeholder="Add New">
+                        
+                        <div class="qd-patient-profile__photo-upload">
+                            <button class="qd-link">Save</button>
+                        </div>
+                    </md-input-container>
+                    
+                    <div flex="100" flex-gt-sm="50" layout="column" layout-align="center start">
+                        <div class="qd-supplies__cart--edit-email" flex="100" layout="row" layout-align="start center">
+                            <md-icon class="qd-icon icon-close icon-space" aria-label="Close Button" aria-hidden="true"></md-icon>
+                            <div class="qd-supplies__cart--edit-email-truncate">
+                                reallylong.employee.name@questdiagnostics.com
+                            </div>
+                        </div>
+                        
+                        <div class="qd-supplies__cart--edit-email" flex="100" layout="row" layout-align="start center">
+                            <md-icon class="qd-icon icon-close icon-space" aria-label="Close Button" aria-hidden="true"></md-icon>
+                            <div class="qd-supplies__cart--edit-email-truncate">                              
+                                phleb@abcpractice.org
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </md-card-content>
         

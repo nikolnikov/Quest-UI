@@ -507,6 +507,16 @@
             &:nth-last-of-type(2) .qd-supplies__cart--divider  {
                 border-top-width: 3px;
             }
+            
+            &-email {
+                margin-bottom: 5px;
+                
+                &-truncate  {
+                    white-space: nowrap;
+                    overflow-x: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
         }
         
         &--input-no-margin  {
@@ -553,6 +563,14 @@
         
         button  {
             margin-bottom: 20px;
+        }
+    }
+    
+    .icon-space {
+        margin: 0 10px 0 20px;
+        
+        @include when-less-than(mini-tablet) {
+            margin-left: 5px;
         }
     }
 }

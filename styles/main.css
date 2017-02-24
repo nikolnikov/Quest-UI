@@ -7679,6 +7679,12 @@ a.qd-button.no-js {
     display: none; }
   .qd-supplies__cart--edit:nth-last-of-type(2) .qd-supplies__cart--divider {
     border-top-width: 3px; }
+  .qd-supplies__cart--edit-email {
+    margin-bottom: 5px; }
+    .qd-supplies__cart--edit-email-truncate {
+      white-space: nowrap;
+      overflow-x: hidden;
+      text-overflow: ellipsis; }
   .qd-supplies__cart--input-no-margin {
     margin: 18px auto 0; }
   .qd-supplies__cart--radio-group {
@@ -7704,6 +7710,11 @@ a.qd-button.no-js {
     margin-bottom: 20px; }
     .qd-supplies .qd-save-cancel button {
       margin-bottom: 20px; }
+  .qd-supplies .icon-space {
+    margin: 0 10px 0 20px; }
+    @media screen and (max-width: 899px) {
+      .qd-supplies .icon-space {
+        margin-left: 5px; } }
 
 .qd-main-content {
   background: #ececec; }
