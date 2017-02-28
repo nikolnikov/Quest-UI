@@ -557,6 +557,18 @@
         }
     }
     
+    .qd-radio-button--truncate {
+
+        .md-label {
+            white-space: nowrap;
+            overflow-x: hidden;
+            text-overflow: ellipsis;
+    
+            @include when-less-than(tablet) {
+                max-width: 300px;
+            }
+        }
+    }
     
     .qd-save-cancel {
         margin-bottom: 20px;

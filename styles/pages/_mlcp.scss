@@ -89,15 +89,6 @@
         &--border {
             border-top: 1px solid $divider-gray-1;
             
-            .qd-mlcp__card {
-                cursor: default;
-            }
-        }
-        
-        &--results  {
-            border: 0;
-            background: $background-gray;
-            
             &::before, &::after {
                 content: "";
                 position: absolute;
@@ -111,18 +102,27 @@
             }
             
             &::before {
-                bottom: -25px;
+                top: 0;
                 border-top-color: $divider-gray-1;
                 border-width: 10px;
                 z-index: 998;
             }
             
             &::after  {
-                bottom: -24px;
+                top: -2px;
                 border-top-color: $background-gray;
                 border-width: 11px;
                 z-index: 999;
             }
+            
+            .qd-mlcp__card {
+                cursor: default;
+            }
+        }
+        
+        &--results  {
+            border: 0;
+            background: $background-gray;
         }
     }
     

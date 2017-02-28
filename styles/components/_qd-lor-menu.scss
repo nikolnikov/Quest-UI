@@ -1,0 +1,53 @@
+.hmSubMenuDiv1 {
+  background: #7d7d7d;
+  color: #fff;
+  font: 12px arial, helvetica, sans-serif;
+  position: absolute;
+  z-index: 2000;
+  cursor : pointer;
+}
+.hmSubMenuDiv2 {
+  background-color: #007934;
+  position: absolute;
+  z-index: 2000;
+  cursor : pointer;
+}
+.hmenu1 {
+  color: #222;
+  white-space: nowrap;
+  font: 12px arial, helvetica, sans-serif;
+  padding: 0 15px 0 0;
+  height: 40px;
+  cursor: pointer;
+}
+.hmenu1  b  {
+  color: #007934;
+}
+.hmenu2 {
+  color: #333;
+  white-space: nowrap;
+  font: 14px arial, helvetica, sans-serif;
+  border-right: 2px solid #fff;
+  padding: 6px 15px;
+  cursor: pointer;
+  background: #d4d4d4;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.hmLabInfo {
+  width: 100%;
+  font: 12px arial, helvetica, sans-serif;
+  background-color: #007934;
+  color: #fff;
+  padding: 3px 8px;
+  text-transform: capitalize;
+}
+.hmSubMenuItem1, .hmSubMenuItem2 {
+  color: #fff;
+  font: 12px arial, helvetica, sans-serif;
+  padding: 4px 10px;
+}
