@@ -625,17 +625,17 @@ input[type="checkbox"], input[type="radio"] {
     .qd-display-1, .qd-home__banner-header, .qd-new-order__success-header, .upgrade-browser__title {
       font-size: 40px; } }
 
-.qd-display-2, .qd-header__title, .qd-results__no-results-header, .qd-account-settings-page__details-name, .qd-home__section-header, .qd-index-page__no-results, .qd-results__null-state, .login__title, .qd-new-order__autocomplete-search[md-floating-label] md-input-container label:not(.md-no-float):not(.md-container-ignore), .qd-new-order__autocomplete-search[md-floating-label] md-input-container input, .qd-notifications__section--clear, .qd-order-detail__header, .qd-order-detail__cancel-banner, .qd-order-detail__success-title, .qd-patient-profile__name, .qd-patient-profile__name--lab {
+.qd-display-2, .qd-header__title, .qd-results__no-results-header, .qd-account-settings-page__details-name, .qd-home__section-header, .login__title, .qd-new-order__autocomplete-search[md-floating-label] md-input-container label:not(.md-no-float):not(.md-container-ignore), .qd-new-order__autocomplete-search[md-floating-label] md-input-container input, .qd-notifications__section--clear, .qd-order-detail__header, .qd-order-detail__cancel-banner, .qd-order-detail__success-title, .qd-patient-profile__name, .qd-patient-profile__name--lab {
   font-size: 22px;
   font-weight: 300; }
   @media screen and (min-width: 600px) {
-    .qd-display-2, .qd-header__title, .qd-results__no-results-header, .qd-account-settings-page__details-name, .qd-home__section-header, .qd-index-page__no-results, .qd-results__null-state, .login__title, .qd-new-order__autocomplete-search[md-floating-label] md-input-container label:not(.md-no-float):not(.md-container-ignore), .qd-new-order__autocomplete-search[md-floating-label] md-input-container input, .qd-notifications__section--clear, .qd-order-detail__header, .qd-order-detail__cancel-banner, .qd-order-detail__success-title, .qd-patient-profile__name, .qd-patient-profile__name--lab {
+    .qd-display-2, .qd-header__title, .qd-results__no-results-header, .qd-account-settings-page__details-name, .qd-home__section-header, .login__title, .qd-new-order__autocomplete-search[md-floating-label] md-input-container label:not(.md-no-float):not(.md-container-ignore), .qd-new-order__autocomplete-search[md-floating-label] md-input-container input, .qd-notifications__section--clear, .qd-order-detail__header, .qd-order-detail__cancel-banner, .qd-order-detail__success-title, .qd-patient-profile__name, .qd-patient-profile__name--lab {
       font-size: 28px; } }
 
-.qd-headline-1, .qd-custom-dialog__headline, .qd-header--home .qd-header__title, .qd-new-order__review-title, .qd-patients-section__list .qd-header__title, .settings-page__bottom-content-title, .qd-supplies .qd-rectangle-tabs__tab .qd-icon, .qd-supplies__content-supplies-title {
+.qd-headline-1, .qd-custom-dialog__headline, .qd-header--home .qd-header__title, .qd-index-page__no-results, .qd-results__null-state, .qd-new-order__review-title, .qd-patients-section__list .qd-header__title, .settings-page__bottom-content-title, .qd-supplies .qd-rectangle-tabs__tab .qd-icon, .qd-supplies__content-supplies-title {
   font-size: 18px; }
   @media screen and (min-width: 600px) {
-    .qd-headline-1, .qd-custom-dialog__headline, .qd-header--home .qd-header__title, .qd-new-order__review-title, .qd-patients-section__list .qd-header__title, .settings-page__bottom-content-title, .qd-supplies .qd-rectangle-tabs__tab .qd-icon, .qd-supplies__content-supplies-title {
+    .qd-headline-1, .qd-custom-dialog__headline, .qd-header--home .qd-header__title, .qd-index-page__no-results, .qd-results__null-state, .qd-new-order__review-title, .qd-patients-section__list .qd-header__title, .settings-page__bottom-content-title, .qd-supplies .qd-rectangle-tabs__tab .qd-icon, .qd-supplies__content-supplies-title {
       font-size: 20px; } }
 
 .qd-headline-2, .qd-user-icon, .qd-patient-card__user-icon, .qd-lab-report__email-dialog-subhead, .qd-order-detail__subheader, .qd-patient-profile .qd-header__title, .qd-patient-profile__sub-header, .settings-page__item--master .settings-page__item-title {
@@ -652,17 +652,17 @@ input[type="checkbox"], input[type="radio"] {
     .qd-title-1, .doshdrgreencare360 {
       font-size: 16px; } }
 
-.qd-title-2, .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul div.search input:not(.md-input), .qd-eligibility__item--header, .qd-error-page__message, .qd-notification-card__title, .qd-results__search input:not(.md-input), .qd-home__graph-container .qd-home__section-header, .qd-home__banner-subhead, .qd-lab-report__email-dialog-title, .qd-lab-report__email-dialog-email, .qd-lab-order__search input:not(.md-input), .qd-mlcp__search input.qd-text-input, .qd-new-order__success-subheader, .qd-notifications__header, .qd-patients-section__search input:not(.md-input), .qd-patient-profile__autocomplete-search input:not(.md-input), .qd-supplies__search input.qd-text-input, .qd-supplies__subtitle, .upgrade-browser__message {
+.qd-title-2, .qd-abn .qd-cart-content-card ul div.search input:not(.md-input), .qd-eligibility__item--header, .qd-error-page__message, md-card.dirClass.qd-lab-order__search--results .qd-lab-order__search input.qd-text-input, .qd-notification-card__title, .qd-results__search input:not(.md-input), .qd-home__graph-container .qd-home__section-header, .qd-home__banner-subhead, .qd-lab-report__email-dialog-title, .qd-lab-report__email-dialog-email, .qd-lab-order__search input.qd-text-input, .qd-mlcp__search input.qd-text-input, .qd-new-order__success-subheader, .qd-notifications__header, .qd-patients-section__search input:not(.md-input), .qd-patient-profile__autocomplete-search input:not(.md-input), .qd-supplies__search input.qd-text-input, .qd-supplies__subtitle, .upgrade-browser__message {
   font-size: 14px; }
   @media screen and (min-width: 600px) {
-    .qd-title-2, .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul div.search input:not(.md-input), .qd-eligibility__item--header, .qd-error-page__message, .qd-notification-card__title, .qd-results__search input:not(.md-input), .qd-home__graph-container .qd-home__section-header, .qd-home__banner-subhead, .qd-lab-report__email-dialog-title, .qd-lab-report__email-dialog-email, .qd-lab-order__search input:not(.md-input), .qd-mlcp__search input.qd-text-input, .qd-new-order__success-subheader, .qd-notifications__header, .qd-patients-section__search input:not(.md-input), .qd-patient-profile__autocomplete-search input:not(.md-input), .qd-supplies__search input.qd-text-input, .qd-supplies__subtitle, .upgrade-browser__message {
+    .qd-title-2, .qd-abn .qd-cart-content-card ul div.search input:not(.md-input), .qd-eligibility__item--header, .qd-error-page__message, md-card.dirClass.qd-lab-order__search--results .qd-lab-order__search input.qd-text-input, .qd-notification-card__title, .qd-results__search input:not(.md-input), .qd-home__graph-container .qd-home__section-header, .qd-home__banner-subhead, .qd-lab-report__email-dialog-title, .qd-lab-report__email-dialog-email, .qd-lab-order__search input.qd-text-input, .qd-mlcp__search input.qd-text-input, .qd-new-order__success-subheader, .qd-notifications__header, .qd-patients-section__search input:not(.md-input), .qd-patient-profile__autocomplete-search input:not(.md-input), .qd-supplies__search input.qd-text-input, .qd-supplies__subtitle, .upgrade-browser__message {
       font-size: 16px; } }
 
 .qd-title-2-special, .qd-test-and-diagnosis-card--full .qd-test-and-diagnosis-card__name {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px; }
 
-.qd-subhead-1, .qAbnPositionWrapper .qd-abn .qd-cart-content-card__header, .qd-dialog__header, .qd-error-breaker__title, .qd-header__caption, .qd-lab-order__overflow--name, .qd-order-card__error-message, .qd-patient-profile-card__header, .qd-cart__header, .qd-cart__card--header, .qd-status-bars--5 .qd-status-bars__status, .qd-test-and-diagnosis-card__error-message, .qd-tooltip--bold, .qd-home__dashboard-card-description, .login__subhead, .qd-new-order__review-warning-text, .upgrade-browser__browser-title {
+.qd-subhead-1, .qd-abn .qd-cart-content-card__header, .qd-dialog__header, .qd-error-breaker__title, .qd-header__caption, .qd-lab-order__overflow--name, .qd-order-card__error-message, .qd-patient-profile-card__header, .qd-cart__header, .qd-cart__card--header, .qd-status-bars--5 .qd-status-bars__status, .qd-test-and-diagnosis-card__error-message, .qd-tooltip--bold, .qd-home__dashboard-card-description, .login__subhead, .qd-new-order__review-warning-text, .upgrade-browser__browser-title {
   font-size: 14px;
   font-weight: 700; }
 
@@ -676,7 +676,7 @@ input[type="checkbox"], input[type="radio"] {
 .qd-body-2, .qd-bullet-heading, .qd-custom-dialog__body-copy, md-dialog .md-dialog-content-body p, .qd-eligibility__item, .qd-error-breaker__sub-title, .qd-header-bar, .qd-order-card__info-box, .qd-patient-card--mini .qd-patient-card__name, .qd-test-and-diagnosis-card--mini .qd-patient-card__name,
 .qd-order-card__patient-wrapper .qd-patient-card__name,
 .qd-result-card__patient-container .qd-patient-card__name,
-.qd-patient-card--full .qd-patient-card__name, .qd-patient-profile-card__title, .qd-new-order__order-note-title, .qd-patient-profile-card__content, md-radio-button.qd-radio-button, .qd-result-card__date, .qd-notification-card__date, .qd-results__no-results-subhead, .qd-results__results-header, .qd-results__results-status, .qd-patient-profile__results-status, .qd-select-input .md-select-value.md-select-placeholder, .qd-select-input .md-select-value, .md-select-menu-container md-option .md-text, .qd-test-and-diagnosis-card__inline-info-block label, md-input-container label:not(.md-no-float):not(.md-container-ignore),
+.qd-patient-card--full .qd-patient-card__name, .qd-patient-profile-card__title, .qd-new-order__order-note-title, .qd-patient-profile-card__content, md-radio-button.qd-radio-button, .qd-result-card__date, .qd-notification-card__date, .qd-results__container--empty, .qd-results__no-results-subhead, .qd-results__results-header, .qd-results__results-status, .qd-patient-profile__results-status, .qd-select-input .md-select-value.md-select-placeholder, .qd-select-input .md-select-value, .md-select-menu-container md-option .md-text, .qd-cart__card--chips-content-empty, .qd-test-and-diagnosis-card__inline-info-block label, md-input-container label:not(.md-no-float):not(.md-container-ignore),
 md-input-container .md-input.qd-text-input, .qd-home__graph-container .qd-home__section-header md-select, .qd-index-page__filters-header, .qd-index-page__results-bar-status, .qd-lab-report__reviewed-byline, .qd-lab-report__reviewed-name, .login__text, .login__question-text, .qd-mlcp__card, .qd-mlcp__policy, .qd-mlcp__dialog, .qd-new-order__saved-list-title, .qd-patients-section__filter-toggle, .qd-patient-profile__diagnoses-indicator-tag, .settings-page__item--labeled::before, .qd-supplies .qd-rectangle-tabs__tab, .qd-supplies__categories, .qd-supplies__item, .qd-supplies__item-order-history, .qd-supplies__item--details, .qd-supplies__cart--card-content, .upgrade-browser__footnote {
   font-size: 14px; }
 
@@ -690,12 +690,12 @@ md-input-container .md-input.qd-text-input, .qd-home__graph-container .qd-home__
     .qd-caption, .error, .qd-blockquote, .qd-message, .qd-message a.qd-link, .qd-message a.qd-order-detail__cancel-copy, .qd-help-text, .qd-notification-card__reviewed-by, .qd-overflow-menu__checkbox-label, .qd-patient-card__address, .qd-patient-card__ssn, .qd-patient-card__pid, .qd-patient-card__sex, .qd-patient-card__dob, .qd-patient-card__tel, .qd-results__results-tag, .qd-account-settings-page__details-address, .qd-home__section-header--small {
       font-size: 14px; } }
 
-.qd-cta, .qAbnPositionWrapper .qd-abn a, .md-button.qd-button, .md-button.md-raised.qd-button, md-dialog .md-title, md-dialog md-dialog-actions .md-button, .qd-dropdown-menu__title, .qd-dropdown-menu__item-count, .qd-header__back-button button.md-button, .qd-header__action button, .qd-lab-report-header__back button.md-button, .qd-link, .qd-order-detail__cancel-copy, .qd-notifications-dropdown__cta.md-button.md-primary, .qd-overflow-menu__action button, .qd-overflow-menu__submit button, .qd-patient-profile-card__header .md-icon-button__text, .qd-rectangle-tabs__tab, .qd-md-tabs .md-tab, .qd-result-card__mini-status-message, .qd-results__results-tests-back, .qd-cart a, .qd-tooltip--top-nav, md-menu-content.qd-menu-content a, .qd-account-settings-page__details-title, .qd-index-page__results-bar-back, .qd-new-order__nav-item, .qd-new-order__autocomplete-or, .qd-patient-profile__autocomplete-or, .qd-new-order__cancel-button, .qd-new-order__or, .qd-order-detail__or, .qd-new-order__saved-list-header, .qd-new-order__saved-list-toggle, .qd-new-order__review-added-title, .qd-notifications__view-more {
+.qd-cta, .qd-abn a, .md-button.qd-button, .md-button.md-raised.qd-button, md-dialog .md-title, md-dialog md-dialog-actions .md-button, .qd-dropdown-menu__title, .qd-dropdown-menu__item-count, .qd-header__back-button button.md-button, .qd-header__action button, .qd-lab-report-header__back button.md-button, .qd-link, .qd-order-detail__cancel-copy, .qd-notifications-dropdown__cta.md-button.md-primary, .qd-overflow-menu__action button, .qd-overflow-menu__submit button, .qd-patient-profile-card__header .md-icon-button__text, .qd-rectangle-tabs__tab, .qd-md-tabs .md-tab, .qd-result-card__mini-status-message, .qd-results__results-tests-back, .qd-cart a, .qd-tooltip--top-nav, md-menu-content.qd-menu-content a, .qd-account-settings-page__details-title, .qd-account-settings-page__lab-defaults-header, .qd-index-page__results-bar-back, .qd-new-order__nav-item, .qd-new-order__autocomplete-or, .qd-patient-profile__autocomplete-or, .qd-new-order__cancel-button, .qd-new-order__or, .qd-order-detail__or, .qd-new-order__saved-list-header, .qd-new-order__saved-list-toggle, .qd-new-order__review-added-title, .qd-notifications__view-more {
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase; }
 
-.qd-label-2, .qd-annotation__timestamp, .qd-custom-dialog__timestamp, .qd-custom-dialog__datepicker-label, .qd-notification-card--mini .qd-notification-card__title, .qd-notification-card--mini .qd-notification-card__time, .qd-patient-card__ssn:before, .qd-patient-card__pid:before, .qd-patient-card__sex:before, .qd-patient-card__dob:before, .qd-patient-card__tel:before, .qd-patient-profile-card__autocomplete .qd-input-error, .qd-patient-profile-card__label, .qd-order-card__info-box label, .qd-patient-profile-card__static-container label, .qd-test-and-diagnosis-card__info-block-wrapper label, .qd-results__label, .qd-test-and-diagnosis-card__panel-info-block label, .qd-supplies__item-order-history label, md-input-container.qd-patient-profile-card__input-container .hint, md-input-container.qd-patient-profile__input-container .hint, md-input-container .qd-input-error, .qd-input-hint, .qd-toast__info, .qd-toast.qd-lab-order .qd-toast__info, .qd-account-settings-page__details-item label, .qd-account-settings-page__selected-item label, .qd-lab-report__reviewed-timestamp, .qd-new-order__datepicker-wrapper label, .qd-order-detail__static-hint, .qd-order-detail__order-note-title, .qd-patient-profile__info-item label, .qd-lab-report__info-item label, .settings-page__bottom-content-subtitle, .settings-page__item-description {
+.qd-label-2, .qd-annotation__timestamp, .qd-custom-dialog__timestamp, .qd-custom-dialog__datepicker-label, .qd-notification-card--mini .qd-notification-card__title, .qd-notification-card--mini .qd-notification-card__time, .qd-patient-card__ssn:before, .qd-patient-card__pid:before, .qd-patient-card__sex:before, .qd-patient-card__dob:before, .qd-patient-card__tel:before, .qd-patient-profile-card__autocomplete .qd-input-error, .qd-patient-profile-card__label, .qd-order-card__info-box label, .qd-patient-profile-card__static-container label, .qd-test-and-diagnosis-card__info-block-wrapper label, .qd-results__label, .qd-test-and-diagnosis-card__panel-info-block label, .qd-supplies__item-order-history label, .qd-result-card__name-demographic-message, md-input-container.qd-patient-profile-card__input-container .hint, md-input-container.qd-patient-profile__input-container .hint, md-input-container .qd-input-error, .qd-input-hint, .qd-toast__info, .qd-toast.qd-lab-order .qd-toast__info, .qd-account-settings-page__details-item label, .qd-account-settings-page__selected-item label, .qd-account-settings-page__lab-defaults-content--client-label:before, .qd-lab-report__reviewed-timestamp, .qd-new-order__datepicker-wrapper label, .qd-order-detail__static-hint, .qd-order-detail__order-note-title, .qd-patient-profile__info-item label, .qd-lab-report__info-item label, .settings-page__bottom-content-subtitle, .settings-page__item-description {
   font-size: 12px; }
 
 .qd-label-1, .qd-password-strength::before, .qd-result-card__status, .qd-sidenav__drag-divider-text, .qd-switch__text {
@@ -720,7 +720,7 @@ body {
   font-family: 'Akkurat', sans-serif; }
 
 md-content {
-  background-color: #f8f8f8; }
+  background-color: #ececec; }
 
 ul {
   margin: 0;
@@ -728,6 +728,9 @@ ul {
 
 li {
   list-style: none; }
+
+.bolder {
+  font-weight: 700 !important; }
 
 .qd-breadcrumbs {
   border-bottom: 1px solid #d8d8d8;
@@ -801,438 +804,441 @@ li {
   top: 202px !important;
   right: 8px;
   left: auto !important; }
-  .qAbnPositionWrapper .qd-abn {
-    background: #f8f8f8;
-    padding: 0;
-    min-height: 300px;
-    max-height: calc(95vh - 56px) !important;
-    min-width: 900px;
-    width: 900px;
-    box-shadow: 0px 2px 8px 4px rgba(0, 0, 0, 0.24);
-    /* .qd-cart-content-card */ }
-    .qAbnPositionWrapper .qd-abn qd-lab-order-search-results {
-      display: none; }
-    .qAbnPositionWrapper .qd-abn__button-wrapper {
-      display: flex; }
-      .qAbnPositionWrapper .qd-abn__button-wrapper .qd-button {
-        display: block;
-        margin: 10px 0;
-        align-items: center; }
-      @media screen and (min-width: 320px) and (max-width: 899px) {
-        .qAbnPositionWrapper .qd-abn__button-wrapper {
-          height: 94px; } }
-    .qAbnPositionWrapper .qd-abn .mobileHeader {
-      display: none; }
-    .qAbnPositionWrapper .qd-abn::before {
-      border-left: solid transparent 10px;
-      border-right: solid transparent 10px;
-      border-bottom: solid #35792a 10px;
-      top: -10px;
-      content: " ";
-      height: 0;
-      right: 65px;
-      margin-left: -10px;
-      position: absolute;
-      width: 0; }
-    .qAbnPositionWrapper .qd-abn a {
-      color: #35792a;
-      cursor: pointer;
-      text-decoration: none !important; }
-    .qAbnPositionWrapper .qd-abn .readMore {
-      margin: 10px 10px;
+
+.qd-abn {
+  background: #f8f8f8;
+  padding: 0;
+  min-height: 300px;
+  max-height: calc(95vh - 56px) !important;
+  min-width: 900px;
+  width: 900px;
+  box-shadow: 0px 2px 8px 4px rgba(0, 0, 0, 0.24);
+  display: flex;
+  flex-direction: column;
+  /* .qd-cart-content-card */ }
+  .qd-abn qd-lab-order-search-results {
+    display: none; }
+  .qd-abn__button-wrapper {
+    display: flex; }
+    .qd-abn__button-wrapper .qd-button {
+      display: block;
+      margin: 10px 0;
+      align-items: center; }
+    @media screen and (min-width: 320px) and (max-width: 899px) {
+      .qd-abn__button-wrapper {
+        height: 94px; } }
+  .qd-abn .mobileHeader {
+    display: none; }
+  .qd-abn::before {
+    border-left: solid transparent 10px;
+    border-right: solid transparent 10px;
+    border-bottom: solid #35792a 10px;
+    top: -10px;
+    content: " ";
+    height: 0;
+    right: 65px;
+    margin-left: -10px;
+    position: absolute;
+    width: 0; }
+  .qd-abn a {
+    color: #35792a;
+    cursor: pointer;
+    text-decoration: none !important; }
+  .qd-abn .readMore {
+    margin: 10px 10px;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6); }
+    .qd-abn .readMore a {
       font-size: 12px;
-      color: rgba(0, 0, 0, 0.6); }
-      .qAbnPositionWrapper .qd-abn .readMore a {
-        font-size: 12px;
-        text-transform: none; }
-    .qAbnPositionWrapper .qd-abn .showmore {
-      cursor: pointer;
-      outline: none;
-      font-size: 14px;
-      margin: 10px 10px 0;
-      line-height: 22px; }
-      .qAbnPositionWrapper .qd-abn .showmore:hover {
-        color: #19551f; }
-      .qAbnPositionWrapper .qd-abn .showmore .qd-icon {
-        float: right;
-        color: #22672a;
-        height: 20px;
-        line-height: 10px; }
-    .qAbnPositionWrapper .qd-abn .qd-cart-content-wrapper {
-      overflow-x: auto;
-      height: 45vh; }
-    .qAbnPositionWrapper .qd-abn .qd-cart-content-card {
-      margin-bottom: 15px;
-      border-radius: 0;
-      position: relative; }
-      .qAbnPositionWrapper .qd-abn .qd-cart-content-card qd-lab-name {
-        display: flex;
-        width: 100%;
-        font-size: 16px;
-        padding: 10px 15px;
-        border-bottom: 1px solid #d8d8d8; }
-        .qAbnPositionWrapper .qd-abn .qd-cart-content-card qd-lab-name .name {
-          width: 80%;
-          display: inline-block; }
-          @media screen and (max-width: 899px) {
-            .qAbnPositionWrapper .qd-abn .qd-cart-content-card qd-lab-name .name {
-              width: 70%; } }
-          @media screen and (max-width: 599px) {
-            .qAbnPositionWrapper .qd-abn .qd-cart-content-card qd-lab-name .name {
-              width: 100%; } }
-        .qAbnPositionWrapper .qd-abn .qd-cart-content-card qd-lab-name .icon-check {
-          color: #35792a;
-          font-size: 22px;
-          margin-top: -5px; }
-        .qAbnPositionWrapper .qd-abn .qd-cart-content-card qd-lab-name div {
-          font-size: 12px;
-          color: rgba(0, 0, 0, 0.6);
-          margin: 10px 0; }
-      .qAbnPositionWrapper .qd-abn .qd-cart-content-card .additional-information__content .qd-patient-profile-card__input-container md-select {
-        margin: 0; }
-      .qAbnPositionWrapper .qd-abn .qd-cart-content-card .additional-information__content .qd-patient-profile-card__checkbox-container {
-        padding: 0;
-        margin: 10px 0; }
-      .qAbnPositionWrapper .qd-abn .qd-cart-content-card .filters {
-        width: 20%;
-        display: inline-block;
-        text-align: right;
-        margin: 0;
-        color: rgba(0, 0, 0, 0.6); }
-        .qAbnPositionWrapper .qd-abn .qd-cart-content-card .filters a {
-          color: rgba(0, 0, 0, 0.6);
-          text-transform: none;
-          font-weight: normal; }
-          .qAbnPositionWrapper .qd-abn .qd-cart-content-card .filters a.selected {
-            color: #35792a; }
-        @media screen and (max-width: 899px) {
-          .qAbnPositionWrapper .qd-abn .qd-cart-content-card .filters {
-            width: 30%; } }
-        @media screen and (max-width: 599px) {
-          .qAbnPositionWrapper .qd-abn .qd-cart-content-card .filters {
-            width: 100%;
-            padding-top: 4px;
-            text-align: left; } }
-      .qAbnPositionWrapper .qd-abn .qd-cart-content-card .medicare-policy {
-        height: 155px;
-        overflow-y: auto;
-        font-size: 14px;
-        margin-bottom: 10px; }
-      .qAbnPositionWrapper .qd-abn .qd-cart-content-card .qd-lab-order__item.selected {
-        background: rgba(255, 247, 141, 0.5); }
-        .qAbnPositionWrapper .qd-abn .qd-cart-content-card .qd-lab-order__item.selected:hover {
-          background: rgba(255, 247, 141, 0.5) !important; }
-      .qAbnPositionWrapper .qd-abn .qd-cart-content-card .search__number {
-        width: 50%; }
-        @media screen and (max-width: 599px) {
-          .qAbnPositionWrapper .qd-abn .qd-cart-content-card .search__number {
-            width: 100%; } }
-      .qAbnPositionWrapper .qd-abn .qd-cart-content-card .qd-lab-order__search {
-        display: flex;
-        width: 50%; }
-        .qAbnPositionWrapper .qd-abn .qd-cart-content-card .qd-lab-order__search input:not(.md-input) {
-          width: 100%;
-          border: none;
-          background-color: transparent;
-          padding-left: 0; }
-          .qAbnPositionWrapper .qd-abn .qd-cart-content-card .qd-lab-order__search input:not(.md-input)::-webkit-input-placeholder {
-            color: rgba(0, 0, 0, 0.6); }
-          .qAbnPositionWrapper .qd-abn .qd-cart-content-card .qd-lab-order__search input:not(.md-input):focus {
-            outline: 0; }
-        @media screen and (max-width: 899px) {
-          .qAbnPositionWrapper .qd-abn .qd-cart-content-card .qd-lab-order__search {
-            width: 50%; } }
-        @media screen and (max-width: 599px) {
-          .qAbnPositionWrapper .qd-abn .qd-cart-content-card .qd-lab-order__search {
-            width: 100%; } }
-      .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul {
-        /*-webkit-columns: 4;
-                -moz-columns: 4;
-                columns: 4;*/ }
-        .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul div.search {
-          position: relative;
-          display: inline-block;
-          width: 50%; }
-          .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul div.search::before {
-            font-size: 22px;
-            color: rgba(0, 0, 0, 0.6);
-            position: absolute;
-            left: 15px;
-            top: 5px; }
-          .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul div.search .md-whiteframe-z1 {
-            box-shadow: none; }
-          .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul div.search input:not(.md-input) {
-            border: none;
-            width: 100%;
-            background-color: transparent;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.6);
-            margin-left: 15px;
-            padding: 5px 0 5px 25px;
-            color: rgba(0, 0, 0, 0.6); }
-            .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul div.search input:not(.md-input)::-webkit-input-placeholder {
-              color: rgba(0, 0, 0, 0.6); }
-        .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul li {
-          width: 250px;
-          color: rgba(0, 0, 0, 0.6);
-          font-size: 14px;
-          padding: 3px 2px 0 2px;
-          margin: 5px;
-          display: inline-block;
-          border-radius: 5px; }
-          .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul li div {
-            display: inline-block;
-            margin: 1px;
-            padding: 5px;
-            border-radius: 8px; }
-          .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul li div:first-child {
-            max-width: 85%;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis; }
-            .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul li div:first-child .icon-flag {
-              font-size: inherit;
-              margin-top: -2px;
-              margin-left: 3px;
-              background-color: #00acea;
-              color: #ffffff;
-              border-radius: 50%;
-              line-height: 1.4;
-              text-align: center;
-              height: 18px;
-              width: 18px;
-              min-height: 18px;
-              min-width: 18px; }
-          .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul li.selected div.ng-binding {
-            color: #333333;
-            border-radius: 8px;
-            background: rgba(255, 236, 2, 0.25);
-            -webkit-box-shadow: inset 0px 0px 0px 1px rgba(255, 236, 2, 0.25);
-            -moz-box-shadow: inset 0px 0px 0px 1px rgba(255, 236, 2, 0.25);
-            box-shadow: inset 0px 0px 0px 1px rgba(255, 236, 2, 0.95); }
-            .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul li.selected div.ng-binding div.code {
-              box-shadow: none;
-              background: none; }
-          .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul li .code {
-            display: block;
-            margin: 0;
-            padding: 0;
-            font-size: 12px;
-            color: #a7a8aa;
-            min-width: 100%; }
-          .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul li .qd-lab-order__overflow {
-            display: none;
-            background: transparent !important;
-            margin: 12px 2px 0 0;
-            -webkit-box-shadow: inset 0px 0px 0px 0px !important;
-            -moz-box-shadow: inset 0px 0px 0px 0px !important;
-            box-shadow: inset 0px 0px 0px 0px !important; }
-          .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul li:hover {
-            cursor: pointer;
-            background-color: #f8f8f8; }
-            .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul li:hover .qd-lab-order__overflow {
-              display: inline-block;
-              position: relative;
-              padding: 0;
-              vertical-align: middle;
-              height: 18px;
-              float: right; }
-              .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul li:hover .qd-lab-order__overflow .md-menu .md-icon-button {
-                padding: 0;
-                margin: 0;
-                border-radius: 0;
-                width: 18px;
-                height: 18px;
-                min-height: 18px; }
-              .md-button.md-raised:not([disabled]) .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul li:hover .qd-lab-order__overflow .md-menu .qd-icon,
-              .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul li:hover .qd-lab-order__overflow .md-menu .qd-icon {
-                color: #35792a;
-                font-size: 18px;
-                line-height: 1px;
-                position: absolute;
-                top: 0;
-                right: 0; }
-          .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul li:focus {
-            outline: 0; }
-      .qAbnPositionWrapper .qd-abn .qd-cart-content-card__header {
-        padding: 8px 10px;
-        text-transform: uppercase;
-        color: #ffffff;
-        background-color: #35792a; }
-        @media screen and (min-width: 320px) and (max-width: 899px) {
-          .qAbnPositionWrapper .qd-abn .qd-cart-content-card__header {
-            display: none; } }
-      .qAbnPositionWrapper .qd-abn .qd-cart-content-card__input-container {
-        margin: 10px 0; }
-        .qAbnPositionWrapper .qd-abn .qd-cart-content-card__input-container .md-errors-spacer {
-          display: none; }
-      .qAbnPositionWrapper .qd-abn .qd-cart-content-card__content {
-        padding: 10px 8px 8px; }
-        .qAbnPositionWrapper .qd-abn .qd-cart-content-card__content--chip {
-          padding: 2px 16px 10px; }
-      .qAbnPositionWrapper .qd-abn .qd-cart-content-card .qd-checkbox {
-        margin-left: 10px; }
-    .qAbnPositionWrapper .qd-abn .diagnosis_alert__container {
-      position: relative;
-      padding: 15px 20px;
-      height: 80px;
+      text-transform: none; }
+  .qd-abn .showmore {
+    cursor: pointer;
+    outline: none;
+    font-size: 14px;
+    margin: 10px 10px 0;
+    line-height: 22px; }
+    .qd-abn .showmore:hover {
+      color: #19551f; }
+    .qd-abn .showmore .qd-icon {
+      float: right;
+      color: #22672a;
+      height: 20px;
+      line-height: 10px; }
+  .qd-abn .qd-cart-content-wrapper {
+    overflow-x: auto;
+    height: 45vh; }
+  .qd-abn .qd-cart-content-card {
+    margin-bottom: 15px;
+    border-radius: 0;
+    position: relative; }
+    .qd-abn .qd-cart-content-card qd-lab-name {
+      display: flex;
       width: 100%;
-      display: block;
-      z-index: 1; }
-      @media screen and (min-width: 600px) {
-        .qAbnPositionWrapper .qd-abn .diagnosis_alert__container {
-          padding: 0 20px; } }
-    .qAbnPositionWrapper .qd-abn .diagnosis_alert__mini-status {
-      background-color: #fff78d;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.09);
-      padding: 3px 20px;
-      height: 30px;
-      position: relative;
-      display: block;
-      width: 100%;
-      z-index: 1;
-      font-size: 14px;
-      font-weight: 400;
-      text-transform: none;
-      color: rgba(0, 0, 0, 0.6);
-      text-align: center; }
-      .qAbnPositionWrapper .qd-abn .diagnosis_alert__mini-status .qd-icon {
-        color: #d32f2f; }
-      .qAbnPositionWrapper .qd-abn .diagnosis_alert__mini-status div {
+      font-size: 16px;
+      padding: 10px 15px;
+      border-bottom: 1px solid #d8d8d8; }
+      .qd-abn .qd-cart-content-card qd-lab-name .name {
+        width: 80%;
         display: inline-block; }
-      .qAbnPositionWrapper .qd-abn .diagnosis_alert__mini-status--critical {
-        background-color: #d32f2f; }
-        .qAbnPositionWrapper .qd-abn .diagnosis_alert__mini-status--critical .qd-icon {
-          color: #ffffff; }
-      .qAbnPositionWrapper .qd-abn .diagnosis_alert__mini-status .qd-icon {
-        color: #E65100;
-        display: inline-block; }
-    .qAbnPositionWrapper .qd-abn .diagnosis_alert .arrow {
-      display: inline-block;
-      width: 0;
-      height: 0;
-      border-top: 15px solid transparent;
-      border-bottom: 15px solid transparent;
-      border-left: 20px solid #000000;
-      position: relative; }
-    .qAbnPositionWrapper .qd-abn .diagnosis_alert .arrow:after {
-      content: '';
-      width: 0;
-      height: 0;
-      border-top: 15px solid transparent;
-      border-bottom: 15px solid transparent;
-      border-left: 20px solid #fff78d;
-      position: absolute;
-      top: -15px;
-      left: -20px; }
-    .qAbnPositionWrapper .qd-abn .diagnosis_alert .diagnosis_alert__link {
-      display: inline-block;
-      vertical-align: top; }
-      .qAbnPositionWrapper .qd-abn .diagnosis_alert .diagnosis_alert__link a {
-        vertical-align: top;
-        display: inline-block;
-        margin: 8px 0 0 5px;
-        cursor: pointer; }
-    .qAbnPositionWrapper .qd-abn .diagnosis_alert.satisfied .diagnosis_alert__mini-status {
-      background-color: #ffffff;
-      border-bottom: 0;
-      height: auto; }
-      .qAbnPositionWrapper .qd-abn .diagnosis_alert.satisfied .diagnosis_alert__mini-status .qd-icon {
-        color: #ffffff; }
-      .qAbnPositionWrapper .qd-abn .diagnosis_alert.satisfied .diagnosis_alert__mini-status .qd-icon {
+        @media screen and (max-width: 899px) {
+          .qd-abn .qd-cart-content-card qd-lab-name .name {
+            width: 70%; } }
+        @media screen and (max-width: 599px) {
+          .qd-abn .qd-cart-content-card qd-lab-name .name {
+            width: 100%; } }
+      .qd-abn .qd-cart-content-card qd-lab-name .icon-check {
         color: #35792a;
-        display: inline-block; }
-    @media screen and (max-width: 899px) {
-      .qAbnPositionWrapper .qd-abn {
-        max-height: 100% !important;
-        position: fixed;
-        top: 56px;
-        right: 0;
-        bottom: 0;
-        left: 0;
+        font-size: 22px;
+        margin-top: -5px; }
+      .qd-abn .qd-cart-content-card qd-lab-name div {
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.6);
+        margin: 10px 0; }
+    .qd-abn .qd-cart-content-card .additional-information__content .qd-patient-profile-card__input-container md-select {
+      margin: 0; }
+    .qd-abn .qd-cart-content-card .additional-information__content .qd-patient-profile-card__checkbox-container {
+      padding: 0;
+      margin: 10px 0; }
+    .qd-abn .qd-cart-content-card .filters {
+      width: 20%;
+      display: inline-block;
+      text-align: right;
+      margin: 0;
+      color: rgba(0, 0, 0, 0.6); }
+      .qd-abn .qd-cart-content-card .filters a {
+        color: rgba(0, 0, 0, 0.6);
+        text-transform: none;
+        font-weight: normal; }
+        .qd-abn .qd-cart-content-card .filters a.selected {
+          color: #35792a; }
+      @media screen and (max-width: 899px) {
+        .qd-abn .qd-cart-content-card .filters {
+          width: 30%; } }
+      @media screen and (max-width: 599px) {
+        .qd-abn .qd-cart-content-card .filters {
+          width: 100%;
+          padding-top: 4px;
+          text-align: left; } }
+    .qd-abn .qd-cart-content-card .medicare-policy {
+      height: 155px;
+      overflow-y: auto;
+      font-size: 14px;
+      margin-bottom: 10px; }
+    .qd-abn .qd-cart-content-card .qd-lab-order__item.selected {
+      background: rgba(255, 247, 141, 0.5); }
+      .qd-abn .qd-cart-content-card .qd-lab-order__item.selected:hover {
+        background: rgba(255, 247, 141, 0.5) !important; }
+    .qd-abn .qd-cart-content-card .search__number {
+      width: 50%; }
+      @media screen and (max-width: 599px) {
+        .qd-abn .qd-cart-content-card .search__number {
+          width: 100%; } }
+    .qd-abn .qd-cart-content-card .qd-lab-order__search {
+      display: flex;
+      width: 50%; }
+      .qd-abn .qd-cart-content-card .qd-lab-order__search input:not(.md-input) {
         width: 100%;
-        min-width: 100% !important; }
-        .qAbnPositionWrapper .qd-abn::before {
-          position: relative;
-          height: 0;
-          width: 0;
-          padding: 0;
-          margin: 0;
-          display: none; }
-        .qAbnPositionWrapper .qd-abn .mobileHeader {
-          padding: 6px 0;
-          display: block;
-          border-bottom: 1px solid #d8d8d8;
-          min-height: 40px; }
-          .qAbnPositionWrapper .qd-abn .mobileHeader .qd-header__title {
+        border: none;
+        background-color: transparent;
+        padding-left: 0; }
+        .qd-abn .qd-cart-content-card .qd-lab-order__search input:not(.md-input)::-webkit-input-placeholder {
+          color: rgba(0, 0, 0, 0.6); }
+        .qd-abn .qd-cart-content-card .qd-lab-order__search input:not(.md-input):focus {
+          outline: 0; }
+      @media screen and (max-width: 899px) {
+        .qd-abn .qd-cart-content-card .qd-lab-order__search {
+          width: 50%; } }
+      @media screen and (max-width: 599px) {
+        .qd-abn .qd-cart-content-card .qd-lab-order__search {
+          width: 100%; } }
+    .qd-abn .qd-cart-content-card ul {
+      /*-webkit-columns: 4;
+            -moz-columns: 4;
+            columns: 4;*/ }
+      .qd-abn .qd-cart-content-card ul div.search {
+        position: relative;
+        display: inline-block;
+        width: 50%; }
+        .qd-abn .qd-cart-content-card ul div.search::before {
+          font-size: 22px;
+          color: rgba(0, 0, 0, 0.6);
+          position: absolute;
+          left: 15px;
+          top: 5px; }
+        .qd-abn .qd-cart-content-card ul div.search .md-whiteframe-z1 {
+          box-shadow: none; }
+        .qd-abn .qd-cart-content-card ul div.search input:not(.md-input) {
+          border: none;
+          width: 100%;
+          background-color: transparent;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+          margin-left: 15px;
+          padding: 5px 0 5px 25px;
+          color: rgba(0, 0, 0, 0.6); }
+          .qd-abn .qd-cart-content-card ul div.search input:not(.md-input)::-webkit-input-placeholder {
+            color: rgba(0, 0, 0, 0.6); }
+      .qd-abn .qd-cart-content-card ul li {
+        width: 250px;
+        color: rgba(0, 0, 0, 0.6);
+        font-size: 14px;
+        padding: 3px 2px 0 2px;
+        margin: 5px;
+        display: inline-block;
+        border-radius: 5px; }
+        .qd-abn .qd-cart-content-card ul li div {
+          display: inline-block;
+          margin: 1px;
+          padding: 5px;
+          border-radius: 8px; }
+        .qd-abn .qd-cart-content-card ul li div:first-child {
+          max-width: 85%;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis; }
+          .qd-abn .qd-cart-content-card ul li div:first-child .icon-flag {
+            font-size: inherit;
+            margin-top: -2px;
+            margin-left: 3px;
+            background-color: #00acea;
+            color: #ffffff;
+            border-radius: 50%;
+            line-height: 1.4;
             text-align: center;
-            width: 50%;
-            margin: 0 auto;
-            line-height: 40px; }
-          .qAbnPositionWrapper .qd-abn .mobileHeader .qd-header__action--icon {
+            height: 18px;
+            width: 18px;
+            min-height: 18px;
+            min-width: 18px; }
+        .qd-abn .qd-cart-content-card ul li.selected div.ng-binding {
+          color: #333333;
+          border-radius: 8px;
+          background: rgba(255, 236, 2, 0.25);
+          -webkit-box-shadow: inset 0px 0px 0px 1px rgba(255, 236, 2, 0.25);
+          -moz-box-shadow: inset 0px 0px 0px 1px rgba(255, 236, 2, 0.25);
+          box-shadow: inset 0px 0px 0px 1px rgba(255, 236, 2, 0.95); }
+          .qd-abn .qd-cart-content-card ul li.selected div.ng-binding div.code {
+            box-shadow: none;
+            background: none; }
+        .qd-abn .qd-cart-content-card ul li .code {
+          display: block;
+          margin: 0;
+          padding: 0;
+          font-size: 12px;
+          color: #a7a8aa;
+          min-width: 100%; }
+        .qd-abn .qd-cart-content-card ul li .qd-lab-order__overflow {
+          display: none;
+          background: transparent !important;
+          margin: 12px 2px 0 0;
+          -webkit-box-shadow: inset 0px 0px 0px 0px !important;
+          -moz-box-shadow: inset 0px 0px 0px 0px !important;
+          box-shadow: inset 0px 0px 0px 0px !important; }
+        .qd-abn .qd-cart-content-card ul li:hover {
+          cursor: pointer;
+          background-color: #f8f8f8; }
+          .qd-abn .qd-cart-content-card ul li:hover .qd-lab-order__overflow {
+            display: inline-block;
+            position: relative;
+            padding: 0;
+            vertical-align: middle;
+            height: 18px;
+            float: right; }
+            .qd-abn .qd-cart-content-card ul li:hover .qd-lab-order__overflow .md-menu .md-icon-button {
+              padding: 0;
+              margin: 0;
+              border-radius: 0;
+              width: 18px;
+              height: 18px;
+              min-height: 18px; }
+            .md-button.md-raised:not([disabled]) .qd-abn .qd-cart-content-card ul li:hover .qd-lab-order__overflow .md-menu .qd-icon,
+            .qd-abn .qd-cart-content-card ul li:hover .qd-lab-order__overflow .md-menu .qd-icon {
+              color: #35792a;
+              font-size: 18px;
+              line-height: 1px;
+              position: absolute;
+              top: 0;
+              right: 0; }
+        .qd-abn .qd-cart-content-card ul li:focus {
+          outline: 0; }
+    .qd-abn .qd-cart-content-card__header {
+      padding: 8px 10px;
+      text-transform: uppercase;
+      color: #ffffff;
+      background-color: #35792a; }
+      @media screen and (min-width: 320px) and (max-width: 899px) {
+        .qd-abn .qd-cart-content-card__header {
+          display: none; } }
+    .qd-abn .qd-cart-content-card__input-container {
+      margin: 10px 0; }
+      .qd-abn .qd-cart-content-card__input-container .md-errors-spacer {
+        display: none; }
+    .qd-abn .qd-cart-content-card__content {
+      padding: 10px 8px 8px; }
+      .qd-abn .qd-cart-content-card__content--chip {
+        padding: 2px 16px 10px; }
+    .qd-abn .qd-cart-content-card .qd-checkbox {
+      margin-left: 10px; }
+  .qd-abn .diagnosis_alert__container {
+    position: relative;
+    padding: 15px 20px;
+    height: 80px;
+    width: 100%;
+    display: block;
+    z-index: 1; }
+    @media screen and (min-width: 600px) {
+      .qd-abn .diagnosis_alert__container {
+        padding: 0 20px; } }
+  .qd-abn .diagnosis_alert__mini-status {
+    background-color: #fff78d;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+    padding: 3px 20px;
+    height: 30px;
+    position: relative;
+    display: block;
+    width: 100%;
+    z-index: 1;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: none;
+    color: rgba(0, 0, 0, 0.6);
+    text-align: center; }
+    .qd-abn .diagnosis_alert__mini-status .qd-icon {
+      color: #d32f2f; }
+    .qd-abn .diagnosis_alert__mini-status div {
+      display: inline-block; }
+    .qd-abn .diagnosis_alert__mini-status--critical {
+      background-color: #d32f2f; }
+      .qd-abn .diagnosis_alert__mini-status--critical .qd-icon {
+        color: #ffffff; }
+    .qd-abn .diagnosis_alert__mini-status .qd-icon {
+      color: #E65100;
+      display: inline-block; }
+  .qd-abn .diagnosis_alert .arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 20px solid #000000;
+    position: relative; }
+  .qd-abn .diagnosis_alert .arrow:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 20px solid #fff78d;
+    position: absolute;
+    top: -15px;
+    left: -20px; }
+  .qd-abn .diagnosis_alert .diagnosis_alert__link {
+    display: inline-block;
+    vertical-align: top; }
+    .qd-abn .diagnosis_alert .diagnosis_alert__link a {
+      vertical-align: top;
+      display: inline-block;
+      margin: 8px 0 0 5px;
+      cursor: pointer; }
+  .qd-abn .diagnosis_alert.satisfied .diagnosis_alert__mini-status {
+    background-color: #ffffff;
+    border-bottom: 0;
+    height: auto; }
+    .qd-abn .diagnosis_alert.satisfied .diagnosis_alert__mini-status .qd-icon {
+      color: #ffffff; }
+    .qd-abn .diagnosis_alert.satisfied .diagnosis_alert__mini-status .qd-icon {
+      color: #35792a;
+      display: inline-block; }
+  @media screen and (max-width: 899px) {
+    .qd-abn {
+      max-height: 100% !important;
+      position: fixed;
+      top: 56px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      min-width: 100% !important; }
+      .qd-abn::before {
+        position: relative;
+        height: 0;
+        width: 0;
+        padding: 0;
+        margin: 0;
+        display: none; }
+      .qd-abn .mobileHeader {
+        padding: 6px 0;
+        display: block;
+        border-bottom: 1px solid #d8d8d8;
+        min-height: 40px; }
+        .qd-abn .mobileHeader .qd-header__title {
+          text-align: center;
+          width: 50%;
+          margin: 0 auto;
+          line-height: 40px; }
+        .qd-abn .mobileHeader .qd-header__action--icon {
+          vertical-align: top;
+          float: left; }
+        .qd-abn .mobileHeader .md-icon-button {
+          padding: 0; }
+        .qd-abn .mobileHeader .qd-icon {
+          font-size: 26px;
+          padding: 0; }
+      .qd-abn .qd-cart-content-wrapper {
+        overflow-x: auto;
+        flex: 1; }
+      .qd-abn .qd-cart-content-card .medicare-policy {
+        height: auto; }
+      .qd-abn .qd-cart-content-card ul {
+        /*-webkit-columns: 1;
+                -moz-columns: 1;
+                columns: 1;*/
+        margin: 20px 10px; }
+        .qd-abn .qd-cart-content-card ul li {
+          padding: 3px 1px 0 1px;
+          width: 48%; }
+          .qd-abn .qd-cart-content-card ul li div {
+            padding: 5px 2px; }
+          .qd-abn .qd-cart-content-card ul li .qd-lab-order__overflow {
+            display: inline-block;
+            position: relative;
+            padding: 0;
             vertical-align: top;
-            float: left; }
-          .qAbnPositionWrapper .qd-abn .mobileHeader .md-icon-button {
-            padding: 0; }
-          .qAbnPositionWrapper .qd-abn .mobileHeader .qd-icon {
-            font-size: 26px;
-            padding: 0; }
-        .qAbnPositionWrapper .qd-abn .qd-cart-content-wrapper {
-          overflow-x: auto;
-          height: 100%; }
-        .qAbnPositionWrapper .qd-abn .qd-cart-content-card .medicare-policy {
-          height: auto; }
-        .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul {
-          /*-webkit-columns: 1;
-                    -moz-columns: 1;
-                    columns: 1;*/
-          margin: 20px 10px; }
-          .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul li {
-            padding: 3px 1px 0 1px;
-            width: 48%; }
-            .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul li div {
-              padding: 5px 2px; }
-            .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul li .qd-lab-order__overflow {
-              display: inline-block;
-              position: relative;
+            height: 28px;
+            float: right;
+            margin: 0; }
+            .qd-abn .qd-cart-content-card ul li .qd-lab-order__overflow .md-menu .md-icon-button {
               padding: 0;
-              vertical-align: top;
+              margin: 0;
+              border-radius: 0;
+              width: 18px;
               height: 28px;
-              float: right;
-              margin: 0; }
-              .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul li .qd-lab-order__overflow .md-menu .md-icon-button {
-                padding: 0;
-                margin: 0;
-                border-radius: 0;
-                width: 18px;
-                height: 28px;
-                min-height: 18px; }
-              .md-button.md-raised:not([disabled]) .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul li .qd-lab-order__overflow .md-menu .qd-icon,
-              .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul li .qd-lab-order__overflow .md-menu .qd-icon {
-                color: #35792a;
-                font-size: 28px !important;
-                line-height: 1px;
-                position: absolute;
-                top: 0;
-                right: 0; }
-            .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul li:hover .qd-lab-order__overflow {
-              display: inline-block;
-              position: relative;
-              padding: 0;
-              vertical-align: top;
-              height: 28px;
-              float: right;
-              margin: 0; }
-              .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul li:hover .qd-lab-order__overflow .md-menu .md-icon-button {
-                width: 18px;
-                height: 28px !important;
-                min-height: 28px !important; }
-              .md-button.md-raised:not([disabled]) .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul li:hover .qd-lab-order__overflow .md-menu .qd-icon,
-              .qAbnPositionWrapper .qd-abn .qd-cart-content-card ul li:hover .qd-lab-order__overflow .md-menu .qd-icon {
-                font-size: 28px !important;
-                line-height: 1; } }
-    @media screen and (max-width: 599px) {
-      .qAbnPositionWrapper .qd-abn .qd-cart-content-card li {
-        width: 100% !important; } }
+              min-height: 18px; }
+            .md-button.md-raised:not([disabled]) .qd-abn .qd-cart-content-card ul li .qd-lab-order__overflow .md-menu .qd-icon,
+            .qd-abn .qd-cart-content-card ul li .qd-lab-order__overflow .md-menu .qd-icon {
+              color: #35792a;
+              font-size: 28px !important;
+              line-height: 1px;
+              position: absolute;
+              top: 0;
+              right: 0; }
+          .qd-abn .qd-cart-content-card ul li:hover .qd-lab-order__overflow {
+            display: inline-block;
+            position: relative;
+            padding: 0;
+            vertical-align: top;
+            height: 28px;
+            float: right;
+            margin: 0; }
+            .qd-abn .qd-cart-content-card ul li:hover .qd-lab-order__overflow .md-menu .md-icon-button {
+              width: 18px;
+              height: 28px !important;
+              min-height: 28px !important; }
+            .md-button.md-raised:not([disabled]) .qd-abn .qd-cart-content-card ul li:hover .qd-lab-order__overflow .md-menu .qd-icon,
+            .qd-abn .qd-cart-content-card ul li:hover .qd-lab-order__overflow .md-menu .qd-icon {
+              font-size: 28px !important;
+              line-height: 1; } }
+  @media screen and (max-width: 599px) {
+    .qd-abn .qd-cart-content-card li {
+      width: 100% !important; } }
 
 .qd-annotation {
   border-top: 1px solid #d8d8d8;
@@ -1596,6 +1602,9 @@ md-dialog .md-dialog-content {
 md-dialog .md-dialog-content-body p {
   color: rgba(0, 0, 0, 0.6); }
 
+md-dialog .md-dialog-content-body md-checkbox {
+  margin-right: 0; }
+
 md-dialog md-dialog-actions {
   border-top: 1px solid #d8d8d8;
   padding: 0; }
@@ -1683,8 +1692,11 @@ td hr {
   color: rgba(0, 0, 0, 0.6); }
 
 .qd-custom-dialog__eligibility {
-  height: 650px;
-  max-height: 650px; }
+  height: 655px;
+  max-height: 655px; }
+  @media screen and (max-width: 1279px) {
+    .qd-custom-dialog__eligibility {
+      max-height: 580px; } }
   @media screen and (max-width: 899px) {
     .qd-custom-dialog__eligibility {
       max-height: 550px; } }
@@ -1693,13 +1705,26 @@ td hr {
   margin-bottom: 20px;
   max-height: 410px;
   overflow-y: auto; }
+  @media screen and (max-width: 1279px) {
+    .qd-eligibility {
+      max-height: 340px; } }
   @media screen and (max-width: 899px) {
     .qd-eligibility {
       max-height: 310px; } }
+  .qd-eligibility__selectall .qd-eligibility__item {
+    height: 35px;
+    border-bottom: none; }
+    @media screen and (max-width: 899px) {
+      .qd-eligibility__selectall .qd-eligibility__item {
+        height: 60px; } }
   .qd-eligibility__item {
     padding: 15px;
+    height: 60px;
     border-right: 1px solid #d8d8d8;
     border-bottom: 1px solid #d8d8d8; }
+    @media screen and (max-width: 899px) {
+      .qd-eligibility__item {
+        height: 100px; } }
     .qd-eligibility__item:nth-child(even) {
       border-right: 0; }
     .qd-eligibility__item--header {
@@ -1757,7 +1782,16 @@ td hr {
       content: 'Responsible Party Phone'; }
 
 .qd-error-breaker {
-  background-color: #d8d8d8; }
+  background-color: #d8d8d8;
+  padding: 20px 0;
+  margin: 20px 0 10px; }
+  @media screen and (min-width: 600px) {
+    .qd-error-breaker {
+      padding: 20px; } }
+  @media screen and (min-width: 1280px) {
+    .qd-error-breaker {
+      margin: 40px 0 20px;
+      padding: 30px 40px; } }
   .qd-error-breaker__header {
     margin: 0 20px; }
     @media screen and (min-width: 600px) {
@@ -1876,8 +1910,7 @@ td hr {
     .qd-header, .qd-lab-report-header {
       padding: 0 40px; } }
   .qd-header--home .qd-header__title {
-    color: #35792a;
-    padding-top: 10px; }
+    color: #35792a; }
   .qd-header__caption {
     color: rgba(0, 0, 0, 0.6);
     font-weight: normal; }
@@ -1963,17 +1996,34 @@ md-icon.qd-icon {
     color: #ffffff; }
   md-icon.qd-icon--yellow {
     color: #c4d809; }
+  md-icon.qd-icon--arrow {
+    cursor: default; }
 
-.qd-lab-order md-card.labs, .qd-lab-order md-card.diagnosis {
+.qd-import-patient .qd-patient-card__avatar-and-name .qd-checkbox {
+  margin-top: 15px; }
+
+.qd-import-patient .qd-patient-card__dob:after {
+  border-right: 0;
+  margin: 0;
+  background-color: transparent; }
+
+.qd-import-patient .qd-result-card__mini-status {
+  height: 60px;
+  background-color: #ffffff; }
+
+.qd-import-patient .qd-result-card:hover {
+  background-color: transparent; }
+
+.qd-lab-order md-card.dirClass, .qd-lab-order md-card.labs, .qd-lab-order md-card.diagnosis {
   position: relative;
   width: 100%;
   margin: 0 0 15px 0;
   background: #ffffff;
   min-height: auto;
   border-radius: 0; }
-  .qd-lab-order md-card.labs md-card-content, .qd-lab-order md-card.diagnosis md-card-content {
+  .qd-lab-order md-card.dirClass md-card-content, .qd-lab-order md-card.labs md-card-content, .qd-lab-order md-card.diagnosis md-card-content {
     padding: 10px 15px; }
-  .qd-lab-order md-card.labs .no-results, .qd-lab-order md-card.diagnosis .no-results {
+  .qd-lab-order md-card.dirClass .no-results, .qd-lab-order md-card.labs .no-results, .qd-lab-order md-card.diagnosis .no-results {
     display: inline-block;
     text-align: center;
     width: 100%;
@@ -2108,24 +2158,51 @@ md-icon.qd-icon {
     -moz-box-shadow: inset 0px 0px 0px 1px #ffffff; }
 
 /* === SEARCH RESULTS === */
-qd-lab-order-search-results md-autocomplete.qd-lab-order__search {
-  height: 30px;
-  margin: 0; }
-  qd-lab-order-search-results md-autocomplete.qd-lab-order__search input {
-    font-size: 14px !important;
-    height: 30px;
-    line-height: 30px; }
-  qd-lab-order-search-results md-autocomplete.qd-lab-order__search md-autocomplete-wrap {
-    height: 30px; }
-
-qd-lab-order-search-results .qd-header__action {
-  float: right; }
-
-qd-lab-order-search-results .qd-pagination-bar {
-  background: #ffffff;
-  padding: 0; }
-  qd-lab-order-search-results .qd-pagination-bar__text {
-    margin-left: 15px; }
+md-card.dirClass.qd-lab-order__search--results {
+  width: 100%;
+  min-height: calc(100vh - 245px); }
+  @media screen and (max-width: 1279px) {
+    md-card.dirClass.qd-lab-order__search--results {
+      margin: 15px; } }
+  @media screen and (max-width: 899px) {
+    md-card.dirClass.qd-lab-order__search--results {
+      max-width: 100%;
+      margin: 0 0 15px; } }
+  md-card.dirClass.qd-lab-order__search--results md-radio-group {
+    margin-right: 20px; }
+    @media screen and (max-width: 899px) {
+      md-card.dirClass.qd-lab-order__search--results md-radio-group {
+        margin: 0 0 15px; } }
+  md-card.dirClass.qd-lab-order__search--results .qd-lab-order__search {
+    background: none;
+    padding: 0;
+    margin: 0; }
+    @media screen and (max-width: 899px) {
+      md-card.dirClass.qd-lab-order__search--results .qd-lab-order__search {
+        margin-top: 0 !important; } }
+    md-card.dirClass.qd-lab-order__search--results .qd-lab-order__search::before {
+      font-size: 22px;
+      color: #63666a;
+      position: absolute;
+      left: 0;
+      top: 4px; }
+    md-card.dirClass.qd-lab-order__search--results .qd-lab-order__search input.qd-text-input {
+      padding-left: 30px; }
+    md-card.dirClass.qd-lab-order__search--results .qd-lab-order__search.md-input-focused .icon-go, md-card.dirClass.qd-lab-order__search--results .qd-lab-order__search .icon-go {
+      position: absolute;
+      top: 0;
+      color: #35792a; }
+    md-card.dirClass.qd-lab-order__search--results .qd-lab-order__search .md-errors-spacer {
+      display: none; }
+  md-card.dirClass.qd-lab-order__search--results .qd-lab-order__search--filters {
+    margin: 20px 0; }
+  md-card.dirClass.qd-lab-order__search--results .icon-close {
+    margin-right: 0; }
+  md-card.dirClass.qd-lab-order__search--results .qd-pagination-bar {
+    background: #ffffff;
+    padding: 0; }
+    md-card.dirClass.qd-lab-order__search--results .qd-pagination-bar__text {
+      margin-left: 15px; }
 
 .qd-lab-report-header {
   padding: 0; }
@@ -2350,6 +2427,8 @@ qd-lab-order-search-results .qd-pagination-bar {
   border-radius: 0;
   padding: 15px 20px;
   margin: 0 0 15px; }
+  .qd-order-card .md-button {
+    white-space: normal; }
   .qd-order-card:last-child {
     margin-bottom: 0; }
   .qd-order-card__button {
@@ -2426,6 +2505,31 @@ qd-lab-order-search-results .qd-pagination-bar {
       color: #E65100;
       margin-right: 5px; }
 
+.qd-cart__verify .qd-cart__card__container-scroll {
+  max-height: 320px;
+  overflow-y: auto; }
+  .qd-cart__verify .qd-cart__card__container-scroll .qd-patient-profile-card__input {
+    display: none; }
+    .qd-cart__verify .qd-cart__card__container-scroll .qd-patient-profile-card__input.qd-verify {
+      display: inherit; }
+
+.qd-cart__verify .qd-patient-profile-card, .qd-cart__verify .qd-cart-content-card {
+  margin: 0;
+  width: 100%;
+  box-shadow: none; }
+  .qd-cart__verify .qd-patient-profile-card__content, .qd-cart__verify .qd-patient-profile-card .additional-information__content, .qd-cart__verify .qd-cart-content-card__content, .qd-cart__verify .qd-cart-content-card .additional-information__content {
+    padding: 0 !important; }
+  .qd-cart__verify .qd-patient-profile-card qd-lab-name, .qd-cart__verify .qd-cart-content-card qd-lab-name {
+    margin: 5px 0 0 10px; }
+  .qd-cart__verify .qd-patient-profile-card md-divider, .qd-cart__verify .qd-cart-content-card md-divider {
+    margin: 0 -5px 15px; }
+
+.qd-cart__verify .qd-cart__card--full-width {
+  width: 100%; }
+
+.qd-cart__verify .qd-cart__card--content {
+  padding: 10px 5px; }
+
 .qd-overflow-menu {
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.4);
   width: 240px; }
@@ -2481,6 +2585,7 @@ qd-lab-order-search-results .qd-pagination-bar {
 
 /*== FORM OVERRIDES ==*/
 /* Overrides default Material required asterisks */
+.qd-patient-profile-card__label.qd-required:after, .qd-order-card__info-box label.qd-required:after, .qd-patient-profile-card__static-container label.qd-required:after, .qd-test-and-diagnosis-card__info-block-wrapper label.qd-required:after, .qd-required.qd-results__label:after, .qd-test-and-diagnosis-card__panel-info-block label.qd-required:after, .qd-supplies__item-order-history label.qd-required:after,
 md-input-container label:not(.md-container-ignore).md-required:after,
 md-input-container:not(.md-input-has-value) md-select[required] .md-select-value span:first-child:after,
 md-input-container:not(.md-input-has-value) md-select.ng-required .md-select-value span:first-child:after {
@@ -2798,12 +2903,12 @@ md-input-container.md-input-focused:not(.md-input-has-value) md-select .md-selec
         border-left: 1px solid #d8d8d8;
         display: inline-block;
         text-align: center;
-        line-height: 80px;
+        line-height: 65px;
         position: relative;
         margin-left: 20px;
         top: 0;
         right: 0;
-        height: 80px;
+        height: 65px;
         width: 50px; } }
     @media screen and (min-width: 1280px) {
       .qd-patient-card__edit {
@@ -2811,6 +2916,9 @@ md-input-container.md-input-focused:not(.md-input-has-value) md-select .md-selec
         vertical-align: middle; } }
     .qd-patient-card__edit:hover {
       background-color: rgba(216, 216, 216, 0.5); }
+      @media screen and (max-width: 599px) {
+        .qd-patient-card__edit:hover {
+          background-color: transparent; } }
     .qd-patient-card__edit .qd-icon {
       color: #35792a;
       margin-right: 0; }
@@ -2886,7 +2994,7 @@ md-input-container.md-input-focused:not(.md-input-has-value) md-select .md-selec
       font-weight: inherit;
       text-transform: none;
       margin-left: 30px; }
-    .qd-patient-card--full-ordering .md-ink-ripple {
+    .qd-patient-card--full-ordering .md-container {
       left: 20px; }
     .qd-patient-card--full-ordering:hover .qd-patient-card__container, .qd-patient-card--full-ordering:hover .qd-test-and-diagnosis-card__container {
       border-left: 3px solid transparent; }
@@ -2928,7 +3036,9 @@ md-input-container.md-input-focused:not(.md-input-has-value) md-select .md-selec
         .qd-patient-profile-card__header .md-icon-button__text {
           display: inline; } }
   .qd-patient-profile-card__header-wrapper {
-    position: relative; }
+    position: relative;
+    border-bottom: 1px solid #d8d8d8;
+    background: #f8f8f8; }
   .qd-patient-profile-card__title, .qd-new-order__order-note-title {
     color: #35792a;
     padding: 0 0 0 10px;
@@ -3383,8 +3493,27 @@ md-radio-button:not([disabled]).qd-radio-button--dark.md-checked .md-off {
   .qd-result-card__name {
     display: block;
     overflow: hidden;
+    white-space: nowrap;
     text-overflow: ellipsis;
     padding-right: 20px; }
+  .qd-result-card__name-demographic-message {
+    color: rgba(0, 0, 0, 0.6);
+    margin: 0 20px 10px;
+    padding-left: 6px;
+    overflow: visible;
+    white-space: normal;
+    position: relative; }
+    .qd-result-card__name-demographic-message:before {
+      content: "*";
+      color: #d32f2f;
+      position: absolute;
+      top: 0;
+      left: 0; }
+    .qd-result-card__name-demographic-message.lab-report-message {
+      margin: 10px 20px; }
+      @media screen and (min-width: 1280px) and (max-width: 9998em) {
+        .qd-result-card__name-demographic-message.lab-report-message {
+          margin: 10px 40px; } }
   .qd-result-card__status {
     color: #35792a;
     line-height: 15px; }
@@ -3497,6 +3626,8 @@ qd-patient-results-card {
         .qd-results__container .qd-pagination-bar {
           padding-left: 40px;
           height: 100px; } }
+    .qd-results__container--empty {
+      padding-top: 30px; }
   .qd-results__cards {
     padding: 0; }
     @media screen and (min-width: 900px) {
@@ -3902,6 +4033,9 @@ md-input-container.md-input-invalid md-select[disabled] .md-select-value {
         padding: 20px 5px 0; }
     .qd-cart__card--chips-content {
       padding: 2px 15px 10px; }
+      .qd-cart__card--chips-content-empty {
+        color: #63666a;
+        padding-top: 8px; }
   .qd-cart__labels {
     margin: 10px 0 5px; }
     .qd-cart__labels .qd-icon.icon-print {
@@ -3912,10 +4046,12 @@ md-input-container.md-input-invalid md-select[disabled] .md-select-value {
       margin-left: 10px; }
   .qd-cart__buttons {
     margin-bottom: 5px; }
+  .qd-cart a.qd-link, .qd-cart a.qd-order-detail__cancel-copy {
+    margin-bottom: 15px; }
   .qd-cart .patient-responsibility {
     width: 100%;
     font-size: 12px;
-    margin: 15px 0 0;
+    margin: 0;
     padding: 8px 0;
     text-align: center;
     background: #eee; }
@@ -4964,7 +5100,7 @@ md-input-container .qd-input-error {
   display: none;
   color: #d32f2f;
   position: absolute;
-  bottom: -17px;
+  top: 35px;
   left: 10px; }
 
 md-input-container.md-input-invalid.md-input-focused .qd-input-error {
@@ -5257,11 +5393,13 @@ md-menu-content.qd-menu-content {
   text-align: center;
   line-height: 30px;
   width: 30px;
+  min-width: 30px;
   height: 30px; }
   @media screen and (min-width: 600px) {
     .qd-user-icon, .qd-patient-card__user-icon {
       line-height: 40px;
       width: 40px;
+      min-width: 40px;
       height: 40px; } }
   .qd-user-icon--green {
     background-color: #35792a;
@@ -5272,6 +5410,15 @@ md-menu-content.qd-menu-content {
 .qd-account-settings-page {
   background-color: #ececec;
   min-height: calc(100vh - 56px); }
+  .qd-account-settings-page .qd-patient-profile-card__header .icon-check {
+    margin: 0 0 0 6px;
+    font-size: 16px;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #35792a;
+    text-align: center;
+    min-height: 20px;
+    min-width: 20px; }
   .qd-account-settings-page__details {
     padding: 20px;
     background: #f8f8f8;
@@ -5325,25 +5472,6 @@ md-menu-content.qd-menu-content {
       margin-bottom: 0; }
   .qd-account-settings-page__card-content {
     border-bottom: 1px solid #d8d8d8; }
-    .qd-account-settings-page__card-content:last-of-type {
-      border-bottom: none; }
-    .qd-account-settings-page__card-content--checkbox {
-      min-width: 7%;
-      display: block; }
-      .qd-account-settings-page__card-content--checkbox label {
-        font-size: 11px;
-        color: rgba(0, 0, 0, 0.6);
-        display: block;
-        line-height: 12px;
-        margin: 0 0 10px; }
-      .qd-account-settings-page__card-content--checkbox .icon-check {
-        font-size: 24px;
-        color: #35792a;
-        padding-top: 8px; }
-        @media screen and (min-width: 600px) {
-          .qd-account-settings-page__card-content--checkbox .icon-check {
-            font-size: 30px;
-            padding-top: 16px; } }
     .qd-account-settings-page__card-content--duplicate-button {
       color: #ffffff;
       font-size: 26px;
@@ -5364,9 +5492,6 @@ md-menu-content.qd-menu-content {
         width: 33%; } }
   .qd-account-settings-page__selected-item {
     width: 100%;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
     padding: 0; }
     @media screen and (min-width: 600px) {
       .qd-account-settings-page__selected-item {
@@ -5382,6 +5507,113 @@ md-menu-content.qd-menu-content {
         .qd-account-settings-page__selected-item label {
           display: block;
           margin: 0 0 14px; } }
+    .qd-account-settings-page__selected-item .label-bold {
+      font-weight: bold; }
+    .qd-account-settings-page__selected-item--content {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden; }
+    .qd-account-settings-page__selected-item--check, .qd-account-settings-page__selected-item--check md-icon {
+      display: flex;
+      width: 16px;
+      min-width: 16px;
+      min-height: 16px;
+      /*label {
+                font-size: 11px;
+                color: rgba($black, $text-opacity-secondary);
+                display: block;
+                line-height: 12px;
+                margin:0 0 10px;
+            }*/ }
+      @media screen and (min-width: 600px) {
+        .qd-account-settings-page__selected-item--check, .qd-account-settings-page__selected-item--check md-icon {
+          width: 22px;
+          min-width: 22px; } }
+      .qd-account-settings-page__selected-item--check .icon-check, .qd-account-settings-page__selected-item--check md-icon .icon-check {
+        font-size: 14px;
+        color: #35792a;
+        padding-top: 0; }
+        @media screen and (min-width: 600px) {
+          .qd-account-settings-page__selected-item--check .icon-check, .qd-account-settings-page__selected-item--check md-icon .icon-check {
+            font-size: 20px;
+            padding-top: 24px; } }
+  .qd-account-settings-page__org-default-select .qd-patient-profile-card__input-container {
+    margin: 30px 0 10px; }
+  .qd-account-settings-page__lab-default-select .qd-patient-profile-card__input-container {
+    margin: 30px 14px 0; }
+  .qd-account-settings-page__lab-defaults {
+    padding: 20px 0 0;
+    margin: 0 20px 10px; }
+    .qd-account-settings-page__lab-defaults--last {
+      padding-bottom: 20px; }
+    @media screen and (min-width: 1280px) {
+      .qd-account-settings-page__lab-defaults {
+        margin: 0 20px; } }
+  .qd-account-settings-page__lab-defaults-header {
+    color: rgba(0, 0, 0, 0.6);
+    height: 40px;
+    padding: 0 18px;
+    border: 1px solid #d8d8d8;
+    background-color: #ececec; }
+    @media screen and (min-width: 600px) {
+      .qd-account-settings-page__lab-defaults-header {
+        height: 50px; } }
+    .qd-account-settings-page__lab-defaults-header .icon-check {
+      margin: 0 0 0 6px;
+      font-size: 16px;
+      border-radius: 50%;
+      background: #35792a;
+      color: #ffffff;
+      text-align: center;
+      min-height: 20px;
+      min-width: 20px; }
+  .qd-account-settings-page__lab-defaults-content {
+    border: 1px solid #d8d8d8;
+    border-top: 0;
+    background-color: #ffffff;
+    position: relative; }
+    .qd-account-settings-page__lab-defaults-content--clients-row {
+      padding: 10px 0 0;
+      border-bottom: 1px solid #d8d8d8; }
+      .qd-account-settings-page__lab-defaults-content--clients-row:last-of-type {
+        border-bottom: none; }
+    .qd-account-settings-page__lab-defaults-content--client, .qd-account-settings-page__lab-defaults-content--physician {
+      width: 100%; }
+      @media screen and (min-width: 600px) {
+        .qd-account-settings-page__lab-defaults-content--client, .qd-account-settings-page__lab-defaults-content--physician {
+          width: 50%; } }
+    .qd-account-settings-page__lab-defaults-content--client {
+      margin: 18px 0 0 30px; }
+      .qd-account-settings-page__lab-defaults-content--client .md-label {
+        width: 90%;
+        padding-left: 10px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden; }
+        @media screen and (min-width: 600px) {
+          .qd-account-settings-page__lab-defaults-content--client .md-label {
+            padding-left: 20px; } }
+      .qd-account-settings-page__lab-defaults-content--client [disabled] .md-label span {
+        color: #63666a; }
+      .qd-account-settings-page__lab-defaults-content--client .md-off {
+        border-color: #a7a8aa; }
+      .qd-account-settings-page__lab-defaults-content--client .md-on {
+        background-color: #a7a8aa; }
+    .qd-account-settings-page__lab-defaults-content--client-label:before {
+      color: rgba(0, 0, 0, 0.6);
+      content: "Default";
+      display: block;
+      font-size: 12px;
+      position: absolute;
+      top: 8px;
+      left: 6px; }
+      @media screen and (min-width: 600px) {
+        .qd-account-settings-page__lab-defaults-content--client-label:before {
+          left: 20px; } }
+  .qd-account-settings-page .default-check {
+    font-size: 16px;
+    margin: 0;
+    padding-left: 4px; }
 
 .qd-add-patient__save-cancel {
   margin: 20px 0 40px;
@@ -5462,7 +5694,7 @@ md-menu-content.qd-menu-content {
     cursor: pointer;
     height: 60px;
     margin-bottom: 10px;
-    padding: 20px;
+    padding: 10px;
     outline: none;
     position: relative; }
     @media screen and (min-width: 600px) {
@@ -5504,11 +5736,7 @@ md-menu-content.qd-menu-content {
   .qd-home__dashboard-card-description {
     color: rgba(0, 0, 0, 0.6);
     text-transform: uppercase;
-    margin-top: 15px;
     text-align: center; }
-    @media screen and (min-width: 600px) {
-      .qd-home__dashboard-card-description {
-        margin-top: 0; } }
   .qd-home__graph-container {
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
     background-color: #ffffff;
@@ -5692,12 +5920,13 @@ a.qd-button.no-js {
     width: 100%;
     -webkit-overflow-scrolling: touch;
     overflow: hidden;
-    border: 1px solid #d8d8d8;
     background: #ececec; }
     @media screen and (max-width: 1279px) {
       .qd-lab-report__iframe {
         height: 350px;
         overflow-y: hidden; } }
+  .qd-lab-report__iframe-error {
+    height: 175px; }
   .qd-lab-report__iframe-touch {
     -webkit-overflow-scrolling: touch;
     overflow: auto; }
@@ -5821,6 +6050,38 @@ a.qd-button.no-js {
   .qd-lab-report .qd-checkbox {
     margin-left: 20px; }
 
+.qd-import-patient .qd-result-card {
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3); }
+  .qd-import-patient .qd-result-card__container {
+    padding: 20px;
+    height: auto; }
+  @media screen and (max-width: 899px) {
+    .qd-import-patient .qd-result-card__right {
+      margin-left: 0; } }
+  @media screen and (max-width: 899px) {
+    .qd-import-patient .qd-result-card__name-and-doctor {
+      margin-bottom: 10px; } }
+  .qd-import-patient .qd-result-card__mini-status {
+    height: auto;
+    padding: 10px 20px; }
+  @media screen and (max-width: 899px) {
+    .qd-import-patient .qd-result-card__name {
+      padding-right: 0; } }
+
+.qd-import-patient .qd-patient-card, .qd-import-patient .qd-result-card, .qd-import-patient .qd-test-and-diagnosis-card {
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3); }
+  @media screen and (max-width: 899px) {
+    .qd-import-patient .qd-patient-card__name-and-address {
+      padding-right: 0; } }
+  .qd-import-patient .qd-patient-card__avatar-and-name .qd-checkbox {
+    margin: 0; }
+  .qd-import-patient .qd-patient-card__right {
+    margin-left: 32px; }
+  .qd-import-patient .qd-patient-card__dob {
+    border-right: 1px solid #a7a8aa;
+    padding-right: 8px;
+    margin-right: 8px; }
+
 .qd-lab-order {
   /* === MOBILE TABS === */ }
   .qd-lab-order .qd-header .qd-header__title, .qd-lab-order .qd-lab-report-header .qd-header__title {
@@ -5832,17 +6093,27 @@ a.qd-button.no-js {
     float: right; }
   .qd-lab-order__search {
     background: none;
-    border-bottom: 1px solid #a7a8aa; }
+    padding: 0;
+    margin: 0; }
+    @media screen and (max-width: 899px) {
+      .qd-lab-order__search {
+        margin-top: 15px; } }
     .qd-lab-order__search::before {
       font-size: 22px;
       color: #63666a;
       position: absolute;
       left: 0;
       top: 4px; }
-    .qd-lab-order__search .md-whiteframe-z1 {
-      box-shadow: none; }
-    .qd-lab-order__search input:not(.md-input) {
+    .qd-lab-order__search input.qd-text-input {
       padding-left: 30px; }
+    .qd-lab-order__search.md-input-focused .icon-go, .qd-lab-order__search .icon-go {
+      position: absolute;
+      top: 0;
+      color: #35792a; }
+    .qd-lab-order__search .md-errors-spacer {
+      display: none; }
+  .qd-lab-order md-input-container.md-icon-right {
+    padding: 0; }
   .qd-lab-order .qd-patient-card, .qd-lab-order .qd-result-card, .qd-lab-order .qd-test-and-diagnosis-card {
     height: auto;
     margin: 0;
@@ -5946,7 +6217,7 @@ a.qd-button.no-js {
     display: block !important;
     background: #ececec;
     padding: 20px 40px;
-    min-height: calc(100vh - 205px); }
+    min-height: calc(100vh - 245px); }
     @media screen and (max-width: 1279px) {
       .qd-lab-order__content {
         padding: 15px 20px; } }
@@ -5994,6 +6265,7 @@ a.qd-button.no-js {
   .qd-lab-order .qd-button {
     margin: 0 5px; }
   .qd-lab-order__mobileTabs {
+    background: #f8f8f8;
     display: none; }
     @media screen and (min-width: 320px) and (max-width: 899px) {
       .qd-lab-order__mobileTabs {
@@ -7111,6 +7383,11 @@ a.qd-button.no-js {
     @media screen and (min-width: 1280px) {
       .qd-patients-section__list {
         padding: 0 40px 20px 40px; } }
+    .qd-patients-section__list--empty {
+      padding-top: 20px; }
+      @media screen and (max-width: 899px) {
+        .qd-patients-section__list--empty {
+          padding: 20px; } }
     .qd-patients-section__list .qd-header__title {
       margin: 20px 0; }
   .qd-patients-section .qd-pagination-bar {
@@ -7206,8 +7483,7 @@ a.qd-button.no-js {
     padding-right: 20px; } }
 
 .qd-patient-profile__info-item:last-child, .qd-lab-report__info-item:last-child {
-  margin-right: 0;
-  border-right: 0; }
+  margin-right: 0; }
 
 .qd-patient-profile__info-item label, .qd-lab-report__info-item label {
   color: rgba(0, 0, 0, 0.6);
@@ -7606,7 +7882,7 @@ a.qd-button.no-js {
     position: relative; }
     .qd-supplies__item-order-history.expired {
       opacity: 0.50; }
-      .qd-supplies__item-order-history.expired:before {
+      .qd-supplies__item-order-history.expired .qd-supplies__item-order-history--order-wrapper:before {
         content: "Expired";
         font-size: 40px;
         font-weight: 300;
@@ -7615,14 +7891,12 @@ a.qd-button.no-js {
         right: 15px;
         color: #ccc; }
         @media screen and (max-width: 599px) {
-          .qd-supplies__item-order-history.expired:before {
+          .qd-supplies__item-order-history.expired .qd-supplies__item-order-history--order-wrapper:before {
             font-size: 28px; } }
     .qd-supplies__item-order-history label {
       margin: 3px 0; }
     .qd-supplies__item-order-history--order-details-wrapper {
-      border-bottom: 1px solid #d8d8d8;
-      padding: 4px 0;
-      margin-bottom: 15px; }
+      padding: 4px 0; }
     .qd-supplies__item-order-history--details,
     .qd-supplies__item-order-history--order-actions .qd-button {
       padding: 0 20px;
@@ -7630,6 +7904,12 @@ a.qd-button.no-js {
       .qd-supplies__item-order-history--details:last-child,
       .qd-supplies__item-order-history--order-actions .qd-button:last-child {
         border-right: none; }
+      .qd-supplies__item-order-history--details.show-order,
+      .qd-supplies__item-order-history--order-actions .qd-button.show-order {
+        padding: 0 6px; }
+        .qd-supplies__item-order-history--details.show-order.md-button,
+        .qd-supplies__item-order-history--order-actions .qd-button.show-order.md-button {
+          min-width: 44px; }
     @media screen and (max-width: 1279px) {
       .qd-supplies__item-order-history--details {
         padding: 4px 20px;
@@ -7662,6 +7942,9 @@ a.qd-button.no-js {
         width: 100%;
         margin-top: 10px;
         padding-top: 2px; } }
+    .qd-supplies__item-order-history--order-wrapper {
+      border-top: 1px solid #d8d8d8;
+      padding-top: 15px; }
     .qd-supplies__item-order-history--img {
       max-width: 80px;
       height: 80px;

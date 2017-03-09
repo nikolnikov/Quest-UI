@@ -215,6 +215,14 @@
             padding: 0 40px 20px 40px;
         }
         
+        &--empty  {
+            padding-top: 20px;
+            
+            @include when-less-than(mini-tablet) {
+                padding: 20px;
+            }
+        }
+        
         .qd-header__title {
             @extend %type-headline-1;
             margin: 20px 0;

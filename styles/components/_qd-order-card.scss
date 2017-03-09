@@ -3,6 +3,10 @@
     border-radius: 0;
     padding: 15px 20px;
     margin: 0 0 15px;
+        
+        .md-button {
+            white-space: normal;
+        }
 
     &:last-child {
         margin-bottom: 0;

@@ -51,6 +51,8 @@
 
     &__header-wrapper {
         position: relative;
+        border-bottom: 1px solid $divider-gray-1;
+        background: $background-light-gray;
     }
 
     &__title {

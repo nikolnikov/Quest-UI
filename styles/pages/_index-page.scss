@@ -110,7 +110,7 @@
     }
 
     &__no-results {
-        @extend %type-display-2;
+        @extend %type-headline-1;
         color: rgba($black, $text-opacity-secondary);
         text-align: center;
         padding: 20px;

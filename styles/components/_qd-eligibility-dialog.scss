@@ -1,6 +1,10 @@
 .qd-custom-dialog__eligibility  {
-    height: 650px;
-    max-height: 650px;
+    height: 655px;
+    max-height: 655px;
+    
+    @include when-less-than(desktop) {
+      max-height: 580px; 
+    }
     
     @include when-less-than(mini-tablet) {
         max-height: 550px;   
@@ -12,15 +16,35 @@
     max-height: 410px;
     overflow-y: auto;
     
+    @include when-less-than(desktop) {
+      max-height: 340px; 
+    }
+    
     @include when-less-than(mini-tablet) {
         max-height: 310px;   
+    }
+    
+    &__selectall  {
+        .qd-eligibility__item {
+            height: 35px;
+            border-bottom: none;
+            
+            @include when-less-than(mini-tablet) {
+                height: 60px;   
+            }
+        }
     }
     
     &__item {
         @extend %type-body-2;
         padding: 15px;
+        height: 60px;
         border-right: 1px solid $divider-gray-1;
         border-bottom: 1px solid $divider-gray-1;
+        
+        @include when-less-than(mini-tablet) {
+            height: 100px;   
+        }
         
         &:nth-child(even)  {
             border-right: 0;

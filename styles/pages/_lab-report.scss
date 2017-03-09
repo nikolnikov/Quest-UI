@@ -20,6 +20,7 @@
             padding: 20px 40px;
             //min-height: calc(100vh - #{$top-nav-height});
         }
+
     }
 
     &__info-item {
@@ -35,13 +36,16 @@
         width: 100%;
         -webkit-overflow-scrolling: touch;
         overflow: hidden;
-        border: 1px solid $divider-gray-1;
         background: $background-gray;
         
         @include when-less-than(desktop) {
             height: 350px;
             overflow-y: hidden;
         }
+    }
+
+    &__iframe-error {
+        height: 175px;
     }
 
     &__iframe-touch {
@@ -254,5 +258,64 @@
 
     .qd-checkbox {
         margin-left: 20px;
+    }
+
+}
+
+.qd-import-patient  {
+    .qd-result-card  {
+        @include elevation(2);
+    
+        &__container  {
+            padding: 20px;
+            height: auto;
+        }
+        
+        &__right  {
+            @include when-less-than(mini-tablet) {
+                margin-left: 0;
+            }
+        }
+        
+        &__name-and-doctor  {
+            @include when-less-than(mini-tablet) {
+                margin-bottom: 10px;
+            }
+        }
+        
+        &__mini-status  {
+            height: auto;
+            padding: 10px 20px;
+        }
+        
+        &__name {
+            @include when-less-than(mini-tablet) {
+                padding-right: 0;
+            }
+        }
+    }
+    
+    .qd-patient-card  {
+        @include elevation(2);
+        
+        &__name-and-address {
+            @include when-less-than(mini-tablet) {
+                padding-right: 0;
+            }
+        }
+        
+        &__avatar-and-name .qd-checkbox {
+            margin: 0;
+        }
+        
+        &__right  {
+            margin-left: 32px;
+        }
+    
+        &__dob {
+            border-right: 1px solid $divider-gray-2;
+            padding-right: 8px;
+            margin-right: 8px;
+        }
     }
 }

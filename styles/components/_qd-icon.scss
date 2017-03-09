@@ -24,4 +24,8 @@ md-icon.qd-icon {
     &--yellow {
         color: $yellow-l;
     }
+    
+    &--arrow  {
+        cursor: default;
+    }
 }

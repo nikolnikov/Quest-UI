@@ -254,6 +254,12 @@
         
         &--chips-content {
             padding: 2px 15px 10px;
+            
+            &-empty {
+                @extend %type-body-2;
+                color: $icon-dark-gray;
+                padding-top: 8px;
+            }
         }
     }
     
@@ -275,11 +281,15 @@
     &__buttons {
         margin-bottom: 5px;
     }
+    
+    a.qd-link {
+        margin-bottom: 15px;
+    }
 
     .patient-responsibility {
         width: 100%;
         font-size: 12px;
-        margin: 15px 0 0;
+        margin: 0;
         padding: 8px 0;
         text-align: center;
         background: #eee;
@@ -346,7 +356,6 @@
             right: 2px;
         }
     }
-
 
     @include when-less-than(mini-tablet) {
         max-height: 100%!important;

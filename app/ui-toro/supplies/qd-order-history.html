@@ -70,29 +70,33 @@
 		            	<md-button class="qd-button" ng-click=""><md-icon class="qd-icon icon-cached"></md-icon>
 		            	Reorder
        					</md-button>
+                        <md-button class="qd-button show-order" ng-click="vm.showOrder = !vm.showOrder"><md-icon class="qd-icon qd-icon--green" ng-class="vm.showOrder ? 'icon-arrowup' : 'icon-arrowdown'"></md-icon>
+                        </md-button>
 	            	</div>
             	</div>
-                <div class="qd-supplies__item--details" flex layout="row">
-                    <div class="qd-supplies__item-order-history--img">
-                        <img src="http://www.copanusa.com/files/cache/2536d4996d04873b8b1b5e5ca20d9d37_f136.jpg">
+                <div class="qd-supplies__item-order-history--order-wrapper" ng-show="vm.showOrder">
+                    <div class="qd-supplies__item--details" flex layout="row">
+                        <div class="qd-supplies__item-order-history--img">
+                            <img src="http://www.copanusa.com/files/cache/2536d4996d04873b8b1b5e5ca20d9d37_f136.jpg">
+                        </div>
+                        <div flex layout="column">
+    	                    <div class="qd-supplies__item--title">SWAB, CULTURETTE AMIES GEL BLUE CAP COPAN,500/CS</div>
+    	                    <div class="qd-supplies__item--number">Item &#35;: 105741</div>
+    	                    <div class="qd-supplies__item--units">Units: 50/pk</div>
+    	                    <div class="qd-supplies__item-order-history--quantity">Qty Ordered: <span class="amount">100</span></div>
+    	                </div>
                     </div>
-                    <div flex layout="column">
-	                    <div class="qd-supplies__item--title">SWAB, CULTURETTE AMIES GEL BLUE CAP COPAN,500/CS</div>
-	                    <div class="qd-supplies__item--number">Item &#35;: 105741</div>
-	                    <div class="qd-supplies__item--units">Units: 50/pk</div>
-	                    <div class="qd-supplies__item-order-history--quantity">Qty Ordered: <span class="amount">100</span></div>
-	                </div>
-                </div>
-                <div class="qd-supplies__item--details" flex layout="row">
-                    <div class="qd-supplies__item-order-history--img">
-                        <img src="http://www.novelupdates.com/img/noimagefound.jpg">
+                    <div class="qd-supplies__item--details" flex layout="row">
+                        <div class="qd-supplies__item-order-history--img">
+                            <img src="http://www.novelupdates.com/img/noimagefound.jpg">
+                        </div>
+                        <div flex layout="column">
+    	                    <div class="qd-supplies__item--title">Curad Flex Fab 3/4</div>
+    	                    <div class="qd-supplies__item--number">Item &#35;: 105741</div>
+    	                    <div class="qd-supplies__item--units">Units: 50/pk</div>
+    	                    <div class="qd-supplies__item-order-history--quantity">Qty Ordered: <span class="amount">50</span></div>
+    	                </div>
                     </div>
-                    <div flex layout="column">
-	                    <div class="qd-supplies__item--title">Curad Flex Fab 3/4</div>
-	                    <div class="qd-supplies__item--number">Item &#35;: 105741</div>
-	                    <div class="qd-supplies__item--units">Units: 50/pk</div>
-	                    <div class="qd-supplies__item-order-history--quantity">Qty Ordered: <span class="amount">50</span></div>
-	                </div>
                 </div>
             </md-card>
         </div>

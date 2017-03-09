@@ -9,7 +9,7 @@ body {
 }
 
 md-content  {
-  background-color: $background-light-gray;
+  background-color: $background-gray;
 }
 
 ul {
@@ -19,4 +19,8 @@ ul {
 
 li {
     list-style: none;
+}
+
+.bolder {
+	font-weight: 700 !important;
 }

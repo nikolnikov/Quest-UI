@@ -1,5 +1,16 @@
 .qd-error-breaker {
     background-color: $icon-gray;
+    padding: 20px 0;
+    margin: 20px 0 10px;
+
+    @include when-wider-than(tablet) {
+        padding: 20px;
+    }
+
+    @include when-wider-than(desktop) {
+        margin: 40px 0 20px;
+        padding: 30px 40px;
+    }
 
     &__header {
         margin: 0 20px;

@@ -2,6 +2,19 @@
     background-color: $background-gray;
     min-height: calc(100vh - #{$top-nav-height});
 
+    .qd-patient-profile-card__header {
+        .icon-check {
+            margin: 0 0 0 6px;
+            font-size: 16px;
+            border-radius: 50%;
+            background: $white;
+            color: $green-l;
+            text-align:center;
+            min-height: 20px;
+            min-width: 20px;
+        }
+    }
+
     &__details {
         padding: 20px;
         background: $background-light-gray;
@@ -94,34 +107,6 @@
     &__card-content {
         border-bottom: 1px solid $divider-gray-1;
 
-        &:last-of-type {
-            border-bottom: none;
-        }
-
-        &--checkbox {
-            min-width: 7%;
-            display: block;
-
-            label {
-                font-size: 11px;
-                color: rgba($black, $text-opacity-secondary);
-                display: block;
-                line-height: 12px;
-                margin:0 0 10px;
-            }
-
-            .icon-check {
-                font-size: 24px;
-                color: $green-l;
-                padding-top: 8px;
-
-                @include when-wider-than(tablet) {
-                    font-size: 30px;
-                    padding-top: 16px;
-                }
-            }
-
-        }
 
         &--duplicate-button {
             color: $white;
@@ -153,9 +138,6 @@
     &__selected-item {
         @extend %type-subhead-2;
         width: 100%;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
         padding: 0;
 
         @include when-wider-than(tablet) {
@@ -178,5 +160,176 @@
                 margin: 0 0 14px;
             }
         }
+
+        .label-bold {
+            font-weight: bold;
+
+        }
+
+
+        &--content {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        &--check, &--check md-icon {
+            display: flex;
+            width: 16px;
+            min-width: 16px;
+            min-height: 16px;
+
+            @include when-wider-than(tablet) {
+                width: 22px;
+                min-width: 22px;
+            }
+
+            /*label {
+                font-size: 11px;
+                color: rgba($black, $text-opacity-secondary);
+                display: block;
+                line-height: 12px;
+                margin:0 0 10px;
+            }*/
+
+            .icon-check {
+                font-size: 14px;
+                color: $green-l;
+                padding-top: 0;
+
+                @include when-wider-than(tablet) {
+                    font-size: 20px;
+                    padding-top: 24px;
+                }
+            }
+
+        }
+    }
+
+    &__org-default-select {
+
+        .qd-patient-profile-card__input-container {
+            margin: 30px 0 10px;
+        }
+    }
+
+    //new lab options
+    &__lab-default-select {
+
+        .qd-patient-profile-card__input-container {
+            margin: 30px 14px 0;
+        }
+    }
+
+    &__lab-defaults {
+        padding: 20px 0 0;
+        margin: 0 20px 10px;
+
+        &--last {
+            padding-bottom: 20px;
+        }
+
+        @include when-wider-than(desktop) {
+            margin: 0 20px;
+        }
+    }
+
+    &__lab-defaults-header {
+        @extend %type-cta;
+        color: rgba($black, $text-opacity-secondary);
+        height: 40px;
+        padding: 0 18px;
+        border: 1px solid $divider-gray-1;
+        background-color: $background-gray;
+
+        @include when-wider-than(tablet) {
+            height: 50px;
+        }
+
+        .icon-check {
+            margin: 0 0 0 6px;
+            font-size: 16px;
+            border-radius: 50%;
+            background: $green-l;
+            color: $white;
+            text-align:center;
+            min-height: 20px;
+            min-width: 20px;
+        }
+    }
+
+    &__lab-defaults-content {
+        border: 1px solid $divider-gray-1;
+        border-top: 0;
+        background-color: $white;
+        position: relative;
+
+        &--clients-row {
+            padding: 10px 0 0;
+            border-bottom: 1px solid $divider-gray-1;
+
+            &:last-of-type {
+            border-bottom: none;
+            }
+        }
+
+        &--client, &--physician {
+            width: 100%;
+
+            @include when-wider-than(tablet) {
+                width: 50%;
+            }
+
+        }
+
+        &--client {
+            margin: 18px 0 0 30px;
+
+            .md-label {
+                width: 90%;
+                padding-left: 10px;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+
+                @include when-wider-than(tablet) {
+                padding-left: 20px;
+                }
+            }
+
+            [disabled] .md-label span {
+                color: $icon-dark-gray;
+            }
+
+            .md-off {
+                border-color: $divider-gray-2;
+            }
+
+            .md-on {
+                background-color: $divider-gray-2;
+            }
+        }
+
+        &--client-label:before {
+            @extend %type-label-2; 
+            color: rgba($black, $text-opacity-secondary); 
+            content: "Default";
+            display:block;
+            font-size: 12px;
+            position: absolute;
+            top: 8px;
+            left: 6px;
+
+            @include when-wider-than(tablet) {
+                left: 20px;
+            }      
+        }
+
+    }
+
+    .default-check {
+        font-size: 16px;
+        margin: 0;
+        padding-left: 4px;
     }
 }

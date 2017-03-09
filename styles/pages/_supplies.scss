@@ -287,9 +287,9 @@
         position: relative;
 
         &.expired {
-             opacity: 0.50; 
+            opacity: 0.50; 
              
-             &:before {
+            .qd-supplies__item-order-history--order-wrapper:before {
                 content: "Expired";
                 font-size: 40px;
                 font-weight: 300;
@@ -301,7 +301,7 @@
                 @include when-less-than(tablet) {
                     font-size: 28px;
                 }
-             }
+            }
         }
 
         label {
@@ -310,9 +310,7 @@
         }
 
         &--order-details-wrapper {
-            border-bottom: 1px solid $divider-gray-1;
             padding: 4px 0;
-            margin-bottom: 15px;
         }
 
         &--details,
@@ -322,6 +320,14 @@
 
             &:last-child {
                 border-right: none;
+            }
+
+            &.show-order{
+                padding: 0 6px;
+
+                &.md-button {
+                    min-width: 44px;
+                }
             }
         }
 
@@ -374,6 +380,12 @@
                  margin-top: 10px;
                  padding-top: 2px;
             }
+
+        }
+
+        &--order-wrapper {
+            border-top: 1px solid $divider-gray-1;
+            padding-top: 15px;
 
         }
 

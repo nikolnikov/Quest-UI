@@ -1,0 +1,40 @@
+.qd-cart__verify  {
+    .qd-cart__card__container-scroll {
+        max-height: 320px;
+        overflow-y: auto;
+        
+        .qd-patient-profile-card__input {
+            display: none;
+            
+            &.qd-verify  {
+                display: inherit;
+            }
+        }
+    }
+    
+    .qd-patient-profile-card, .qd-cart-content-card {
+        margin: 0;
+        width: 100%;
+        box-shadow: none;
+        
+        &__content, .additional-information__content  {
+            padding: 0 !important;
+        }
+        
+        qd-lab-name {
+            margin: 5px 0 0 10px;
+        }
+        
+        md-divider  {
+            margin: 0 -5px 15px;
+        }
+    }
+    
+    .qd-cart__card--full-width  {
+        width: 100%;
+    }
+    
+    .qd-cart__card--content {
+        padding: 10px 5px;
+    }
+}

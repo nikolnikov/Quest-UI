@@ -14,7 +14,12 @@
     
     &__search {
         background: none;
-        border-bottom: 1px solid $divider-gray-2;
+        padding: 0;
+        margin: 0;
+        
+        @include when-less-than(mini-tablet) {
+            margin-top: 15px; 
+        }
 
         &::before {
             font-size: 22px;
@@ -24,14 +29,24 @@
             top: 4px;
         }
 
-        .md-whiteframe-z1 {
-            box-shadow: none;
-        }
-
-        input:not(.md-input) {
+        input.qd-text-input {
             @extend %type-title-2;
             padding-left: 30px;
         }
+        
+        &.md-input-focused .icon-go, .icon-go  {
+            position: absolute;
+            top: 0;
+            color: $green-l;
+        }
+        
+        .md-errors-spacer {
+            display: none;
+        }
+    }
+    
+    md-input-container.md-icon-right  {
+        padding: 0;
     }
     
     .qd-patient-card {
@@ -201,7 +216,7 @@
         display: block !important;
         background: $background-gray;
         padding: 20px 40px;
-        min-height: calc(100vh - 205px);
+        min-height: calc(100vh - 245px);
         
         @include when-less-than(desktop) {
             padding: 15px 20px;
@@ -277,6 +292,7 @@
 /* === MOBILE TABS === */
     
     &__mobileTabs {
+        background: $background-light-gray;
         display: none;
         
         @include when-on(mobile) {

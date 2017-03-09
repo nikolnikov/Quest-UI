@@ -1,5 +1,5 @@
 .qd-lab-order {
-  md-card.labs, md-card.diagnosis {
+  md-card.dirClass, md-card.labs, md-card.diagnosis {
       position: relative;
       width: 100%;
       margin: 0 0 15px 0;
@@ -194,25 +194,66 @@
 
 /* === SEARCH RESULTS === */
 
-qd-lab-order-search-results {
+md-card.dirClass.qd-lab-order__search--results  {
+    width: 100%;
+    min-height: calc(100vh - 245px);
+    
+    @include when-less-than(desktop) {
+        margin: 15px; 
+    }
+    
+    @include when-less-than(mini-tablet) {
+        max-width: 100%;
+        margin: 0 0 15px; 
+    }
+
+    md-radio-group  {
+        margin-right: 20px;
+        
+        @include when-less-than(mini-tablet) {
+            margin: 0 0 15px;
+        }
+    }
   
-    md-autocomplete.qd-lab-order__search {
-        height: 30px;
+    .qd-lab-order__search {
+        background: none;
+        padding: 0;
         margin: 0;
         
-        input {
-            font-size: 14px !important;
-            height: 30px;
-            line-height: 30px;
+        @include when-less-than(mini-tablet) {
+            margin-top: 0 !important; 
+        }
+
+        &::before {
+            font-size: 22px;
+            color: $icon-dark-gray;
+            position: absolute;
+            left: 0;
+            top: 4px;
+        }
+
+        input.qd-text-input {
+            @extend %type-title-2;
+            padding-left: 30px;
         }
         
-        md-autocomplete-wrap  {
-            height: 30px;
+        &.md-input-focused .icon-go, .icon-go  {
+            position: absolute;
+            top: 0;
+            color: $green-l;
+        }
+        
+        .md-errors-spacer {
+            display: none;
         }
     }
     
-    .qd-header__action {
-        float: right;
+    .qd-lab-order__search--filters  {
+        margin: 20px 0;
+    }
+
+    .icon-close {
+        margin-right: 0;
     }
     
     .qd-pagination-bar {

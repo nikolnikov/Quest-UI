@@ -59,8 +59,35 @@
         @extend %type-body-1;
         display: block;
         overflow: hidden;
+        white-space: nowrap;
         text-overflow: ellipsis;
         padding-right: 20px;
+    }
+
+    &__name-demographic-message {
+        @extend %type-label-2;
+        color: rgba($black, $text-opacity-secondary);
+        margin: 0 20px 10px;
+        padding-left: 6px;
+        overflow: visible;
+        white-space: normal;
+        position: relative;
+
+        &:before {
+          content: "*";
+          color: $red;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+
+        &.lab-report-message {
+            margin: 10px 20px;
+
+             @include when-on(desktop) {
+                margin: 10px 40px;
+            }
+        }
     }
 
     &__status {

@@ -13,9 +13,15 @@ md-dialog {
         @extend %type-cta;
     }
 
-    .md-dialog-content-body p {
-        @extend %type-body-2;
-        color: rgba($black, $text-opacity-secondary);
+    .md-dialog-content-body {        
+        p {
+            @extend %type-body-2;
+            color: rgba($black, $text-opacity-secondary);
+        }
+        
+        md-checkbox {
+            margin-right: 0;
+        }
     }
 
     md-dialog-actions {

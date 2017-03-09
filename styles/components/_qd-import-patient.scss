@@ -1,0 +1,22 @@
+.qd-import-patient  {
+    .qd-patient-card__avatar-and-name {
+        .qd-checkbox  {
+            margin-top: 15px;
+        }
+    }
+    
+    .qd-patient-card__dob:after {
+        border-right: 0;
+        margin: 0;
+        background-color: transparent;
+    }
+    
+    .qd-result-card__mini-status  {
+        height: 60px;
+        background-color: $white;
+    }
+    
+    .qd-result-card:hover {
+        background-color: transparent;
+    }
+}
