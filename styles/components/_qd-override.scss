@@ -5,7 +5,7 @@
 .qd-patient-profile-card__label.qd-required:after,
 md-input-container label:not(.md-container-ignore).md-required:after,
 md-input-container:not(.md-input-has-value) md-select[required] .md-select-value span:first-child:after,
-md-input-container:not(.md-input-has-value) md-select.ng-required .md-select-value span:first-child:after  {
+md-input-container:not(.md-input-has-value) md-select.qd-required .md-select-value span:first-child:after  {
   color: $red !important;
   content: '*';
 }

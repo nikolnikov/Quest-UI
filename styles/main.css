@@ -2588,7 +2588,7 @@ md-card.dirClass.qd-lab-order__search--results {
 .qd-patient-profile-card__label.qd-required:after, .qd-order-card__info-box label.qd-required:after, .qd-patient-profile-card__static-container label.qd-required:after, .qd-test-and-diagnosis-card__info-block-wrapper label.qd-required:after, .qd-required.qd-results__label:after, .qd-test-and-diagnosis-card__panel-info-block label.qd-required:after, .qd-supplies__item-order-history label.qd-required:after,
 md-input-container label:not(.md-container-ignore).md-required:after,
 md-input-container:not(.md-input-has-value) md-select[required] .md-select-value span:first-child:after,
-md-input-container:not(.md-input-has-value) md-select.ng-required .md-select-value span:first-child:after {
+md-input-container:not(.md-input-has-value) md-select.qd-required .md-select-value span:first-child:after {
   color: #d32f2f !important;
   content: '*'; }
 
@@ -7882,21 +7882,10 @@ a.qd-button.no-js {
     position: relative; }
     .qd-supplies__item-order-history.expired {
       opacity: 0.50; }
-      .qd-supplies__item-order-history.expired .qd-supplies__item-order-history--order-wrapper:before {
-        content: "Expired";
-        font-size: 40px;
-        font-weight: 300;
-        position: absolute;
-        bottom: 8px;
-        right: 15px;
-        color: #ccc; }
-        @media screen and (max-width: 599px) {
-          .qd-supplies__item-order-history.expired .qd-supplies__item-order-history--order-wrapper:before {
-            font-size: 28px; } }
     .qd-supplies__item-order-history label {
       margin: 3px 0; }
     .qd-supplies__item-order-history--order-details-wrapper {
-      padding: 4px 0; }
+      padding: 10px 0; }
     .qd-supplies__item-order-history--details,
     .qd-supplies__item-order-history--order-actions .qd-button {
       padding: 0 20px;

@@ -288,20 +288,6 @@
 
         &.expired {
             opacity: 0.50; 
-             
-            .qd-supplies__item-order-history--order-wrapper:before {
-                content: "Expired";
-                font-size: 40px;
-                font-weight: 300;
-                position: absolute;
-                bottom: 8px;
-                right: 15px;
-                color: #ccc;
-                
-                @include when-less-than(tablet) {
-                    font-size: 28px;
-                }
-            }
         }
 
         label {
@@ -310,7 +296,7 @@
         }
 
         &--order-details-wrapper {
-            padding: 4px 0;
+            padding: 10px 0;
         }
 
         &--details,
